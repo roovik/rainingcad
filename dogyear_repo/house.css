@@ -1,0 +1,66 @@
+:root{ --paper:#F3F2EC; --ink:#2A2A2D; --ink-soft:#6F6F74; --gold:#B0822B; --gold-deep:#876217; --line:rgba(42,42,45,.16); }
+*{box-sizing:border-box}
+html{background:#fff}
+body{margin:0;font-family:"Spectral",Georgia,serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.deck{display:flex;flex-direction:column;align-items:center}
+.page{position:relative;width:8in;height:10in;background:var(--paper);overflow:hidden}
+.pad{position:absolute;inset:0;padding:.75in}
+.kicker{font-family:"Hanken Grotesk",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.24em;font-size:10.5px;color:var(--gold-deep)}
+.folio{position:absolute;left:.75in;right:.75in;bottom:.42in;display:flex;justify-content:space-between;align-items:baseline;font-family:"Hanken Grotesk",sans-serif;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.folio .pageno{letter-spacing:.12em;opacity:.7}
+.hero .holder{position:absolute;inset:.75in;overflow:hidden;border-radius:2px;border:1px solid rgba(42,42,45,.14)}
+.hero .holder img{width:100%;height:100%;object-fit:cover}
+.intro .p2{display:flex;gap:32px;height:100%}
+.intro .main{flex:1;min-width:0}
+.intro .side{flex:0 0 210px}
+.intro .kicker{margin-bottom:14px}
+.intro h1{font-family:"Spectral",serif;font-weight:800;font-size:46px;line-height:.94;margin:0;letter-spacing:-.01em}
+.intro .pos{font-family:"Spectral",serif;font-style:italic;font-weight:600;font-size:19px;color:var(--gold-deep);margin:13px 0 17px;max-width:24ch;line-height:1.28}
+.intro .story{font-size:13px;line-height:1.52;text-align:justify}
+.intro .story p{margin:0 0 9px}
+.intro .story p:first-child:first-letter{font-family:"Spectral",serif;font-weight:800;float:left;font-size:56pt;line-height:.66;padding:8px 11px 0 0;color:var(--gold)}
+.side .stats{border-top:3px solid var(--gold);padding-top:13px}
+.side .sl{font-family:"Hanken Grotesk",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:11px}
+.side .rank{display:flex;align-items:flex-start;gap:10px}
+.side .rank .num{font-family:"Spectral",serif;font-weight:800;font-size:34px;line-height:.82;color:var(--ink);white-space:nowrap}
+.side .season{font-family:"Hanken Grotesk",sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);margin-top:9px}
+.intro .main{position:relative}
+.profqr{position:absolute;left:0;bottom:.15in;display:flex;align-items:center;gap:14px}
+.profqr .qr{height:96px;width:96px}
+.profqr .pl{font-family:"Hanken Grotesk",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+.profqr .ps{font-size:12.5px;margin-top:5px;max-width:20ch;line-height:1.35}
+.side .rank .cap{font-family:"Hanken Grotesk",sans-serif;font-size:10px;line-height:1.32;color:var(--ink-soft);flex:1;margin-top:2px}
+.side .stats dl{margin:13px 0 0;border-top:1px solid var(--line)}
+.grow{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
+.grow:last-of-type{border-bottom:none}
+.grow dt{font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
+.grow dd{margin:0;font-size:12px;text-align:right;font-weight:500}
+.fblock{margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
+.fblock .fl{font-family:"Hanken Grotesk",sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px}
+.fblock p{font-size:11.5px;line-height:1.5;margin:0;color:var(--ink)}
+.wk .pad{display:flex;flex-direction:column}
+.weekhead{display:flex;align-items:flex-end;border-bottom:2px solid var(--ink);padding-bottom:9px}
+.weekhead h2{font-family:"Spectral",serif;font-weight:800;font-size:24px;margin:0;line-height:1.02}
+.days{flex:1;display:flex;flex-direction:column;min-height:0}
+.day{flex:1;min-height:0;display:flex;gap:16px;align-items:stretch;padding:15px 0;border-bottom:1px solid var(--line)}
+.thumb{position:relative;flex:0 0 128px;width:128px;align-self:stretch;min-height:104px;display:block;border-radius:2px;overflow:hidden;text-decoration:none;border:1px solid rgba(42,42,45,.14)}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dbody{flex:1;min-height:0;display:flex;flex-direction:column;min-width:0}
+.dhead{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:5px}
+.dhead .dow{font-family:"Spectral",serif;font-weight:700;font-size:19px}
+.dhead .date{font-family:"Hanken Grotesk",sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+.dtext{font-size:14px;line-height:1.5;margin:0;color:var(--ink);white-space:nowrap;overflow:hidden}
+.lower{flex:1;min-height:0;display:flex;gap:14px;padding-top:9px}
+.qr{flex:0 0 auto;height:100%;aspect-ratio:1/1;background:#fff;border:1px solid var(--line);border-radius:2px;padding:4px;overflow:hidden;display:block}
+.qr img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated;display:block}
+.write{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between}
+.write span{display:block;border-bottom:1px solid rgba(42,42,45,.22)}
+.lastrow .dhead{margin-bottom:6px}
+.lwarea{flex:1;min-height:0;display:flow-root}
+.lwarea::before{content:"";display:block;float:left;width:0;height:calc(100% - 88px)}
+.lwqr{float:left;clear:left;width:88px;height:88px;aspect-ratio:auto;margin:0 14px 0 0}
+.lwbody{flex:1;min-width:0;margin:0;font-size:13px;line-height:1.5;color:var(--ink);overflow:hidden}
+.lwtext .lw1{display:block;margin-bottom:4px}
+@page{size:8in 10in;margin:0}
+.page{page-break-after:always;break-after:page}
+.page:last-child{page-break-after:auto}
