@@ -5,3 +5,8 @@ node_modules/
 *.jpg
 *.html
 __pycache__/
+
+# built site is committed
+!site/**/*.html
+!site/**/*.png
+!site/**/*.svg

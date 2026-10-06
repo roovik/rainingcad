@@ -1,0 +1,6 @@
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/DY2027/*.webp
+  Cache-Control: public, max-age=604800
+/books/*.webp
+  Cache-Control: public, max-age=604800
