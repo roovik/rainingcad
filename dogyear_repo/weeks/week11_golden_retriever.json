@@ -1,41 +1,101 @@
 {
-  "num": 11,
-  "breed": "Golden Retriever",
-  "name_lines": ["Golden Retriever"],
-  "positioning": "The friend who is always glad to see you.",
-  "story": [
-    "Some dogs are admired. The Golden Retriever is adored. The face says welcome, the tail says everything is wonderful, and the whole body says you were missed, even if you only stepped out for the mail.",
-    "The breed began in the Scottish Highlands in the 1800s. Lord Tweedmouth wanted a retriever that could fetch game over rough ground and cold water, then carry it home unharmed. He bred his yellow retrievers with care and kept careful notes.",
-    "The result was a dog with a water-shedding coat, a soft mouth, and a mind eager to please. The AKC recognized the breed in 1925.",
-    "Then the work widened. Goldens became guide dogs, search partners, therapy visitors, and patient listeners beside children learning to read. Wherever people need comfort, a Golden seems to arrive.",
-    "America took the breed to heart. Presidents kept them. Films starred them. Year after year, they rank among the nation’s favorite dogs.",
-    "At home, a Golden asks for little. A walk, a toy, a family. It will bring you a stick, a shoe, or a stuffed bear, and then look proud. Keep it close, keep it busy, and expect to be loved."
+ "num": 11,
+ "breed": "Golden Retriever",
+ "name_lines": [
+  "Golden Retriever"
+ ],
+ "positioning": "The friend who is always glad to see you.",
+ "story": [
+  "Some dogs are admired. The Golden Retriever is adored. The face says welcome, the tail says everything is wonderful, and the whole body says you were missed, even if you only stepped out for the mail.",
+  "The breed began in the Scottish Highlands in the 1800s. Lord Tweedmouth wanted a retriever that could fetch game over rough ground and cold water, then carry it home unharmed. He bred his yellow retrievers with care and kept careful notes.",
+  "The result was a dog with a water-shedding coat, a soft mouth, and a mind eager to please. The AKC recognized the breed in 1925.",
+  "Then the work widened. Goldens became guide dogs, search partners, therapy visitors, and patient listeners beside children learning to read. Wherever people need comfort, a Golden seems to arrive.",
+  "America took the breed to heart. Presidents kept them. Films starred them. Year after year, they rank among the nation’s favorite dogs.",
+  "At home, a Golden asks for little. A walk, a toy, a family. It will bring you a stick, a shoe, or a stuffed bear, and then look proud. Keep it close, keep it busy, and expect to be loved."
+ ],
+ "rank_num": "3",
+ "rank_cap": "The gold standard of friendliness (AKC)",
+ "season_line": "No. 1 of 11 &middot; Dog of Winter",
+ "glance": [
+  [
+   "Expected age",
+   "10–12 years"
   ],
-  "rank_num": "3",
-  "rank_cap": "The gold standard of friendliness (AKC)",
-  "season_line": "No. 1 of 11 &middot; Dog of Winter",
-  "glance": [
-    ["Expected age", "10–12 years"],
-    ["Height", "21.5–24 in"],
-    ["Weight", "55–75 lb"],
-    ["Breed group", "Sporting"],
-    ["Origin", "Scotland, 1800s"]
+  [
+   "Height",
+   "21.5–24 in"
   ],
-  "fblocks": [
-    ["Origin of the Name", "Golden for the color of the coat. Retriever for the job of fetching shot game from land and water."],
-    ["Notable Golden Retrievers", "Liberty, President Ford’s White House companion. Shadow, the wise voice of Homeward Bound. Buddy, the star of Air Bud."],
-    ["Good to Know", "Sheds year-round and loves to chew. Needs daily exercise and daily company. Choose a breeder who screens hips, elbows, eyes, and heart."],
-    ["Coats & Colors", "A dense, water-repellent coat with feathering on the chest, legs, and tail. Shades from light cream to deep gold."],
-    ["By the Numbers", "Fifty-five to seventy-five pounds. Developed in Scotland in the 1800s. Recognized by the AKC in 1925."]
+  [
+   "Weight",
+   "55–75 lb"
   ],
-  "days": [
-    ["Sunday", "Observation", "The fire is warm, the bear is close, and all is well."],
-    ["Monday", "Story", "Lord Tweedmouth bred the first Goldens in Scotland in the 1800s."],
-    ["Tuesday", "Surprise", "Winter is not weather. To a Golden, it is a toy."],
-    ["Wednesday", "Fact", "A soft mouth means a Golden can carry a stick gently."],
-    ["Thursday", "Wisdom", "Rest your head by the window. The snow will wait for you."],
-    ["Friday", "Conversation Piece", "Golden puppies often darken with age. Cream today, gold tomorrow."],
-    ["Saturday", "Heartwarmer", "The snow flies, the tail wags, and joy is everywhere."]
+  [
+   "Breed group",
+   "Sporting"
   ],
-  "last_walk": "The leash is by the door, and the lantern is lit.\nA Golden never needs convincing. It needs only the sound of the door. Then out it bounds, gold against the snow, sure the best part of the day has just begun. The gate swings open, and the world is ready to roam."
+  [
+   "Origin",
+   "Scotland, 1800s"
+  ]
+ ],
+ "fblocks": [
+  [
+   "Origin of the Name",
+   "Golden for the color of the coat. Retriever for the job of fetching shot game from land and water."
+  ],
+  [
+   "Notable Golden Retrievers",
+   "Liberty, President Ford’s White House companion. Shadow, the wise voice of Homeward Bound. Buddy, the star of Air Bud."
+  ],
+  [
+   "Good to Know",
+   "Sheds year-round and loves to chew. Needs daily exercise and daily company. Choose a breeder who screens hips, elbows, eyes, and heart."
+  ],
+  [
+   "Coats & Colors",
+   "A dense, water-repellent coat with feathering on the chest, legs, and tail. Shades from light cream to deep gold."
+  ],
+  [
+   "By the Numbers",
+   "Fifty-five to seventy-five pounds. Developed in Scotland in the 1800s. Recognized by the AKC in 1925."
+  ]
+ ],
+ "days": [
+  [
+   "Sunday",
+   "Observation",
+   "The fire is warm, the bear is close, and all is well."
+  ],
+  [
+   "Monday",
+   "Story",
+   "Lord Tweedmouth bred the first Goldens in Scotland in the 1800s."
+  ],
+  [
+   "Tuesday",
+   "Surprise",
+   "Winter is not weather. To a Golden, it is a toy."
+  ],
+  [
+   "Wednesday",
+   "Fact",
+   "A soft mouth means a Golden can carry a stick gently."
+  ],
+  [
+   "Thursday",
+   "Wisdom",
+   "Rest your head by the window. The snow will wait for you."
+  ],
+  [
+   "Friday",
+   "Conversation Piece",
+   "Golden puppies often darken with age. Cream today, gold tomorrow."
+  ],
+  [
+   "Saturday",
+   "Heartwarmer",
+   "The snow flies, the tail wags, and joy is everywhere."
+  ]
+ ],
+ "last_walk": "The leash is by the door, and the lantern is lit.\nA Golden never needs convincing. It needs only the sound of the door. Then out it bounds, gold against the snow, sure the best part of the day has just begun. The gate swings open, and the world is ready to roam."
 }

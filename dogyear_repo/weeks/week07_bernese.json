@@ -1,102 +1,102 @@
 {
-  "num": 7,
-  "breed": "Bernese Mountain Dog",
-  "name_lines": [
-    "Bernese",
-    "Mountain Dog"
+ "num": 7,
+ "breed": "Bernese Mountain Dog",
+ "name_lines": [
+  "Bernese",
+  "Mountain Dog"
+ ],
+ "positioning": "Strength wrapped in kindness.",
+ "story": [
+  "The Bernese Mountain Dog looks like a teddy bear dressed for a formal dinner. Black coat, rust trim, white shirtfront. Then it grins, and the formality ends.",
+  "The breed comes from the farms around Bern, Switzerland. Dairy farmers there needed a dog that could guard the yard, drive the cows, and pull a cart of milk and cheese down the mountain. It had to be strong and steady, and kind enough to trust around children.",
+  "By the late 1800s the breed had nearly vanished as other dogs and machines took over farm work. Then a few Swiss admirers, including the geologist Albert Heim, set out to save it. Bernese were shown in Bern in 1904, and the revival took hold.",
+  "That rescue is why we have them. Today the Bernese is a family dog first. It loves children, shrugs off weather, and believes any gathering would be improved by leaning against someone.",
+  "The coat is the signature. Jet black, rich rust, and clean white, with a white blaze on the face and a smudge of rust above each eye. It sheds in great clouds, so keep a lint roller handy.",
+  "The heart is the signature too, and it comes with a cost. Bernese often live only seven to ten years. Owners will tell you every one of those years is worth it."
+ ],
+ "rank_num": "20",
+ "rank_cap": "A farm dog with a formal coat and a soft heart (AKC)",
+ "season_line": "No. 5 of 11 &middot; Dogs of Winter",
+ "glance": [
+  [
+   "Expected age",
+   "7–10 years"
   ],
-  "positioning": "Strength wrapped in kindness.",
-  "story": [
-    "The Bernese Mountain Dog looks like a teddy bear dressed for a formal dinner. Black coat, rust trim, white shirtfront. Then it grins, and the formality ends.",
-    "The breed comes from the farms around Bern, Switzerland. Dairy farmers there needed a dog that could guard the yard, drive the cows, and pull a cart of milk and cheese down the mountain. It had to be strong and steady, and kind enough to trust around children.",
-    "By the late 1800s the breed had nearly vanished as other dogs and machines took over farm work. Then a few Swiss admirers, including the geologist Albert Heim, set out to save it. Bernese were shown in Bern in 1904, and the revival took hold.",
-    "That rescue is why we have them. Today the Bernese is a family dog first. It loves children, shrugs off weather, and believes any gathering would be improved by leaning against someone.",
-    "The coat is the signature. Jet black, rich rust, and clean white, with a white blaze on the face and a smudge of rust above each eye. It sheds in great clouds, so keep a lint roller handy.",
-    "The heart is the signature too, and it comes with a cost. Bernese often live only seven to ten years. Owners will tell you every one of those years is worth it."
+  [
+   "Height",
+   "23–28 in"
   ],
-  "rank_num": "20",
-  "rank_cap": "A farm dog with a formal coat and a soft heart (AKC)",
-  "season_line": "No. 5 of 11 &middot; Dogs of Winter",
-  "glance": [
-    [
-      "Expected age",
-      "7–10 years"
-    ],
-    [
-      "Height",
-      "23–28 in"
-    ],
-    [
-      "Weight",
-      "70–115 lb"
-    ],
-    [
-      "Breed group",
-      "Working"
-    ],
-    [
-      "Origin",
-      "Bern, Switzerland"
-    ]
+  [
+   "Weight",
+   "70–115 lb"
   ],
-  "fblocks": [
-    [
-      "Origin of the Name",
-      "Named for the Swiss canton of Bern. Its Swiss name, Berner Sennenhund, means Bernese dairyman’s dog."
-    ],
-    [
-      "Notable Bernese",
-      "The Dürrbächler, farm dogs named for the village of Dürrbach, where the breed first drew notice. Albert Heim, the geologist who helped save it."
-    ],
-    [
-      "Good to Know",
-      "Sheds heavily and overheats easily. Needs company and a daily walk. Prone to cancer and joint problems, so choose a breeder who screens carefully."
-    ],
-    [
-      "Coats & Colors",
-      "A long, silky coat in jet black with rich rust and white markings. The tail hangs low with a gentle curve."
-    ],
-    [
-      "By the Numbers",
-      "Males up to 115 pounds. Reportedly able to pull a loaded cart of 1,000 pounds. Recognized by the AKC in 1937."
-    ]
+  [
+   "Breed group",
+   "Working"
   ],
-  "days": [
-    [
-      "Sunday",
-      "Observation",
-      "A Bernese lies by the fire, a warm rug with opinions."
-    ],
-    [
-      "Monday",
-      "Fact",
-      "Bernese once pulled milk carts down Swiss mountain roads."
-    ],
-    [
-      "Tuesday",
-      "Surprise",
-      "A Bernese can reportedly pull a thousand pounds. It prefers games."
-    ],
-    [
-      "Wednesday",
-      "Wisdom",
-      "Steady beats fast. The Bernese has been proving it for centuries."
-    ],
-    [
-      "Thursday",
-      "Conversation Piece",
-      "Bernese means from Bern, Switzerland. The dog is a local celebrity."
-    ],
-    [
-      "Friday",
-      "Story",
-      "By 1900 the breed was nearly gone. Swiss admirers saved it."
-    ],
-    [
-      "Saturday",
-      "Heartwarmer",
-      "The pup leans against the big dog and falls asleep."
-    ]
+  [
+   "Origin",
+   "Bern, Switzerland"
+  ]
+ ],
+ "fblocks": [
+  [
+   "Origin of the Name",
+   "Named for the Swiss canton of Bern. Its Swiss name, Berner Sennenhund, means Bernese dairyman’s dog."
   ],
-  "last_walk": "The chalet door is open, and the snow is settling.\nA Bernese does not tug at the leash. It leans toward the day, calm and cheerful, and waits for you to join it. It has always walked beside people, from the farm to the mountain pass. The door swings wide, and the Alps wait, ready to roam."
+  [
+   "Notable Bernese",
+   "The Dürrbächler, farm dogs named for the village of Dürrbach, where the breed first drew notice. Albert Heim, the geologist who helped save it."
+  ],
+  [
+   "Good to Know",
+   "Sheds heavily and overheats easily. Needs company and a daily walk. Prone to cancer and joint problems, so choose a breeder who screens carefully."
+  ],
+  [
+   "Coats & Colors",
+   "A long, silky coat in jet black with rich rust and white markings. The tail hangs low with a gentle curve."
+  ],
+  [
+   "By the Numbers",
+   "Males up to 115 pounds. Reportedly able to pull a loaded cart of 1,000 pounds. Recognized by the AKC in 1937."
+  ]
+ ],
+ "days": [
+  [
+   "Sunday",
+   "Observation",
+   "A Bernese lies by the fire, a warm rug with opinions."
+  ],
+  [
+   "Monday",
+   "Fact",
+   "Bernese once pulled milk carts down Swiss mountain roads."
+  ],
+  [
+   "Tuesday",
+   "Surprise",
+   "A Bernese can reportedly pull a thousand pounds. It prefers games."
+  ],
+  [
+   "Wednesday",
+   "Wisdom",
+   "Steady beats fast. The Bernese has been proving it for centuries."
+  ],
+  [
+   "Thursday",
+   "Conversation Piece",
+   "Bernese means from Bern, Switzerland. The dog is a local celebrity."
+  ],
+  [
+   "Friday",
+   "Story",
+   "By 1900 the breed was nearly gone. Swiss admirers saved it."
+  ],
+  [
+   "Saturday",
+   "Heartwarmer",
+   "The pup leans against the big dog and falls asleep."
+  ]
+ ],
+ "last_walk": "The chalet door is open, and the snow is settling.\nA Bernese does not tug at the leash. It leans toward the day, calm and cheerful, and waits for you to join it. It has always walked beside people, from the farm to the mountain pass. The door swings wide, and the Alps wait, ready to roam."
 }

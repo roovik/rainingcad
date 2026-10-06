@@ -1,101 +1,101 @@
 {
-  "num": 2,
-  "breed": "Akita",
-  "name_lines": [
-    "Akita"
+ "num": 2,
+ "breed": "Akita",
+ "name_lines": [
+  "Akita"
+ ],
+ "positioning": "The silent guardian of the snow country.",
+ "story": [
+  "Some dogs love you loudly. The Akita does it quietly. It will not bark for attention or beg for it or announce its devotion. It will simply be there, watching you with calm dark eyes, certain that you already know.",
+  "The breed comes from the snowy north of Japan, in the mountains around Akita Prefecture. Hunters there used large dogs to track game as big as bear. A dog like that had to be strong, silent, and steady. The Akita was all three.",
+  "Japan came to treasure the breed. The Akita was named a national monument in 1931. Families still give small Akita statues to newborns and the sick, as a wish for health and long life.",
+  "Then came Hachiko. Every day in the 1920s, an Akita in Tokyo walked to Shibuya Station to meet his owner’s train. When the professor died, Hachiko kept coming. For about nine years he waited. Today his statue stands outside that station.",
+  "Helen Keller is credited with bringing the first Akita to America, in 1937. Soldiers returning from Japan after the war brought more. Americans fell for the breed the same way Japan had.",
+  "The Akita is not for everyone. It is large, willful, and reserved with strangers. But to the people it chooses, it gives the long, steady kind of loyalty that never needs words."
+ ],
+ "rank_num": "62",
+ "rank_cap": "A silent guardian from northern Japan (AKC)",
+ "season_line": "No. 10 of 11 &middot; Dogs of Winter",
+ "glance": [
+  [
+   "Expected age",
+   "10–13 years"
   ],
-  "positioning": "The silent guardian of the snow country.",
-  "story": [
-    "Some dogs love you loudly. The Akita does it quietly. It will not bark for attention or beg for it or announce its devotion. It will simply be there, watching you with calm dark eyes, certain that you already know.",
-    "The breed comes from the snowy north of Japan, in the mountains around Akita Prefecture. Hunters there used large dogs to track game as big as bear. A dog like that had to be strong, silent, and steady. The Akita was all three.",
-    "Japan came to treasure the breed. The Akita was named a national monument in 1931. Families still give small Akita statues to newborns and the sick, as a wish for health and long life.",
-    "Then came Hachiko. Every day in the 1920s, an Akita in Tokyo walked to Shibuya Station to meet his owner’s train. When the professor died, Hachiko kept coming. For about nine years he waited. Today his statue stands outside that station.",
-    "Helen Keller is credited with bringing the first Akita to America, in 1937. Soldiers returning from Japan after the war brought more. Americans fell for the breed the same way Japan had.",
-    "The Akita is not for everyone. It is large, willful, and reserved with strangers. But to the people it chooses, it gives the long, steady kind of loyalty that never needs words."
+  [
+   "Height",
+   "24–28 in"
   ],
-  "rank_num": "47",
-  "rank_cap": "A silent guardian from northern Japan (AKC)",
-  "season_line": "No. 10 of 11 &middot; Dogs of Winter",
-  "glance": [
-    [
-      "Expected age",
-      "10–13 years"
-    ],
-    [
-      "Height",
-      "24–28 in"
-    ],
-    [
-      "Weight",
-      "70–130 lb"
-    ],
-    [
-      "Breed group",
-      "Working"
-    ],
-    [
-      "Origin",
-      "Japan, 1600s"
-    ]
+  [
+   "Weight",
+   "70–130 lb"
   ],
-  "fblocks": [
-    [
-      "Origin of the Name",
-      "Named for Akita Prefecture in northern Japan. The prefecture’s name means autumn field."
-    ],
-    [
-      "Notable Akitas",
-      "Hachiko, who waited at Shibuya Station for about nine years. Kamikaze-go, the gift to Helen Keller in 1937."
-    ],
-    [
-      "Good to Know",
-      "Quiet but strong willed. Reserved with strangers and often with other dogs. Sheds heavily twice a year. Early training matters."
-    ],
-    [
-      "Coats & Colors",
-      "A thick double coat in red, white, pinto, or brindle. A plush tail curls over the back."
-    ],
-    [
-      "By the Numbers",
-      "Up to 130 pounds. Hachiko waited about nine years. Recognized by the AKC in 1972."
-    ]
+  [
+   "Breed group",
+   "Working"
   ],
-  "days": [
-    [
-      "Sunday",
-      "Observation",
-      "The Akita watches the snow fall and approves of the silence."
-    ],
-    [
-      "Monday",
-      "Fact",
-      "Akita means autumn field. The breed comes from that Japanese prefecture."
-    ],
-    [
-      "Tuesday",
-      "Story",
-      "Hachiko met the Shibuya train for nine years after his owner died."
-    ],
-    [
-      "Wednesday",
-      "Wisdom",
-      "Loyalty is quiet work. The Akita never once explains itself."
-    ],
-    [
-      "Thursday",
-      "Surprise",
-      "Hunters used these dogs on bear. Now they guard the sofa."
-    ],
-    [
-      "Friday",
-      "Conversation Piece",
-      "Akita colors range from red and white to brindle. All are correct."
-    ],
-    [
-      "Saturday",
-      "Heartwarmer",
-      "A sleeping Akita wraps its tail over its nose like a scarf."
-    ]
+  [
+   "Origin",
+   "Japan, 1600s"
+  ]
+ ],
+ "fblocks": [
+  [
+   "Origin of the Name",
+   "Named for Akita Prefecture in northern Japan. The prefecture’s name means autumn field."
   ],
-  "last_walk": "The garden gate is open, and the snow is fresh.\nAn Akita never rushes out. It pauses on the step, weighs the morning, and decides you are worth walking with. It asks for nothing and gives everything. The gate swings wide, and the garden waits, ready to roam."
+  [
+   "Notable Akitas",
+   "Hachiko, who waited at Shibuya Station for about nine years. Kamikaze-go, the gift to Helen Keller in 1937."
+  ],
+  [
+   "Good to Know",
+   "Quiet but strong willed. Reserved with strangers and often with other dogs. Sheds heavily twice a year. Early training matters."
+  ],
+  [
+   "Coats & Colors",
+   "A thick double coat in red, white, pinto, or brindle. A plush tail curls over the back."
+  ],
+  [
+   "By the Numbers",
+   "Up to 130 pounds. Hachiko waited about nine years. Recognized by the AKC in 1972."
+  ]
+ ],
+ "days": [
+  [
+   "Sunday",
+   "Observation",
+   "The Akita watches the snow fall and approves of the silence."
+  ],
+  [
+   "Monday",
+   "Fact",
+   "Akita means autumn field. The breed comes from that Japanese prefecture."
+  ],
+  [
+   "Tuesday",
+   "Story",
+   "Hachiko met the Shibuya train for nine years after his owner died."
+  ],
+  [
+   "Wednesday",
+   "Wisdom",
+   "Loyalty is quiet work. The Akita never once explains itself."
+  ],
+  [
+   "Thursday",
+   "Surprise",
+   "Hunters used these dogs on bear. Now they guard the sofa."
+  ],
+  [
+   "Friday",
+   "Conversation Piece",
+   "Akita colors range from red and white to brindle. All are correct."
+  ],
+  [
+   "Saturday",
+   "Heartwarmer",
+   "A sleeping Akita wraps its tail over its nose like a scarf."
+  ]
+ ],
+ "last_walk": "The garden gate is open, and the snow is fresh.\nAn Akita never rushes out. It pauses on the step, weighs the morning, and decides you are worth walking with. It asks for nothing and gives everything. The gate swings wide, and the garden waits, ready to roam."
 }

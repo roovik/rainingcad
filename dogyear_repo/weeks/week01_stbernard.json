@@ -1,101 +1,101 @@
 {
-  "num": 1,
-  "breed": "Saint Bernard",
-  "name_lines": [
-    "Saint Bernard"
+ "num": 1,
+ "breed": "Saint Bernard",
+ "name_lines": [
+  "Saint Bernard"
+ ],
+ "positioning": "The rescuer of the mountains.",
+ "story": [
+  "Some dogs earn a reputation. The Saint Bernard earned a hospice. High in the Swiss Alps, on a pass where storms arrive without warning, monks kept these dogs from the 1600s. Travelers vanished in the snow there. The dogs went out and found them.",
+  "By most tellings, they had gifts no human had. They seemed to sense avalanches before they fell. They tracked a buried scent through deep snow. They lay beside a frozen traveler and shared the warmth of a body the size of a small sofa. Then one dog ran back for help.",
+  "Barry became the legend. Over twelve years of service in the early 1800s, he is credited with saving about forty lives. He still stands in a museum in Bern. The hospice has kept a dog named Barry ever since.",
+  "The famous brandy barrel is a myth. A painter added it to a collar in 1820, and the world believed him. The real rescues needed no help from a cask.",
+  "Today the breed is a family dog. It is patient, calm, and enormous. It drools, it leans, and it will try to sit on your lap. It still believes anyone nearby might need rescuing. Usually the rescue is a hug.",
+  "Nobody asked these dogs to be heroes. They were asked to be steady. In storm or in calm, the Saint Bernard arrives the same way, slow and certain, as if the mountain were never in doubt."
+ ],
+ "rank_num": "63",
+ "rank_cap": "An alpine rescuer turned family companion (AKC)",
+ "season_line": "No. 11 of 11 &middot; Dogs of Winter",
+ "glance": [
+  [
+   "Expected age",
+   "8–10 years"
   ],
-  "positioning": "The rescuer of the mountains.",
-  "story": [
-    "Some dogs earn a reputation. The Saint Bernard earned a hospice. High in the Swiss Alps, on a pass where storms arrive without warning, monks kept these dogs from the 1600s. Travelers vanished in the snow there. The dogs went out and found them.",
-    "By most tellings, they had gifts no human had. They seemed to sense avalanches before they fell. They tracked a buried scent through deep snow. They lay beside a frozen traveler and shared the warmth of a body the size of a small sofa. Then one dog ran back for help.",
-    "Barry became the legend. Over twelve years of service in the early 1800s, he is credited with saving about forty lives. He still stands in a museum in Bern. The hospice has kept a dog named Barry ever since.",
-    "The famous brandy barrel is a myth. A painter added it to a collar in 1820, and the world believed him. The real rescues needed no help from a cask.",
-    "Today the breed is a family dog. It is patient, calm, and enormous. It drools, it leans, and it will try to sit on your lap. It still believes anyone nearby might need rescuing. Usually the rescue is a hug.",
-    "Nobody asked these dogs to be heroes. They were asked to be steady. In storm or in calm, the Saint Bernard arrives the same way, slow and certain, as if the mountain were never in doubt."
+  [
+   "Height",
+   "26–30 in"
   ],
-  "rank_num": "49",
-  "rank_cap": "An alpine rescuer turned family companion (AKC)",
-  "season_line": "No. 11 of 11 &middot; Dogs of Winter",
-  "glance": [
-    [
-      "Expected age",
-      "8–10 years"
-    ],
-    [
-      "Height",
-      "26–30 in"
-    ],
-    [
-      "Weight",
-      "120–180 lb"
-    ],
-    [
-      "Breed group",
-      "Working"
-    ],
-    [
-      "Origin",
-      "Switzerland, 1600s"
-    ]
+  [
+   "Weight",
+   "120–180 lb"
   ],
-  "fblocks": [
-    [
-      "Origin of the Name",
-      "Named for the Great St. Bernard Pass, where a hospice was founded in the 11th century by Bernard of Menthon."
-    ],
-    [
-      "Notable Saint Bernards",
-      "Barry, the Alpine rescue legend. Beethoven, the slobbering film star of 1992. Cujo, the title dog of Stephen King’s 1981 novel."
-    ],
-    [
-      "Good to Know",
-      "Drools and sheds. Overheats easily. Giant breeds often live shorter lives, so choose a breeder who screens hips, elbows, and heart."
-    ],
-    [
-      "Coats & Colors",
-      "A smooth or rough coat in red with white markings, or brindle with white. A dark mask and a long, heavy tail."
-    ],
-    [
-      "By the Numbers",
-      "Up to 180 pounds. About 2,000 lives credited to hospice dogs over roughly two centuries. Recognized by the AKC in 1885."
-    ]
+  [
+   "Breed group",
+   "Working"
   ],
-  "days": [
-    [
-      "Sunday",
-      "Fact",
-      "The hospice sits at 8,100 feet. A warm fire was the rescue."
-    ],
-    [
-      "Monday",
-      "Story",
-      "Legend says one dog lay beside the traveler, one fetched the monks."
-    ],
-    [
-      "Tuesday",
-      "Surprise",
-      "That black nose can smell a traveler buried under deep snow."
-    ],
-    [
-      "Wednesday",
-      "Observation",
-      "A Saint Bernard shakes off snow like a wet blanket. Stand back."
-    ],
-    [
-      "Thursday",
-      "Wisdom",
-      "The dog at the window is not bored. It is on duty."
-    ],
-    [
-      "Friday",
-      "Conversation Piece",
-      "The brandy barrel? A painter invented it in 1820. Ask your friends."
-    ],
-    [
-      "Saturday",
-      "Heartwarmer",
-      "Every pup believes it is small, then climbs into your lap."
-    ]
+  [
+   "Origin",
+   "Switzerland, 1600s"
+  ]
+ ],
+ "fblocks": [
+  [
+   "Origin of the Name",
+   "Named for the Great St. Bernard Pass, where a hospice was founded in the 11th century by Bernard of Menthon."
   ],
-  "last_walk": "The leash hangs by the door, and the snow is waiting.\nA Saint Bernard’s whole history rests on one question. Who needs help today? The dog asks it of every stranger and every tired person on the path. Often the answer is you. Then the door opens, and the mountain waits, ready to roam."
+  [
+   "Notable Saint Bernards",
+   "Barry, the Alpine rescue legend. Beethoven, the slobbering film star of 1992. Cujo, the title dog of Stephen King’s 1981 novel."
+  ],
+  [
+   "Good to Know",
+   "Drools and sheds. Overheats easily. Giant breeds often live shorter lives, so choose a breeder who screens hips, elbows, and heart."
+  ],
+  [
+   "Coats & Colors",
+   "A smooth or rough coat in red with white markings, or brindle with white. A dark mask and a long, heavy tail."
+  ],
+  [
+   "By the Numbers",
+   "Up to 180 pounds. About 2,000 lives credited to hospice dogs over roughly two centuries. Recognized by the AKC in 1885."
+  ]
+ ],
+ "days": [
+  [
+   "Sunday",
+   "Fact",
+   "The hospice sits at 8,100 feet. A warm fire was the rescue."
+  ],
+  [
+   "Monday",
+   "Story",
+   "Legend says one dog lay beside the traveler, one fetched the monks."
+  ],
+  [
+   "Tuesday",
+   "Surprise",
+   "That black nose can smell a traveler buried under deep snow."
+  ],
+  [
+   "Wednesday",
+   "Observation",
+   "A Saint Bernard shakes off snow like a wet blanket. Stand back."
+  ],
+  [
+   "Thursday",
+   "Wisdom",
+   "The dog at the window is not bored. It is on duty."
+  ],
+  [
+   "Friday",
+   "Conversation Piece",
+   "The brandy barrel? A painter invented it in 1820. Ask your friends."
+  ],
+  [
+   "Saturday",
+   "Heartwarmer",
+   "Every pup believes it is small, then climbs into your lap."
+  ]
+ ],
+ "last_walk": "The leash hangs by the door, and the snow is waiting.\nA Saint Bernard’s whole history rests on one question. Who needs help today? The dog asks it of every stranger and every tired person on the path. Often the answer is you. Then the door opens, and the mountain waits, ready to roam."
 }

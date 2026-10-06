@@ -1,101 +1,101 @@
 {
-  "num": 5,
-  "breed": "Great Dane",
-  "name_lines": [
-    "Great Dane"
+ "num": 5,
+ "breed": "Great Dane",
+ "name_lines": [
+  "Great Dane"
+ ],
+ "positioning": "The gentle giant who believes he is a lapdog.",
+ "story": [
+  "No dog enters a room like the Great Dane. It arrives. Heads turn. The coffee table retreats. Then this giant lowers itself onto a sofa meant for two and asks for a blanket.",
+  "The name is a misunderstanding. The breed is German, not Danish. Hunters there bred big dogs to chase wild boar through the forest. By most tellings, a French naturalist saw the dogs in Denmark and called them grand danois, and the name stuck.",
+  "Germany came to love its dog. In 1876 it named the Great Dane a national breed. Admirers have long called it the Apollo of dogs.",
+  "Size is the headline. A Great Dane named Zeus stood 44 inches at the shoulder and earned a Guinness record. On his hind legs he stood over seven feet.",
+  "Everything else is gentleness. A Great Dane is patient with children, polite with strangers, and certain it is a lap dog. It will lean on you, sigh, and hand you its whole weight as a compliment.",
+  "The price of such a heart is a short visit. Giants tend to live only seven to ten years. Great Dane owners know it, and love harder anyway."
+ ],
+ "rank_num": "22",
+ "rank_cap": "The Apollo of dogs (AKC)",
+ "season_line": "No. 6 of 11 &middot; Dogs of Winter",
+ "glance": [
+  [
+   "Expected age",
+   "7–10 years"
   ],
-  "positioning": "The gentle giant who believes he is a lapdog.",
-  "story": [
-    "No dog enters a room like the Great Dane. It arrives. Heads turn. The coffee table retreats. Then this giant lowers itself onto a sofa meant for two and asks for a blanket.",
-    "The name is a misunderstanding. The breed is German, not Danish. Hunters there bred big dogs to chase wild boar through the forest. By most tellings, a French naturalist saw the dogs in Denmark and called them grand danois, and the name stuck.",
-    "Germany came to love its dog. In 1876 it named the Great Dane a national breed. Admirers have long called it the Apollo of dogs.",
-    "Size is the headline. A Great Dane named Zeus stood 44 inches at the shoulder and earned a Guinness record. On his hind legs he stood over seven feet.",
-    "Everything else is gentleness. A Great Dane is patient with children, polite with strangers, and certain it is a lap dog. It will lean on you, sigh, and hand you its whole weight as a compliment.",
-    "The price of such a heart is a short visit. Giants tend to live only seven to ten years. Great Dane owners know it, and love harder anyway."
+  [
+   "Height",
+   "28–32 in"
   ],
-  "rank_num": "25",
-  "rank_cap": "The Apollo of dogs (AKC)",
-  "season_line": "No. 7 of 11 &middot; Dogs of Winter",
-  "glance": [
-    [
-      "Expected age",
-      "7–10 years"
-    ],
-    [
-      "Height",
-      "28–32 in"
-    ],
-    [
-      "Weight",
-      "110–175 lb"
-    ],
-    [
-      "Breed group",
-      "Working"
-    ],
-    [
-      "Origin",
-      "Germany, 1800s"
-    ]
+  [
+   "Weight",
+   "110–175 lb"
   ],
-  "fblocks": [
-    [
-      "Origin of the Name",
-      "Not Danish at all. The name is credited to a French naturalist who called the breed grand danois."
-    ],
-    [
-      "Notable Great Danes",
-      "Zeus, a record-holder at 44 inches. Scooby-Doo, the Mystery Machine’s mascot. Marmaduke, the comic strip star."
-    ],
-    [
-      "Good to Know",
-      "Needs space and a sturdy bed. Prone to bloat, so ask your vet about feeding. Giants often live shorter lives, so choose a breeder who screens heart and hips."
-    ],
-    [
-      "Coats & Colors",
-      "A short, smooth coat in fawn, brindle, blue, black, harlequin, or mantle. A long tail tapers to a point."
-    ],
-    [
-      "By the Numbers",
-      "Up to 175 pounds. Males stand at least 30 inches. Recognized by the AKC in 1887."
-    ]
+  [
+   "Breed group",
+   "Working"
   ],
-  "days": [
-    [
-      "Sunday",
-      "Observation",
-      "The sofa was built for two people. The Dane volunteered."
-    ],
-    [
-      "Monday",
-      "Fact",
-      "The Great Dane is German, not Danish. The name was a mistake."
-    ],
-    [
-      "Tuesday",
-      "Surprise",
-      "A hundred pounds of dog, and not one ornament was harmed."
-    ],
-    [
-      "Wednesday",
-      "Wisdom",
-      "Real strength is quiet. The Dane watches the snow fall and waits."
-    ],
-    [
-      "Thursday",
-      "Story",
-      "Zeus stood 44 inches tall and set a Guinness world record."
-    ],
-    [
-      "Friday",
-      "Conversation Piece",
-      "Scooby-Doo is a Great Dane. So is Marmaduke. Ask your friends."
-    ],
-    [
-      "Saturday",
-      "Heartwarmer",
-      "When a Great Dane sleeps, the whole house seems to exhale."
-    ]
+  [
+   "Origin",
+   "Germany, 1800s"
+  ]
+ ],
+ "fblocks": [
+  [
+   "Origin of the Name",
+   "Not Danish at all. The name is credited to a French naturalist who called the breed grand danois."
   ],
-  "last_walk": "The lanterns are lit, and the steps are dusted with snow.\nA Great Dane waits at the door like a guard of honor. It lowers its head to let you clip the leash, then matches its long stride to yours. The door opens, and the winter waits, ready to roam."
+  [
+   "Notable Great Danes",
+   "Zeus, a record-holder at 44 inches. Scooby-Doo, the Mystery Machine’s mascot. Marmaduke, the comic strip star."
+  ],
+  [
+   "Good to Know",
+   "Needs space and a sturdy bed. Prone to bloat, so ask your vet about feeding. Giants often live shorter lives, so choose a breeder who screens heart and hips."
+  ],
+  [
+   "Coats & Colors",
+   "A short, smooth coat in fawn, brindle, blue, black, harlequin, or mantle. A long tail tapers to a point."
+  ],
+  [
+   "By the Numbers",
+   "Up to 175 pounds. Males stand at least 30 inches. Recognized by the AKC in 1887."
+  ]
+ ],
+ "days": [
+  [
+   "Sunday",
+   "Observation",
+   "The sofa was built for two people. The Dane volunteered."
+  ],
+  [
+   "Monday",
+   "Fact",
+   "The Great Dane is German, not Danish. The name was a mistake."
+  ],
+  [
+   "Tuesday",
+   "Surprise",
+   "A hundred pounds of dog, and not one ornament was harmed."
+  ],
+  [
+   "Wednesday",
+   "Wisdom",
+   "Real strength is quiet. The Dane watches the snow fall and waits."
+  ],
+  [
+   "Thursday",
+   "Story",
+   "Zeus stood 44 inches tall and set a Guinness world record."
+  ],
+  [
+   "Friday",
+   "Conversation Piece",
+   "Scooby-Doo is a Great Dane. So is Marmaduke. Ask your friends."
+  ],
+  [
+   "Saturday",
+   "Heartwarmer",
+   "When a Great Dane sleeps, the whole house seems to exhale."
+  ]
+ ],
+ "last_walk": "The lanterns are lit, and the steps are dusted with snow.\nA Great Dane waits at the door like a guard of honor. It lowers its head to let you clip the leash, then matches its long stride to yours. The door opens, and the winter waits, ready to roam."
 }

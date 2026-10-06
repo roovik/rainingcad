@@ -1,102 +1,102 @@
 {
-  "num": 9,
-  "breed": "Cavalier King Charles Spaniel",
-  "name_lines": [
-    "Cavalier King",
-    "Charles Spaniel"
+ "num": 9,
+ "breed": "Cavalier King Charles Spaniel",
+ "name_lines": [
+  "Cavalier King",
+  "Charles Spaniel"
+ ],
+ "positioning": "The aristocrat who loves everybody.",
+ "story": [
+  "The Cavalier King Charles Spaniel has a face made for portraits. Silky ears, wide dark eyes, a chestnut and white coat. It looks like royalty because, historically, it was.",
+  "These small spaniels warmed the laps of the English court. King Charles II adored them so much that, by Samuel Pepys’s account, he played with his dogs instead of minding the state. The breed carries his name.",
+  "Before central heating, a lap spaniel had a job. Ladies of the court called them comforters and held them for warmth. A Cavalier still believes that is its calling. It will curl against you, sigh, and become a small furry heater.",
+  "Over the centuries the original style nearly disappeared. In 1926 an American named Roswell Eldridge offered a prize at Crufts for spaniels like those in old royal paintings. Breeders took up the challenge, and the Cavalier returned.",
+  "The result is a spaniel with a sweet face and a bottomless supply of affection. Cavaliers befriend children, cats, strangers, and the mail carrier. They are happiest in your lap, or beside it, or on your feet.",
+  "Take one home and the arrangement is simple. You supply the sofa. The Cavalier supplies the loyalty, and a small invisible crown."
+ ],
+ "rank_num": "12",
+ "rank_cap": "A royal lap spaniel with a famously open heart (AKC)",
+ "season_line": "No. 3 of 11 &middot; Dogs of Winter",
+ "glance": [
+  [
+   "Expected age",
+   "9–14 years"
   ],
-  "positioning": "The aristocrat who loves everybody.",
-  "story": [
-    "The Cavalier King Charles Spaniel has a face made for portraits. Silky ears, wide dark eyes, a chestnut and white coat. It looks like royalty because, historically, it was.",
-    "These small spaniels warmed the laps of the English court. King Charles II adored them so much that, by Samuel Pepys’s account, he played with his dogs instead of minding the state. The breed carries his name.",
-    "Before central heating, a lap spaniel had a job. Ladies of the court called them comforters and held them for warmth. A Cavalier still believes that is its calling. It will curl against you, sigh, and become a small furry heater.",
-    "Over the centuries the original style nearly disappeared. In 1926 an American named Roswell Eldridge offered a prize at Crufts for spaniels like those in old royal paintings. Breeders took up the challenge, and the Cavalier returned.",
-    "The result is a spaniel with a sweet face and a bottomless supply of affection. Cavaliers befriend children, cats, strangers, and the mail carrier. They are happiest in your lap, or beside it, or on your feet.",
-    "Take one home and the arrangement is simple. You supply the sofa. The Cavalier supplies the loyalty, and a small invisible crown."
+  [
+   "Height",
+   "12–13 in"
   ],
-  "rank_num": "12",
-  "rank_cap": "A royal lap spaniel with a famously open heart (AKC)",
-  "season_line": "No. 3 of 11 &middot; Dogs of Winter",
-  "glance": [
-    [
-      "Expected age",
-      "9–14 years"
-    ],
-    [
-      "Height",
-      "12–13 in"
-    ],
-    [
-      "Weight",
-      "13–18 lb"
-    ],
-    [
-      "Breed group",
-      "Toy"
-    ],
-    [
-      "Origin",
-      "England, 1600s"
-    ]
+  [
+   "Weight",
+   "13–18 lb"
   ],
-  "fblocks": [
-    [
-      "Origin of the Name",
-      "Named for King Charles II, who adored toy spaniels. Cavalier sets this breed apart from the flat-faced King Charles Spaniel."
-    ],
-    [
-      "Notable Cavaliers",
-      "Rex, Ronald Reagan’s White House companion. The spaniels of King Charles II, who kept them at court."
-    ],
-    [
-      "Good to Know",
-      "Wants company all day. Sheds and needs regular brushing. Prone to heart and spine conditions, so choose a breeder who screens carefully."
-    ],
-    [
-      "Coats & Colors",
-      "A silky coat in four colors: Blenheim (chestnut and white), tricolor, ruby, and black and tan. The tail wags nonstop."
-    ],
-    [
-      "By the Numbers",
-      "Thirteen to eighteen pounds. Four recognized colors. Recognized by the AKC in 1995."
-    ]
+  [
+   "Breed group",
+   "Toy"
   ],
-  "days": [
-    [
-      "Sunday",
-      "Observation",
-      "The Cavalier sleeps like a monarch who has finished governing."
-    ],
-    [
-      "Monday",
-      "Fact",
-      "Cavaliers are named for King Charles II, who adored toy spaniels."
-    ],
-    [
-      "Tuesday",
-      "Wisdom",
-      "Affection is a full-time job. The Cavalier works every shift."
-    ],
-    [
-      "Wednesday",
-      "Story",
-      "Samuel Pepys complained the king played with dogs instead of governing."
-    ],
-    [
-      "Thursday",
-      "Conversation Piece",
-      "Ronald Reagan’s White House dog Rex was a Cavalier."
-    ],
-    [
-      "Friday",
-      "Surprise",
-      "A Cavalier will catch snowflakes on its tongue and call it dessert."
-    ],
-    [
-      "Saturday",
-      "Heartwarmer",
-      "Only the face shows. The rest has gone entirely to blanket."
-    ]
+  [
+   "Origin",
+   "England, 1600s"
+  ]
+ ],
+ "fblocks": [
+  [
+   "Origin of the Name",
+   "Named for King Charles II, who adored toy spaniels. Cavalier sets this breed apart from the flat-faced King Charles Spaniel."
   ],
-  "last_walk": "The leash is by the door, and the world is waiting.\nA Cavalier does not demand the walk. It asks politely, with eyes that have melted harder hearts than yours. Then it trots out, ears swinging, delighted with everyone it meets. The door opens, and the kingdom is ready to roam."
+  [
+   "Notable Cavaliers",
+   "Rex, Ronald Reagan’s White House companion. The spaniels of King Charles II, who kept them at court."
+  ],
+  [
+   "Good to Know",
+   "Wants company all day. Sheds and needs regular brushing. Prone to heart and spine conditions, so choose a breeder who screens carefully."
+  ],
+  [
+   "Coats & Colors",
+   "A silky coat in four colors: Blenheim (chestnut and white), tricolor, ruby, and black and tan. The tail wags nonstop."
+  ],
+  [
+   "By the Numbers",
+   "Thirteen to eighteen pounds. Four recognized colors. Recognized by the AKC in 1995."
+  ]
+ ],
+ "days": [
+  [
+   "Sunday",
+   "Observation",
+   "The Cavalier sleeps like a monarch who has finished governing."
+  ],
+  [
+   "Monday",
+   "Fact",
+   "Cavaliers are named for King Charles II, who adored toy spaniels."
+  ],
+  [
+   "Tuesday",
+   "Wisdom",
+   "Affection is a full-time job. The Cavalier works every shift."
+  ],
+  [
+   "Wednesday",
+   "Story",
+   "Samuel Pepys complained the king played with dogs instead of governing."
+  ],
+  [
+   "Thursday",
+   "Conversation Piece",
+   "Ronald Reagan’s White House dog Rex was a Cavalier."
+  ],
+  [
+   "Friday",
+   "Surprise",
+   "A Cavalier will catch snowflakes on its tongue and call it dessert."
+  ],
+  [
+   "Saturday",
+   "Heartwarmer",
+   "Only the face shows. The rest has gone entirely to blanket."
+  ]
+ ],
+ "last_walk": "The leash is by the door, and the world is waiting.\nA Cavalier does not demand the walk. It asks politely, with eyes that have melted harder hearts than yours. Then it trots out, ears swinging, delighted with everyone it meets. The door opens, and the kingdom is ready to roam."
 }
