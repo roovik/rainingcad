@@ -83,7 +83,7 @@ box.querySelector('.dl').addEventListener('click',function(){
  var out=[];try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);
   if(k.indexOf('dy27:')===0&&!/:title$/.test(k)){out.push([k,localStorage.getItem(k+':title')||k,localStorage.getItem(k)])}}}catch(e){}
  out.sort(function(a,b){return a[0]<b[0]?-1:1});
- var txt='MY DOG YEAR 2027 NOTES\n\n'+(out.length?out.map(function(o){return o[1]+'\n'+o[2]}).join('\n\n---\n\n'):'No notes yet.');
+ var txt='MY DOG YEAR 2027 NOTES\n\n'+(out.length?out.map(function(o){return String(o[1]).split(' \u00b7 ')[0]+'\n'+o[2]}).join('\n\n---\n\n'):'No notes yet.');
  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'text/plain'}));a.download='my-dog-year-notes.txt';a.click()});
 })();
 </script></body></html>
