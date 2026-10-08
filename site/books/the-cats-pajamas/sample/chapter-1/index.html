@@ -1,0 +1,141 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapter 1: Pure Class | The Cat's Pajamas</title><meta name="description" content="Read chapter 1 of The Cat's Pajamas, Pure Class, with an illustration facing each idiom.">
+<link rel="canonical" href="https://rainingcad.com/books/the-cats-pajamas/sample/chapter-1/">
+<meta property="og:title" content="Chapter 1: Pure Class | The Cat's Pajamas"><meta property="og:description" content="Read chapter 1 of The Cat's Pajamas, Pure Class, with an illustration facing each idiom."><meta property="og:image" content="https://rainingcad.com/books/the-cats-pajamas/ch1-l.webp"><meta property="og:type" content="article">
+<style>
+@font-face{font-family:Spectral;font-weight:400;src:url(/fonts/spectral-400.woff2) format('woff2');font-display:swap}
+@font-face{font-family:Spectral;font-weight:400;font-style:italic;src:url(/fonts/spectral-400i.woff2) format('woff2');font-display:swap}
+@font-face{font-family:Spectral;font-weight:600;font-style:italic;src:url(/fonts/spectral-600i.woff2) format('woff2');font-display:swap}
+@font-face{font-family:Spectral;font-weight:800;src:url(/fonts/spectral-800.woff2) format('woff2');font-display:swap}
+@font-face{font-family:Hanken;font-weight:100 900;src:url(/fonts/hanken.woff2) format('woff2');font-display:swap}
+
+:root{--paper:#F3F2EC;--ink:#2A2A2D;--soft:#6F6F74;--gold:#B0822B;--gold-deep:#876217;--line:rgba(42,42,45,.16)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.6 Spectral,Georgia,serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.top{padding:18px 0;border-bottom:1px solid var(--line);font:600 11px Hanken,sans-serif;letter-spacing:.2em;text-transform:uppercase;display:flex;gap:22px;flex-wrap:wrap}
+.top a{text-decoration:none;color:var(--gold-deep)}
+.kick{font:600 11px Hanken,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:34px 0 10px}
+h1{font:800 clamp(34px,6vw,54px)/1.02 Spectral,serif;margin:0 0 10px;letter-spacing:-.01em}
+h2{font:800 clamp(24px,4vw,32px)/1.1 Spectral,serif;margin:44px 0 14px}
+.sub{font:italic 600 clamp(18px,3vw,23px)/1.3 Spectral,serif;color:var(--gold-deep);margin:0 0 22px}
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px;align-items:start;margin-top:10px}
+@media(max-width:720px){.hero{grid-template-columns:1fr;gap:10px}}
+.cov{display:block;width:100%;height:auto;border:1px solid var(--line);box-shadow:0 14px 34px rgba(0,0,0,.16);background:#e9e7df}
+.meta{font:12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:18px 0}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.btn{font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:13px 20px;border:2px solid var(--gold-deep);color:var(--gold-deep)}
+.btn.main{background:var(--gold-deep);color:#fff}
+.btn.off{border-color:var(--line);color:var(--soft);background:transparent;pointer-events:none}
+.look{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.look img{width:100%;height:auto;display:block;border:1px solid var(--line);background:#e9e7df}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:28px;margin:26px 0}
+.shelf a{text-decoration:none}
+.shelf img{width:100%;height:auto;display:block;border:1px solid var(--line);box-shadow:0 10px 24px rgba(0,0,0,.14)}
+.shelf b{display:block;font:800 20px/1.15 Spectral,serif;margin:12px 0 2px}
+.shelf span{font:12px Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.dy{display:block;border-top:3px solid var(--gold);margin:50px 0 0;padding:22px 0;text-decoration:none}
+.dy b{font:800 28px Spectral,serif;display:block}
+.dy span{color:var(--soft)}
+.foot{border-top:1px solid var(--line);margin-top:60px;padding:26px 0 50px;font:13px Hanken,sans-serif;color:var(--soft)}
+.foot a{color:var(--gold-deep)}
+
+.book{width:min(1440px,calc(100vw - 48px));min-width:min(640px,calc(100vw - 48px));position:relative;left:50%;transform:translateX(-50%);margin:26px 0 10px}
+.stage .sp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#FBFAF6;border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.14);margin:0 0 30px}
+.book.js .stage .sp{margin:0}
+.sp[hidden]{display:none}
+.pi{background:#e9e7df;align-self:start}
+.pi img{display:block;width:100%;height:auto;aspect-ratio:640/807}
+.pg{position:relative;padding:clamp(24px,3.2vw,48px) clamp(24px,3.4vw,52px) 52px;font:clamp(16px,1.35vw,19px)/1.6 Spectral,Georgia,serif;border-left:1px solid var(--line)}
+.sp>.pg:first-child{border-left:0}
+.pg p{margin:0 0 .85em}
+.pg .chn{text-align:left;margin:0 0 6px}
+.cht2{font:800 clamp(26px,3.4vw,36px)/1.05 Spectral,serif;margin:0 0 6px;color:#7a2a2a}
+.pg .chs{text-align:left;font:italic 600 19px Spectral,serif;color:var(--gold-deep);margin:0 0 20px}
+.pg h3{font:800 clamp(26px,3.4vw,34px)/1.05 Spectral,serif;margin:0 0 4px;color:#7a2a2a}
+.pg .tg{font:italic 400 19px Spectral,serif;color:var(--soft);margin:0 0 16px}
+.pn{position:absolute;right:18px;bottom:14px;font:11px Hanken,sans-serif;color:var(--soft)}
+.ctl{display:none;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 0}
+.book.js .ctl{display:flex}
+.ctl button{font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:13px 22px;border:2px solid var(--gold-deep);background:var(--gold-deep);color:#fff;cursor:pointer}
+.ctl button:disabled{opacity:.35;cursor:default}
+.jmp{display:flex;flex-direction:column;align-items:center;gap:4px;font:600 11px Hanken,sans-serif;letter-spacing:.14em;color:var(--soft);min-width:0}
+.jmp select{max-width:100%;font:14px Hanken,sans-serif;padding:6px 8px;border:1px solid var(--line);background:#fff;color:var(--ink)}
+@media(max-width:720px){.book{width:100%;min-width:0;left:0;transform:none}.stage .sp{grid-template-columns:1fr}.pg{border-left:0;border-top:1px solid var(--line);padding:24px 20px 40px}.ctl button{padding:12px 14px}}
+.rd{max-width:680px;margin:0 auto}
+.rd p{margin:0 0 1em}
+.lead{font:italic 400 clamp(18px,2.6vw,21px)/1.5 Spectral,serif;color:var(--soft);max-width:680px;margin:0 0 22px}
+.chnav{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px;margin:22px 0 8px}
+.chnav a{display:block;text-decoration:none}
+.chnav img{width:100%;height:auto;display:block;border:1px solid var(--line)}
+.chnav span{display:block;font:600 10px Hanken,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-top:5px}
+.chnav .lock span::after{content:" \00b7  preview"}
+.chart{max-width:420px;margin:50px auto 18px}
+.chart img{width:100%;height:auto;display:block;border:1px solid var(--line);box-shadow:0 14px 34px rgba(0,0,0,.16)}
+.chn{text-align:center;font:600 11px Hanken,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin:0 0 6px}
+.cht{text-align:center;font:800 clamp(28px,5vw,40px)/1.05 Spectral,serif;margin:0 0 6px}
+.chs{text-align:center;font:italic 600 20px Spectral,serif;color:var(--gold-deep);margin:0 0 30px}
+.idm{margin:46px 0 0;padding-top:30px;border-top:1px solid var(--line)}
+.idm h3{font:800 28px/1.1 Spectral,serif;margin:0 0 4px;color:#7a2a2a}
+.idm .tg{font:italic 400 20px Spectral,serif;color:var(--soft);margin:0 0 18px}
+.tease{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;margin:26px 0}
+.tz{background:#fff;border:1px solid var(--line);padding:14px}
+.tz img{width:100%;height:auto;display:block}
+.tz h3{font:800 22px/1.1 Spectral,serif;margin:14px 0 2px}
+.tz .tg{font:italic 400 16px Spectral,serif;color:var(--soft);margin:0 0 10px}
+.tz ol{margin:0;padding-left:1.4em;font:15px/1.55 Hanken,sans-serif}
+.tz .k{font:600 10px Hanken,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin:12px 0 0}
+.endcap{border:2px solid var(--gold-deep);padding:24px;margin:50px 0 10px;text-align:center}
+.endcap b{display:block;font:800 26px Spectral,serif;margin-bottom:6px}
+.endcap p{margin:0 0 14px;color:var(--soft)}
+.up{font:600 11px Hanken,sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--gold-deep);display:inline-block;margin:26px 0 0}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:680px;margin:36px auto 10px}
+.two a{display:block;text-decoration:none;background:#fff;border:2px solid var(--gold-deep);padding:12px;text-align:center;transition:box-shadow .15s,transform .15s}
+.two a:hover{box-shadow:0 12px 28px rgba(0,0,0,.16);transform:translateY(-2px)}
+.two img{width:100%;height:auto;display:block;margin-bottom:10px}
+.two b{display:block;font:700 12px Hanken,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}
+.two span{display:block;font:800 19px/1.15 Spectral,serif;margin-top:3px;color:var(--ink)}
+.lt{text-align:center;font:600 11px Hanken,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);margin:44px 0 0}
+.tz a.go{display:inline-block;margin-top:12px;font:700 11px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);border-bottom:2px solid var(--gold-deep);text-decoration:none}
+.tz .im{display:block}
+
+.pi.ban{background:transparent}
+.pi.ban img{aspect-ratio:auto}
+.ot{padding:clamp(24px,3.2vw,44px) clamp(24px,3.4vw,52px)}.ot .chn,.ot .chs,.ot .cht2{text-align:left}
+.cov1{max-width:380px;margin:30px auto 0}.cov1 img{width:100%;height:auto;display:block;border:1px solid var(--line);box-shadow:0 14px 34px rgba(0,0,0,.16)}
+.tz .bn{display:block;width:100%;height:auto}
+.tease{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.two img{width:100%;height:auto}
+</style><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><style>.top{display:flex;align-items:center;gap:12px}.top .mk{display:block;line-height:0;margin-right:6px}.top .mk img{display:block;height:31px;width:auto}</style><style id="pinbar">.pin{display:none}@media(max-width:720px){html{scroll-padding-top:52px}.pin{display:flex;align-items:center;gap:14px;position:sticky;top:0;z-index:50;background:var(--paper,#F3F2EC);border-bottom:1px solid var(--line,rgba(42,42,45,.16));padding:6px 14px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}.pin::-webkit-scrollbar{display:none}.pin a{font:600 11px Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--gold-deep,#876217);padding:10px 0}.pin .h{display:block;line-height:0;padding:0;margin-right:2px;flex:none}.pin .h img{display:block;height:30px;width:auto}div.top{display:none}}</style></head><body><nav class="pin" aria-label="Quick menu"><a class="h" href="/" aria-label="Raining Cats &amp; Dogs home"><img src="/img/rcd-mark-96.webp" width="46" height="30" alt=""></a><a href="/DY2027/">DY2027</a><a href="/books/">Books</a><a href="/merch/">Merch</a><a href="/books/dog-breeds/">Dogs</a><a href="/books/cat-breeds/">Cats</a></nav><div class="wrap">
+<a id="top"></a>
+<div class="top"><a class="mk" href="/" aria-label="Raining Cats &amp; Dogs home"><img src="/img/rcd-mark-96.webp" srcset="/img/rcd-mark-96.webp 1x,/img/rcd-mark-192.webp 2x" width="48" height="31" alt="Raining Cats &amp; Dogs"></a><a href="/">Raining Cats &amp; Dogs</a><a href="/books/">Books</a><a href="/DY2027/">Dog Year 2027</a><a href="/merch/">Merch</a></div>
+<p class="kick">The Cat's Pajamas &middot; Free sample</p><h1>Chapter 1: Pure Class</h1><p class="lead">Use the arrows or your keyboard to turn the pages.</p>
+<div class="btns"><a class="btn" href="/books/the-cats-pajamas/sample/#chapters">All chapters</a><a class="btn" href="/books/the-cats-pajamas/">Back to the book</a></div>
+<div class="book" id="book"><div class="stage"><section class="sp" id="start" data-label="Chapter 1: Pure Class"><div class="pi ban"><div style="padding:0"><img src="/books/the-cats-pajamas/ch1-l.webp" width="1100" height="477" alt="Chapter 1: Pure Class"></div><div class="ot"><p class="chn">Chapter 1</p><h2 class="cht2">Pure Class</h2><p class="chs">Style, confidence, and being effortlessly the best</p></div></div><div class="pg"><p>Nobody taught the cat to be elegant. It decided, somewhere in the first five minutes of domestication, that it was the finest thing in any room, and has never once been argued out of the position.</p><p>This chapter is about that serene, unshakeable superiority: the walk, the poise, the certainty, and the words we coined trying to bottle it. Because the truth is we don&#x27;t admire cats for what they do. We admire them for how completely they believe in themselves, and how rarely they bother checking whether we agree.</p></div></section><section class="sp" id="the-cats-pajamas" data-label="The Cat&#x27;s Pajamas"><div class="pi"><img src="/books/the-cats-pajamas/idm1-1.webp" width="640" height="800" alt="Illustration for The Cat&#x27;s Pajamas" loading=lazy></div><div class="pg"><h3>The Cat&#x27;s Pajamas</h3><p class="tg">The undisputed height of excellence and style</p><p>Picture the literal article and you&#x27;ve already missed the point: a cat does not wear pajamas, and would sooner shred them than be seen in them. Yet for a brief, glittering moment a century ago, this was the highest compliment the language could pay.</p><p>The phrase belongs to the 1920s, that giddy decade when American slang invented a whole zoo of superlatives: the bee&#x27;s knees, the gnat&#x27;s elbow, the elephant&#x27;s instep, most of them gloriously meaningless. The cat&#x27;s pajamas outlasted the rest, and not by accident. Pajamas were then a daring novelty, silk loungewear that respectable people were only just persuading themselves to be seen in. To call a thing the cat&#x27;s pajamas was to crown it the newest, sleekest, most enviable item going. The compliment came pre-loaded with glamour.</p><p>Why the cat got top billing is the only part that needs no explaining. Of all the animals, the cat already behaves as though it is the best thing in the room, pajamas or no. The slang simply agreed with what the cat had been insisting all along.</p><p>Etymologists tip a cautious hat to the sportswriter T. A. Dorgan, credited, perhaps too generously, with half the slang of the era.</p><p>There is a lesson in the survival of the phrase. The bee&#x27;s knees faded. The cat&#x27;s pajamas endures, because we still recognize the type. Every room has one creature wholly convinced of its own splendor, and more often than not, infuriatingly, it turns out to be right, and to know it.</p><span class="pn">7</span></div></section><section class="sp" id="the-cats-meow" data-label="The Cat&#x27;s Meow"><div class="pi"><img src="/books/the-cats-pajamas/idm1-2.webp" width="640" height="800" alt="Illustration for The Cat&#x27;s Meow" loading=lazy></div><div class="pg"><h3>The Cat&#x27;s Meow</h3><p class="tg">Equally the best, with a touch more swagger</p><p>If the cat&#x27;s pajamas was the decade&#x27;s favorite compliment, the cat&#x27;s meow was its slightly louder cousin: the same idea with the volume turned up. Both meant the tops, the ultimate, the thing everyone wished they had thought of first.</p><p>What makes the meow version sing is the sound of it. A cat&#x27;s meow is, when you think about it, an act of pure theater. Adult cats barely meow at one another at all. They reserve the noise almost entirely for us. The meow is a performance staged exclusively for the human audience, pitched to be impossible to ignore, somewhere between a question and a command.</p><p>So to call something the cat&#x27;s meow was, without anyone quite realizing, an unusually accurate compliment. It named the thing that demands your attention and gets it: the showstopper, the headline act. The bee&#x27;s knees never asked for an encore. The cat&#x27;s meow always did.</p><p>The 1920s adored these animal superlatives and burned through them like cheap matches, but the feline ones held on longest. Partly habit. Mostly because the cat, alone among the candidates, kept living up to the billing.</p><p>Try it as a test. The bee&#x27;s knees sounds quaint now, a museum piece. The cat&#x27;s meow still lands, still carries that whiff of glamour, because we have all met the person it describes: the one who walks in, makes a single well-timed noise, and somehow owns the evening.</p><p>That, reliably, is the cat&#x27;s meow.</p><span class="pn">9</span></div></section><section class="sp" id="the-cats-whiskers" data-label="The Cat&#x27;s Whiskers"><div class="pi"><img src="/books/the-cats-pajamas/idm1-3.webp" width="640" height="800" alt="Illustration for The Cat&#x27;s Whiskers" loading=lazy></div><div class="pg"><h3>The Cat&#x27;s Whiskers</h3><p class="tg">Precision, finesse, and the very finest of all</p><p>The British, never to be out-superlatived, had their own version: the cat&#x27;s whiskers. Same meaning: the best, the finest, the last word. But it carries a faint air of technical precision the American cousins lacked, and for once that air was earned.</p><p>Because a cat&#x27;s whiskers are not decoration. They are instruments. Each one is rooted deep in a bed of nerves, tuned to read the faintest stir of air, the exact width of a gap, the presence of something in the dark long before the eyes confirm it. A cat navigates through them with a finesse no human sense can match. To be the cat&#x27;s whiskers, then, is to be exquisitely, almost unfairly well made.</p><p>There is a second whisker hiding in here, and the engineers will enjoy it. In the early days of radio, the delicate wire that probed a crystal to find a signal was called the cat&#x27;s whisker: a tiny, twitching feeler hunting for the sweet spot in the static. For a generation, getting the cat&#x27;s whisker just right was the difference between music and silence.</p><p>So the phrase carries two pedigrees at once, the living instrument and the man-made one named in its honor. Both do the same job: finding, with maddening delicacy, the one right point in a sea of noise.</p><p>Call a thing the cat&#x27;s whiskers and you pay it the finest compliment in the drawer. Not merely good, but precisely, sensitively, unimprovably right.</p><span class="pn">11</span></div></section><section class="sp" id="cool-cat" data-label="Cool Cat"><div class="pi"><img src="/books/the-cats-pajamas/idm1-4.webp" width="640" height="800" alt="Illustration for Cool Cat" loading=lazy></div><div class="pg"><h3>Cool Cat</h3><p class="tg">Unbothered, in the know, and effortlessly hip</p><p>Long before the cat was cool, the musicians were. In the jazz clubs of the 1940s, cat meant a player, someone in the life, fluent in the music and the slang that came with it, and cool meant a particular way of carrying it: unhurried, understated, entirely unbothered. Put the two together and you had the coolest thing in the room, the cat who had seen it all and felt no need to mention it.</p><p>It is no mystery why the musicians reached for the animal. Watch a cat enter a space it does not fully trust. It does not rush, does not fuss, does not announce itself. It moves at exactly its own speed, surveys the situation with heavy-lidded calm, and lets the room come to it. That is cool in its original, undiluted form: not the absence of feeling, but the refusal to perform it.</p><p>The word has since been worn smooth by overuse. Everything is cool now, from the weather to a mild agreement. But the cool cat was something more specific and harder to fake: a creature so secure in itself that effort would be beneath it. You cannot try to be a cool cat. The moment you are seen trying, the spell breaks.</p><p>Which is, of course, exactly why cats manage it and we mostly do not. The cat is not performing indifference. It is genuinely indifferent. And nothing in the world looks cooler than not caring whether you look cool at all.</p><span class="pn">13</span></div></section><section class="sp" id="catwalk" data-label="Catwalk"><div class="pi"><img src="/books/the-cats-pajamas/idm1-5.webp" width="640" height="800" alt="Illustration for Catwalk" loading=lazy></div><div class="pg"><h3>Catwalk</h3><p class="tg">The narrow stage where only the poised survive</p><p>Before it belonged to fashion, the catwalk belonged to anyone who had to cross something terrifyingly narrow without falling off. Sailors edging along a gangway, riggers high in a theater&#x27;s flies, workers on a thread of steel above a factory floor — all of them walked the catwalk, so named for the obvious reason that you would need the balance of a cat to manage it with any dignity.</p><p>The fashion runway borrowed the word and kept the meaning intact. A model on a catwalk is doing precisely what the name promises: crossing a narrow elevated platform, in full view, with absolute composure, as though the difficulty simply did not exist. The whole art is to make the impossible look like a stroll.</p><p>And nobody strolls a narrow ledge like a cat. It will pick its way along the top of a fence, a bookshelf, a curtain rail, placing each foot with a tightrope-walker&#x27;s certainty and an expression of profound boredom, as if to ask what all the fuss is about. The poise is not an act. The cat genuinely does not consider falling to be among its options.</p><p>That, in the end, is what the catwalk demands of anyone who walks it: not the absence of a long drop, but the absolute refusal to acknowledge one. Confidence as a structural feature.</p><p>The cat understood this first, naturally. We just built a stage, pointed some lights at it, and called the lesson couture.</p><span class="pn">15</span></div></section><section class="sp" id="purring-like-a-kitten" data-label="Purring Like a Kitten"><div class="pi"><img src="/books/the-cats-pajamas/idm1-6.webp" width="640" height="800" alt="Illustration for Purring Like a Kitten" loading=lazy></div><div class="pg"><h3>Purring Like a Kitten</h3><p class="tg">Deep contentment, smooth and well-tuned</p><p>We say it of a well-tuned engine, a smoothly running plan, a person finally at ease: purring like a kitten. It is the sound of everything working exactly as it should, with a little surplus of pleasure thrown in.</p><p>The borrowed image is precise. A cat&#x27;s purr is the rare animal sound that means, almost always, all is well: a low, steady idle of contentment produced, remarkably, on both the in-breath and the out-breath, so it never has to stop. It is the most efficient idle in nature. Engineers would envy it. We spend decades building engines to achieve what a cat manages in a sunbeam: continuous, effortless power with no audible strain.</p><p>But the purr keeps a secret the phrase glosses over. Cats also purr when they are frightened, injured, or unwell. The vibration sits in a frequency band that appears to soothe and even help the body mend itself, which means the purr is not only a broadcast of joy but a private act of self-repair, a cat quietly putting itself back together. The most contented sound in nature is also, sometimes, the bravest.</p><p>So purring like a kitten turns out to be a braver compliment than we intended. It does not only mean blissed-out and trouble-free. It means holding steady, generating your own calm, running smooth whatever the conditions.</p><p>The kitten purrs because all is well. The grown cat purrs to make it so. There is a difference, and it is worth learning.</p><span class="pn">17</span></div></section></div><div class="ctl"><button type="button" id="prv">&#8249; Back</button><label class="jmp"><span id="cnt">1 / 7</span><select id="sel" aria-label="Jump to"><option value="start">Chapter 1: Pure Class</option><option value="the-cats-pajamas">The Cat&#x27;s Pajamas</option><option value="the-cats-meow">The Cat&#x27;s Meow</option><option value="the-cats-whiskers">The Cat&#x27;s Whiskers</option><option value="cool-cat">Cool Cat</option><option value="catwalk">Catwalk</option><option value="purring-like-a-kitten">Purring Like a Kitten</option></select></label><button type="button" id="nxt">Next &#8250;</button></div></div>
+<noscript><div class="two"><a href="/books/the-cats-pajamas/sample/#intro"><b>&#8249; Introduction</b></a><a href="/books/the-cats-pajamas/sample/chapter-2/"><b>Chapter 2 &#8250;</b></a></div></noscript>
+<script>
+(function(){var b=document.getElementById('book');var S=[].slice.call(b.querySelectorAll('.sp'));var i=0,sel=document.getElementById('sel'),cnt=document.getElementById('cnt'),P=document.getElementById('prv'),N=document.getElementById('nxt');
+var PL='Introduction',PH='/books/the-cats-pajamas/sample/#intro',NL='Chapter 2',NH='/books/the-cats-pajamas/sample/chapter-2/';
+b.classList.add('js');
+function show(n,scroll){if(n<0||n>=S.length)return;i=n;S.forEach(function(s,k){s.hidden=k!==n});sel.selectedIndex=n;cnt.textContent=(n+1)+' / '+S.length;
+P.innerHTML='&#8249; '+(n===0?PL:'Back');N.innerHTML=(n===S.length-1?NL:'Next')+' &#8250;';
+[n+1,n-1].forEach(function(k){if(S[k]){[].forEach.call(S[k].querySelectorAll('img[loading]'),function(im){im.loading='eager'})}});
+try{history.replaceState(null,'','#'+S[n].id)}catch(e){}
+if(scroll){var r=b.getBoundingClientRect();if(r.top<0||r.top>window.innerHeight*.5)window.scrollTo({top:window.scrollY+r.top-12})}}
+function fromHash(){var h=location.hash.slice(1);var k=S.findIndex(function(s){return s.id===h});return k<0?0:k}
+function prev(){if(i===0)location.href=PH;else show(i-1,1)}
+function next(){if(i===S.length-1)location.href=NH;else show(i+1,1)}
+P.onclick=prev;N.onclick=next;
+sel.onchange=function(){show(sel.selectedIndex,1)};
+document.addEventListener('keydown',function(e){if(/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName))return;if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev()});
+var x=null;b.addEventListener('touchstart',function(e){x=e.touches[0].clientX},{passive:true});b.addEventListener('touchend',function(e){if(x===null)return;var dx=e.changedTouches[0].clientX-x;x=null;if(Math.abs(dx)>60){if(dx<0)next();else prev()}});
+window.addEventListener('hashchange',function(){show(fromHash(),0)});
+show(fromHash(),0);
+})();
+</script>
+
+<div class="foot">&copy; Richard J. Koret. Raining Cats &amp; Dogs. <a href="/">rainingcad.com</a></div>
+</div></body></html>
