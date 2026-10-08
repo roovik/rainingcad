@@ -47,6 +47,16 @@ h2{font:800 clamp(24px,4vw,32px)/1.1 Spectral,serif;margin:44px 0 14px}
 .sub2{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 6px}
 .sub2 a{font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:10px 16px;border:2px solid var(--gold-deep);color:var(--gold-deep)}
 .sub2 a.on{background:var(--gold-deep);color:#fff}
+.sub3{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0 6px}
+.sub3 em{font:600 11px Hanken,sans-serif;letter-spacing:.2em;text-transform:uppercase;font-style:normal;color:var(--soft);margin-right:4px}
+.sub3 a{font:600 12px Hanken,sans-serif;text-decoration:none;padding:6px 11px;border:1px solid var(--line);color:var(--ink);background:#fff}
+.sub3 a:hover{border-color:var(--gold-deep);color:var(--gold-deep)}
+.sub3 a.on{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
+.bp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;align-items:start;margin:22px 0}
+.bp img{width:100%;height:auto;display:block;border:1px solid var(--line);background:#fff}
+.bp .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bp h2{margin:0 0 8px}
+@media(max-width:720px){.bp{grid-template-columns:1fr}}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;margin:20px 0}
 .grid.tees{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
 .grid.dogs{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
