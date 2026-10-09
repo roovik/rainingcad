@@ -2,60 +2,72 @@
  "num": 4,
  "breed": "Burmese",
  "slug": "burmese",
- "positioning": "A brick wrapped in silk.",
+ "positioning": "A brick wrapped in silk. A glossy, golden-eyed cat that adores its people.",
  "story": [
-  "The Burmese has a heavy heart and a velvet coat. Pick one up and you notice the weight first. Fans say it is a brick wrapped in silk.",
-  "Nearly every Burmese traces to one cat. In 1930 Dr. Joseph Thompson of San Francisco brought home a small brown female named Wong Mau after a trip to Burma. He bred her to Siamese cats, and sable kittens without pointed markings started the breed.",
-  "Wong Mau turned out to be a cross between a Siamese and a Burmese type. That is why her line also gave the world the Tonkinese.",
-  "The Cat Fanciers' Association registered the Burmese in 1936. It later paused recognition while breeders argued over outcrossing, and restored it for good in 1954.",
-  "Two types exist today. The American Burmese is stocky with a round face. The European type is longer and finer.",
-  "Burmese are people cats. They are playful, attentive, and chatty like their Siamese ancestors, but with softer voices. Many learn to fetch. Most will pick your lap, your book, or your journal, and sit right in the middle of it."
+  "The modern Burmese traces to a single cat. In the 1930s a small brown cat named Wong Mau was brought from Burma to the United States, and a careful breeding program built an entire breed around her warm sable coat and sweet nature.",
+  "It is deceptively solid. The Burmese looks compact and rounded but feels surprisingly heavy in the hand, leading to the old description of a brick wrapped in silk. The short, glossy coat lies close to a muscular body, set off by large, round, golden-yellow eyes.",
+  "The temperament is its glory. Burmese are devoted, people-oriented, and endlessly affectionate, often called the most dog-like of cats for the way they follow, greet, and insist on laps. They stay playful and kittenish well into adulthood.",
+  "They do not like to be alone and thrive in busy, loving homes. The breed also helped create the Tonkinese through crosses with the Siamese, and it comes in sable and several diluted shades.",
+  "A Burmese is famously people-dependent. It wants laps, shoulders, and conversation, follows its owners from room to room, and stays playful and kitten-like for years, which makes it a delightful companion and a poor choice for anyone away from home all day.",
+  "The short, satiny coat needs only a weekly wipe, but the breed carries a few risks worth knowing, including dental disease, diabetes, and, in some lines, a serious skull deformity and a condition that causes painful sensitivity, so reputable breeders test carefully."
  ],
- "rank_num": "19",
- "rank_cap": "CFA registration rank among 45 breeds, 2018",
+ "rank_num": "17",
+ "rank_cap": "No. 17 of 50",
  "season_line": "Cats of Winter",
  "glance": [
   [
-   "Expected age",
+   "Expected Age",
    "12–16 years"
-  ],
-  [
-   "Height",
-   "8–10 in"
   ],
   [
    "Weight",
    "8–12 lb"
   ],
   [
-   "Coat division",
-   "Shorthair"
+   "Coat",
+   "Short and glossy"
+  ],
+  [
+   "Temperament",
+   "Affectionate and playful"
   ],
   [
    "Origin",
-   "Burma, bred in the US"
+   "Burma and the United States"
+  ],
+  [
+   "Activity",
+   "Moderate to high"
   ]
  ],
  "fblocks": [
   [
    "Origin of the Name",
-   "Named for Burma, now Myanmar, where Wong Mau's journey began. The breed itself was developed in California."
+   "Named for Burma, the homeland of Wong Mau, the foundation cat brought to the United States in the 1930s."
   ],
   [
-   "Notable Burmese",
-   "Wong Mau, the brown cat of 1930 who founded the breed. Her line also gave the world the Tonkinese."
+   "A Founding Cat",
+   "Nearly the entire breed descends from Wong Mau, bred to fix her warm brown coat and sweet temperament."
   ],
   [
    "Good to Know",
-   "Social and chatty, and unhappy alone all day. Often playful into old age. Ask the breeder about genetic testing and diabetes risk."
+   "Affectionate and people-focused, it wants company and laps and dislikes being left alone for long."
   ],
   [
-   "Coats & Colors",
-   "A short, satin coat that lies close to the body. CFA colors are sable, champagne, blue, and platinum. Yellow eyes."
+   "Coat & Color",
+   "A short, satiny, close-lying coat, classically warm sable brown, also in dilute shades, with golden eyes."
   ],
   [
    "By the Numbers",
-   "8 to 12 pounds. About 12 to 16 years. Registered by the CFA in 1936. Ranked 19th of 45 breeds in 2018."
+   "A parent of the Tonkinese through crosses with the Siamese, and a long-standing favorite for its dog-like devotion."
+  ],
+  [
+   "Living with One",
+   "Give it laps, play, and company. The Burmese is devoted and social and unhappy left alone for long stretches."
+  ],
+  [
+   "Health Notes",
+   "Easy to groom, but watch for dental disease and diabetes and choose breeders who screen for known inherited conditions."
   ]
  ],
  "days": [
@@ -67,7 +79,7 @@
   [
    "Monday",
    "Story",
-   "Dr. Joseph Thompson carried Wong Mau from Burma to San Francisco in 1930."
+   "Wong Mau came from Burma to the United States in the 1930s."
   ],
   [
    "Tuesday",
@@ -96,5 +108,5 @@
   ]
  ],
  "last_walk": "The lamp is on, and the snow keeps falling.\nThe Burmese has followed you from room to room all week. It has sat on your book, your sweater, and your plans. Now it curls into the quilt with a sigh, content to be exactly where you are. A heavy little heart, warm all the way through.",
- "glance_note": "DRAFT from web research. Replace story, glance, fblocks and rank with the Cat Breeds book text."
+ "cap": "The devoted sable cat descended from a single import named Wong Mau"
 }

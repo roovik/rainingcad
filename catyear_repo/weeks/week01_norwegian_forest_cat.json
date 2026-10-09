@@ -2,60 +2,72 @@
  "num": 1,
  "breed": "Norwegian Forest Cat",
  "slug": "norwegian_forest_cat",
- "positioning": "The forest cat of the far north.",
+ "positioning": "The cat of Norse legend. A mountain-climbing giant in a weatherproof coat.",
  "story": [
-  "The Norwegian Forest Cat looks built for winter, and it was. A waterproof top coat sheds the snow. A woolly undercoat holds the heat. A thick ruff and a long, bushy tail finish the job. In Norway it is the skogkatt, the forest cat.",
-  "Where it came from is still a good argument. Some say Viking ships carried its ancestors. Some say traders brought longhaired cats up from the south. Norse myth gave the goddess Freya a chariot pulled by two great cats, and fans of the breed have claimed them ever since.",
-  "What is certain is the farm. For centuries these cats worked barns and cottages, keeping mice out of the grain and themselves out of the cold. They climbed rock, trees, and rooftops. Few cats are better built for it.",
-  "A cat show in 1938 introduced the breed to the public, and a club formed in Oslo. Then the war nearly erased it. Breeders rebuilt the line with patience. King Olav V is said to have named it the official cat of Norway in the 1950s.",
-  "The breed took its time crossing the ocean. The Cat Fanciers' Association gave it full championship status in 1993.",
-  "Today the Norwegian Forest Cat is a big, gentle, unhurried companion. It takes up to five years to grow into itself. It will follow you to the window, watch the snow with you, and leave paw prints on every cold surface in the house."
+  "The Norwegian Forest Cat, called the Wegie for short, is the stuff of Viking legend. These big longhairs have lived in Norway for centuries, and they appear in Norse myth as the cats that pulled the goddess Freya's chariot. King Olav V named the breed the official cat of Norway.",
+  "It is built for a cold, wet climate. A long double coat with a dense woolly underlayer sheds rain and snow, topped by a full ruff, tufted lynx-tipped ears, and a long bushy tail. Big and muscular, the Wegie is a powerful climber that descends trees head-first.",
+  "For all its wild looks, the temperament is gentle and friendly. The Norwegian Forest Cat is calm, patient, and sociable, fond of its family without being demanding, and happy to watch the household from a high perch.",
+  "It is often confused with the Maine Coon, and the two share a similar size and rugged build, but they developed an ocean apart and differ in head shape and coat. The Wegie is slow to mature, reaching full size at around five years.",
+  "The Wegie is a calm, friendly giant that likes to survey its home from up high. It is sociable without being clingy, patient with children and other pets, and content to spend part of the day on its own, though it enjoys company when it is offered.",
+  "The water-shedding double coat needs regular brushing, with a heavy molt in spring that calls for daily attention. The breed is sturdy but can carry the heart condition HCM, a kidney condition, and a rare metabolic disorder called GSD IV, so reputable breeders test for them."
  ],
- "rank_num": "14",
- "rank_cap": "CFA registration rank among 45 breeds, 2018",
+ "rank_num": "13",
+ "rank_cap": "No. 13 of 50",
  "season_line": "Cats of Winter",
  "glance": [
   [
-   "Expected age",
-   "14–16 years"
-  ],
-  [
-   "Height",
-   "9–12 in"
+   "Expected Age",
+   "12–16 years"
   ],
   [
    "Weight",
-   "9–16 lb"
+   "9–20 lb"
   ],
   [
-   "Coat division",
-   "Longhair"
+   "Coat",
+   "Long, double, waterproof"
+  ],
+  [
+   "Temperament",
+   "Calm and friendly"
   ],
   [
    "Origin",
-   "Norway, ancient"
+   "Norway"
+  ],
+  [
+   "Activity",
+   "Moderate"
   ]
  ],
  "fblocks": [
   [
    "Origin of the Name",
-   "Skogkatt is Norwegian for forest cat. Fans call the breed Wegie for short."
+   "Named for the forests of Norway, where it lived for centuries, and tied to Norse myth as Freya's cat."
   ],
   [
-   "The Official Cat of Norway",
-   "King Olav V is said to have given the breed that title in the 1950s."
+   "A Natural Breed",
+   "An ancient Scandinavian forest cat shaped by climate, later named the national cat of Norway."
   ],
   [
    "Good to Know",
-   "Slow to mature. Loves to climb, so give it height. Brush weekly, and daily in spring shedding. Ask the breeder about heart and genetic screening."
+   "Sociable and easygoing, it loves to climb and perch. The thick coat needs regular brushing, especially in spring."
   ],
   [
-   "Coats & Colors",
-   "A long, water-resistant coat over a woolly undercoat, with a ruff, britches, and a bushy tail. Nearly every color and pattern, with or without white."
+   "Coat & Color",
+   "A long, water-shedding double coat with a ruff, tufted ears, and bushy tail, in many colors and patterns."
   ],
   [
    "By the Numbers",
-   "Up to 16 pounds. Up to 5 years to mature. CFA championship status in 1993. Ranked 13th by CFA registrations in 2023."
+   "Reaches full size at around five years. Similar to the Maine Coon but a distinct, separately developed breed."
+  ],
+  [
+   "Living with One",
+   "Offer tall perches, regular brushing, and easygoing company. The Wegie is independent but affectionate on its own terms."
+  ],
+  [
+   "Health Notes",
+   "Can carry the heart condition HCM and a rare metabolic disorder, so choose breeders who screen their lines."
   ]
  ],
  "days": [
@@ -96,5 +108,5 @@
   ]
  ],
  "last_walk": "The path is white and the cabin light is on.\nA Norwegian Forest Cat has crossed this snow a thousand times. It walks without hurry, tail high, as if the forest were its own front yard. When it reaches the door, it does not ask to come in. It waits, because it knows the warm room is already waiting for it.",
- "glance_note": "DRAFT from web research. Replace story, glance, fblocks and rank with the Cat Breeds book text."
+ "cap": "Norway's legendary forest cat, in CFA's top fifteen"
 }

@@ -2,60 +2,72 @@
  "num": 2,
  "breed": "Chartreux",
  "slug": "chartreux",
- "positioning": "The smiling blue cat of France.",
+ "positioning": "France's smiling blue. A quiet, woolly cat with a monastery legend.",
  "story": [
-  "The Chartreux is the cat that smiles. Its face is round, its jaw is broad, and its mouth curves up at the corners. The French call it the smiling blue cat.",
-  "The coat is blue-gray, anywhere from pale ash to deep slate. It is dense and woolly, and it parts like sheep's fleece when you run a hand through it. The eyes are gold to copper and glow out of all that gray like lanterns.",
-  "Every Chartreux story begins with monks. Legend says Carthusian monks kept these cats in their mountain monastery. Nobody has found a record to prove it. The name appears in print in 1723, and the French naturalist Buffon described the breed in the 1700s.",
-  "Hard times followed. The world wars nearly wiped the breed out. Breeders crossed the survivors with other blue cats to save the line. Two sisters on the island of Belle-Île began breeding them around 1928.",
-  "The first Chartreux reached the United States in 1971. The Cat Fanciers' Association gave the breed championship status in 1987.",
-  "At home, the Chartreux is quiet and watchful. Many chirp instead of meow, and some never make a sound. It picks one person and follows them from room to room. The author Colette lived with one named Saha."
+  "The Chartreux is France's own blue cat, old enough to come wrapped in legend. Stories tie it to the Carthusian monks of the Grande Chartreuse, and it has been part of French life for centuries, praised by writers and treated as a national treasure.",
+  "The coat is its trademark. A dense, woolly, water-resistant blue-grey coat stands slightly away from the body, and a rounded head with full cheeks and a gently upturned mouth gives the breed its famous smile. Bright copper or orange eyes complete the look.",
+  "It is a robust, powerful cat on surprisingly fine legs, sometimes described as a potato on toothpicks. The Chartreux is an excellent mouser, calm and observant, and notably quiet, with some individuals barely making a sound.",
+  "The temperament is gentle and undemanding. Chartreux are devoted but reserved, attaching to their families while keeping a dignified, easygoing calm, content to follow quietly from room to room.",
+  "The Chartreux is a quiet, gentle companion that bonds closely while keeping a dignified calm. It is an excellent, patient mouser, content to follow its people from room to room and settle nearby, and it is notably silent, with some cats barely making a sound.",
+  "The dense, woolly coat is best cared for by combing and hand-grooming rather than heavy brushing, which can spoil its texture, and it sheds seasonally. The breed is robust and long-lived, though some lines can carry hip problems and a urinary tendency, so reputable breeders screen and owners keep it lean."
  ],
- "rank_num": "34",
- "rank_cap": "CFA registration rank among 45 breeds, 2018",
+ "rank_num": "30",
+ "rank_cap": "No. 30 of 50",
  "season_line": "Cats of Winter",
  "glance": [
   [
-   "Expected age",
-   "11–15 years"
-  ],
-  [
-   "Height",
-   "8–11 in"
+   "Expected Age",
+   "12–16 years"
   ],
   [
    "Weight",
-   "Up to 16 lb"
+   "7–16 lb"
   ],
   [
-   "Coat division",
-   "Shorthair"
+   "Coat",
+   "Short, dense, woolly"
+  ],
+  [
+   "Temperament",
+   "Quiet and gentle"
   ],
   [
    "Origin",
    "France"
+  ],
+  [
+   "Activity",
+   "Low to moderate"
   ]
  ],
  "fblocks": [
   [
    "Origin of the Name",
-   "Tied by legend to the Carthusian monks of the Grande Chartreuse. No monastery record has ever been found."
+   "Linked by legend to the Carthusian monks of the Grande Chartreuse in France."
   ],
   [
-   "Notable Chartreux",
-   "Saha, the cat of the French author Colette. Katoklix Devin, CFA's 17th Best Cat of 1990 to 1991."
+   "An Ancient Breed",
+   "A centuries-old French cat, celebrated in literature and regarded as a national treasure."
   ],
   [
    "Good to Know",
-   "Quiet, loyal, and slow to mature. Bonds with one person. Brush weekly. Ask the breeder about kneecap screening."
+   "Calm, quiet, and devoted, it bonds closely while staying undemanding. A fine, observant mouser that rarely makes noise."
   ],
   [
-   "Coats & Colors",
-   "A short, dense, woolly coat in blue-gray, from pale ash to deep slate. Gold to copper eyes."
+   "Coat & Color",
+   "A dense, woolly, water-resistant blue-grey coat with copper or orange eyes and a smiling expression."
   ],
   [
    "By the Numbers",
-   "Up to 16 pounds. About 11 to 15 years. CFA championship status in 1987."
+   "Robust and powerful on fine legs, and one of the quietest of all breeds."
+  ],
+  [
+   "Living with One",
+   "Comb the woolly coat by hand and offer calm company. The Chartreux is quiet, devoted, and easy to live with."
+  ],
+  [
+   "Health Notes",
+   "Hardy and long-lived, though some lines carry hip issues, so choose screened breeders and keep the cat lean and active."
   ]
  ],
  "days": [
@@ -67,7 +79,7 @@
   [
    "Monday",
    "Story",
-   "Legend says Carthusian monks kept them. The monastery records disagree."
+   "Legend ties them to Carthusian monks of the Grande Chartreuse."
   ],
   [
    "Tuesday",
@@ -96,5 +108,5 @@
   ]
  ],
  "last_walk": "The greenhouse glows and the frost is winning outside.\nThe Chartreux has made its rounds. It has checked every pot, every shelf, and every sunny square of floor. Now it settles on the burlap and lets the string lights count the hours. Tomorrow there will be more to inspect. Tonight, the smile stays.",
- "glance_note": "DRAFT from web research. Replace story, glance, fblocks and rank with the Cat Breeds book text."
+ "cap": "France's ancient blue cat, with a woolly coat and a quiet smile"
 }

@@ -2,60 +2,72 @@
  "num": 3,
  "breed": "Turkish Angora",
  "slug": "turkish_angora",
- "positioning": "The silk of Ankara.",
+ "positioning": "Turkey's silken dancer. An elegant longhair with a national pedigree.",
  "story": [
-  "The Turkish Angora is a cat made of silk. The coat is long, fine, and wavy, and the tail sweeps behind it like a plume. Many are pure white, though the breed comes in every color.",
-  "Angora is the old name of Ankara, the capital of Turkey. The cat has lived in those hills for hundreds of years. Written records of it reach France in the 1500s.",
-  "Then Europe loved it a little too much. Breeders crossed Angoras with Persians, and the pure cat nearly vanished. Turkey stepped in. The Ankara Zoo began a breeding program and favored white cats with blue, gold, or odd eyes.",
-  "A pair of Angoras traveled from Turkey to the United States in 1962 with an Army colonel and his wife.",
-  "In the 1970s the Cat Fanciers' Association gave the breed championship status, first for whites and later for every color.",
-  "Angoras are quick, clever, and a little talkative. They love heights and leap like dancers. Many will happily play in water. They want to be where you are, preferably on the daybed."
+  "The Turkish Angora is one of the oldest known longhaired breeds, named for Ankara, the Turkish city once called Angora. It has charmed Europe since at least the 1600s, and Turkey treasures it enough to run a preservation program at the Ankara Zoo.",
+  "It is built for grace. A fine-boned, athletic body carries a silky single coat that flows when the cat moves, with a plumed tail and a delicate wedge-shaped face. The classic Angora is a brilliant white, often with eyes of blue, amber, or one of each.",
+  "The personality is lively and bold. Angoras are playful, clever, and athletic, fond of high perches and of being the center of attention, and they bond closely and follow their people from room to room.",
+  "One trait needs care. White, blue-eyed Angoras can carry a gene linked to deafness, especially on the blue-eyed side, so odd-eyed cats may hear on only one side. The single coat is silky and far easier to groom than a double one.",
+  "The Turkish Angora is a lively, bold cat that bonds closely and likes to be in charge of the room. It is playful and athletic, fond of high perches and water, and so attached to its people that it follows them about and tends to choose a favorite.",
+  "The silky single coat has no dense undercoat, so it rarely mats and needs only weekly brushing. The breed is generally healthy, but white, blue-eyed cats can carry a gene linked to deafness, and some lines carry the heart condition HCM and a rare neurological disorder, so reputable breeders test."
  ],
- "rank_num": "35",
- "rank_cap": "CFA registration rank among 45 breeds, 2018",
+ "rank_num": "22",
+ "rank_cap": "No. 22 of 50",
  "season_line": "Cats of Winter",
  "glance": [
   [
-   "Expected age",
-   "15–18 years"
-  ],
-  [
-   "Height",
-   "8–10 in"
+   "Expected Age",
+   "12–18 years"
   ],
   [
    "Weight",
-   "5–10 lb"
+   "6–10 lb"
   ],
   [
-   "Coat division",
-   "Longhair"
+   "Coat",
+   "Long, silky, single"
+  ],
+  [
+   "Temperament",
+   "Playful and bold"
   ],
   [
    "Origin",
-   "Turkey (Ankara)"
+   "Turkey"
+  ],
+  [
+   "Activity",
+   "High"
   ]
  ],
  "fblocks": [
   [
    "Origin of the Name",
-   "Named for Angora, the old name of Ankara. In Turkish it is simply Ankara kedisi, the Ankara cat."
+   "Named for Ankara, the Turkish capital once called Angora, its home for centuries."
   ],
   [
-   "Coming to America",
-   "In 1962 an Army colonel and his wife exported a pair of Angoras from Turkey to the United States."
+   "An Ancient Breed",
+   "One of the oldest longhairs, prized in Europe since the 1600s and preserved today in Turkey."
   ],
   [
    "Good to Know",
-   "White cats with blue eyes may be deaf. Ask the breeder about hearing tests. The silky coat has little undercoat and rarely mats."
+   "Active and attention-loving, it enjoys climbing and play. The single coat is easy to groom, with no dense undercoat to mat."
   ],
   [
-   "Coats & Colors",
-   "Long, silky, and slightly wavy. Every color and pattern is accepted today. Eyes may be blue, green, amber, or odd, one of two colors."
+   "Coat & Color",
+   "A long, silky single coat with a plumed tail, classically pure white, also in many colors and patterns."
   ],
   [
    "By the Numbers",
-   "5 to 10 pounds. Often 15 years or more. Ranked 35th of 45 breeds by CFA registrations in 2018."
+   "White blue-eyed cats can carry a deafness gene, so odd-eyed Angoras may be deaf on the blue-eyed side."
+  ],
+  [
+   "Living with One",
+   "Give it heights, play, and attention. The Angora is bold and devoted and likes to run the household."
+  ],
+  [
+   "Health Notes",
+   "White blue-eyed cats can be deaf. Some lines carry the heart condition HCM, so choose breeders who screen their cats."
   ]
  ],
  "days": [
@@ -67,12 +79,12 @@
   [
    "Monday",
    "Story",
-   "The Ankara Zoo started a breeding program to save the white Angora."
+   "The Ankara Zoo runs a preservation program for the breed."
   ],
   [
    "Tuesday",
    "Surprise",
-   "The silky coat has little undercoat, so it rarely mats."
+   "The silky coat has no dense undercoat, so it rarely mats."
   ],
   [
    "Wednesday",
@@ -87,7 +99,7 @@
   [
    "Friday",
    "Conversation Piece",
-   "The Ankara Zoo prized odd eyes, one blue and one gold. Ask your friends."
+   "A white Angora may have one blue eye and one amber. Ask your friends."
   ],
   [
    "Saturday",
@@ -96,5 +108,5 @@
   ]
  ],
  "last_walk": "The sunroom turns gold, and the snow outside turns rose.\nThe Turkish Angora has run, leapt, and inspected every lemon on the tree. Now the plume of a tail curls around it like a scarf. It has been loved in Ankara for centuries, and it knows exactly how to be admired. It only asks that the cushion stay warm.",
- "glance_note": "DRAFT from web research. Replace story, glance, fblocks and rank with the Cat Breeds book text."
+ "cap": "Turkey's ancient national longhair, a treasure of the Ankara Zoo"
 }
