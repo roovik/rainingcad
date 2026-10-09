@@ -1,0 +1,100 @@
+{
+ "num": 3,
+ "breed": "Turkish Angora",
+ "slug": "turkish_angora",
+ "positioning": "The silk of Ankara.",
+ "story": [
+  "The Turkish Angora is a cat made of silk. The coat is long, fine, and wavy, and the tail sweeps behind it like a plume. Many are pure white, though the breed comes in every color.",
+  "Angora is the old name of Ankara, the capital of Turkey. The cat has lived in those hills for hundreds of years. Written records of it reach France in the 1500s.",
+  "Then Europe loved it a little too much. Breeders crossed Angoras with Persians, and the pure cat nearly vanished. Turkey stepped in. The Ankara Zoo began a breeding program and favored white cats with blue, gold, or odd eyes.",
+  "A pair of Angoras traveled from Turkey to the United States in 1962 with an Army colonel and his wife.",
+  "In the 1970s the Cat Fanciers' Association gave the breed championship status, first for whites and later for every color.",
+  "Angoras are quick, clever, and a little talkative. They love heights and leap like dancers. Many will happily play in water. They want to be where you are, preferably on the daybed."
+ ],
+ "rank_num": "35",
+ "rank_cap": "CFA registration rank among 45 breeds, 2018",
+ "season_line": "Cats of Winter",
+ "glance": [
+  [
+   "Expected age",
+   "15–18 years"
+  ],
+  [
+   "Height",
+   "8–10 in"
+  ],
+  [
+   "Weight",
+   "5–10 lb"
+  ],
+  [
+   "Coat division",
+   "Longhair"
+  ],
+  [
+   "Origin",
+   "Turkey (Ankara)"
+  ]
+ ],
+ "fblocks": [
+  [
+   "Origin of the Name",
+   "Named for Angora, the old name of Ankara. In Turkish it is simply Ankara kedisi, the Ankara cat."
+  ],
+  [
+   "Coming to America",
+   "In 1962 an Army colonel and his wife exported a pair of Angoras from Turkey to the United States."
+  ],
+  [
+   "Good to Know",
+   "White cats with blue eyes may be deaf. Ask the breeder about hearing tests. The silky coat has little undercoat and rarely mats."
+  ],
+  [
+   "Coats & Colors",
+   "Long, silky, and slightly wavy. Every color and pattern is accepted today. Eyes may be blue, green, amber, or odd, one of two colors."
+  ],
+  [
+   "By the Numbers",
+   "5 to 10 pounds. Often 15 years or more. Ranked 35th of 45 breeds by CFA registrations in 2018."
+  ]
+ ],
+ "days": [
+  [
+   "Sunday",
+   "Fact",
+   "Angora is the old name for Ankara, the Turkish capital. This is the Ankara cat."
+  ],
+  [
+   "Monday",
+   "Story",
+   "The Ankara Zoo started a breeding program to save the white Angora."
+  ],
+  [
+   "Tuesday",
+   "Surprise",
+   "The silky coat has little undercoat, so it rarely mats."
+  ],
+  [
+   "Wednesday",
+   "Observation",
+   "A white cat in a white blanket is a magic trick. Look for the eyes."
+  ],
+  [
+   "Thursday",
+   "Wisdom",
+   "Be elegant. Be curious. Stay near the sunniest window."
+  ],
+  [
+   "Friday",
+   "Conversation Piece",
+   "The Ankara Zoo prized odd eyes, one blue and one gold. Ask your friends."
+  ],
+  [
+   "Saturday",
+   "Heartwarmer",
+   "The head goes down on the basket and the whole house gets quiet."
+  ]
+ ],
+ "last_walk": "The sunroom turns gold, and the snow outside turns rose.\nThe Turkish Angora has run, leapt, and inspected every lemon on the tree. Now the plume of a tail curls around it like a scarf. It has been loved in Ankara for centuries, and it knows exactly how to be admired. It only asks that the cushion stay warm.",
+ "glance_note": "DRAFT from web research. Replace story, glance, fblocks and rank with the Cat Breeds book text."
+}
