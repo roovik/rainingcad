@@ -10,3 +10,4 @@ __pycache__/
 !site/**/*.html
 !site/**/*.png
 !site/**/*.svg
+merch/printify_cats/
