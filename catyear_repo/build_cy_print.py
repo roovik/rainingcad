@@ -15,7 +15,7 @@ R=[('Dog Year 2027 &middot; Every Day Has Its Dog','Cat Year 2027 &middot; Every
 ("'+seas.map(function(s){return '<button class=\"chip\" data-s=\"'+s+'\">'+s+'</button>'}).join('')+'","'+seas.map(function(s){return '<button class=\"chip\" data-s=\"'+s+'\">'+s+'</button>'}).join('')+'"),
 ("var seas=['Winter','Spring','Summer','Fall'];","var seas=['Winter','Spring','Summer','Fall'].filter(function(x){return D.some(function(w){return w.se===x})});"),
 ('Pick at least one week to see your journal.','Pick at least one week to see your journal.'),
-('Fifty','Four')]
+('Fifty','Four'),("var KIND='dog'","var KIND='cat'")]
 for a,b in R: s=s.replace(a,b)
 s=s.replace(P,'Raining Cats &amp; Dogs')
 s=s.replace('Print Your Own Journal · Cat Year 2027','Print Your Own Journal · Cat Year 2027')
