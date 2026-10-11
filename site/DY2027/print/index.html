@@ -1,0 +1,382 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Print Your Own Journal · Dog Year 2027</title>
+<meta name="description" content="Make your own Every Day a Dog journal. Pick your weeks, add your dog's name and photos, write your notes, then print at home or save as a PDF.">
+<link rel="canonical" href="https://rainingcad.com/DY2027/print/">
+<meta property="og:title" content="Print Your Own Journal · Dog Year 2027"><meta property="og:description" content="Pick your weeks, add your dog and your photos, then print at home or save as a PDF.">
+<meta property="og:image" content="https://rainingcad.com/DY2027/1/hero.webp"><meta property="og:type" content="website">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+@font-face{font-family:Spectral;font-weight:400;src:url(/fonts/spectral-400.woff2) format('woff2');font-display:swap}
+@font-face{font-family:Spectral;font-weight:400;font-style:italic;src:url(/fonts/spectral-400i.woff2) format('woff2');font-display:swap}
+@font-face{font-family:Spectral;font-weight:600;font-style:italic;src:url(/fonts/spectral-600i.woff2) format('woff2');font-display:swap}
+@font-face{font-family:Spectral;font-weight:800;src:url(/fonts/spectral-800.woff2) format('woff2');font-display:swap}
+@font-face{font-family:Hanken;font-weight:100 900;src:url(/fonts/hanken.woff2) format('woff2');font-display:swap}
+:root{--paper:#F3F2EC;--card:#FBFAF6;--ink:#2A2A2D;--soft:#6F6F74;--gold:#B0822B;--gold-deep:#876217;--mar:#6E1B1B;--line:rgba(42,42,45,.16);--sh:0 1px 2px rgba(42,42,45,.08),0 8px 24px rgba(42,42,45,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.55 Spectral,Georgia,serif;-webkit-text-size-adjust:100%}
+a{color:var(--gold-deep)}button,input,select,textarea{font:inherit;color:inherit}
+.kick{font:600 12px Hanken,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+/* ---------- app shell ---------- */
+.top{display:flex;align-items:center;gap:14px;padding:14px 22px;border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:40}
+.top img{height:34px;width:auto;display:block}.top a{font:600 12px Hanken,sans-serif;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--gold-deep)}.top .sp{flex:1}
+.hero{max-width:1240px;margin:0 auto;padding:44px 22px 10px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.hero h1{font:800 clamp(34px,5.2vw,60px)/1.02 Spectral,serif;margin:10px 0 14px;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;font-weight:600;color:var(--gold-deep)}
+.hero p{font-size:19px;color:#45454a;max-width:34em;margin:0 0 18px}
+.steps{display:flex;gap:10px;flex-wrap:wrap;margin:0;padding:0;list-style:none}
+.steps li{font:600 12px Hanken,sans-serif;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:7px 13px;background:var(--card)}
+.steps b{color:var(--gold-deep);margin-right:6px}
+.fan{position:relative;height:400px;max-width:520px;justify-self:center;width:100%}
+.fan div{position:absolute;width:44%;aspect-ratio:3/4;background:#fff center/cover;border:7px solid #fff;box-shadow:var(--sh);border-radius:2px}
+.fan div:nth-child(1){left:2%;top:28px;transform:rotate(-7deg)}.fan div:nth-child(2){left:28%;top:0;transform:rotate(2deg);z-index:2}.fan div:nth-child(3){right:2%;top:36px;transform:rotate(8deg)}
+.fan span{position:absolute;left:0;right:0;bottom:6px;text-align:center;font:italic 600 20px Spectral,serif;color:var(--gold-deep);z-index:3}
+.wrap{max-width:1240px;margin:0 auto;padding:10px 22px 120px;display:grid;grid-template-columns:minmax(0,560px) minmax(0,1fr);gap:34px;align-items:start}
+.ctrl{display:flex;flex-direction:column;gap:20px;min-width:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 22px 24px;box-shadow:var(--sh)}
+.card h2{display:flex;align-items:baseline;gap:12px;margin:0 0 4px;font:800 24px/1.15 Spectral,serif}
+.card h2 i{font:800 34px/1 Spectral,serif;color:var(--gold);font-style:normal}
+.card .sub{margin:0 0 16px;color:var(--soft);font-size:16px}
+label.f{display:block;margin:12px 0 0;font:600 11px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+input[type=text],textarea,select{width:100%;margin-top:6px;border:1px solid var(--line);border-radius:9px;background:#fff;padding:11px 13px;font-size:17px}
+input[type=text]:focus,textarea:focus,select:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transparent}
+textarea{resize:vertical;line-height:1.45;min-height:84px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;font:600 12px Hanken,sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;color:var(--ink);transition:.15s}
+.chip:hover{border-color:var(--gold)}.chip[aria-pressed=true],.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:99px;background:var(--ink);color:#fff;font:700 13px Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:14px 24px;cursor:pointer;text-decoration:none;transition:.15s}
+.btn:hover{background:#000}.btn.gold{background:var(--gold-deep)}.btn.gold:hover{background:#6e4f12}.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}.btn.ghost:hover{background:var(--ink);color:#fff}.btn.sm{padding:9px 15px;font-size:11px}
+.covers{display:flex;gap:10px;overflow-x:auto;padding:6px 2px 10px;margin-top:6px;scroll-snap-type:x proximity}
+.covers button{flex:none;width:74px;aspect-ratio:3/4;border:3px solid #fff;outline:1px solid var(--line);background:#ddd center/cover;border-radius:2px;cursor:pointer;scroll-snap-align:start;padding:0}
+.covers button[aria-pressed=true]{outline:3px solid var(--gold-deep)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:12px;margin-top:14px;max-height:520px;overflow:auto;padding:4px 4px 8px}
+.wk{position:relative;text-align:left;border:0;background:none;padding:0;cursor:pointer;border-radius:6px}
+.wk img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border:3px solid #fff;outline:1px solid var(--line);background:#ddd;border-radius:2px;transition:.15s}
+.wk b{display:block;margin-top:6px;font:600 14px/1.2 Spectral,serif}.wk small{display:block;font:600 10px Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.wk .ck{position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.9);border:1.5px solid var(--ink);display:grid;place-items:center;font:700 14px Hanken;opacity:.85}
+.wk[aria-pressed=true] img{outline:3px solid var(--gold-deep)}.wk[aria-pressed=true] .ck{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;opacity:1}.wk[aria-pressed=true] .ck:after{content:"\2713"}
+.cnt{margin:12px 0 0;font:600 12px Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep)}
+.ndays{display:grid;gap:12px;margin-top:12px}.ndays label{display:block;font:600 12px Hanken,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}.ndays textarea{min-height:70px;margin-top:4px}
+.hwrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px}.hwrow img{height:42px;width:auto;max-width:150px;background:#fff;border:1px solid var(--line);border-radius:4px;padding:2px}.hwrow .link{background:none;border:0;padding:4px 0;font:700 11px Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);cursor:pointer;text-decoration:underline;text-underline-offset:3px}.hwrow .link.rm{color:var(--soft)}
+.modal{position:fixed;inset:0;z-index:80;background:rgba(30,30,34,.55);display:none;align-items:center;justify-content:center;padding:16px;overflow:auto}.modal.open{display:flex}
+.mbox{background:var(--card);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.35);width:100%;max-width:560px;padding:22px 22px 20px;max-height:100%;overflow:auto}.mbox h3{margin:0 0 2px;font:800 24px/1.15 Spectral,serif}.mbox p{margin:0 0 12px;color:var(--soft);font-size:16px}
+.hwv{border:1px solid var(--line);border-radius:10px;background:#fff repeating-linear-gradient(transparent 0 27px,#d9d6cb 27px 28px);min-height:120px;display:grid;place-items:center;padding:10px}.hwv canvas{max-width:100%;max-height:40vh;display:block}
+.sl{display:block;margin-top:14px;font:600 11px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}.sl input{width:100%;accent-color:var(--gold-deep);margin-top:6px}
+.mact{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.mact .sp{flex:1}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.drop{margin-top:6px;border:2px dashed var(--line);border-radius:12px;padding:20px;text-align:center;color:var(--soft);cursor:pointer;background:#fff;transition:.15s}.drop:hover,.drop.over{border-color:var(--gold);color:var(--ink)}
+.drop b{display:block;font:800 18px Spectral,serif;color:var(--ink)}
+.ph{display:grid;grid-template-columns:76px 1fr auto;gap:12px;align-items:start;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.ph img{width:76px;aspect-ratio:3/4;object-fit:cover;border:3px solid #fff;outline:1px solid var(--line)}.ph .x{background:none;border:0;color:var(--soft);cursor:pointer;font-size:22px;line-height:1;padding:4px}
+.ph input,.ph select{margin-top:0;padding:8px 10px;font-size:15px}.ph select{margin-top:6px}
+.opt{display:flex;align-items:flex-start;gap:11px;margin:12px 0 0;font-size:17px;line-height:1.35}.opt input{margin-top:5px;width:18px;height:18px;accent-color:var(--gold-deep);flex:none}.opt small{display:block;color:var(--soft);font-size:14px}
+.sizes{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:8px}
+.sizes button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px;text-align:left;cursor:pointer}.sizes b{display:block;font:800 17px Spectral,serif}.sizes small{color:var(--soft);font-size:14px}.sizes button[aria-pressed=true]{border-color:var(--gold-deep);outline:2px solid var(--gold-deep)}
+.tip{margin-top:16px;padding:14px 16px;border-radius:10px;background:#EFEBDD;font-size:15.5px;line-height:1.5}.tip b{font:700 11px Hanken;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);display:block;margin-bottom:4px}
+.save{font:600 12px Hanken,sans-serif;color:var(--soft);margin:8px 0 0;min-height:18px}
+/* ---------- preview ---------- */
+.pvpane{position:sticky;top:76px;max-height:calc(100vh - 92px);display:flex;flex-direction:column;background:#E4E1D6;border-radius:14px;border:1px solid var(--line);overflow:hidden;box-shadow:var(--sh)}
+.pvbar{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--line)}.pvbar .t{font:600 12px Hanken,sans-serif;letter-spacing:.12em;text-transform:uppercase;flex:1}.pvbar .cl{display:none}
+.pv{overflow:auto;padding:18px;flex:1}
+.empty{padding:50px 20px;text-align:center;color:var(--soft)}
+#book{zoom:var(--z,.5)}
+.page{position:relative;width:var(--pw);height:var(--ph);padding:var(--pad);background:#fff;margin:0 auto 22px;box-shadow:0 2px 14px rgba(0,0,0,.18);overflow:hidden;font-size:calc(var(--base)*var(--k,1));line-height:1.45;color:var(--ink);display:flex;flex-direction:column;break-after:page;page-break-after:always}
+.page.cv{padding:0}
+/* ---------- printed pages ---------- */
+#book[data-size=letter]{--pw:8.5in;--ph:11in;--base:10.5pt;--pad:.6in}
+#book[data-size=a4]{--pw:210mm;--ph:297mm;--base:10.5pt;--pad:15mm}
+#book[data-size=half]{--pw:5.5in;--ph:8.5in;--base:8.4pt;--pad:.45in}
+#book[data-size=a5]{--pw:148mm;--ph:210mm;--base:8.4pt;--pad:11mm}
+#book[data-bind=on] .page:nth-child(odd):not(.cv){padding-left:calc(var(--pad) + .3in)}#book[data-bind=on] .page:nth-child(even):not(.cv){padding-right:calc(var(--pad) + .3in)}
+.page .kk{font:600 .78em Hanken,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+.page h1{font:800 2.7em/1 Spectral,serif;margin:.25em 0 .2em;letter-spacing:-.01em}
+.page .pos{font:italic 600 1.35em/1.25 Spectral,serif;color:var(--gold-deep);margin:0}
+.page img{display:block}
+.fb{flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column}
+/* hero page */
+.p-hero .fr{flex:1;min-height:0;margin:.9em 0 .9em;border:.6pt solid var(--ink);padding:0}.p-hero .fr img{width:100%;height:100%;object-fit:cover}
+.p-hero h1{font-size:3.4em;margin:0}.p-hero .ft{display:flex;justify-content:space-between;align-items:flex-end;gap:1em}
+/* breed page */
+.p-breed .cols{display:grid;grid-template-columns:1.55fr 1fr;gap:1.8em;margin-top:1.2em;flex:1;min-height:0}
+.p-breed .story p{margin:0 0 .75em;text-align:justify;hyphens:auto}.p-breed .story p:first-child:first-letter{float:left;font:800 4.1em/.78 Spectral,serif;color:var(--gold);padding:.06em .1em 0 0}
+.p-breed .side{border-top:3pt solid var(--gold);padding-top:.6em;font-size:.92em}
+.p-breed .rk{display:flex;align-items:baseline;gap:.5em}.p-breed .rk b{font:800 3em/1 Spectral,serif}.p-breed .rk span{font:600 .72em Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep)}
+.p-breed .cap{color:var(--soft);font-size:.9em;margin:.2em 0 .7em;line-height:1.3}
+.p-breed .gl div{display:flex;justify-content:space-between;gap:.6em;border-top:.5pt solid var(--line);padding:.35em 0;font-size:.95em}.p-breed .gl span{font:600 .72em Hanken,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);padding-top:.2em}
+.p-breed .bl{margin-top:.8em}.p-breed .bl h4{margin:0 0 .15em;font:600 .7em Hanken,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep)}.p-breed .bl p{margin:0;line-height:1.35}
+.qrbox{display:flex;align-items:center;gap:.7em}.qrbox svg{width:3.4em;height:3.4em;flex:none;display:block}.qrbox small{font:600 .62em/1.35 Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep)}
+.p-breed .foot{display:flex;align-items:center;margin-top:.8em;padding-top:.7em;border-top:.5pt solid var(--line)}
+/* day pages */
+.p-days .rows{flex:1;min-height:0;display:grid;grid-template-rows:repeat(4,1fr);gap:.8em;margin-top:.9em}
+.dr{display:grid;grid-template-columns:27% 1fr;gap:1em;min-height:0;border-top:.5pt solid var(--line);padding-top:.8em}
+.dr .im{min-height:0;border:.6pt solid var(--ink)}.dr .im img{width:100%;height:100%;object-fit:cover}
+.dr .tx{min-width:0;display:flex;flex-direction:column;min-height:0;position:relative}
+.dr .hd{display:flex;align-items:baseline;gap:.7em}.dr .hd b{font:800 1.3em/1 Spectral,serif}.dr .hd span{font:600 .7em Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep)}
+.dr .ln{margin:.25em 0 .3em;font-style:italic;line-height:1.3;padding-right:3.8em}
+.dr .nt{flex:1;min-height:0;overflow:hidden;line-height:1.55em;background:repeating-linear-gradient(transparent 0 1.5em,#cfcdc4 1.5em calc(1.5em + .5pt));font:italic 400 .98em/1.55em Spectral,serif;color:#46464b;white-space:pre-wrap;padding-top:.05em}
+.dr .nt{position:relative}.dr .nt img.hw{position:absolute;left:0;top:0;max-width:100%;max-height:100%;width:auto;height:auto;mix-blend-mode:multiply}
+.dr .qq{position:absolute;right:0;top:0;width:3em;height:3em}.dr .qq svg{width:100%;height:100%;display:block}
+.dr.lw .ln{font-style:normal;padding-right:0}.dr.lw .ln b{display:block;font:italic 600 1.1em/1.3 Spectral,serif;color:var(--mar);margin-bottom:.2em}
+.p-days .hdr{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5pt solid var(--gold);padding-bottom:.5em}.p-days .hdr h3{margin:0;font:800 1.5em/1 Spectral,serif}
+/* cover, dedication, photo, back */
+.cv{color:#fff;background:#fff}.cv .im{position:absolute;inset:.38in;overflow:hidden}.cv .im img{width:100%;height:100%;object-fit:cover}
+.cv .ov{position:absolute;inset:.38in;display:flex;flex-direction:column;justify-content:flex-end;padding:8%;background:linear-gradient(180deg,rgba(0,0,0,0) 38%,rgba(0,0,0,.72) 100%)}
+.cv .kk{color:#E6C98A}.cv h1{font-size:4.6em;margin:.1em 0 .1em;color:#fff}.cv .who{font:italic 600 1.5em/1.3 Spectral,serif}.cv .by{font:600 .8em Hanken,sans-serif;letter-spacing:.2em;text-transform:uppercase;margin-top:1em;color:#E6C98A}
+.cv.paper{background:#F3F2EC;color:var(--ink)}.cv.paper .im{position:static;inset:auto;margin:0 12% 0;flex:1;border:.6pt solid var(--ink)}.cv.paper .ov{position:static;background:none;padding:12% 12% 7%;inset:auto;color:var(--ink)}.cv.paper .kk{color:var(--gold-deep)}.cv.paper h1{color:var(--ink)}.cv.paper .by{color:var(--gold-deep)}
+.cv.paper{display:flex;flex-direction:column}.cv.paper .top2{padding:11% 12% 5%}.cv.paper .bot{padding:5% 12% 10%}
+.cv.ink{background:#1F1F22;color:#fff;display:flex;flex-direction:column}.cv.ink .top2{padding:11% 12% 5%}.cv.ink .im{position:static;inset:auto;margin:0 12%;flex:1;border:1.5pt solid #B0822B}.cv.ink .bot{padding:5% 12% 10%}.cv.ink h1{color:#fff}
+.cv.paper .top2 h1,.cv.ink .top2 h1{font-size:4.2em;margin:.12em 0 0}
+.p-ded{justify-content:center;text-align:center;align-items:center}.p-ded .own{font:800 2.2em/1.1 Spectral,serif;margin:.3em 0 0}.p-ded .dg{font:italic 600 1.4em Spectral,serif;color:var(--gold-deep);margin:.2em 0 1.4em}.p-ded .tx{max-width:26em;font:italic 400 1.25em/1.6 Spectral,serif;white-space:pre-wrap}.p-ded .bl0{min-width:12em;border-bottom:.6pt solid var(--ink);margin-bottom:.5em}.p-ded .rule{width:4em;height:2pt;background:var(--gold);margin:1.2em auto}
+.p-photo .fr{flex:1;min-height:0;margin:.8em 0;border:.6pt solid var(--ink)}.p-photo .fr img{width:100%;height:100%;object-fit:contain;background:#faf9f4}.p-photo .capt{font:italic 600 1.3em/1.3 Spectral,serif;text-align:center}
+.p-back{justify-content:center;align-items:center;text-align:center}.p-back img.mk{width:5.2em;height:auto;margin:0 auto 1em}.p-back h2{font:800 2em/1.1 Spectral,serif;margin:.2em 0}.p-back p{max-width:24em;margin:.4em auto}.p-back .qq{width:7em;height:7em;margin:1.2em auto .4em}.p-back .qq svg{width:100%;height:100%}
+/* ---------- sticky bar + responsive ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:45;background:rgba(251,250,246,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:none;align-items:center;gap:10px}
+.bar .n{flex:1;font:600 12px/1.3 Hanken,sans-serif;letter-spacing:.08em;text-transform:uppercase}.bar .n b{display:block;font:800 18px Spectral,serif;letter-spacing:0;text-transform:none}
+.foot{max-width:1240px;margin:0 auto;padding:0 22px 60px;font:600 11px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+@media(max-width:1020px){
+ .hero{grid-template-columns:1fr;padding-top:28px}.fan{height:330px}
+ .wrap{grid-template-columns:1fr;padding-bottom:140px}.bar{display:flex}
+ .pvpane{position:fixed;inset:0;max-height:none;border-radius:0;z-index:60;display:none;top:0}.pvpane.open{display:flex}.pvbar .cl{display:inline-flex}
+ .top{padding:10px 14px}
+}
+@media(max-width:520px){.card{padding:18px 16px 20px}.row2{grid-template-columns:1fr}.sizes{grid-template-columns:1fr 1fr}.grid{grid-template-columns:repeat(3,1fr);max-height:420px}.hero p{font-size:17px}}
+/* ---------- print ---------- */
+@media print{
+ html,body{background:#fff!important}.top,.hero,.foot,.bar,.ctrl,.pvbar,.empty{display:none!important}.wrap{display:block!important;padding:0!important;max-width:none!important}.pvpane{position:static!important;display:block!important;max-height:none!important;border:0!important;box-shadow:none!important;background:none!important;overflow:visible!important;border-radius:0!important}.pv{overflow:visible!important;padding:0!important}
+ #book{zoom:1!important}.page{margin:0!important;box-shadow:none!important;width:var(--pw);height:var(--ph)}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style></head><body>
+<header class="top"><a href="/" aria-label="Raining Cats &amp; Dogs home"><img src="/img/rcd-mark-96.webp" srcset="/img/rcd-mark-96.webp 1x,/img/rcd-mark-192.webp 2x" width="52" height="34" alt="Raining Cats &amp; Dogs"></a><a href="/DY2027/">Dog Year 2027</a><span class="sp"></span><a href="/books/">Books</a><a href="/merch/">Merch</a></header>
+
+<section class="hero">
+ <div>
+  <div class="kick">Dog Year 2027 &middot; Every Day a Dog</div>
+  <h1>Print your own <em>dog journal.</em></h1>
+  <p>Pick the weeks you want, add your dog's name and your own photos, jot your notes, then print at home or save a PDF for your local copy shop. It works the same on your phone and your computer.</p>
+  <ol class="steps"><li><b>1</b>Make it yours</li><li><b>2</b>Pick weeks</li><li><b>3</b>Notes</li><li><b>4</b>Photos</li><li><b>5</b>Print</li></ol>
+ </div>
+ <div class="fan" aria-hidden="true"><div style="background-image:url(/DY2027/26/hero.webp)"></div><div style="background-image:url(/DY2027/11/hero.webp)"></div><div style="background-image:url(/DY2027/29/hero.webp)"></div><span>Fifty dogs. Fifty weeks. One for every day.</span></div>
+</section>
+
+<main class="wrap">
+ <div class="ctrl">
+  <section class="card" id="s1"><h2><i>1</i>Make it yours</h2><p class="sub">This goes on your cover and the first page.</p>
+   <div class="row2"><div><label class="f" for="owner">Your name</label><input id="owner" type="text" maxlength="40" autocomplete="name" placeholder="Roov"></div><div><label class="f" for="dog">Your dog's name</label><input id="dog" type="text" maxlength="40" placeholder="Biscuit"></div></div>
+   <label class="f" for="ded">A few words for the first page</label><textarea id="ded" maxlength="260" placeholder="For every walk in the rain and every nap in the sun."></textarea>
+   <label class="f">Cover look</label>
+   <div class="chips" id="cstyle"><button class="chip" data-v="photo">Full photo</button><button class="chip" data-v="paper">Light paper</button><button class="chip" data-v="ink">Midnight ink</button></div>
+   <label class="f">Cover photo</label><div class="covers" id="covers"></div>
+  </section>
+
+  <section class="card" id="s2"><h2><i>2</i>Pick your weeks</h2><p class="sub">Each week has a breed, a full page of its story, and two pages for the days.</p>
+   <div class="chips" id="seas"></div>
+   <div class="grid" id="grid"></div><p class="cnt" id="wcnt"></p>
+  </section>
+
+  <section class="card" id="s3"><h2><i>3</i>Your notes</h2><p class="sub">The notes you write on the day pages show up here too. Change them here and they print on your journal.</p>
+   <label class="f" for="nwk">Week</label><select id="nwk"></select>
+   <div class="ndays" id="ndays"></div>
+   <div class="tip" style="margin-top:14px"><b>Handwritten your day?</b>Tap Scan my handwriting under any day. Photograph or upload your page and we clean up the paper so only your pen shows. It prints in your own handwriting. A few lines per day fits best. For typed text, use Live Text on iPhone or Google Lens on Android, then paste it into the box.</div>
+   <div class="tools"><button class="btn ghost sm" id="exp">Back up my notes</button><button class="btn ghost sm" id="imp">Load notes from a file</button><input type="file" id="impf" accept="application/json,.json" hidden></div>
+   <p class="save" id="nsave">Notes are saved on this device only. Use a backup file to move them to another device.</p>
+  </section>
+
+  <section class="card" id="s4"><h2><i>4</i>Your photos</h2><p class="sub">Add your own dog. Each photo gets its own page, placed where you choose.</p>
+   <div class="drop" id="drop" tabindex="0" role="button"><b>Add photos</b>Tap to choose, or drop them here</div><input type="file" id="pf" accept="image/*" multiple hidden>
+   <div id="plist"></div><p class="save" id="psave">Photos stay on this device. They are never uploaded.</p>
+  </section>
+
+  <section class="card" id="s5"><h2><i>5</i>Paper and print</h2><p class="sub">Choose a paper size, then print or save a PDF.</p>
+   <div class="sizes" id="sizes"><button data-v="letter"><b>Letter</b><small>8.5 &times; 11 in</small></button><button data-v="a4"><b>A4</b><small>210 &times; 297 mm</small></button><button data-v="half"><b>Half letter</b><small>5.5 &times; 8.5 in, fits a binder</small></button><button data-v="a5"><b>A5</b><small>148 &times; 210 mm</small></button></div>
+   <label class="opt"><input type="checkbox" id="o_notes"><span>Print my notes<small>Your typed notes appear on the lines of each day.</small></span></label>
+   <label class="opt"><input type="checkbox" id="o_qr"><span>Add QR codes<small>Scan a code in the printed journal to open that day online.</small></span></label>
+   <label class="opt"><input type="checkbox" id="o_bind"><span>Extra margin for binding<small>Leaves room on the inside edge for a punch or a spiral.</small></span></label>
+   <label class="opt"><input type="checkbox" id="o_hero"><span>Include a photo page for each week</span></label>
+   <label class="opt"><input type="checkbox" id="o_breed"><span>Include the breed page for each week</span></label>
+   <label class="opt"><input type="checkbox" id="o_days"><span>Include the daily pages</span></label>
+   <div class="tools" style="margin-top:20px"><button class="btn gold" id="print">Print or save as PDF</button><button class="btn ghost" id="pvm" style="display:none">Preview</button></div>
+   <div class="tip"><b>For the best result</b>In the print window, choose &ldquo;Save as PDF&rdquo; to keep a copy. Set scale to 100%, margins to None or Default, and turn off headers and footers. Print double sided if you like. On a phone, use Share, then Print, or save the PDF to Files.</div>
+  </section>
+ </div>
+
+ <aside class="pvpane" id="pvpane" aria-label="Preview">
+  <div class="pvbar"><span class="t" id="pvt">Preview</span><button class="btn sm ghost cl" id="pvc">Close</button></div>
+  <div class="pv" id="pv"><div id="book" data-size="letter"></div><div class="empty" id="empty" hidden>Pick at least one week to see your journal.</div></div>
+ </aside>
+</main>
+
+<div class="modal" id="hwm" role="dialog" aria-modal="true" aria-labelledby="hwt"><div class="mbox"><h3 id="hwt">Clean up your handwriting</h3><p>We lift the pen off the paper. Adjust until it looks right.</p>
+ <div class="hwv" id="hwv"><canvas id="hwc"></canvas></div>
+ <label class="sl">Pen strength<input type="range" id="hws" min="0" max="100" value="55"></label>
+ <label class="sl">Paper cleanup<input type="range" id="hwp" min="0" max="100" value="60"></label>
+ <div class="mact"><button class="btn ghost sm" id="hwr">Rotate</button><button class="btn ghost sm" id="hwf">Choose another photo</button><span class="sp"></span><button class="btn ghost sm" id="hwcn">Cancel</button><button class="btn gold sm" id="hwsv">Use this</button></div></div></div>
+<div class="bar"><div class="n"><b id="bn">0 pages</b><span id="bs">Your journal</span></div><button class="btn ghost sm" id="pvb">Preview</button><button class="btn gold sm" id="pb">Print</button></div>
+<div class="foot">Dog Year 2027 &middot; Every Day Has Its Dog &middot; Raining Cats &amp; Dogs</div>
+
+<script src="/DY2027/print/qr.js"></script>
+<script>
+(function(){
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var DEF={owner:'',dog:'',ded:'',cstyle:'photo',cwk:1,size:'letter',notes:true,qr:true,bind:false,hero:true,breed:true,days:true,weeks:[1,2,3,4]};
+var KEY='dy27:print:settings',S={},D=[],P=[],HW={};
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v);return true}catch(e){return false}}
+function lsDel(k){try{localStorage.removeItem(k)}catch(e){}}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function load(){var o={};try{o=JSON.parse(lsGet(KEY)||'{}')}catch(e){}S={};for(var k in DEF)S[k]=(o[k]!==undefined?o[k]:DEF[k])}
+var st;function save(){clearTimeout(st);st=setTimeout(function(){lsSet(KEY,JSON.stringify(S))},300)}
+function dt(w,i){var d=new Date(w.start+'T12:00:00');d.setDate(d.getDate()+i);return d}
+function dlab(w,i){var d=dt(w,i);return MON[d.getMonth()]+' '+d.getDate()}
+function wrange(w){return dlab(w,0)+' – '+dlab(w,6)}
+function note(n,d){return lsGet('dy27:'+n+'/'+d)||''}
+/* ---------- QR ---------- */
+var qc={};function qr(url){if(qc[url])return qc[url];var q=qrcode(0,'M');q.addData(url);q.make();var n=q.getModuleCount(),p='';for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(q.isDark(r,c))p+='M'+(c+1)+','+(r+1)+'h1v1h-1z';
+ return qc[url]='<svg viewBox="0 0 '+(n+2)+' '+(n+2)+'" shape-rendering="crispEdges" role="img" aria-label="QR code"><rect width="100%" height="100%" fill="#fff"/><path d="'+p+'" fill="#2A2A2D"/></svg>'}
+var BASE='https://rainingcad.com/DY2027/';
+/* ---------- IndexedDB photos ---------- */
+var db=null;function idb(){return new Promise(function(res){try{var r=indexedDB.open('dy27print',2);r.onupgradeneeded=function(){var d=r.result;if(!d.objectStoreNames.contains('photos'))d.createObjectStore('photos',{keyPath:'id'});if(!d.objectStoreNames.contains('hw'))d.createObjectStore('hw',{keyPath:'id'})};r.onsuccess=function(){db=r.result;res()};r.onerror=function(){res()}}catch(e){res()}})}
+function dbAll(st){st=st||'photos';return new Promise(function(res){if(!db)return res([]);var o=[],c=db.transaction(st).objectStore(st).openCursor();c.onsuccess=function(){var x=c.result;if(x){o.push(x.value);x.continue()}else res(o)};c.onerror=function(){res(o)}})}
+function dbPut(p,st){st=st||'photos';if(db)try{db.transaction(st,'readwrite').objectStore(st).put(p)}catch(e){}}
+function dbDel(id,st){st=st||'photos';if(db)try{db.transaction(st,'readwrite').objectStore(st).delete(id)}catch(e){}}
+/* ---------- page builders ---------- */
+function ph(n,f){return '/DY2027/'+n+'/'+f+'.webp'}
+function cover(){
+ var w=D[(S.cwk||1)-1]||D[0],name=S.dog?esc(S.dog):'',own=S.owner?esc(S.owner):'',cs=S.cstyle;
+ var who=name?'The journal of '+name:'My dog year',by=own?'Kept by '+own:'Raining Cats &amp; Dogs';
+ if(cs==='photo')return '<section class="page cv"><div class="im"><img src="'+ph(w.n,'hero')+'" alt=""></div><div class="ov"><div class="kk">2027</div><h1>Every Day<br>a Dog</h1><div class="who">'+who+'</div><div class="by">'+by+'</div></div></section>';
+ return '<section class="page cv '+cs+'"><div class="top2"><div class="kk">2027</div><h1>Every Day<br>a Dog</h1></div><div class="im"><img src="'+ph(w.n,'hero')+'" alt=""></div><div class="bot"><div class="who">'+who+'</div><div class="by">'+by+'</div></div></section>'}
+function ded(){
+ return '<section class="page p-ded"><div class="kk">This journal belongs to</div><div class="own'+(S.owner?'':' bl0')+'">'+(S.owner?esc(S.owner):'&nbsp;')+'</div><div class="dg'+(S.dog?'':' bl0')+'">'+(S.dog?'and '+esc(S.dog):'&nbsp;')+'</div><div class="rule"></div>'+(S.ded?'<div class="tx">'+esc(S.ded)+'</div>':'')+'</section>'}
+function hero(w){
+ return '<section class="page p-hero"><div class="kk">Week '+w.n+' &nbsp;&middot;&nbsp; '+wrange(w)+'</div><div class="fr"><img loading="lazy" src="'+ph(w.n,'hero')+'" alt="'+esc(w.b)+'"></div><div class="ft"><div><h1>'+esc(w.b)+'</h1><p class="pos">'+esc(w.p)+'</p></div>'+(S.qr?'<div class="qrbox" style="flex:none">'+qr(BASE+w.n+'/')+'</div>':'')+'</div></section>'}
+function breed(w){
+ var st=w.s.map(function(p){return '<p>'+esc(p)+'</p>'}).join(''),gl=w.g.map(function(g){return '<div><span>'+esc(g[0])+'</span><b style="font-weight:400">'+esc(g[1])+'</b></div>'}).join(''),bl=w.f.map(function(b){return '<div class="bl"><h4>'+esc(b[0])+'</h4><p>'+esc(b[1])+'</p></div>'}).join('');
+ return '<section class="page p-breed"><div class="kk">Week '+w.n+' &nbsp;&middot;&nbsp; Dog Year 2027</div><h1>'+esc(w.b)+'</h1><p class="pos">'+esc(w.p)+'</p><div class="cols fb"><div class="story">'+st+'</div><div class="side"><div class="rk"><b>'+esc(w.rn)+'</b><span>No. '+w.n+' &middot; Dogs of '+w.se+'</span></div><div class="cap">'+esc(w.rc)+'</div><div class="gl">'+gl+'</div>'+bl+'</div></div>'+(S.qr?'<div class="foot qrbox">'+qr(BASE+w.n+'/')+'<small>Meet the breed online<br>Scan for this week\'s page</small></div>':'')+'</section>'}
+function dayRow(w,i){
+ var last=i===7,lab=last?'Last Walk':DAYS[i],sub=last?'Week close':dlab(w,i),beat=last?'':w.d[i][1];
+ var txt=last?'<b>'+esc(w.lw[0])+'</b>'+esc(w.lw[1]):esc(w.d[i][2]),nt=S.notes?esc(note(w.n,i+1)):'';
+ return '<div class="dr'+(last?' lw':'')+'"><div class="im"><img loading="lazy" src="'+ph(w.n,String(i+1))+'" alt=""></div><div class="tx"><div class="hd"><b>'+lab+'</b><span>'+sub+(beat?' &middot; '+esc(beat):'')+'</span></div><div class="ln">'+txt+'</div><div class="nt">'+nt+(S.notes&&HW[w.n+'/'+(i+1)]?'<img class="hw" src="'+HW[w.n+'/'+(i+1)]+'" alt="">':'')+'</div>'+(S.qr?'<div class="qq">'+qr(BASE+w.n+'/'+(i+1)+'/')+'</div>':'')+'</div></div>'}
+function days(w,a){
+ var idx=a?[0,1,2,3]:[4,5,6,7];
+ return '<section class="page p-days"><div class="hdr"><h3>'+esc(w.b)+'</h3><span class="kk">Week '+w.n+' &middot; '+(a?'Sunday to Wednesday':'Thursday to Saturday')+'</span></div><div class="rows">'+idx.map(function(i){return dayRow(w,i)}).join('')+'</div></section>'}
+function photoPg(p){
+ return '<section class="page p-photo"><div class="kk">'+(S.dog?esc(S.dog)+' &middot; ':'')+'My photo</div><div class="fr"><img src="'+p.data+'" alt=""></div><div class="capt">'+(p.cap?esc(p.cap):'&nbsp;')+'</div></section>'}
+function back(){return '<section class="page p-back"><img class="mk" src="/img/rcd-mark-192.webp" alt=""><h2>Every Day a Dog</h2><p>A new breed every week. Scan the code to find every dog online, at rainingcad.com.</p><div class="qq">'+qr(BASE)+'</div><p class="kk">Raining Cats &amp; Dogs</p></section>'}
+function plan(){
+ var ws=D.filter(function(w){return S.weeks.indexOf(w.n)>-1}),pg=[];
+ pg.push(cover);pg.push(ded);
+ function ps(b){P.filter(function(p){return String(p.wk)===b}).forEach(function(p){pg.push(function(){return photoPg(p)})})}
+ ps('start');
+ ws.forEach(function(w){ps(String(w.n));if(S.hero)pg.push(function(){return hero(w)});if(S.breed)pg.push(function(){return breed(w)});if(S.days){pg.push(function(){return days(w,true)});pg.push(function(){return days(w,false)})}});
+ ps('end');pg.push(back);return pg}
+/* ---------- render ---------- */
+var rt;function render(){clearTimeout(rt);rt=setTimeout(doRender,60)}
+function doRender(){
+ var bk=$('#book');bk.setAttribute('data-size',S.size);bk.setAttribute('data-bind',S.bind?'on':'off');
+ setPageRule();var pg=plan(),has=S.weeks.length>0;$('#empty').hidden=has;
+ bk.innerHTML=has?pg.map(function(f){return f()}).join(''):'';
+ var n=has?pg.length:0;$('#bn').textContent=n+(n===1?' page':' pages');$('#bs').textContent=n?Math.ceil(n/2)+' sheets if double sided':'Pick a week';$('#pvt').textContent='Preview · '+n+' pages';
+ zoom();fit();
+}
+function setPageRule(){var z={letter:'8.5in 11in',a4:'210mm 297mm',half:'5.5in 8.5in',a5:'148mm 210mm'}[S.size],e=$('#psz');if(!e){e=document.createElement('style');e.id='psz';document.head.appendChild(e)}e.textContent='@page{size:'+z+';margin:0}'}
+function zoom(){var pv=$('#pv'),bk=$('#book');bk.style.setProperty('--z','1');var p=bk.querySelector('.page');if(!p)return;var w=p.getBoundingClientRect().width,avail=pv.clientWidth-36;if(w>0&&avail>0)bk.style.setProperty('--z',Math.min(1,avail/w).toFixed(4))}
+function fit(){(document.fonts&&document.fonts.ready||Promise.resolve()).then(function(){
+ $$('#book .page').forEach(function(pg){pg.style.removeProperty('--k');var k=1,box=pg.querySelector('.fb'),cols=pg.querySelector('.cols'),guard=0;
+  if(cols){var over=function(){return cols.scrollHeight>cols.clientHeight+1||cols.querySelector('.story').scrollHeight>cols.clientHeight+1||cols.querySelector('.side').scrollHeight>cols.clientHeight+1};while(!over()&&k<1.4&&guard++<12){k+=.04;pg.style.setProperty('--k',k.toFixed(2))}if(over()){k-=.04;pg.style.setProperty('--k',k.toFixed(2))}guard=0;while(guard++<14){var side=cols.scrollHeight>cols.clientHeight+1||cols.querySelector('.story').scrollHeight>cols.clientHeight+1||cols.querySelector('.side').scrollHeight>cols.clientHeight+1;if(!side)break;k-=.04;pg.style.setProperty('--k',k.toFixed(2))}}
+  $$('.dr .tx',pg).forEach(function(t){var g=0;while(g++<10&&t.scrollHeight>t.clientHeight+1){k=Math.max(.7,k-.03);pg.style.setProperty('--k',k.toFixed(2))}});
+ })})}
+/* ---------- controls ---------- */
+function ui(){
+ $('#owner').value=S.owner;$('#dog').value=S.dog;$('#ded').value=S.ded;
+ $$('#cstyle .chip').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===S.cstyle)});
+ $$('#sizes button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===S.size)});
+ ['notes','qr','bind','hero','breed','days'].forEach(function(k){$('#o_'+k).checked=!!S[k]});
+}
+function buildCovers(){$('#covers').innerHTML=D.map(function(w){return '<button data-n="'+w.n+'" aria-pressed="'+(S.cwk===w.n)+'" title="'+esc(w.b)+'" style="background-image:url('+ph(w.n,'hero')+')"></button>'}).join('')}
+function buildGrid(){
+ $('#grid').innerHTML=D.map(function(w){return '<button class="wk" data-n="'+w.n+'" aria-pressed="'+(S.weeks.indexOf(w.n)>-1)+'"><img loading="lazy" decoding="async" src="'+ph(w.n,'hero')+'" alt=""><span class="ck"></span><b>'+esc(w.b)+'</b><small>Week '+w.n+' &middot; '+wrange(w)+'</small></button>'}).join('');
+ var seas=['Winter','Spring','Summer','Fall'];
+ $('#seas').innerHTML='<button class="chip" data-all="1">All 50</button>'+seas.map(function(s){return '<button class="chip" data-s="'+s+'">'+s+'</button>'}).join('')+'<button class="chip" data-none="1">Clear</button>';
+ wcount()}
+function wcount(){var n=S.weeks.length;$('#wcnt').textContent=n+(n===1?' week':' weeks')+' selected';$$('#grid .wk').forEach(function(b){b.setAttribute('aria-pressed',S.weeks.indexOf(+b.dataset.n)>-1)})}
+function buildNotes(){
+ var sel=$('#nwk');if(!sel.options.length)sel.innerHTML=D.map(function(w){return '<option value="'+w.n+'">Week '+w.n+' · '+esc(w.b)+'</option>'}).join('');
+ var n=+sel.value||1,w=D[n-1],h='';
+ for(var i=0;i<8;i++){var lab=i===7?'Last Walk':DAYS[i]+', '+dlab(w,i);var hk=n+'/'+(i+1);h+='<div><label for="nt'+i+'">'+lab+'</label><textarea id="nt'+i+'" data-i="'+(i+1)+'" placeholder="What did your dog do today?">'+esc(note(n,i+1))+'</textarea><div class="hwrow">'+(HW[hk]?'<img src="'+HW[hk]+'" alt="Your handwriting"><button class="link" data-hw="'+(i+1)+'">Replace handwriting</button><button class="link rm" data-hwx="'+(i+1)+'">Remove</button>':'<button class="link" data-hw="'+(i+1)+'">Scan my handwriting</button>')+'</div></div>'}
+ $('#ndays').innerHTML=h}
+function saveNote(ta){var n=+$('#nwk').value,w=D[n-1],i=+ta.dataset.i,k='dy27:'+n+'/'+i,v=ta.value,ok;
+ if(v.trim())ok=lsSet(k+':title',i===8?'Last Walk of Week '+n:DAYS[i-1]+', '+dlab(w,i-1))&&lsSet(k,v);else{lsDel(k);lsDel(k+':title');ok=true}
+ $('#nsave').textContent=ok?'Saved on this device.':'This browser is blocking saving. Copy your notes somewhere safe.';render()}
+function photos(){
+ var wopts='<option value="start">At the start</option>'+D.map(function(w){return '<option value="'+w.n+'">Before week '+w.n+' · '+esc(w.b)+'</option>'}).join('')+'<option value="end">At the end</option>';
+ $('#plist').innerHTML=P.map(function(p){return '<div class="ph" data-id="'+p.id+'"><img src="'+p.data+'" alt=""><div><input type="text" maxlength="80" placeholder="Add a caption" value="'+esc(p.cap)+'" data-f="cap"><select data-f="wk">'+wopts.replace('value="'+p.wk+'"','value="'+p.wk+'" selected')+'</select></div><button class="x" title="Remove" data-x="1" aria-label="Remove photo">&times;</button></div>'}).join('')}
+function shrink(file){return new Promise(function(res,rej){var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var m=1500,s=Math.min(1,m/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.86))};im.onerror=rej;im.src=r.result};r.onerror=rej;r.readAsDataURL(file)})}
+function addFiles(fl){var files=Array.prototype.slice.call(fl).filter(function(f){return /^image\//.test(f.type)});if(!files.length)return;
+ if(P.length+files.length>24){$('#psave').textContent='Up to 24 photos, to keep your journal a sensible size.';files=files.slice(0,Math.max(0,24-P.length))}
+ Promise.all(files.map(shrink)).then(function(ds){ds.forEach(function(d,i){var p={id:Date.now()+'-'+i+'-'+Math.random().toString(36).slice(2,6),data:d,cap:'',wk:'end'};P.push(p);dbPut(p)});photos();render();$('#psave').textContent=db?'Photos stay on this device. They are never uploaded.':'Photos will be lost when you close this page, since your browser blocks saving.'}).catch(function(){$('#psave').textContent='One of those photos could not be read.'})}
+function stat(){var all=$$('#book img');return Promise.all(all.map(function(i){i.loading='eager';return i.decode?i.decode().catch(function(){}):Promise.resolve()}))}
+function jpegify(b,t){/* PDF size: browsers embed JPEG as-is but expand WebP, so convert once at print resolution */
+ var bk=$('#book');bk.style.setProperty('--z','1');var imgs=$$('#book img').filter(function(i){return !i.dataset.j&&i.src.indexOf('data:')!==0}),n=0;
+ return imgs.reduce(function(p,im){return p.then(function(){return new Promise(function(res){
+  function go(){try{var r=im.getBoundingClientRect(),k=200/96,sx=Math.max(r.width*k/im.naturalWidth,r.height*k/im.naturalHeight,.05),s=Math.min(1,sx),c=document.createElement('canvas');c.width=Math.max(1,Math.round(im.naturalWidth*s));c.height=Math.max(1,Math.round(im.naturalHeight*s));var x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);im.src=c.toDataURL('image/jpeg',.84);im.dataset.j=1}catch(e){}n++;if(n%6===0)b.textContent='Preparing '+n+' of '+imgs.length;setTimeout(res,0)}
+  if(im.complete&&im.naturalWidth)go();else{im.loading='eager';im.onload=go;im.onerror=function(){n++;res()}}})})},Promise.resolve())}
+function doPrint(){var b=$('#print'),pb=$('#pb');b.disabled=true;var t=b.textContent;b.textContent='Getting pages ready';
+ Promise.race([stat(),new Promise(function(r){setTimeout(r,25000)})]).then(function(){return jpegify(b,t)}).then(function(){return stat()}).then(function(){fit();return new Promise(function(r){setTimeout(r,300)})}).then(function(){b.disabled=false;b.textContent=t;window.print()})}
+
+/* ---------- handwriting scan ---------- */
+var hwState={n:0,i:0,img:null,rot:0,out:null};
+function hwPick(n,i){hwState.n=n;hwState.i=i;var f=document.createElement('input');f.type='file';f.accept='image/*';f.onchange=function(){var fl=f.files[0];if(!fl)return;var url=URL.createObjectURL(fl),im=new Image();im.onload=function(){hwState.img=im;hwState.rot=0;$('#hwm').classList.add('open');document.body.style.overflow='hidden';hwProcess()};im.src=url};f.click()}
+function hwProcess(){
+ var im=hwState.img;if(!im)return;var rot=hwState.rot%4,W=im.naturalWidth,H=im.naturalHeight,sc=Math.min(1,1500/Math.max(W,H)),w=Math.round(W*sc),h=Math.round(H*sc),sw=rot%2?h:w,sh=rot%2?w:h;
+ var c=document.createElement('canvas');c.width=sw;c.height=sh;var x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,sw,sh);x.save();x.translate(sw/2,sh/2);x.rotate(rot*Math.PI/2);x.drawImage(im,-w/2,-h/2,w,h);x.restore();
+ var d=x.getImageData(0,0,sw,sh),px=d.data,N=sw*sh,g=new Float32Array(N),i;
+ for(i=0;i<N;i++)g[i]=0.299*px[i*4]+0.587*px[i*4+1]+0.114*px[i*4+2];
+ /* paper estimate: a heavily blurred copy, taken from the lighter side so ink does not darken it */
+ var bs=Math.max(8,Math.round(Math.max(sw,sh)/28)),bw=Math.ceil(sw/bs),bh=Math.ceil(sh/bs),bg=new Float32Array(bw*bh),by,bx,yy,xx,m;
+ for(by=0;by<bh;by++)for(bx=0;bx<bw;bx++){var arr=[];for(yy=by*bs;yy<Math.min(sh,by*bs+bs);yy+=2)for(xx=bx*bs;xx<Math.min(sw,bx*bs+bs);xx+=2)arr.push(g[yy*sw+xx]);arr.sort(function(a,b){return a-b});bg[by*bw+bx]=arr[Math.floor(arr.length*.85)]||255}
+ function bgAt(X,Y){var fx=Math.min(bw-1,Math.max(0,X/bs-.5)),fy=Math.min(bh-1,Math.max(0,Y/bs-.5)),x0=Math.floor(fx),y0=Math.floor(fy),x1=Math.min(bw-1,x0+1),y1=Math.min(bh-1,y0+1),tx=fx-x0,ty=fy-y0;return (bg[y0*bw+x0]*(1-tx)+bg[y0*bw+x1]*tx)*(1-ty)+(bg[y1*bw+x0]*(1-tx)+bg[y1*bw+x1]*tx)*ty}
+ var s=+$('#hws').value/100,clean=+$('#hwp').value/100,t0=.34-.28*s+.06*clean,t1=t0+.2,minX=sw,minY=sh,maxX=0,maxY=0;
+ var eb=Math.round(Math.min(sw,sh)*.04);for(var Y=0;Y<sh;Y++)for(var X=0;X<sw;X++){var k=Y*sw+X,b=bgAt(X,Y)||255,ink=1-g[k]/Math.max(60,b),a=(ink-t0)/(t1-t0);a=a<0?0:a>1?1:a;if(X<eb||Y<eb||X>=sw-eb||Y>=sh-eb)a=0;
+  px[k*4]=29;px[k*4+1]=29;px[k*4+2]=36;px[k*4+3]=Math.round(a*255);if(a>.55){if(X<minX)minX=X;if(X>maxX)maxX=X;if(Y<minY)minY=Y;if(Y>maxY)maxY=Y}}
+ x.clearRect(0,0,sw,sh);x.putImageData(d,0,0);
+ var pad=Math.round(Math.max(sw,sh)*.012);if(maxX<=minX||maxY<=minY){minX=0;minY=0;maxX=sw;maxY=sh}else{minX=Math.max(0,minX-pad);minY=Math.max(0,minY-pad);maxX=Math.min(sw,maxX+pad);maxY=Math.min(sh,maxY+pad)}
+ var o=document.createElement('canvas');o.width=maxX-minX;o.height=maxY-minY;o.getContext('2d').drawImage(c,minX,minY,o.width,o.height,0,0,o.width,o.height);
+ hwState.out=o;var pc=$('#hwc');pc.width=o.width;pc.height=o.height;var pg=pc.getContext('2d');pg.clearRect(0,0,pc.width,pc.height);pg.drawImage(o,0,0)}
+function hwClose(){$('#hwm').classList.remove('open');document.body.style.overflow='';hwState.img=null}
+function hwSave(){var o=hwState.out;if(!o)return hwClose();var k=hwState.n+'/'+hwState.i,url=o.toDataURL('image/png');HW[k]=url;dbPut({id:k,data:url},'hw');hwClose();buildNotes();render()}
+var hwT;function hwLive(){clearTimeout(hwT);hwT=setTimeout(hwProcess,80)}
+function bind(){
+ $('#owner').oninput=function(){S.owner=this.value;save();render()};$('#dog').oninput=function(){S.dog=this.value;save();render()};$('#ded').oninput=function(){S.ded=this.value;save();render()};
+ $('#cstyle').onclick=function(e){var b=e.target.closest('.chip');if(!b)return;S.cstyle=b.dataset.v;save();ui();render()};
+ $('#covers').onclick=function(e){var b=e.target.closest('button');if(!b)return;S.cwk=+b.dataset.n;save();$$('#covers button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});render()};
+ $('#grid').onclick=function(e){var b=e.target.closest('.wk');if(!b)return;var n=+b.dataset.n,i=S.weeks.indexOf(n);if(i>-1)S.weeks.splice(i,1);else{S.weeks.push(n);S.weeks.sort(function(a,b){return a-b})}save();wcount();render()};
+ $('#seas').onclick=function(e){var b=e.target.closest('.chip');if(!b)return;if(b.dataset.all)S.weeks=D.map(function(w){return w.n});else if(b.dataset.none)S.weeks=[];else{var s=b.dataset.s;S.weeks=D.filter(function(w){return w.se===s}).map(function(w){return w.n})}save();wcount();render()};
+ $('#nwk').onchange=buildNotes;$('#ndays').onclick=function(e){var b=e.target.closest('[data-hw]'),r=e.target.closest('[data-hwx]');if(b)hwPick(+$('#nwk').value,+b.dataset.hw);if(r){var k=$('#nwk').value+'/'+r.dataset.hwx;delete HW[k];dbDel(k,'hw');buildNotes();render()}};
+ $('#hws').oninput=hwLive;$('#hwp').oninput=hwLive;$('#hwr').onclick=function(){hwState.rot++;hwProcess()};$('#hwf').onclick=function(){hwPick(hwState.n,hwState.i)};$('#hwcn').onclick=hwClose;$('#hwsv').onclick=hwSave;$('#hwm').onclick=function(e){if(e.target===this)hwClose()};document.addEventListener('keydown',function(e){if(e.key==='Escape'&&$('#hwm').classList.contains('open'))hwClose()});var nt;$('#ndays').oninput=function(e){var t=e.target;if(t.tagName!=='TEXTAREA')return;clearTimeout(nt);nt=setTimeout(function(){saveNote(t)},350)};
+ $('#exp').onclick=function(){var o={};try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k.indexOf('dy27:')===0&&k.indexOf('dy27:print')!==0)o[k]=localStorage.getItem(k)}}catch(e){}
+  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({type:'dy27-notes',v:2,notes:o,hw:HW},null,1)],{type:'application/json'}));a.download='my-dog-year-notes-backup.json';a.click();$('#nsave').textContent='Backup saved. Open this page on your other device and choose Load notes from a file.'};
+ $('#imp').onclick=function(){$('#impf').click()};
+ $('#impf').onchange=function(){var f=this.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{var o=JSON.parse(r.result),n=0;if(o.type!=='dy27-notes')throw 0;for(var k in o.notes){if(k.indexOf('dy27:')===0&&k.indexOf('dy27:print')!==0){lsSet(k,o.notes[k]);n++}}if(o.hw)for(var hk in o.hw){HW[hk]=o.hw[hk];dbPut({id:hk,data:o.hw[hk]},'hw');n++}$('#nsave').textContent='Loaded '+n+' entries from your backup.';buildNotes();render()}catch(e){$('#nsave').textContent='That file is not a notes backup from this journal.'}};r.readAsText(f);this.value=''};
+ var dr=$('#drop');dr.onclick=function(){$('#pf').click()};dr.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();$('#pf').click()}};
+ $('#pf').onchange=function(){addFiles(this.files);this.value=''};
+ ['dragover','dragenter'].forEach(function(t){dr.addEventListener(t,function(e){e.preventDefault();dr.classList.add('over')})});['dragleave','drop'].forEach(function(t){dr.addEventListener(t,function(e){e.preventDefault();dr.classList.remove('over')})});dr.addEventListener('drop',function(e){addFiles(e.dataTransfer.files)});
+ var pt;$('#plist').oninput=function(e){var row=e.target.closest('.ph');if(!row)return;var p=P.filter(function(x){return x.id===row.dataset.id})[0];if(!p)return;p[e.target.dataset.f]=e.target.value;clearTimeout(pt);pt=setTimeout(function(){dbPut(p);render()},300)};
+ $('#plist').onclick=function(e){var x=e.target.closest('[data-x]');if(!x)return;var id=x.closest('.ph').dataset.id;P=P.filter(function(p){return p.id!==id});dbDel(id);photos();render()};
+ $('#sizes').onclick=function(e){var b=e.target.closest('button');if(!b)return;S.size=b.dataset.v;save();ui();render()};
+ ['notes','qr','bind','hero','breed','days'].forEach(function(k){$('#o_'+k).onchange=function(){S[k]=this.checked;save();render()}});
+ $('#print').onclick=doPrint;$('#pb').onclick=doPrint;
+ function pv(o){$('#pvpane').classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';if(o)setTimeout(zoom,30)}
+ $('#pvb').onclick=function(){pv(true)};$('#pvc').onclick=function(){pv(false)};$('#pvm').onclick=function(){pv(true)};
+ window.addEventListener('resize',function(){zoom()});if(window.ResizeObserver)new ResizeObserver(zoom).observe($('#pv'));
+ window.addEventListener('beforeprint',function(){$('#book').style.setProperty('--z','1')});window.addEventListener('afterprint',zoom);
+}
+load();idb().then(function(){return Promise.all([fetch('/DY2027/print/data.json').then(function(r){return r.json()}),dbAll(),dbAll('hw')])}).then(function(r){
+ D=r[0];P=r[1].sort(function(a,b){return a.id<b.id?-1:1});r[2].forEach(function(h){HW[h.id]=h.data});
+ S.weeks=S.weeks.filter(function(n){return n>=1&&n<=D.length});if(!D[S.cwk-1])S.cwk=1;
+ ui();buildCovers();buildGrid();buildNotes();photos();bind();render();
+});
+})();
+</script></body></html>
