@@ -7,7 +7,7 @@ SITE="/home/claude/rainingcad/site"; OUT="merch/printify_cats"; os.makedirs(OUT+
 T="/usr/share/texmf/fonts/opentype/public/tex-gyre/"
 INK='#2A2A2D'; GOLD='#876217'
 FEATURE={"british-shorthair"}
-PICK=[(1,"norwegian-forest-cat","NorwegianForestCat","VIKING QUEEN"),(2,"chartreux","Chartreux","STRONG SILENT TYPE"),(3,"turkish-angora","TurkishAngora","ROYAL FLUFF"),(4,"burmese","Burmese","IRON WRAPPED IN SILK"),(5,"siberian","Siberian","THREE COATS DEEP"),(6,"abyssinian","Abyssinian","TOP SHELF ENERGY"),(7,"devon-rex","DevonRex","MONKEY IN A CATSUIT"),(8,"birman","Birman","WHITE GLOVE SERVICE"),(9,"sphynx","Sphynx","SKIN IN THE GAME"),(10,"british-shorthair","BritishShorthair","TEDDY BEAR IN TWEED"),(11,"american-shorthair","AmericanShorthair","ALL-AMERICAN KITTY")]
+PICK=[(1,"norwegian-forest-cat","NorwegianForestCat","VIKING QUEEN"),(2,"chartreux","Chartreux","STRONG SILENT TYPE"),(3,"turkish-angora","TurkishAngora","TURKISH DELIGHT"),(4,"burmese","Burmese","IRON IN SILK"),(5,"siberian","Siberian","COLD? WHAT COLD?"),(6,"abyssinian","Abyssinian","TOP SHELF ENERGY"),(7,"devon-rex","DevonRex","MONKEY IN A CATSUIT"),(8,"birman","Birman","WHITE GLOVE SERVICE"),(9,"sphynx","Sphynx","SKIN IN THE GAME"),(10,"british-shorthair","BritishShorthair","TEDDY BEAR IN TWEED"),(11,"american-shorthair","AmericanShorthair","ALL-AMERICAN KITTY")]
 def tf(b,s): return ImageFont.truetype(T+("texgyrepagella-bold.otf" if b else "texgyrepagella-italic.otf"),s)
 def tee_front(n,breed,txt,out,slug=''):
     S=f"{SITE}/CY2027/{n}/"; tiles=[Image.open(S+f).convert('RGB') for f in ["hero.webp"]+[f"{i}.webp" for i in range(1,9)]]
