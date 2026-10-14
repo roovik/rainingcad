@@ -65,7 +65,7 @@ BKCSS='<style id="bkcss">.bks{border-top:3px solid #B0822B;margin:46px 0 0;paddi
 BOOKS=[("cat-breeds","Cat Breeds","Breed guide"),("dog-breeds","Dog Breeds","Breed guide"),("every-dog-has-his-day","Every Dog Has His Day","Idiom book"),("the-cats-pajamas","The Cat&#x27;s Pajamas","Idiom book")]
 def strip(cur=None):
     bs=[b for b in BOOKS if b[0]!=cur]
-    return f'<div class="bks"><h2>{"More Books" if cur else "The Books"}</h2><div class="g n{len(bs)}">'+''.join(f'<a href="/books/{s}/"><img loading="lazy" src="/books/{s}/cover.webp" width="300" height="400" alt="{t} cover"><b>{t}</b><span>{sub}</span></a>' for s,t,sub in bs)+'</div></div>'
+    return f'<div class="bks"><h2>{"Other Books from Raining Cats &amp; Dogs" if cur else "Books from Raining Cats &amp; Dogs"}</h2><div class="g n{len(bs)}">'+''.join(f'<a href="/books/{s}/"><img loading="lazy" src="/books/{s}/cover.webp" width="300" height="400" alt="{t} cover"><b>{t}</b><span>{sub}</span></a>' for s,t,sub in bs)+'</div></div>'
 n=0
 for p in glob.glob(f"{SITE}/**/index.html",recursive=True):
     h=open(p,encoding='utf-8').read()
