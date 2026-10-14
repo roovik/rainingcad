@@ -6,7 +6,7 @@ import build_mugs_all as BM
 SITE="/home/claude/rainingcad/site"; OUT="merch/printify_cats"; os.makedirs(OUT+"/Mugs_15oz_2475x1275",exist_ok=True)
 T="/usr/share/texmf/fonts/opentype/public/tex-gyre/"
 INK='#2A2A2D'; GOLD='#876217'
-PICK=[(9,"sphynx","Sphynx","SKIN IN THE GAME"),(10,"british-shorthair","BritishShorthair","TEDDY BEAR IN TWEED"),(11,"american-shorthair","AmericanShorthair","ALL-AMERICAN")]
+PICK=[(9,"sphynx","Sphynx","SKIN IN THE GAME"),(10,"british-shorthair","BritishShorthair","TEDDY BEAR IN TWEED"),(11,"american-shorthair","AmericanShorthair","ALL-AMERICAN KITTY")]
 def tf(b,s): return ImageFont.truetype(T+("texgyrepagella-bold.otf" if b else "texgyrepagella-italic.otf"),s)
 def tee_front(n,breed,txt,out):
     S=f"{SITE}/CY2027/{n}/"; tiles=[Image.open(S+f).convert('RGB') for f in ["hero.webp"]+[f"{i}.webp" for i in range(1,9)]]
@@ -49,7 +49,7 @@ def tee_back(w,out):
         print(w['breed'],'main bottom/qr top/side bottom',over)
         pg.screenshot(path=out,clip={'x':0,'y':0,'width':3852,'height':4398}); b.close()
 if __name__=="__main__":
-    for n,slug,name,txt in PICK:
+    for n,slug,name,txt in [p for p in PICK if (not os.environ.get('ONLY') or p[1]==os.environ['ONLY'])]:
         w=json.load(open(glob.glob(f"weeks/week{n:02d}_*.json")[0],encoding='utf-8'))
         tee_front(n,w['breed'],txt,f"{OUT}/{slug}_TEE_FRONT.png"); tee_back(w,f"{OUT}/{slug}_TEE_BACK.png")
         for H,path in ((1155,f"{OUT}/{slug}_MUG.png"),(1275,f"{OUT}/Mugs_15oz_2475x1275/{slug}_MUG15.png")):
