@@ -11,15 +11,12 @@ J=[("Bulldog","DY2027/10","STUBBORN BY DESIGN"),("GoldenRetriever","DY2027/11","
 ("NorwegianForestCat","CY2027/1","BUILT FOR WINTER"),("Burmese","CY2027/4","HEAVY HEART. VELVET COAT.")]
 MW,MH=2700,1000; os.makedirs("merch/mugs",exist_ok=True)
 def lines(txt):
-    if len(txt)<=17: return [txt]
-    w=txt.split(' '); best=None
-    for i in range(1,len(w)):
-        a,b=' '.join(w[:i]),' '.join(w[i:]); sc=abs(len(a)-len(b))
-        if best is None or sc<best[0]: best=(sc,[a,b])
-    return best[1]
+    return [txt]
 def wrap(src,txt,feature=False):
     t=[Image.open(f"{SITE}/{src}/{f}.webp").convert('RGB') for f in ["hero","1","2","3","4","5","6","7","8"]]
-    L=lines(txt); sw=260 if len(L)==1 else 420; edge=int(MW*.08); g=16
+    L=lines(txt); _d=ImageDraw.Draw(Image.new('RGB',(10,10))); sz=200
+    while _d.textlength(L[0],font=font(sz))>MH-80 or sz*1.15>230: sz-=5
+    sw=max(170,min(260,int(sz*1.15)+80)); edge=int(MW*.08); g=16
     colw=(MW//2-edge-sw//2-g*2)//2; th=(MH-3*g)//2
     left=[t[0],t[1],t[2],t[3]]; right=[t[4],t[5],t[6],t[8]]
     mug=Image.new('RGB',(MW,MH),'white')
@@ -38,11 +35,7 @@ def wrap(src,txt,feature=False):
             x0=int((i2.width-w)*fx);y0=int((i2.height-h)*fy); mug.paste(i2.crop((x0,y0,x0+w,y0+h)),(x,y))
         for k in range(3): putbox(right[k],x2,g+k*(sh1+g),sw1,sh1)
         putbox(right[3],x2+sw1+g,g,fw,MH-2*g,.7,.5)
-    sz=200; 
-    while True:
-        f=font(sz); lay=Image.new('RGBA',(MH,sw),(255,255,255,0)); ld=ImageDraw.Draw(lay)
-        if max(ld.textlength(l,font=f) for l in L)<=MH-80 and sz*1.15*len(L)<=sw-30: break
-        sz-=5
+    f=font(sz); lay=Image.new('RGBA',(MH,sw),(255,255,255,0)); ld=ImageDraw.Draw(lay)
     y=(sw-sz*1.15*len(L))/2
     for l in L:
         ld.text(((MH-ld.textlength(l,font=f))/2,y),l,font=f,fill='#2a2a2d'); y+=sz*1.15
