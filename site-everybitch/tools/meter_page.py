@@ -58,6 +58,19 @@ METER_CSS = """
 .mm{border:2px solid var(--black);background:#fff;padding:12px 16px}
 .mm .h{font:800 11px Hanken,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-deep);margin:0 0 4px}
 .mm p{margin:0 0 4px}
+.scoring{margin:26px 0 8px}
+.scoring h2{font:800 12px Hanken,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--pink-deep);margin:0 0 10px}
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:2px solid var(--black);background:#fff}
+@media(max-width:640px){.ladder{grid-template-columns:1fr 1fr}}
+.ladder div{padding:12px 14px;border-right:2px solid var(--black)}
+.ladder div:last-child{border-right:0;background:var(--pink)}
+@media(max-width:640px){.ladder div:nth-child(2){border-right:0}.ladder div:nth-child(-n+2){border-bottom:2px solid var(--black)}}
+.ladder b{display:block;font:800 30px/1 Spectral,serif}
+.ladder span{display:block;font:800 11px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin:4px 0 6px}
+.ladder i{display:block;font:italic 600 16px/1.3 Spectral,serif}
+.scoring p{margin:10px 0 0;font:italic 600 18px/1.35 Spectral,serif}
+.vol{display:flex;align-items:center;gap:10px;margin-top:10px;font:800 10px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.vol i{flex:1;height:6px;background:linear-gradient(90deg,var(--black),var(--pink));display:block}
 .hubgrid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:30px 0}
 @media(max-width:760px){.hubgrid{grid-template-columns:1fr}}
 .hubc{display:block;text-decoration:none;background:var(--black);color:#fff;box-shadow:10px 10px 0 var(--pink);transition:transform .15s}
@@ -68,6 +81,14 @@ METER_CSS = """
 .hubc p{margin:0 0 14px;color:#ddd}
 .hubc .btn{pointer-events:none}
 """
+
+RULES = ('<div class="scoring"><h2>How she scores you</h2><div class="ladder">'
+         '<div><b>+0</b><span>Doormat</span><i>Apologizes to the furniture.</i></div>'
+         '<div><b>+1</b><span>Loud</span><i>Wins the argument. Loses the room.</i></div>'
+         '<div><b>+2</b><span>Petty</span><i>Clever. Visible. A little smug.</i></div>'
+         '<div><b>+3</b><span>Perfect</span><i>Does less. Gets more.</i></div></div>'
+         '<div class="vol"><span>Loud</span><i></i><span>Quiet</span></div>'
+         '<p>Higher is bitchier. The coolest head wins and the loudest answer never does. Twenty questions, sixty points, one percentage.</p></div>')
 
 def _img_url(key):
     if key.startswith('ch'):
@@ -184,7 +205,7 @@ def build(write, head, nav, FOOT, buttons):
                 + f'<div class="intro" id="intro"><p class="kick" style="color:var(--pink-deep)">The Bitch-O-Meter, {t["name"]} edition</p>'
                 + f'<h1>How much of a bitch <span class="p">are you at {t["name"].lower()}?</span></h1>'
                 + f'<p class="lede">{E(t["blurb"])} Four answers each. All of them are funny. Only one is right, and it is probably not the one you want to pick. Every pick gets a verdict.</p>'
-                + '<button class="btn dark start" id="go" type="button">Begin the test</button> '
+                + RULES + '<button class="btn dark start" id="go" type="button">Begin the test</button> '
                 + f'<a class="btn" href="{t["other"]}" style="background:transparent;color:var(--black)">Or take the {t["otherName"]} test</a></div>'
                 + '<div class="stage" id="stage"></div><div class="fin" id="fin" aria-live="polite"></div>'
                 + '<div class="getbox" style="margin-top:60px"><b>Meet the real thing.</b>Sixteen breeds, seventeen portraits, one uncomfortable mirror.' + buttons() + '</div></div>'
@@ -199,7 +220,7 @@ def build(write, head, nav, FOOT, buttons):
            + nav('/bitch-o-meter/')
            + '<div class="mt"><div class="intro"><p class="kick" style="color:var(--pink-deep)">The Bitch-O-Meter</p>'
            + '<h1>How much of a bitch <span class="p">are you, really?</span></h1>'
-           + '<p class="lede">Two tests. Twenty questions each. Every answer is funny and every pick gets a verdict. Only one answer per question is right, and it is probably not the one you want to pick. Take one or take both.</p></div>'
+           + '<p class="lede">Two tests. Twenty questions each. Every answer is funny and every pick gets a verdict. Only one answer per question is right, and it is probably not the one you want to pick. Take one or take both.</p></div>' + RULES.replace('Twenty questions, sixty points, one percentage.', 'Sixty points per test.')
            + f'<div class="hubgrid">{cards}</div>'
            + '<div class="getbox" style="margin-top:20px"><b>Meet the real thing.</b>Sixteen breeds, seventeen portraits, one uncomfortable mirror.' + buttons() + '</div></div>'
            + FOOT + '</body></html>')
