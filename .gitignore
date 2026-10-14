@@ -10,3 +10,7 @@ __pycache__/
 !site/**/*.html
 !site/**/*.png
 !site/**/*.svg
+
+# merch print files are large and generated
+catyear_repo/merch/printify_cats/*.png
+catyear_repo/merch/printify_cats/Mugs_15oz_2475x1275/
