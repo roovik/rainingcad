@@ -125,6 +125,23 @@ details.rv{margin:18px 0;border:2px solid var(--black);background:#fff;padding:1
 details.rv summary{cursor:pointer;font:800 12px Hanken,sans-serif;letter-spacing:.16em;text-transform:uppercase}
 details.rv ol{margin:12px 0 0;padding-left:20px}
 details.rv li{margin:0 0 10px;font-size:17px}
+.keyh{font:800 26px/1.1 Spectral,serif;margin:34px 0 12px}
+.kq{border:2px solid var(--black);background:#fff;padding:14px 18px;margin:0 0 12px}
+.kq.ok{border-color:var(--pink);box-shadow:5px 5px 0 var(--pink)}
+.kqh{font:800 17px/1.3 Spectral,serif;margin:0 0 8px}
+.kq p{margin:0 0 6px;font-size:17px}
+.pts{display:inline-block;font:800 11px Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;background:var(--black);color:#fff;padding:3px 8px;margin-left:6px}
+.kbest{color:var(--pink-deep)}
+.kx{font-style:italic;border-left:4px solid var(--pink);padding-left:12px;margin-top:8px!important}
+.scale{margin:30px 0 10px}
+.track{position:relative;height:16px;background:linear-gradient(90deg,#F7DCE8,#FF1493,#0E0E10);border:2px solid var(--black)}
+.track i{position:absolute;top:-10px;width:4px;height:34px;background:var(--black);margin-left:-2px}
+.track em{position:absolute;top:36px;left:50%;transform:translateX(-50%);font:800 11px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;background:var(--black);color:#fff;padding:2px 6px;font-style:normal}
+.zones{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:40px;font:700 11px/1.2 Hanken,sans-serif;text-align:center;text-transform:uppercase;letter-spacing:.06em}
+.zones .z{padding:6px 2px;border:1px solid #ccc;color:#777}
+.zones .z.here{background:var(--pink);border-color:var(--pink);color:var(--black)}
+.means{font-size:19px;margin:16px 0 26px}
+@media(max-width:640px){.zones{font-size:9px}}
 .sharebtn{margin-top:6px;cursor:pointer;background:var(--pink);border-color:var(--pink);color:var(--black)}
 """
 
@@ -326,6 +343,25 @@ METER = [
    ("Cancel everyone else's plans out of principle.",2),
    ("Plan your own party, invite the right six, and hand out hats.",3)]),
 ]
+EXPL = [
+ "Violence is loud. Tipping better is permanent. The barista will remember you in March. The line cutter will remember nothing and feel strangely small anyway.",
+ "Anger is a gift to the late. Calm is a gift to yourself. Eating the appetizer slowly proves the clock was never your problem.",
+ "Shouting makes you the story. Handing out the next three steps makes you the manager. Credit is a rental. Leadership is a deed.",
+ "Defending yourself admits there was a case. \"Noted\" is a closed file. Eating is the footnote.",
+ "Instant replies are a leash. Thursday is a verdict. \"Hope you're well\" is the most polite door ever slammed.",
+ "One pleasant sentence beats a review. She asked once, she waited, the right plate arrived. Dessert is on him.",
+ "A request for an agenda is a boundary dressed as help. The silence that follows is the actual answer.",
+ "The receipt is not about the jacket. It is about the terms. She will return it spotless and a little afraid.",
+ "\"Wow\" is a full paragraph. The slow page turn is a closing argument. He will feel it in his seat.",
+ "Waiting is a vote for other people's calendars. A party you plan yourself has the right guests and the right hats. Six guests who showed up on purpose beat sixty who were told to."
+]
+MEANS = [
+ ("Puppy scale", "At this number you are legally a throw pillow. People sit on you and say thank you. Scientists say your tail can power a small fan."),
+ ("Desperate scale", "At this number you have a plan, a spreadsheet and a loud sigh for each. You are one calm Thursday away from greatness."),
+ ("Line scale", "At this number you hold the line and then explain the line. Cut the explaining and you gain ten points overnight."),
+ ("Beware scale", "At this number waiters check on your table twice. Ex-boyfriends delete your number from their backup phones."),
+ ("Alpha scale", "At this number you are not a reading. You are a weather system. Furniture rearranges itself when you walk in."),
+]
 TIERS = [
  (0, "The Puppy", 4, "You apologize to furniture and say sorry when someone bumps into you. The world adores you and takes advantage of that. Start with Chapter Four, The Underbitch.", "the-underbitch"),
  (20, "The Desperate Bitch", 14, "Big feelings, big volume, and one eye on the scoreboard. You care and everybody knows it. The neighbor's boat is still on your mind. Try Chapter Fourteen.", "desperate-bitches"),
@@ -339,6 +375,7 @@ def meter():
     for qi, (q, opts) in enumerate(METER):
         qs += f'<fieldset class="q" data-q="{qi}"><legend>{qi+1}. {E(q)}</legend><div class="opts"></div></fieldset>'
     data = json.dumps({"q": [{"q": q, "a": [{"t": t, "s": sc} for t, sc in opts]} for q, opts in METER],
+                       "x": EXPL, "means": [{"h": h, "t": t} for h, t in MEANS],
                        "tiers": [{"min": m, "name": n, "img": f"/img/ch{i:02d}.webp", "text": t, "slug": sl} for m, n, i, t, sl in TIERS]}, ensure_ascii=False)
     js = ("const D=" + data + ";"
           "const f=document.getElementById('mz'),msg=document.getElementById('mmsg'),out=document.getElementById('mres');"
@@ -351,11 +388,15 @@ def meter():
           "for(let i=0;i<D.q.length;i++){const v=f.querySelector('input[name=m'+i+']:checked');if(v){tot+=+v.value;n++}}"
           "if(n<D.q.length){msg.textContent='Answer all ten. She finishes what she starts.';return}msg.textContent='';"
           "const pct=Math.round(tot/(D.q.length*3)*100);let t=D.tiers[0];D.tiers.forEach(function(x){if(pct>=x.min)t=x});"
-          "const best=D.q.map(function(q,i){const b=q.a.reduce(function(m,a){return a.s>m.s?a:m},q.a[0]);return '<li>'+esc(b.t)+'</li>'}).join('');"
+          "const lab=['Panic points','Loud points','Smug points','Perfect points'];const stamp=['Not the one.','Close, and loud.','Nearly. So smug.','Exactly.'];"
+          "const key=D.q.map(function(q,i){const b=q.a.reduce(function(m,a){return a.s>m.s?a:m},q.a[0]);const v=f.querySelector('input[name=m'+i+']:checked');const mine=+v.value;const ym=q.a.find(function(a){return a.s===mine});"
+          "return '<div class=\"kq'+(mine===3?' ok':'')+'\"><p class=\"kqh\">'+(i+1)+'. '+esc(q.q)+'</p><p class=\"kmine\"><b>You chose:</b> '+esc(ym.t)+' <span class=\"pts\">'+mine+' of 3, '+stamp[mine]+'</span></p>'+(mine===3?'':'<p class=\"kbest\"><b>The answer:</b> '+esc(b.t)+'</p>')+'<p class=\"kx\">'+esc(D.x[i])+'</p></div>'}).join('');"
+          "const zi=D.tiers.indexOf(t);const zones=D.tiers.map(function(x,k){return '<span class=\"z'+(k===zi?' here':'')+'\">'+esc(x.name)+'</span>'}).join('');"
+          "const scale='<div class=\"scale\"><div class=\"track\"><i style=\"left:'+pct+'%\"><em>You</em></i></div><div class=\"zones\">'+zones+'</div></div><p class=\"means\"><b>'+esc(D.means[zi].h)+'.</b> '+esc(D.means[zi].t)+' You scored '+tot+' of '+(D.q.length*3)+'. '+(tot===D.q.length*3?'Nothing left to fix. Please stop reading.':'The missing '+(D.q.length*3-tot)+' points are what the other answers cost you.')+'</p>';"
           "out.innerHTML='<p class=\"kick\" style=\"color:var(--pink-deep)\">Your Bitch-O-Meter reading</p><p class=\"pct\" id=\"pc\">0%</p><div class=\"bar\"><i id=\"bi\"></i></div>'"
           "+'<div class=\"tier\"><img src=\"'+t.img+'\" alt=\"\"><div><p class=\"kick\">You are</p><h3>'+esc(t.name)+'</h3><p>'+esc(t.text)+'</p><p><a href=\"/secrets/'+t.slug+'/\">Read her chapter</a></p></div></div>'"
           "+'<p class=\"twist\">Plot twist: the loudest answers scored lower than the calm ones. In this book, being a bitch is about timing, not volume.</p>'"
-          "+'<details class=\"rv\"><summary>Show me the top answers</summary><ol>'+best+'</ol></details>'"
+          "+'<h2 class=\"keyh\">What you got right (and wrong)</h2>'+key+'<h2 class=\"keyh\">What the number really means</h2>'+scale"
           "+'<button class=\"btn sharebtn\" id=\"sh\" type=\"button\">Share my score</button> <a class=\"btn dark\" href=\"/which-bitch/\">Now find your breed</a>';"
           "out.classList.add('on');out.scrollIntoView({behavior:'smooth',block:'start'});"
           "requestAnimationFrame(function(){document.getElementById('bi').style.width=pct+'%'});"
