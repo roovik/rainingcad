@@ -85,6 +85,10 @@ h2 .p{color:var(--pink-deep)}
 .ch img.pt{position:sticky;top:84px;display:block;width:100%;height:auto;box-shadow:10px 10px 0 var(--pink);background:#ddd}
 .ch h1{font-size:clamp(36px,6vw,60px);color:var(--black)}
 .cap{font:italic 400 clamp(19px,2.4vw,23px)/1.35 Spectral,serif;color:var(--pink-deep);margin:0 0 24px}
+.cb{margin-top:10px}
+.cb .btns{margin-top:12px}
+.btn.off2{border-color:rgba(14,14,16,.3);color:#777;pointer-events:none}
+.btn.main{color:var(--black)}
 .open{margin-top:8px}
 .open p{margin:0 0 .9em;font-size:21px;line-height:1.55}
 .open p:first-of-type::first-letter{font:800 3.4em/.8 Spectral,serif;color:var(--pink-deep);float:left;padding:6px 10px 0 0}
@@ -196,6 +200,10 @@ def chapter_page(i):
     prev_ = CH[i-1] if i > 0 else None
     next_ = CH[i+1] if i < len(CH)-1 else None
     label = c['n'] if c['n'] in ('Introduction', 'Conclusion') else f'Chapter {c["n"]}'
+    cb = '<div class="cb"><div class="btns">'
+    cb += (f'<a class="btn dark" href="/secrets/{prev_["slug"]}/">&larr; {E(prev_["title"])}</a>' if prev_ else '')
+    cb += (f'<a class="btn dark" href="/secrets/{next_["slug"]}/">{E(next_["title"])} &rarr;</a>' if next_ else '<a class="btn dark" href="/#secrets">All the secrets</a>')
+    cb += '</div><div class="btns"><span class="btn off2">Paperback coming soon</span><span class="btn off2">Kindle coming soon</span><a class="btn main" href="/merch/">Bitch Merch</a></div></div>'
     pn = '<div class="pn">'
     pn += (f'<a href="/secrets/{prev_["slug"]}/"><span>Previous</span>{E(prev_["title"])}</a>' if prev_ else '<span></span>')
     pn += (f'<a href="/secrets/{next_["slug"]}/"><span>Next</span>{E(next_["title"])}</a>' if next_ else '<a href="/#get"><span>That is all of them</span>Get the book</a>')
@@ -206,10 +214,9 @@ def chapter_page(i):
             + nav('/#secrets')
             + f'<div class="wrap"><div class="ch"><img class="pt" src="/img/ch{idx(i)}.webp" width="900" alt="Illustrated portrait for {esc(c["title"])}">'
             + f'<div><p class="kick">{label}</p><h1>{E(c["title"])}</h1><p class="cap">{E(cap)}</p>'
-            + f'<div class="open">{ex}<div class="more">The rest of the chapter is in the book.</div></div></div></div>'
-            + pn
-            + '<div class="getbox"><b>Read the rest of her secrets.</b>Seventeen portraits. Sixteen breeds. One uncomfortable mirror.'
-            + buttons() + '</div></div>' + FOOT + '</body></html>')
+            + f'<div class="open">{ex}<div class="more">The rest of the chapter is in the book.</div>{cb}</div></div></div>'
+            + '<div class="getbox" style="margin-top:50px"><b>Read the rest of her secrets.</b>Seventeen portraits. Sixteen breeds. One uncomfortable mirror.'
+            + buttons() + '<div class="btns" style="justify-content:center"><a class="btn dark" href="/merch/">Bitch Merch</a></div></div></div>' + FOOT + '</body></html>')
     write(f'/secrets/{c["slug"]}/', body)
 
 # ---------------- home ----------------
