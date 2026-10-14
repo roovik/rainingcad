@@ -60,3 +60,14 @@ for b,(t,sub,tiles,btns) in PANELS.items():
         if put(p,blk,'<div class="foot">',MPCSS,'mpcss','mp'): n+=1
         else: print("skipped",p)
 print("book pages",n)
+# ---- all four books at the very bottom of every page that has a merch panel
+BKCSS='<style id="bkcss">.bks{border-top:3px solid #B0822B;margin:46px 0 0;padding:22px 0 8px}.bks h2{font:800 clamp(22px,4vw,28px)/1.1 Spectral,Georgia,serif;margin:0 0 14px}.bks .g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.bks .g a{display:block;text-decoration:none;color:#2A2A2D}.bks .g img{width:100%;height:auto;display:block;border:1px solid rgba(42,42,45,.16);box-shadow:0 8px 20px rgba(0,0,0,.14);background:#e9e7df}.bks .g b{display:block;font:800 15px/1.15 Spectral,Georgia,serif;margin:10px 0 1px}.bks .g span{display:block;font:11px Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#6F6F74}@media(max-width:560px){.bks .g{grid-template-columns:1fr 1fr}}</style>'
+BOOKS=[("cat-breeds","Cat Breeds","Breed guide"),("dog-breeds","Dog Breeds","Breed guide"),("every-dog-has-his-day","Every Dog Has His Day","Idiom book"),("the-cats-pajamas","The Cat&#x27;s Pajamas","Idiom book")]
+blk='<div class="bks"><h2>The Books</h2><div class="g">'+''.join(f'<a href="/books/{s}/"><img loading="lazy" src="/books/{s}/cover.webp" width="300" height="400" alt="{t} cover"><b>{t}</b><span>{sub}</span></a>' for s,t,sub in BOOKS)+'</div></div>'
+n=0
+for p in glob.glob(f"{SITE}/**/index.html",recursive=True):
+    h=open(p,encoding='utf-8').read()
+    if '<!--shop-->' in h or '<!--mp-->' in h:
+        if put(p,blk,'<div class="foot">',BKCSS,'bkcss','bks'): n+=1
+        else: print("skipped",p)
+print("books strip pages",n)
