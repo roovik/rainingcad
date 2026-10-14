@@ -148,6 +148,9 @@ details.rv li{margin:0 0 10px;font-size:17px}
 .sharebtn{margin-top:6px;cursor:pointer;background:var(--pink);border-color:var(--pink);color:var(--black)}
 """
 
+from meter_page import METER_CSS
+CSS += METER_CSS
+
 def esc(s): return E(s, quote=True)
 
 NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/#secrets', 'The Secrets', 0), ('/which-bitch/', 'Which Bitch?', 0), ('/bitch-o-meter/', 'Bitch-O-Meter', 0), ('/#inside', 'Look Inside', 0)]
@@ -294,142 +297,9 @@ def quiz():
          + FOOT + f'<script>{js}</script></body></html>')
     write('/which-bitch/', h)
 
-METER = [
- ("Someone cuts in line at the coffee shop. You", [
-   ("Tap their shoulder and announce it to the whole cafe.",1),
-   ("Say \"no worries!\" and replay it in your head for six hours.",0),
-   ("Smile, let them go, and quietly note which barista likes you better.",2),
-   ("Order second, tip better, and let them wonder why they feel small.",3)]),
- ("Your friend is forty minutes late and texts \"omw!!\" You", [
-   ("Send a screenshot of the clock and three knife emojis.",1),
-   ("Apologize for being early.",0),
-   ("Reply \"no rush!!\" and start a group chat without her.",2),
-   ("Order the appetizer, eat it slowly, and greet her like it's seven o'clock.",3)]),
- ("A coworker presents your idea as their own. You", [
-   ("Slam the door so hard it echoes in HR.",1),
-   ("Tell your cat all about it later.",0),
-   ("Compliment them warmly, then forward the original email to the whole team \"for context.\"",2),
-   ("Say \"Glad you like it. Here are the next three steps,\" and hand out the steps.",3)]),
- ("At a dinner party someone says, \"You should really be nicer.\" You", [
-   ("Deliver a seven minute speech with slides.",1),
-   ("Cry in the bathroom for forty minutes, then apologize to the hostess.",0),
-   ("Agree loudly, then be nicer to everyone except them for the rest of the night.",2),
-   ("Say \"Noted,\" and keep eating.",3)]),
- ("Your ex texts \"hey stranger\" at one in the morning. You", [
-   ("Write four paragraphs, delete them, write them again.",1),
-   ("Reply \"Missed you too!\"",0),
-   ("Reply in four seconds: \"Who is this?\" You saved the number as DO NOT.",2),
-   ("Leave it unread until Thursday, then send \"Just saw this. Hope you're well.\"",3)]),
- ("The waiter brings the wrong dish. You", [
-   ("Send it back with a note about your disappointment and his tip.",1),
-   ("Eat it. It's fine. It's probably fine.",0),
-   ("Photograph it for a review before he leaves the table.",2),
-   ("Say \"I ordered the other one,\" pleasantly, once, and wait.",3)]),
- ("Someone invites you to a \"quick call\" that could have been an email. You", [
-   ("Reply all with a six paragraph critique of calendars.",1),
-   ("Say yes, join early, and bring snacks.",0),
-   ("Accept, mute yourself, and fold laundry.",2),
-   ("Say \"Happy to, send an agenda.\" No agenda arrives. You never join.",3)]),
- ("Your sister asks to borrow your favorite jacket. You", [
-   ("Say \"Absolutely not,\" and count the buttons.",1),
-   ("Say \"Of course! Keep it forever!\"",0),
-   ("Say yes, then wear it to her birthday dinner.",2),
-   ("Say \"Sure,\" and attach the dry cleaning receipt.",3)]),
- ("A stranger on the train tells you to smile. You", [
-   ("Shout \"Make me!\" and turn the whole car's head.",1),
-   ("Smile. Hate yourself.",0),
-   ("Smile at him until he gets nervous and changes seats.",2),
-   ("Say \"Wow,\" return to your book, and turn the page. Slowly.",3)]),
- ("It's your birthday and nobody planned anything. You", [
-   ("Wait by the phone, eat cake alone, and post a sad story.",1),
-   ("Say \"it's fine!\" fourteen times.",0),
-   ("Cancel everyone else's plans out of principle.",2),
-   ("Plan your own party, invite the right six, and hand out hats.",3)]),
-]
-EXPL = [
- "Violence is loud. Tipping better is permanent. The barista will remember you in March. The line cutter will remember nothing and feel strangely small anyway.",
- "Anger is a gift to the late. Calm is a gift to yourself. Eating the appetizer slowly proves the clock was never your problem.",
- "Shouting makes you the story. Handing out the next three steps makes you the manager. Credit is a rental. Leadership is a deed.",
- "Defending yourself admits there was a case. \"Noted\" is a closed file. Eating is the footnote.",
- "Instant replies are a leash. Thursday is a verdict. \"Hope you're well\" is the most polite door ever slammed.",
- "One pleasant sentence beats a review. She asked once, she waited, the right plate arrived. Dessert is on him.",
- "A request for an agenda is a boundary dressed as help. The silence that follows is the actual answer.",
- "The receipt is not about the jacket. It is about the terms. She will return it spotless and a little afraid.",
- "\"Wow\" is a full paragraph. The slow page turn is a closing argument. He will feel it in his seat.",
- "Waiting is a vote for other people's calendars. A party you plan yourself has the right guests and the right hats. Six guests who showed up on purpose beat sixty who were told to."
-]
-MEANS = [
- ("Puppy scale", "At this number you are legally a throw pillow. People sit on you and say thank you. Scientists say your tail can power a small fan."),
- ("Desperate scale", "At this number you have a plan, a spreadsheet and a loud sigh for each. You are one calm Thursday away from greatness."),
- ("Line scale", "At this number you hold the line and then explain the line. Cut the explaining and you gain ten points overnight."),
- ("Beware scale", "At this number waiters check on your table twice. Ex-boyfriends delete your number from their backup phones."),
- ("Alpha scale", "At this number you are not a reading. You are a weather system. Furniture rearranges itself when you walk in."),
-]
-ROAST = [
- {0:"Six hours of replay and the line cutter forgot your face in six seconds.",1:"You gave a stranger a speech and the whole cafe a show. Nobody tipped you.",2:"Subtle and petty in the good way. You kept the grudge but skipped the tip.",3:"Quiet and lethal. You did nothing and everything."},
- {0:"You apologized for being on time. She is still not sorry.",1:"Three knives for a latte date. She read it as flattery and will be later next time.",2:"Cold and tidy. You were too busy plotting to taste the appetizer.",3:"Appetizer, cool eyes, perfect timing. Nobody was harmed and everyone knew."},
- {0:"The cat agrees with you. The cat has no say in promotions.",1:"Doors are not evidence. HR loves a slam and writes the memo about you.",2:"Surgical, and the CC list is a work of art. One more step and you would be crowned.",3:"Management by menu. She did it cheerfully."},
- {0:"You apologized to the hostess for your own feelings. She gave you a coaster.",1:"Slides. At a dinner. He feels vindicated and slightly entertained.",2:"Evil and efficient. You proved her point to everyone but her.",3:"Two syllables and a fork. Case closed."},
- {0:"Missed you too, said the phone, to the wrong person.",1:"Drafts are not a personality. Four paragraphs and he still reads interest.",2:"Four seconds. He knows you were awake. So do you.",3:"Thursday is a power move. You were never in a hurry."},
- {0:"It's fine. The waiter agrees. The chef is now sure his dish is a hit.",1:"A note about his tip is a hostage letter. He will not forget the soup either.",2:"The review was written before the soup cooled. Somewhere a manager sweats.",3:"Pleasant once and patient always. The right plate arrived before you blinked."},
- {0:"Snacks for the meeting that eats your day. You are why it lasted an hour.",1:"Six paragraphs on calendars. One coworker calls you a hero and one has muted you.",2:"The laundry gets folded and the meeting goes on. You are the quiet winner of an ugly game.",3:"A boundary in business casual. No agenda arrived and you did not miss it."},
- {0:"She now owns your jacket and your forgiveness.",1:"You counted the buttons. Of course you did. She wants it more now.",2:"A power move wrapped in a sleeve. Petty, brilliant, slightly off the plan.",3:"Terms and conditions. You lent it and you billed her."},
- {0:"He won a smile and you lost a morning.",1:"Now the whole train is on his side. He got a sequel.",2:"A smile with teeth. Effective. Slightly creepy. Hired.",3:"One word and a page turn. The train felt it for three stops."},
- {0:"Fourteen fines and not one slice of cake.",1:"A sad story is a reminder. Your friends felt guilty and forgot by lunch.",2:"You ruined their evening to make a point. The point is you have no party.",3:"A hostess in your own life. Hats for everyone."},
-]
-TIERS = [
- (0, "The Puppy", 4, "You apologize to furniture and say sorry when someone bumps into you. The world adores you and takes advantage of that. Start with Chapter Four, The Underbitch.", "the-underbitch"),
- (20, "The Desperate Bitch", 14, "Big feelings, big volume, and one eye on the scoreboard. You care and everybody knows it. The neighbor's boat is still on your mind. Try Chapter Fourteen.", "desperate-bitches"),
- (40, "The Bitch on the Line", 5, "You hold the line most days. Sometimes you explain it. Nobody needed the explanation. Chapter Five will tighten things up.", "the-bitch-on-the-line"),
- (60, "Beware of the Bitch", 9, "Calm, clear and slightly terrifying. The velvet rope is yours, and you know exactly who is on the list. Chapter Nine is your mirror.", "beware-of-the-bitch"),
- (80, "The Alpha Bitch", 15, "You didn't raise your voice. You didn't need to. Nobody voted and nobody objected. Chapter Fifteen was written about you.", "the-alpha-bitch"),
-]
-
 def meter():
-    qs = ''
-    for qi, (q, opts) in enumerate(METER):
-        qs += f'<fieldset class="q" data-q="{qi}"><legend>{qi+1}. {E(q)}</legend><div class="opts"></div></fieldset>'
-    data = json.dumps({"q": [{"q": q, "a": [{"t": t, "s": sc} for t, sc in opts]} for q, opts in METER],
-                       "x": EXPL, "r": ROAST, "means": [{"h": h, "t": t} for h, t in MEANS],
-                       "tiers": [{"min": m, "name": n, "img": f"/img/ch{i:02d}.webp", "text": t, "slug": sl} for m, n, i, t, sl in TIERS]}, ensure_ascii=False)
-    js = ("const D=" + data + ";"
-          "const f=document.getElementById('mz'),msg=document.getElementById('mmsg'),out=document.getElementById('mres');"
-          "function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\"/g,'&quot;')}"
-          "const ans=[];"
-          "f.querySelectorAll('fieldset').forEach(function(fs,qi){const o=D.q[qi].a.map(function(a,k){return {t:a.t,s:a.s}});"
-          "for(let i=o.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const x=o[i];o[i]=o[j];o[j]=x}"
-          "fs.querySelector('.opts').innerHTML=o.map(function(a,k){return '<label><input type=\"radio\" name=\"m'+qi+'\" value=\"'+a.s+'\"><span>'+esc(a.t)+'</span></label>'}).join('')});"
-          "f.addEventListener('submit',function(e){e.preventDefault();let tot=0,n=0;"
-          "for(let i=0;i<D.q.length;i++){const v=f.querySelector('input[name=m'+i+']:checked');if(v){tot+=+v.value;n++}}"
-          "if(n<D.q.length){msg.textContent='Answer all ten. She finishes what she starts.';return}msg.textContent='';"
-          "const pct=Math.round(tot/(D.q.length*3)*100);let t=D.tiers[0];D.tiers.forEach(function(x){if(pct>=x.min)t=x});"
-          "const lab=['Panic points','Loud points','Smug points','Perfect points'];const stamp=['Not the one.','Close, and loud.','Nearly. So smug.','Exactly.'];"
-          "const key=D.q.map(function(q,i){const b=q.a.reduce(function(m,a){return a.s>m.s?a:m},q.a[0]);const v=f.querySelector('input[name=m'+i+']:checked');const mine=+v.value;const ym=q.a.find(function(a){return a.s===mine});"
-          "return '<div class=\"kq'+(mine===3?' ok':'')+'\"><p class=\"kqh\"><span class=\"kn\">'+(i+1)+'</span>'+esc(q.q)+'</p><p class=\"kmine\">&ldquo;'+esc(ym.t)+'&rdquo; <span class=\"pts\">'+mine+'/3</span></p><p class=\"kroast\">'+esc(D.r[i][mine])+'</p>'+(mine===3?'':'<p class=\"kbest\"><b>Her move:</b> '+esc(b.t)+'</p>')+'<p class=\"kx\">'+esc(D.x[i])+'</p></div>'}).join('');"
-          "const zi=D.tiers.indexOf(t);const zones=D.tiers.map(function(x,k){return '<span class=\"z'+(k===zi?' here':'')+'\">'+esc(x.name)+'</span>'}).join('');"
-          "const scale='<div class=\"scale\"><div class=\"track\"><i style=\"left:'+pct+'%\"><em>You</em></i></div><div class=\"zones\">'+zones+'</div></div><p class=\"means\"><b>'+esc(D.means[zi].h)+'.</b> '+esc(D.means[zi].t)+' You scored '+tot+' of '+(D.q.length*3)+'. '+(tot===D.q.length*3?'Nothing left to fix. Please stop reading.':'The missing '+(D.q.length*3-tot)+' points are what the other answers cost you.')+'</p>';"
-          "out.innerHTML='<p class=\"kick\" style=\"color:var(--pink-deep)\">Your Bitch-O-Meter reading</p><p class=\"pct\" id=\"pc\">0%</p><div class=\"bar\"><i id=\"bi\"></i></div>'"
-          "+'<div class=\"tier\"><img src=\"'+t.img+'\" alt=\"\"><div><p class=\"kick\">You are</p><h3>'+esc(t.name)+'</h3><p>'+esc(t.text)+'</p><p><a href=\"/secrets/'+t.slug+'/\">Read her chapter</a></p></div></div>'"
-          "+'<p class=\"twist\">Plot twist: the loudest answers scored lower than the calm ones. In this book, being a bitch is about timing, not volume.</p>'"
-          "+'<h2 class=\"keyh\">What you got right (and wrong)</h2>'+key+'<h2 class=\"keyh\">What the number really means</h2>'+scale"
-          "+'<button class=\"btn sharebtn\" id=\"sh\" type=\"button\">Share my score</button> <a class=\"btn dark\" href=\"/which-bitch/\">Now find your breed</a>';"
-          "out.classList.add('on');out.scrollIntoView({behavior:'smooth',block:'start'});"
-          "requestAnimationFrame(function(){document.getElementById('bi').style.width=pct+'%'});"
-          "let c=0;const el=document.getElementById('pc');const iv=setInterval(function(){c+=Math.max(1,Math.round(pct/30));if(c>=pct){c=pct;clearInterval(iv)}el.textContent=c+'%'},30);"
-          "document.getElementById('sh').addEventListener('click',function(){const text='I scored '+pct+'% on the Bitch-O-Meter: '+t.name+'. How much of a bitch are you?';const url='https://everybitch.com/bitch-o-meter/';"
-          "if(navigator.share){navigator.share({title:'Bitch-O-Meter',text:text,url:url}).catch(function(){})}"
-          "else if(navigator.clipboard){navigator.clipboard.writeText(text+' '+url).then(function(){document.getElementById('sh').textContent='Copied'})}});"
-          "});")
-    h = (head('How Much of a Bitch Are You, Really? Every Bitch Has Her Way', 'Ten questions. Funny answers. The right one is not the one you think. Find your reading on the Bitch-O-Meter.', '/bitch-o-meter/')
-         + nav('/bitch-o-meter/')
-         + '<div class="wrap" style="max-width:760px;padding-top:50px"><p class="kick" style="color:var(--pink-deep)">The Bitch-O-Meter</p>'
-         + '<h1 style="color:var(--black)">How much of a bitch <span class="p">are you, really?</span></h1>'
-         + '<p class="lede">Ten questions. Every answer is funny. Only one is right, and it is probably not the one you want to pick.</p>'
-         + f'<form id="mz" novalidate>{qs}<button class="btn dark" type="submit">Read my meter</button> <span id="mmsg" style="font:700 14px Hanken,sans-serif;color:var(--pink-deep);margin-left:10px"></span></form>'
-         + '<div id="mres" class="mres" aria-live="polite"></div>'
-         + '<div class="getbox" style="margin-top:50px"><b>Meet the real thing.</b>Sixteen breeds, seventeen portraits, one uncomfortable mirror.' + buttons() + '</div></div>'
-         + FOOT + f'<script>{js}</script></body></html>')
-    write('/bitch-o-meter/', h)
+    import meter_page
+    meter_page.build(write, head, nav, FOOT, buttons)
 
 def merch():
     strip = ''.join(f'<a class="card" href="/secrets/{CH[i]["slug"]}/"><img loading="lazy" src="/img/t{idx(i)}.webp" width="420" height="560" alt="{esc(CH[i]["title"])} portrait"></a>' for i in (0, 3, 4, 9, 15))
@@ -449,7 +319,7 @@ def misc():
         '<ellipse cx="38" cy="17" rx="6" ry="8"/><ellipse cx="49" cy="27" rx="6" ry="8"/></g></svg>')
     open(os.path.join(ROOT, '_headers'), 'w').write('/img/*\n  Cache-Control: public, max-age=604800\n/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n')
     open(os.path.join(ROOT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
-    urls = ['/', '/which-bitch/', '/bitch-o-meter/', '/merch/'] + [f'/secrets/{c["slug"]}/' for c in CH]
+    urls = ['/', '/which-bitch/', '/bitch-o-meter/', '/bitch-o-meter/home/', '/bitch-o-meter/work/', '/merch/'] + [f'/secrets/{c["slug"]}/' for c in CH]
     open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
         + ''.join(f'<url><loc>{SITE}{u}</loc></url>' for u in urls) + '</urlset>')
     open(os.path.join(ROOT, '404.html'), 'w').write(head('Not found, Every Bitch Has Her Way', 'Page not found.', '/404.html')
