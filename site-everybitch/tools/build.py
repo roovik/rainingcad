@@ -81,10 +81,15 @@ h2 .p{color:var(--pink-deep)}
 .foot b{color:#fff}
 /* chapter page */
 .ch{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:start;padding:50px 0 20px}
-@media(max-width:760px){.ch{grid-template-columns:1fr;gap:24px}}
-.ch img.pt{display:block;width:100%;height:auto;box-shadow:10px 10px 0 var(--pink);background:#ddd}
+@media(max-width:760px){.ch{grid-template-columns:1fr;gap:24px}.ch img.pt{position:static}}
+.ch img.pt{position:sticky;top:84px;display:block;width:100%;height:auto;box-shadow:10px 10px 0 var(--pink);background:#ddd}
 .ch h1{font-size:clamp(36px,6vw,60px);color:var(--black)}
 .cap{font:italic 400 clamp(19px,2.4vw,23px)/1.35 Spectral,serif;color:var(--pink-deep);margin:0 0 24px}
+.open{margin-top:8px}
+.open p{margin:0 0 .9em;font-size:21px;line-height:1.55}
+.open p:first-of-type::first-letter{font:800 3.4em/.8 Spectral,serif;color:var(--pink-deep);float:left;padding:6px 10px 0 0}
+.open h3{font:800 13px Hanken,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-deep);margin:1.6em 0 .6em}
+.open .more{margin-top:18px;border-top:3px solid var(--pink);padding-top:12px;font:italic 600 20px/1.3 Spectral,serif;color:var(--soft)}
 .ex{margin:30px 0 0;padding:0;list-style:none}
 .ex li{border-left:5px solid var(--pink);padding:4px 0 4px 18px;margin:0 0 16px;font:italic 600 21px/1.35 Spectral,serif}
 .pn{display:flex;justify-content:space-between;gap:16px;border-top:3px solid var(--black);margin-top:34px;padding:22px 0}
@@ -151,6 +156,8 @@ details.rv li{margin:0 0 10px;font-size:17px}
 from meter_page import METER_CSS
 CSS += METER_CSS
 
+EXCERPTS = json.load(open(os.path.join(os.path.dirname(__file__), 'excerpts.json'), encoding='utf-8'))
+
 def esc(s): return E(s, quote=True)
 
 NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/#secrets', 'The Secrets', 0), ('/which-bitch/', 'Which Bitch?', 0), ('/bitch-o-meter/', 'Bitch-O-Meter', 0), ('/#inside', 'Look Inside', 0)]
@@ -193,13 +200,13 @@ def chapter_page(i):
     pn += (f'<a href="/secrets/{prev_["slug"]}/"><span>Previous</span>{E(prev_["title"])}</a>' if prev_ else '<span></span>')
     pn += (f'<a href="/secrets/{next_["slug"]}/"><span>Next</span>{E(next_["title"])}</a>' if next_ else '<a href="/#get"><span>That is all of them</span>Get the book</a>')
     pn += '</div>'
-    ex = ''.join(f'<li>{E(x)}</li>' for x in c['ex'])
+    ex = ''.join((f'<h3>{E(x)}</h3>' if t == 'h' else f'<p>{E(x)}</p>') for t, x in EXCERPTS[i])
     cap = ' '.join(c['cap'])
     body = (head(f'{c["title"]}, Every Bitch Has Her Way', c['teaser'], f'/secrets/{c["slug"]}/', og=f'/img/ch{idx(i)}.webp')
             + nav('/#secrets')
             + f'<div class="wrap"><div class="ch"><img class="pt" src="/img/ch{idx(i)}.webp" width="900" alt="Illustrated portrait for {esc(c["title"])}">'
             + f'<div><p class="kick">{label}</p><h1>{E(c["title"])}</h1><p class="cap">{E(cap)}</p>'
-            + f'<p class="lede">{E(c["teaser"])}</p><ul class="ex">{ex}</ul></div></div>'
+            + f'<div class="open">{ex}<div class="more">The rest of the chapter is in the book.</div></div></div></div>'
             + pn
             + '<div class="getbox"><b>Read the rest of her secrets.</b>Seventeen portraits. Sixteen breeds. One uncomfortable mirror.'
             + buttons() + '</div></div>' + FOOT + '</body></html>')
