@@ -23,8 +23,11 @@ img{max-width:100%}
 .nav .wrap{display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
 .nav .brand{font:800 17px Spectral,serif;color:#fff;text-decoration:none;margin-right:auto;letter-spacing:.01em}
 .nav .brand b{color:var(--pink)}
-.nav a.l{font:700 11px Hanken,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-decoration:none;padding:4px 0}
+.nav a.l{font:500 11px Hanken,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-decoration:none;padding:4px 0}
+.nav a.l.b{font-weight:800}
 .nav a.l:hover,.nav a.l.on{color:var(--pink)}
+.nav a.l.on{font-weight:800}
+.nav a.get{font-weight:800}
 .nav a.get{background:var(--pink);color:var(--black);padding:9px 14px}
 .nav a.get:hover{background:#fff;color:var(--black)}
 @media(max-width:640px){.nav .brand{flex-basis:100%}.nav .wrap{gap:14px}}
@@ -110,12 +113,12 @@ h2 .p{color:var(--pink-deep)}
 
 def esc(s): return E(s, quote=True)
 
-NAV_ITEMS = [('/#secrets', 'The Secrets'), ('/which-bitch/', 'Which Bitch?'), ('/#inside', 'Look Inside')]
+NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/#secrets', 'The Secrets', 0), ('/which-bitch/', 'Which Bitch?', 0), ('/#inside', 'Look Inside', 0)]
 
 def nav(cur=''):
-    links = ''.join(f'<a class="l{" on" if h==cur else ""}" href="{h}">{t}</a>' for h, t in NAV_ITEMS)
+    links = ''.join(f'<a class="l{" b" if b else ""}{" on" if h==cur else ""}" href="{h}">{t}</a>' for h, t, b in NAV_ITEMS)
     return (f'<nav class="nav"><div class="wrap"><a class="brand" href="/">Every <b>Bitch</b> Has Her Way</a>'
-            f'{links}<a class="l get" href="/#get">Get the Book</a></div></nav>')
+            f'{links}<a class="l get" href="/#get">Buy</a></div></nav>')
 
 FOOT = ('<div class="foot"><div class="wrap"><b>Every Bitch Has Her Way</b>, Secrets of the Well-Bred Bitch. By Richard J. Koret.<br>'
         '&copy; 2026 Richard J. Koret. Published by <a href="https://rainingcad.com/">Raining Cats &amp; Dogs Press</a>.<br>'
@@ -190,7 +193,7 @@ def home():
     h = (head('Every Bitch Has Her Way by Richard J. Koret',
               'Secrets of the Well-Bred Bitch. Seventeen portraits of the she-dogs who run the world. Deadpan, warm and inspiring. A gift book for the bitch in your life.',
               '/', extra=f'<script type="application/ld+json">{jsonld}</script>')
-         + nav()
+         + nav('/')
          + '<header class="hero"><div class="wrap"><img class="cov" src="/img/cover.webp" width="900" height="1350" alt="Every Bitch Has Her Way cover">'
          + '<div><p class="kick">A gift book for the bitch in your life</p><h1>Every Bitch<span class="p">Has Her Way</span></h1>'
          + '<p class="tag">What she-dogs know that humans forget.</p>'
@@ -254,6 +257,17 @@ def quiz():
          + FOOT + f'<script>{js}</script></body></html>')
     write('/which-bitch/', h)
 
+def merch():
+    strip = ''.join(f'<a class="card" href="/secrets/{CH[i]["slug"]}/"><img loading="lazy" src="/img/t{idx(i)}.webp" width="420" height="560" alt="{esc(CH[i]["title"])} portrait"></a>' for i in (0, 3, 4, 9, 15))
+    h = (head('Merch, Every Bitch Has Her Way', 'Mugs, tees and totes for the well-bred bitch. Coming soon to Etsy.', '/merch/')
+         + nav('/merch/')
+         + '<div class="wrap" style="padding-top:50px"><p class="kick" style="color:var(--pink-deep)">Merch</p><h1 style="color:var(--black)">For the well-bred <span class="p">bitch.</span></h1>'
+         + '<p class="lede">Mugs, tees and totes, each with a she-dog from the book. Coming soon to Etsy.</p>'
+         + f'<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">{strip}</div>'
+         + '<div class="getbox" style="margin-top:44px"><b>Not sure which bitch you are?</b>Take the quiz first. The merch will match.<div class="btns"><a class="btn dark" href="/which-bitch/">Take the quiz</a></div></div></div>'
+         + FOOT + '</body></html>')
+    write('/merch/', h)
+
 def misc():
     open(os.path.join(ROOT, 'favicon.svg'), 'w').write(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0E0E10"/>'
@@ -261,13 +275,13 @@ def misc():
         '<ellipse cx="38" cy="17" rx="6" ry="8"/><ellipse cx="49" cy="27" rx="6" ry="8"/></g></svg>')
     open(os.path.join(ROOT, '_headers'), 'w').write('/img/*\n  Cache-Control: public, max-age=604800\n/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n')
     open(os.path.join(ROOT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
-    urls = ['/', '/which-bitch/'] + [f'/secrets/{c["slug"]}/' for c in CH]
+    urls = ['/', '/which-bitch/', '/merch/'] + [f'/secrets/{c["slug"]}/' for c in CH]
     open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
         + ''.join(f'<url><loc>{SITE}{u}</loc></url>' for u in urls) + '</urlset>')
     open(os.path.join(ROOT, '404.html'), 'w').write(head('Not found, Every Bitch Has Her Way', 'Page not found.', '/404.html')
         + nav() + '<div class="wrap" style="padding:80px 20px;text-align:center"><h1 style="color:var(--black)">She left.<span class="p">No explanation.</span></h1><p class="lede" style="margin:0 auto 24px">That page is gone. <a href="/" style="color:var(--pink-deep)">Back to the pack.</a></p></div>' + FOOT + '</body></html>')
 
 if __name__ == '__main__':
-    home(); quiz(); misc()
+    home(); quiz(); merch(); misc()
     for i in range(len(CH)): chapter_page(i)
     print('built', len(CH), 'chapters')
