@@ -130,6 +130,9 @@ details.rv li{margin:0 0 10px;font-size:17px}
 .kq.ok{border-color:var(--pink);box-shadow:5px 5px 0 var(--pink)}
 .kqh{font:800 17px/1.3 Spectral,serif;margin:0 0 8px}
 .kq p{margin:0 0 6px;font-size:17px}
+.kn{display:inline-block;background:var(--pink);color:var(--black);font:800 13px Hanken,sans-serif;padding:2px 8px;margin-right:8px}
+.kmine{color:#555}
+.kroast{font:800 20px/1.25 Spectral,serif;margin:4px 0 8px!important}
 .pts{display:inline-block;font:800 11px Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;background:var(--black);color:#fff;padding:3px 8px;margin-left:6px}
 .kbest{color:var(--pink-deep)}
 .kx{font-style:italic;border-left:4px solid var(--pink);padding-left:12px;margin-top:8px!important}
@@ -362,6 +365,18 @@ MEANS = [
  ("Beware scale", "At this number waiters check on your table twice. Ex-boyfriends delete your number from their backup phones."),
  ("Alpha scale", "At this number you are not a reading. You are a weather system. Furniture rearranges itself when you walk in."),
 ]
+ROAST = [
+ {0:"Six hours of replay and the line cutter forgot your face in six seconds.",1:"You gave a stranger a speech and the whole cafe a show. Nobody tipped you.",2:"Subtle and petty in the good way. You kept the grudge but skipped the tip.",3:"Quiet and lethal. You did nothing and everything."},
+ {0:"You apologized for being on time. She is still not sorry.",1:"Three knives for a latte date. She read it as flattery and will be later next time.",2:"Cold and tidy. You were too busy plotting to taste the appetizer.",3:"Appetizer, cool eyes, perfect timing. Nobody was harmed and everyone knew."},
+ {0:"The cat agrees with you. The cat has no say in promotions.",1:"Doors are not evidence. HR loves a slam and writes the memo about you.",2:"Surgical, and the CC list is a work of art. One more step and you would be crowned.",3:"Management by menu. She did it cheerfully."},
+ {0:"You apologized to the hostess for your own feelings. She gave you a coaster.",1:"Slides. At a dinner. He feels vindicated and slightly entertained.",2:"Evil and efficient. You proved her point to everyone but her.",3:"Two syllables and a fork. Case closed."},
+ {0:"Missed you too, said the phone, to the wrong person.",1:"Drafts are not a personality. Four paragraphs and he still reads interest.",2:"Four seconds. He knows you were awake. So do you.",3:"Thursday is a power move. You were never in a hurry."},
+ {0:"It's fine. The waiter agrees. The chef is now sure his dish is a hit.",1:"A note about his tip is a hostage letter. He will not forget the soup either.",2:"The review was written before the soup cooled. Somewhere a manager sweats.",3:"Pleasant once and patient always. The right plate arrived before you blinked."},
+ {0:"Snacks for the meeting that eats your day. You are why it lasted an hour.",1:"Six paragraphs on calendars. One coworker calls you a hero and one has muted you.",2:"The laundry gets folded and the meeting goes on. You are the quiet winner of an ugly game.",3:"A boundary in business casual. No agenda arrived and you did not miss it."},
+ {0:"She now owns your jacket and your forgiveness.",1:"You counted the buttons. Of course you did. She wants it more now.",2:"A power move wrapped in a sleeve. Petty, brilliant, slightly off the plan.",3:"Terms and conditions. You lent it and you billed her."},
+ {0:"He won a smile and you lost a morning.",1:"Now the whole train is on his side. He got a sequel.",2:"A smile with teeth. Effective. Slightly creepy. Hired.",3:"One word and a page turn. The train felt it for three stops."},
+ {0:"Fourteen fines and not one slice of cake.",1:"A sad story is a reminder. Your friends felt guilty and forgot by lunch.",2:"You ruined their evening to make a point. The point is you have no party.",3:"A hostess in your own life. Hats for everyone."},
+]
 TIERS = [
  (0, "The Puppy", 4, "You apologize to furniture and say sorry when someone bumps into you. The world adores you and takes advantage of that. Start with Chapter Four, The Underbitch.", "the-underbitch"),
  (20, "The Desperate Bitch", 14, "Big feelings, big volume, and one eye on the scoreboard. You care and everybody knows it. The neighbor's boat is still on your mind. Try Chapter Fourteen.", "desperate-bitches"),
@@ -375,7 +390,7 @@ def meter():
     for qi, (q, opts) in enumerate(METER):
         qs += f'<fieldset class="q" data-q="{qi}"><legend>{qi+1}. {E(q)}</legend><div class="opts"></div></fieldset>'
     data = json.dumps({"q": [{"q": q, "a": [{"t": t, "s": sc} for t, sc in opts]} for q, opts in METER],
-                       "x": EXPL, "means": [{"h": h, "t": t} for h, t in MEANS],
+                       "x": EXPL, "r": ROAST, "means": [{"h": h, "t": t} for h, t in MEANS],
                        "tiers": [{"min": m, "name": n, "img": f"/img/ch{i:02d}.webp", "text": t, "slug": sl} for m, n, i, t, sl in TIERS]}, ensure_ascii=False)
     js = ("const D=" + data + ";"
           "const f=document.getElementById('mz'),msg=document.getElementById('mmsg'),out=document.getElementById('mres');"
@@ -390,7 +405,7 @@ def meter():
           "const pct=Math.round(tot/(D.q.length*3)*100);let t=D.tiers[0];D.tiers.forEach(function(x){if(pct>=x.min)t=x});"
           "const lab=['Panic points','Loud points','Smug points','Perfect points'];const stamp=['Not the one.','Close, and loud.','Nearly. So smug.','Exactly.'];"
           "const key=D.q.map(function(q,i){const b=q.a.reduce(function(m,a){return a.s>m.s?a:m},q.a[0]);const v=f.querySelector('input[name=m'+i+']:checked');const mine=+v.value;const ym=q.a.find(function(a){return a.s===mine});"
-          "return '<div class=\"kq'+(mine===3?' ok':'')+'\"><p class=\"kqh\">'+(i+1)+'. '+esc(q.q)+'</p><p class=\"kmine\"><b>You chose:</b> '+esc(ym.t)+' <span class=\"pts\">'+mine+' of 3, '+stamp[mine]+'</span></p>'+(mine===3?'':'<p class=\"kbest\"><b>The answer:</b> '+esc(b.t)+'</p>')+'<p class=\"kx\">'+esc(D.x[i])+'</p></div>'}).join('');"
+          "return '<div class=\"kq'+(mine===3?' ok':'')+'\"><p class=\"kqh\"><span class=\"kn\">'+(i+1)+'</span>'+esc(q.q)+'</p><p class=\"kmine\">&ldquo;'+esc(ym.t)+'&rdquo; <span class=\"pts\">'+mine+'/3</span></p><p class=\"kroast\">'+esc(D.r[i][mine])+'</p>'+(mine===3?'':'<p class=\"kbest\"><b>Her move:</b> '+esc(b.t)+'</p>')+'<p class=\"kx\">'+esc(D.x[i])+'</p></div>'}).join('');"
           "const zi=D.tiers.indexOf(t);const zones=D.tiers.map(function(x,k){return '<span class=\"z'+(k===zi?' here':'')+'\">'+esc(x.name)+'</span>'}).join('');"
           "const scale='<div class=\"scale\"><div class=\"track\"><i style=\"left:'+pct+'%\"><em>You</em></i></div><div class=\"zones\">'+zones+'</div></div><p class=\"means\"><b>'+esc(D.means[zi].h)+'.</b> '+esc(D.means[zi].t)+' You scored '+tot+' of '+(D.q.length*3)+'. '+(tot===D.q.length*3?'Nothing left to fix. Please stop reading.':'The missing '+(D.q.length*3-tot)+' points are what the other answers cost you.')+'</p>';"
           "out.innerHTML='<p class=\"kick\" style=\"color:var(--pink-deep)\">Your Bitch-O-Meter reading</p><p class=\"pct\" id=\"pc\">0%</p><div class=\"bar\"><i id=\"bi\"></i></div>'"
