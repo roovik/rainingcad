@@ -6,16 +6,27 @@ import build_mugs_all as BM
 SITE="/home/claude/rainingcad/site"; OUT="merch/printify_cats"; os.makedirs(OUT+"/Mugs_15oz_2475x1275",exist_ok=True)
 T="/usr/share/texmf/fonts/opentype/public/tex-gyre/"
 INK='#2A2A2D'; GOLD='#876217'
-PICK=[(2,"chartreux","Chartreux","STRONG SILENT TYPE"),(3,"turkish-angora","TurkishAngora","ROYAL FLUFF"),(4,"burmese","Burmese","IRON WRAPPED IN SILK")]
+FEATURE={"british-shorthair"}
+PICK=[(1,"norwegian-forest-cat","NorwegianForestCat","VIKING QUEEN"),(2,"chartreux","Chartreux","STRONG SILENT TYPE"),(3,"turkish-angora","TurkishAngora","ROYAL FLUFF"),(4,"burmese","Burmese","IRON WRAPPED IN SILK"),(5,"siberian","Siberian","THREE COATS DEEP"),(6,"abyssinian","Abyssinian","TOP SHELF ENERGY"),(7,"devon-rex","DevonRex","MONKEY IN A CATSUIT"),(8,"birman","Birman","WHITE GLOVE SERVICE"),(9,"sphynx","Sphynx","SKIN IN THE GAME"),(10,"british-shorthair","BritishShorthair","TEDDY BEAR IN TWEED"),(11,"american-shorthair","AmericanShorthair","ALL-AMERICAN KITTY")]
 def tf(b,s): return ImageFont.truetype(T+("texgyrepagella-bold.otf" if b else "texgyrepagella-italic.otf"),s)
-def tee_front(n,breed,txt,out):
+def tee_front(n,breed,txt,out,slug=''):
     S=f"{SITE}/CY2027/{n}/"; tiles=[Image.open(S+f).convert('RGB') for f in ["hero.webp"]+[f"{i}.webp" for i in range(1,9)]]
     W,H=3852,4398; m=110; top=480; bot=300; g=36
     cw=(W-2*m-2*g)//3; ch=(H-top-bot-2*g)//3
     im=Image.new('RGB',(W,H),'white'); d=ImageDraw.Draw(im)
-    for k,t in enumerate(tiles):
+    if slug not in FEATURE:
+      for k,t in enumerate(tiles):
         r,c=divmod(k,3); sc=max(cw/t.width,ch/t.height); t2=t.resize((int(t.width*sc)+1,int(t.height*sc)+1),Image.LANCZOS)
         x0=(t2.width-cw)//2;y0=(t2.height-ch)//2; im.paste(t2.crop((x0,y0,x0+cw,y0+ch)),(m+c*(cw+g),top+r*(ch+g)))
+    else:
+      # 4 columns: eight small tiles, the last photo as a 2x2 feature at bottom right
+      c4=(W-2*m-3*g)//4; h3=(H-top-bot-2*g)//3
+      def put(t,x,y,w,h):
+        sc=max(w/t.width,h/t.height); t2=t.resize((int(t.width*sc)+1,int(t.height*sc)+1),Image.LANCZOS)
+        x0=(t2.width-w)//2;y0=(t2.height-h)//2; im.paste(t2.crop((x0,y0,x0+w,y0+h)),(x,y))
+      cells=[(0,0),(1,0),(2,0),(3,0),(0,1),(1,1),(0,2),(1,2)]
+      for t,(cx,cy) in zip(tiles[:8],cells): put(t,m+cx*(c4+g),top+cy*(h3+g),c4,h3)
+      put(tiles[8],m+2*(c4+g),top+1*(h3+g),2*c4+g,2*h3+g)
     sz=270;ft=tf(1,sz)
     while d.textlength(txt,font=ft)>W-2*m: sz-=5;ft=tf(1,sz)
     d.text(((W-d.textlength(txt,font=ft))/2,90),txt,font=ft,fill=INK)
@@ -51,7 +62,7 @@ def tee_back(w,out):
 if __name__=="__main__":
     for n,slug,name,txt in [p for p in PICK if (not os.environ.get('ONLY') or p[1]==os.environ['ONLY'])]:
         w=json.load(open(glob.glob(f"weeks/week{n:02d}_*.json")[0],encoding='utf-8'))
-        tee_front(n,w['breed'],txt,f"{OUT}/{slug}_TEE_FRONT.png"); tee_back(w,f"{OUT}/{slug}_TEE_BACK.png")
+        tee_front(n,w['breed'],txt,f"{OUT}/{slug}_TEE_FRONT.png",slug); tee_back(w,f"{OUT}/{slug}_TEE_BACK.png")
         for H,path in ((1155,f"{OUT}/{slug}_MUG.png"),(1275,f"{OUT}/Mugs_15oz_2475x1275/{slug}_MUG15.png")):
-            BM.MW,BM.MH=2475,H; BM.wrap(f"CY2027/{n}",txt).save(path)
+            BM.MW,BM.MH=2475,H; BM.wrap(f"CY2027/{n}",txt,slug in FEATURE).save(path)
         print('ok',slug)

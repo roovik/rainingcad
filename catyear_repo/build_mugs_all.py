@@ -17,7 +17,7 @@ def lines(txt):
         a,b=' '.join(w[:i]),' '.join(w[i:]); sc=abs(len(a)-len(b))
         if best is None or sc<best[0]: best=(sc,[a,b])
     return best[1]
-def wrap(src,txt):
+def wrap(src,txt,feature=False):
     t=[Image.open(f"{SITE}/{src}/{f}.webp").convert('RGB') for f in ["hero","1","2","3","4","5","6","7","8"]]
     L=lines(txt); sw=260 if len(L)==1 else 420; edge=int(MW*.08); g=16
     colw=(MW//2-edge-sw//2-g*2)//2; th=(MH-3*g)//2
@@ -28,7 +28,16 @@ def wrap(src,txt):
         x0=(i2.width-colw)//2;y0=(i2.height-th)//2; mug.paste(i2.crop((x0,y0,x0+colw,y0+th)),(x,y))
     for k,im in enumerate(left): r,c=divmod(k,2); put(im,edge+c*(colw+g),g+r*(th+g))
     x2=MW-edge-2*colw-g
-    for k,im in enumerate(right): r,c=divmod(k,2); put(im,x2+c*(colw+g),g+r*(th+g))
+    if not feature:
+        for k,im in enumerate(right): r,c=divmod(k,2); put(im,x2+c*(colw+g),g+r*(th+g))
+    else:
+        # three small photos stacked, one tall feature photo (the last) on the right
+        RW=2*colw+g; sw1=int(RW*.38); fw=RW-sw1-g; sh1=(MH-4*g)//3
+        def putbox(im,x,y,w,h,fx=.5,fy=.5):
+            sc=max(w/im.width,h/im.height); i2=im.resize((int(im.width*sc)+1,int(im.height*sc)+1),Image.LANCZOS)
+            x0=int((i2.width-w)*fx);y0=int((i2.height-h)*fy); mug.paste(i2.crop((x0,y0,x0+w,y0+h)),(x,y))
+        for k in range(3): putbox(right[k],x2,g+k*(sh1+g),sw1,sh1)
+        putbox(right[3],x2+sw1+g,g,fw,MH-2*g,.7,.5)
     sz=200; 
     while True:
         f=font(sz); lay=Image.new('RGBA',(MH,sw),(255,255,255,0)); ld=ImageDraw.Draw(lay)
