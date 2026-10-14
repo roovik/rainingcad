@@ -109,11 +109,28 @@ h2 .p{color:var(--pink-deep)}
 .res h3{font:800 34px/1.05 Spectral,serif;margin:0 0 10px;color:var(--pink)}
 .res p{margin:0 0 12px}
 .res a{color:var(--pink)}
+.mres{display:none;margin-top:26px}
+.mres.on{display:block}
+.pct{font:800 clamp(72px,16vw,150px)/1 Spectral,serif;color:var(--pink-deep);margin:0}
+.bar{height:22px;background:var(--black);border:3px solid var(--black);margin:6px 0 22px;box-shadow:8px 8px 0 var(--pink)}
+.bar i{display:block;height:100%;width:0;background:var(--pink);transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.tier{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:26px;align-items:center;background:var(--black);color:#fff;padding:28px;margin-top:8px}
+@media(max-width:640px){.tier{grid-template-columns:1fr}}
+.tier img{width:100%;height:auto;display:block}
+.tier h3{font:800 34px/1.05 Spectral,serif;margin:0 0 10px;color:var(--pink)}
+.tier p{margin:0 0 12px}
+.tier a{color:var(--pink)}
+.twist{border-left:5px solid var(--pink);padding:6px 0 6px 18px;margin:26px 0;font:italic 600 21px/1.35 Spectral,serif}
+details.rv{margin:18px 0;border:2px solid var(--black);background:#fff;padding:12px 16px}
+details.rv summary{cursor:pointer;font:800 12px Hanken,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+details.rv ol{margin:12px 0 0;padding-left:20px}
+details.rv li{margin:0 0 10px;font-size:17px}
+.sharebtn{margin-top:6px;cursor:pointer;background:var(--pink);border-color:var(--pink);color:var(--black)}
 """
 
 def esc(s): return E(s, quote=True)
 
-NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/#secrets', 'The Secrets', 0), ('/which-bitch/', 'Which Bitch?', 0), ('/#inside', 'Look Inside', 0)]
+NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/#secrets', 'The Secrets', 0), ('/which-bitch/', 'Which Bitch?', 0), ('/bitch-o-meter/', 'Bitch-O-Meter', 0), ('/#inside', 'Look Inside', 0)]
 
 def nav(cur=''):
     links = ''.join(f'<a class="l{" b" if b else ""}{" on" if h==cur else ""}" href="{h}">{t}</a>' for h, t, b in NAV_ITEMS)
@@ -206,7 +223,7 @@ def home():
          + f'<section class="sec" id="secrets" style="padding-top:0"><div class="wrap"><h2>Sixteen breeds. <span class="p">One uncomfortable mirror.</span></h2>'
          + f'<p class="lede">Every chapter is a she-dog, a lesson and a portrait. Pick one and see how long you last.</p><div class="grid">{cards}</div></div></section>'
          + f'<section class="rules"><div class="wrap"><h2>The house rules of the <span class="p">well-bred bitch.</span></h2><div class="rl">{rl}</div></div></section>'
-         + '<section class="quizband"><div class="wrap"><h2>Which bitch <span class="p">are you?</span></h2><p class="lede">Five questions. No wrong answers. Several uncomfortable ones.</p><a class="btn dark" href="/which-bitch/">Take the quiz</a></div></section>'
+         + '<section class="quizband"><div class="wrap"><h2>Which bitch <span class="p">are you?</span></h2><p class="lede">Five questions. No wrong answers. Several uncomfortable ones. Then find out how much of a bitch you really are.</p><div class="btns" style="justify-content:center"><a class="btn dark" href="/which-bitch/">Which breed?</a><a class="btn dark" href="/bitch-o-meter/">Bitch-O-Meter</a></div></div></section>'
          + f'<section class="sec" id="inside"><div class="wrap"><h2>Look <span class="p">inside.</span></h2><p class="lede">Short sentences. Long pauses. Every chapter opens with a full page portrait.</p><div class="look">{look}</div></div></section>'
          + f'<section class="sec" style="padding-top:0"><div class="wrap"><h2>Buy it for <span class="p">her.</span></h2><ul class="gifts">{gl}</ul></div></section>'
          + '<section class="sec" id="get" style="padding-top:0"><div class="wrap"><div class="getbox"><b>Get Every Bitch Has Her Way</b>Paperback, 6 x 9 in, full color, 114 pages. Also on Kindle.'
@@ -245,7 +262,7 @@ def quiz():
           "for(let i=0;i<5;i++){const v=f.querySelector('input[name=q'+i+']:checked');if(v){c[+v.value]++;n++}}"
           "if(n<5){msg.textContent='Answer all five. She does not leave things unfinished.';return}msg.textContent='';"
           "let b=0;for(let i=1;i<6;i++){if(c[i]>c[b])b=i}const r=R[b];"
-          "out.innerHTML='<img src=\"'+r.img+'\" alt=\"\"><div><p class=\"kick\">You are</p><h3>'+r.name+'</h3><p>'+r.text+'</p><p><a href=\"/secrets/'+r.slug+'/\">Read her chapter</a></p></div>';"
+          "out.innerHTML='<img src=\"'+r.img+'\" alt=\"\"><div><p class=\"kick\">You are</p><h3>'+r.name+'</h3><p>'+r.text+'</p><p><a href=\"/secrets/'+r.slug+'/\">Read her chapter</a> &middot; <a href=\"/bitch-o-meter/\">How much of a bitch are you?</a></p></div>';"
           "out.classList.add('on');out.scrollIntoView({behavior:'smooth',block:'center'})});")
     h = (head('Which Bitch Are You? Every Bitch Has Her Way', 'Five questions. Six she-dogs. Find out which bitch you are.', '/which-bitch/')
          + nav('/which-bitch/')
@@ -256,6 +273,107 @@ def quiz():
          + '<div class="getbox" style="margin-top:50px"><b>Want the full pack?</b>Sixteen breeds, seventeen portraits, one uncomfortable mirror.' + buttons() + '</div></div>'
          + FOOT + f'<script>{js}</script></body></html>')
     write('/which-bitch/', h)
+
+METER = [
+ ("Someone cuts in line at the coffee shop. You", [
+   ("Tap their shoulder and announce it to the whole cafe.",1),
+   ("Say \"no worries!\" and replay it in your head for six hours.",0),
+   ("Smile, let them go, and quietly note which barista likes you better.",2),
+   ("Order second, tip better, and let them wonder why they feel small.",3)]),
+ ("Your friend is forty minutes late and texts \"omw!!\" You", [
+   ("Send a screenshot of the clock and three knife emojis.",1),
+   ("Apologize for being early.",0),
+   ("Reply \"no rush!!\" and start a group chat without her.",2),
+   ("Order the appetizer, eat it slowly, and greet her like it's seven o'clock.",3)]),
+ ("A coworker presents your idea as their own. You", [
+   ("Slam the door so hard it echoes in HR.",1),
+   ("Tell your cat all about it later.",0),
+   ("Compliment them warmly, then forward the original email to the whole team \"for context.\"",2),
+   ("Say \"Glad you like it. Here are the next three steps,\" and hand out the steps.",3)]),
+ ("At a dinner party someone says, \"You should really be nicer.\" You", [
+   ("Deliver a seven minute speech with slides.",1),
+   ("Cry in the bathroom for forty minutes, then apologize to the hostess.",0),
+   ("Agree loudly, then be nicer to everyone except them for the rest of the night.",2),
+   ("Say \"Noted,\" and keep eating.",3)]),
+ ("Your ex texts \"hey stranger\" at one in the morning. You", [
+   ("Write four paragraphs, delete them, write them again.",1),
+   ("Reply \"Missed you too!\"",0),
+   ("Reply in four seconds: \"Who is this?\" You saved the number as DO NOT.",2),
+   ("Leave it unread until Thursday, then send \"Just saw this. Hope you're well.\"",3)]),
+ ("The waiter brings the wrong dish. You", [
+   ("Send it back with a note about your disappointment and his tip.",1),
+   ("Eat it. It's fine. It's probably fine.",0),
+   ("Photograph it for a review before he leaves the table.",2),
+   ("Say \"I ordered the other one,\" pleasantly, once, and wait.",3)]),
+ ("Someone invites you to a \"quick call\" that could have been an email. You", [
+   ("Reply all with a six paragraph critique of calendars.",1),
+   ("Say yes, join early, and bring snacks.",0),
+   ("Accept, mute yourself, and fold laundry.",2),
+   ("Say \"Happy to, send an agenda.\" No agenda arrives. You never join.",3)]),
+ ("Your sister asks to borrow your favorite jacket. You", [
+   ("Say \"Absolutely not,\" and count the buttons.",1),
+   ("Say \"Of course! Keep it forever!\"",0),
+   ("Say yes, then wear it to her birthday dinner.",2),
+   ("Say \"Sure,\" and attach the dry cleaning receipt.",3)]),
+ ("A stranger on the train tells you to smile. You", [
+   ("Shout \"Make me!\" and turn the whole car's head.",1),
+   ("Smile. Hate yourself.",0),
+   ("Smile at him until he gets nervous and changes seats.",2),
+   ("Say \"Wow,\" return to your book, and turn the page. Slowly.",3)]),
+ ("It's your birthday and nobody planned anything. You", [
+   ("Wait by the phone, eat cake alone, and post a sad story.",1),
+   ("Say \"it's fine!\" fourteen times.",0),
+   ("Cancel everyone else's plans out of principle.",2),
+   ("Plan your own party, invite the right six, and hand out hats.",3)]),
+]
+TIERS = [
+ (0, "The Puppy", 4, "You apologize to furniture and say sorry when someone bumps into you. The world adores you and takes advantage of that. Start with Chapter Four, The Underbitch.", "the-underbitch"),
+ (20, "The Desperate Bitch", 14, "Big feelings, big volume, and one eye on the scoreboard. You care and everybody knows it. The neighbor's boat is still on your mind. Try Chapter Fourteen.", "desperate-bitches"),
+ (40, "The Bitch on the Line", 5, "You hold the line most days. Sometimes you explain it. Nobody needed the explanation. Chapter Five will tighten things up.", "the-bitch-on-the-line"),
+ (60, "Beware of the Bitch", 9, "Calm, clear and slightly terrifying. The velvet rope is yours, and you know exactly who is on the list. Chapter Nine is your mirror.", "beware-of-the-bitch"),
+ (80, "The Alpha Bitch", 15, "You didn't raise your voice. You didn't need to. Nobody voted and nobody objected. Chapter Fifteen was written about you.", "the-alpha-bitch"),
+]
+
+def meter():
+    qs = ''
+    for qi, (q, opts) in enumerate(METER):
+        qs += f'<fieldset class="q" data-q="{qi}"><legend>{qi+1}. {E(q)}</legend><div class="opts"></div></fieldset>'
+    data = json.dumps({"q": [{"q": q, "a": [{"t": t, "s": sc} for t, sc in opts]} for q, opts in METER],
+                       "tiers": [{"min": m, "name": n, "img": f"/img/ch{i:02d}.webp", "text": t, "slug": sl} for m, n, i, t, sl in TIERS]}, ensure_ascii=False)
+    js = ("const D=" + data + ";"
+          "const f=document.getElementById('mz'),msg=document.getElementById('mmsg'),out=document.getElementById('mres');"
+          "function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\"/g,'&quot;')}"
+          "const ans=[];"
+          "f.querySelectorAll('fieldset').forEach(function(fs,qi){const o=D.q[qi].a.map(function(a,k){return {t:a.t,s:a.s}});"
+          "for(let i=o.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const x=o[i];o[i]=o[j];o[j]=x}"
+          "fs.querySelector('.opts').innerHTML=o.map(function(a,k){return '<label><input type=\"radio\" name=\"m'+qi+'\" value=\"'+a.s+'\"><span>'+esc(a.t)+'</span></label>'}).join('')});"
+          "f.addEventListener('submit',function(e){e.preventDefault();let tot=0,n=0;"
+          "for(let i=0;i<D.q.length;i++){const v=f.querySelector('input[name=m'+i+']:checked');if(v){tot+=+v.value;n++}}"
+          "if(n<D.q.length){msg.textContent='Answer all ten. She finishes what she starts.';return}msg.textContent='';"
+          "const pct=Math.round(tot/(D.q.length*3)*100);let t=D.tiers[0];D.tiers.forEach(function(x){if(pct>=x.min)t=x});"
+          "const best=D.q.map(function(q,i){const b=q.a.reduce(function(m,a){return a.s>m.s?a:m},q.a[0]);return '<li>'+esc(b.t)+'</li>'}).join('');"
+          "out.innerHTML='<p class=\"kick\" style=\"color:var(--pink-deep)\">Your Bitch-O-Meter reading</p><p class=\"pct\" id=\"pc\">0%</p><div class=\"bar\"><i id=\"bi\"></i></div>'"
+          "+'<div class=\"tier\"><img src=\"'+t.img+'\" alt=\"\"><div><p class=\"kick\">You are</p><h3>'+esc(t.name)+'</h3><p>'+esc(t.text)+'</p><p><a href=\"/secrets/'+t.slug+'/\">Read her chapter</a></p></div></div>'"
+          "+'<p class=\"twist\">Plot twist: the loudest answers scored lower than the calm ones. In this book, being a bitch is about timing, not volume.</p>'"
+          "+'<details class=\"rv\"><summary>Show me the top answers</summary><ol>'+best+'</ol></details>'"
+          "+'<button class=\"btn sharebtn\" id=\"sh\" type=\"button\">Share my score</button> <a class=\"btn dark\" href=\"/which-bitch/\">Now find your breed</a>';"
+          "out.classList.add('on');out.scrollIntoView({behavior:'smooth',block:'start'});"
+          "requestAnimationFrame(function(){document.getElementById('bi').style.width=pct+'%'});"
+          "let c=0;const el=document.getElementById('pc');const iv=setInterval(function(){c+=Math.max(1,Math.round(pct/30));if(c>=pct){c=pct;clearInterval(iv)}el.textContent=c+'%'},30);"
+          "document.getElementById('sh').addEventListener('click',function(){const text='I scored '+pct+'% on the Bitch-O-Meter: '+t.name+'. How much of a bitch are you?';const url='https://everybitch.com/bitch-o-meter/';"
+          "if(navigator.share){navigator.share({title:'Bitch-O-Meter',text:text,url:url}).catch(function(){})}"
+          "else if(navigator.clipboard){navigator.clipboard.writeText(text+' '+url).then(function(){document.getElementById('sh').textContent='Copied'})}});"
+          "});")
+    h = (head('How Much of a Bitch Are You, Really? Every Bitch Has Her Way', 'Ten questions. Funny answers. The right one is not the one you think. Find your reading on the Bitch-O-Meter.', '/bitch-o-meter/')
+         + nav('/bitch-o-meter/')
+         + '<div class="wrap" style="max-width:760px;padding-top:50px"><p class="kick" style="color:var(--pink-deep)">The Bitch-O-Meter</p>'
+         + '<h1 style="color:var(--black)">How much of a bitch <span class="p">are you, really?</span></h1>'
+         + '<p class="lede">Ten questions. Every answer is funny. Only one is right, and it is probably not the one you want to pick.</p>'
+         + f'<form id="mz" novalidate>{qs}<button class="btn dark" type="submit">Read my meter</button> <span id="mmsg" style="font:700 14px Hanken,sans-serif;color:var(--pink-deep);margin-left:10px"></span></form>'
+         + '<div id="mres" class="mres" aria-live="polite"></div>'
+         + '<div class="getbox" style="margin-top:50px"><b>Meet the real thing.</b>Sixteen breeds, seventeen portraits, one uncomfortable mirror.' + buttons() + '</div></div>'
+         + FOOT + f'<script>{js}</script></body></html>')
+    write('/bitch-o-meter/', h)
 
 def merch():
     strip = ''.join(f'<a class="card" href="/secrets/{CH[i]["slug"]}/"><img loading="lazy" src="/img/t{idx(i)}.webp" width="420" height="560" alt="{esc(CH[i]["title"])} portrait"></a>' for i in (0, 3, 4, 9, 15))
@@ -275,13 +393,13 @@ def misc():
         '<ellipse cx="38" cy="17" rx="6" ry="8"/><ellipse cx="49" cy="27" rx="6" ry="8"/></g></svg>')
     open(os.path.join(ROOT, '_headers'), 'w').write('/img/*\n  Cache-Control: public, max-age=604800\n/fonts/*\n  Cache-Control: public, max-age=31536000, immutable\n')
     open(os.path.join(ROOT, 'robots.txt'), 'w').write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
-    urls = ['/', '/which-bitch/', '/merch/'] + [f'/secrets/{c["slug"]}/' for c in CH]
+    urls = ['/', '/which-bitch/', '/bitch-o-meter/', '/merch/'] + [f'/secrets/{c["slug"]}/' for c in CH]
     open(os.path.join(ROOT, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
         + ''.join(f'<url><loc>{SITE}{u}</loc></url>' for u in urls) + '</urlset>')
     open(os.path.join(ROOT, '404.html'), 'w').write(head('Not found, Every Bitch Has Her Way', 'Page not found.', '/404.html')
         + nav() + '<div class="wrap" style="padding:80px 20px;text-align:center"><h1 style="color:var(--black)">She left.<span class="p">No explanation.</span></h1><p class="lede" style="margin:0 auto 24px">That page is gone. <a href="/" style="color:var(--pink-deep)">Back to the pack.</a></p></div>' + FOOT + '</body></html>')
 
 if __name__ == '__main__':
-    home(); quiz(); merch(); misc()
+    home(); quiz(); meter(); merch(); misc()
     for i in range(len(CH)): chapter_page(i)
     print('built', len(CH), 'chapters')
