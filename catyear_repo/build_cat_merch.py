@@ -6,7 +6,7 @@ import build_mugs_all as BM
 SITE="/home/claude/rainingcad/site"; OUT="merch/printify_cats"; os.makedirs(OUT+"/Mugs_15oz_2475x1275",exist_ok=True)
 T="/usr/share/texmf/fonts/opentype/public/tex-gyre/"
 INK='#2A2A2D'; GOLD='#876217'
-PICK=[(9,"sphynx","Sphynx","SKIN IN THE GAME"),(10,"british-shorthair","BritishShorthair","TEDDY BEAR IN TWEED"),(11,"american-shorthair","AmericanShorthair","ALL-AMERICAN KITTY")]
+PICK=[(2,"chartreux","Chartreux","STRONG, SILENT TYPE"),(3,"turkish-angora","TurkishAngora","ROYAL FLUFF"),(4,"burmese","Burmese","BRICK WRAPPED IN SILK")]
 def tf(b,s): return ImageFont.truetype(T+("texgyrepagella-bold.otf" if b else "texgyrepagella-italic.otf"),s)
 def tee_front(n,breed,txt,out):
     S=f"{SITE}/CY2027/{n}/"; tiles=[Image.open(S+f).convert('RGB') for f in ["hero.webp"]+[f"{i}.webp" for i in range(1,9)]]
