@@ -1,7 +1,7 @@
 # Chapter data for everybitch.com. Excerpts are verbatim from the book and are verified by build.py.
 CH = [
  dict(n="Introduction", slug="meet-the-bitch", title="Meet the Bitch",
-  cap=["Sixteen breeds.","One uncomfortable mirror.","She starts here."],
+  cap=["Sixteen breeds.","Same bitch.","She starts here."],
   teaser="A poodle arrives ten minutes late and the whole block adjusts. That is the entire book in one cafe.",
   ex=["A bitch knows what she wants. Not always.","A Border Collie does not apologize for herding.","No matter which breed, the bitch does as she pleases."]),
  dict(n="One", slug="scent-of-a-bitch", title="Scent of a Bitch",

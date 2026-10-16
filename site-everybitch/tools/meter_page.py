@@ -208,7 +208,7 @@ def build(write, head, nav, FOOT, buttons):
                 + RULES + '<button class="btn dark start" id="go" type="button">Begin the test</button> '
                 + f'<a class="btn" href="{t["other"]}" style="background:transparent;color:var(--black)">Or take the {t["otherName"]} test</a></div>'
                 + '<div class="stage" id="stage"></div><div class="fin" id="fin" aria-live="polite"></div>'
-                + '<div class="getbox" style="margin-top:60px"><b>Meet the real thing.</b>Sixteen breeds, seventeen portraits, one uncomfortable mirror.' + buttons() + '</div></div>'
+                + '<div class="getbox" style="margin-top:60px"><b>Meet the real thing.</b>Sixteen breeds. Same bitch.' + buttons() + '</div></div>'
                 + FOOT + f'<script>{js}</script></body></html>')
         write(t['path'], body)
     cards = ''
@@ -222,6 +222,6 @@ def build(write, head, nav, FOOT, buttons):
            + '<h1>How much of a bitch <span class="p">are you, really?</span></h1>'
            + '<p class="lede">Two tests. Twenty questions each. Every answer is funny and every pick gets a verdict. Only one answer per question is right, and it is probably not the one you want to pick. Take one or take both.</p></div>' + RULES.replace('Twenty questions, sixty points, one percentage.', 'Sixty points per test.')
            + f'<div class="hubgrid">{cards}</div>'
-           + '<div class="getbox" style="margin-top:20px"><b>Meet the real thing.</b>Sixteen breeds, seventeen portraits, one uncomfortable mirror.' + buttons() + '</div></div>'
+           + '<div class="getbox" style="margin-top:20px"><b>Meet the real thing.</b>Sixteen breeds. Same bitch.' + buttons() + '</div></div>'
            + FOOT + '</body></html>')
     write('/bitch-o-meter/', hub)
