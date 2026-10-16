@@ -48,7 +48,7 @@ h1 .p{color:var(--pink);display:block}
 .btn.off{border-color:rgba(255,255,255,.28);color:#aaa;pointer-events:none}
 .light .btn.off,.sec .btn.off,.getbox .btn.off{border-color:rgba(14,14,16,.4);color:#4a444e}
 .band{background:var(--pink);color:var(--black);padding:46px 0;text-align:center}
-.band p{font:italic 600 clamp(22px,3.6vw,34px)/1.3 Spectral,serif;margin:0 auto;max-width:21em}
+.band p{font:italic 600 clamp(22px,3.6vw,34px)/1.3 Spectral,serif;margin:0 auto;max-width:none}
 .band p b{font-style:normal;font-weight:800}
 h2{font:800 clamp(30px,5vw,46px)/1.05 Spectral,serif;margin:0 0 14px;letter-spacing:-.01em}
 h2 .p{color:var(--pink-deep)}
