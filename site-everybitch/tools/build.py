@@ -316,12 +316,21 @@ def meter():
     meter_page.build(write, head, nav, FOOT, buttons)
 
 def merch():
-    strip = ''.join(f'<a class="card" href="/secrets/{CH[i]["slug"]}/"><img loading="lazy" src="/img/t{idx(i)}.webp" width="420" height="560" alt="{esc(CH[i]["title"])} portrait"></a>' for i in (0, 3, 4, 9, 15))
-    h = (head('Merch, Every Bitch Has Her Way', 'Mugs, tees and totes for the well-bred bitch. Coming soon to Etsy.', '/merch/')
-         + nav('/merch/')
+    items = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'merch_items.json')))
+    cards = ''
+    for s, title, frm in items:
+        pics = ''.join(f'<img loading="lazy" src="/merch/img/{k}-{s}.webp" alt="{esc(title)} {k}" width="400" height="400">' for k in ('tee', 'mug', 'tote'))
+        cards += f'<div class="mc"><div class="mp">{pics}</div><h3>{esc(title)}</h3><p>{esc(frm)}</p></div>'
+    css = ('<style>.mg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;margin-top:26px}'
+           '.mc{background:#16161a;border:0;border-radius:10px;padding:12px}.mp{display:grid;grid-template-columns:1fr 1fr;gap:6px}'
+           '.mp img{width:100%;height:auto;border-radius:6px;display:block}.mp img:first-child{grid-column:1/3}'
+           '.mc h3{color:var(--pink);font:700 italic 22px "Playfair Display",Georgia,serif;margin:12px 0 2px;text-decoration:none}'
+           '.mc p{color:#bbb;font:14px Hanken,sans-serif;margin:0}</style>')
+    h = (head('Merch, Every Bitch Has Her Way', 'Tees, mugs and totes for the well-bred bitch. Coming soon to Etsy.', '/merch/')
+         + nav('/merch/') + css
          + '<div class="wrap" style="padding-top:50px"><p class="kick" style="color:var(--pink-deep)">Merch</p><h1 style="color:var(--black)">For the well-bred <span class="p">bitch.</span></h1>'
-         + '<p class="lede">Mugs, tees and totes, each with a she-dog from the book. Coming soon to Etsy.</p>'
-         + f'<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">{strip}</div>'
+         + '<p class="lede">Eighteen slogans, each as a tee, a mug and a tote. Coming soon to Etsy.</p>'
+         + f'<div class="mg">{cards}</div>'
          + '<div class="getbox" style="margin-top:44px"><b>Not sure which bitch you are?</b>Take the quiz first. The merch will match.<div class="btns"><a class="btn dark" href="/which-bitch/">Take the quiz</a></div></div></div>'
          + FOOT + '</body></html>')
     write('/merch/', h)
