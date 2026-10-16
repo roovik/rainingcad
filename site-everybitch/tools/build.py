@@ -233,7 +233,7 @@ def home():
              ("Luck, in a bitch, is suspicious. Luck, in a bastard, is talent.", "Lucky Bitch"),
              ("Not every tree is worth barking at.", "Bitching Up the Wrong Tree")]
     rl = ''.join(f'<blockquote>{E(q)}<span>{E(s)}</span></blockquote>' for q, s in rules)
-    gifts = ["The Border Collie who cannot stop organizing.",
+    gifts = ["The Border Collie who cannot stop organizing your calendar.",
              "The Chihuahua who runs the boardroom and cannot be seen above the table.",
              "The Afghan Hound who left town with the top down and never said goodbye.",
              "The friend who left the group chat and is thriving.",
@@ -254,8 +254,7 @@ def home():
          + '<p class="s">Secrets of the Well-Bred Bitch. Seventeen original portraits. Deadpan. Warm. Inspiring. By Richard J. Koret.</p>'
          + buttons() + '<div class="btns"><a class="btn main" href="#secrets">Meet the bitches</a><a class="btn" href="/which-bitch/">Which bitch are you?</a></div></div></div></header>'
          + '<section class="band"><div class="wrap"><p>This book is about a certain type of woman.<br>This book is about female dogs.<br><b>Have a problem with that? This book is for you.</b></p></div></section>'
-         + '<section class="sec"><div class="wrap"><h2>The Border Collie who cannot stop <span class="p">organizing.</span></h2>'
-         + '<p class="lede">The Chihuahua who runs the boardroom but cannot be seen above the table. The Afghan Hound who left town with the top down and never said goodbye.</p>'
+         + '<section class="sec"><div class="wrap"><p class="lede">The Border Collie who cannot stop organizing.<br>The Chihuahua who runs the boardroom but cannot be seen above the table. The Afghan Hound who left town with the top down and never said goodbye.</p>'
          + '<p class="lede">Every she-dog carries wisdom most humans spend a lifetime trying to acquire. We tell their secrets, so you can become a better bitch.</p></div></section>'
          + f'<section class="sec" id="secrets" style="padding-top:0"><div class="wrap"><h2>Sixteen breeds. <span class="p">Same bitch.</span></h2>'
          + f'<p class="lede">Every chapter is a she-dog, a lesson and a portrait. Pick one and see how long you last.</p><div class="grid">{cards}</div></div></section>'
