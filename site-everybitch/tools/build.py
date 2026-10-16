@@ -53,7 +53,7 @@ h1 .p{color:var(--pink);display:block}
 h2{font:800 clamp(30px,5vw,46px)/1.05 Spectral,serif;margin:0 0 14px;letter-spacing:-.01em}
 h2 .p{color:var(--pink-deep)}
 .sec{padding:60px 0}
-.lede{font-size:clamp(20px,2.6vw,24px);max-width:36em}
+.lede{font-size:clamp(20px,2.6vw,24px);max-width:none}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:26px 22px;margin:30px 0 0}
 .card{text-decoration:none;display:block}
 .card img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;background:#ddd;box-shadow:6px 6px 0 var(--black);transition:transform .15s,box-shadow .15s}
