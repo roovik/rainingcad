@@ -258,6 +258,7 @@ def home():
          + '<p class="lede">Every she-dog carries wisdom most humans spend a lifetime trying to acquire. We tell their secrets, so you can become a better bitch.</p></div></section>'
          + f'<section class="sec" id="secrets" style="padding-top:0"><div class="wrap"><h2>Sixteen breeds. <span class="p">Same bitch.</span></h2>'
          + f'<p class="lede" style="max-width:none">Every chapter is a she-dog, a lesson and a portrait. Pick one and see how long you last.</p><div class="grid">{cards}</div></div></section>'
+         + home_merch()
          + f'<section class="rules"><div class="wrap"><h2>The house rules of the <span class="p">well-bred bitch.</span></h2><div class="rl">{rl}</div></div></section>'
          + '<section class="quizband"><div class="wrap"><h2>Which bitch <span class="p">are you?</span></h2><p class="lede">Five questions. No wrong answers. Several uncomfortable ones. Then find out how much of a bitch you really are.</p><div class="btns" style="justify-content:center"><a class="btn dark" href="/which-bitch/">Which breed?</a><a class="btn dark" href="/bitch-o-meter/">Bitch-O-Meter</a></div></div></section>'
          + f'<section class="sec" id="inside"><div class="wrap"><h2>Look <span class="p">inside.</span></h2><p class="lede">Short sentences. Long pauses. Every chapter opens with a full page portrait.</p><div class="look">{look}</div></div></section>'
@@ -313,6 +314,19 @@ def quiz():
 def meter():
     import meter_page
     meter_page.build(write, head, nav, FOOT, buttons)
+
+def home_merch():
+    items = {s: (ti, f) for s, ti, f in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'merch_items.json')))}
+    pick = ['alpha-bitch-betas-back-off', 'beware-of-bitch', 'boat-bitch', 'bitches-never-say-sorry', 'whos-the-bitch', 'bitch-well-bred-not-well-behaved']
+    css = ('<style>.hmg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 8px}.hm{display:block;text-decoration:none;background:#16161a;border-radius:8px;padding:6px 6px 12px}'
+           '.hm img{width:100%;height:auto;display:block;border-radius:5px}.hm span{display:block;color:var(--pink);font:700 italic 16px/1.25 "Playfair Display",Georgia,serif;margin:8px 4px 0}'
+           '.hmh{font:800 clamp(22px,3vw,30px)/1.1 Spectral,serif;margin:34px 0 0}'
+           '@media(max-width:520px){.hmg{grid-template-columns:repeat(2,1fr);gap:10px}}</style>')
+    out = css + '<section class="sec" style="padding-top:0"><div class="wrap"><h2>Bitch <span class="p">Merch.</span></h2><p class="lede">Tees, mugs and totes for the well-bred bitch. Coming soon to Etsy.</p>'
+    for kind, label in (('tee', 'Bitch Tees'), ('mug', 'Bitch Mugs'), ('tote', 'Bitch Totes')):
+        cards = ''.join(f'<a class="hm" href="/merch/"><img loading="lazy" src="/merch/img/{kind}-{s}.webp" width="400" height="400" alt="{esc(items[s][0])} {kind}"><span>{esc(items[s][0])}</span></a>' for s in pick)
+        out += f'<h3 class="hmh">{label}</h3><div class="hmg">{cards}</div>'
+    return out + '<p style="margin-top:26px"><a class="btn dark" href="/merch/">See all 18 designs</a></p></div></section>'
 
 def merch():
     items = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'merch_items.json')))
