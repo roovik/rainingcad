@@ -172,7 +172,7 @@ def nav(cur=''):
             f'{links}<a class="l get" href="/#get">Buy</a></div></nav>')
 
 FOOT = ('<div class="foot"><div class="wrap"><b>Every Bitch Has Her Way</b>, Secrets of the Well-Bred Bitch. By Richard J. Koret.<br>'
-        '&copy; 2026 Richard J. Koret. Published by <a href="https://rainingcad.com/">Raining Cats &amp; Dogs Press</a>.<br>'
+        '&copy; 2026 Richard J. Koret. Published by <a href="https://rainingcad.com/">Raining Cats &amp; Dogs</a>.<br>'
         'This book is about female dogs. Any resemblance to people you know is a compliment.</div></div>')
 
 def head(title, desc, path, og='/img/og.jpg', extra=''):
@@ -243,7 +243,7 @@ def home():
     look = ''.join(f'<a href="/img/in{k}.webp"><img loading="lazy" src="/img/in{k}.webp" width="660" height="990" alt="Sample page {k} of Every Bitch Has Her Way"></a>' for k in range(1, 6))
     jsonld = json.dumps({"@context": "https://schema.org", "@type": "Book", "name": "Every Bitch Has Her Way",
                          "alternativeHeadline": "Secrets of the Well-Bred Bitch", "author": {"@type": "Person", "name": "Richard J. Koret"},
-                         "publisher": {"@type": "Organization", "name": "Raining Cats & Dogs Press"}, "inLanguage": "en", "url": SITE + "/"})
+                         "publisher": {"@type": "Organization", "name": "Raining Cats & Dogs"}, "inLanguage": "en", "url": SITE + "/"})
     h = (head('Every Bitch Has Her Way by Richard J. Koret',
               'Secrets of the Well-Bred Bitch. Seventeen portraits of the she-dogs who run the world. Deadpan, warm and inspiring. A gift book for the bitch in your life.',
               '/', extra=f'<script type="application/ld+json">{jsonld}</script>')

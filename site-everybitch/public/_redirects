@@ -1,0 +1,9 @@
+# Old everybitch.com URLs (previous build) to the new site
+/book /secrets/ 301
+/book/ /secrets/ 301
+/book/img/cover.jpg /img/cover.webp 301
+/book/img/cover.webp /img/cover.webp 301
+/book/:slug /secrets/:slug/ 301
+/book/:slug/ /secrets/:slug/ 301
+/quiz /which-bitch/ 301
+/quiz/ /which-bitch/ 301
