@@ -182,7 +182,7 @@ document.addEventListener('keydown',function(e){
 });
 """
 
-def build(write, head, nav, FOOT, buttons):
+def build(write, head, nav, FOOT, buttons, QTABS):
     convert_new_images()
     tests = {
         'home': dict(name='Home', title='The Home Test', data=HOME, path='/bitch-o-meter/home/', other='/bitch-o-meter/work/', otherName='Work', hero='ch06',
@@ -201,7 +201,7 @@ def build(write, head, nav, FOOT, buttons):
         body = (head(f'The {t["name"]} Bitch-O-Meter, Every Bitch Has Her Way', t['blurb'] + ' Find your reading.', t['path'])
                 + nav('/bitch-o-meter/')
                 + '<div class="hud" id="hud"><div class="row"><span id="cnt">1 / 20</span><div class="pg"><i id="pgb"></i></div><span class="rd">Running reading<b id="rdn">0%</b></span></div></div>'
-                + '<div class="mt">'
+                + '<div class="mt">' + QTABS('meter')
                 + f'<div class="intro" id="intro"><p class="kick" style="color:var(--pink-deep)">The Bitch-O-Meter, {t["name"]} edition</p>'
                 + f'<h1>How much of a bitch <span class="p">are you at {t["name"].lower()}?</span></h1>'
                 + f'<p class="lede">{E(t["blurb"])} Four answers each. All of them are funny. Only one is right, and it is probably not the one you want to pick. Every pick gets a verdict.</p>'
@@ -218,7 +218,7 @@ def build(write, head, nav, FOOT, buttons):
     hub = (head('The Bitch-O-Meter: How Much of a Bitch Are You, Really? Every Bitch Has Her Way',
                 'Two tests of twenty questions each. Funny answers, a verdict for every pick, and a reading on the Bitch-O-Meter.', '/bitch-o-meter/')
            + nav('/bitch-o-meter/')
-           + '<div class="mt"><div class="intro"><p class="kick" style="color:var(--pink-deep)">The Bitch-O-Meter</p>'
+           + '<div class="mt">' + QTABS('meter') + '<div class="intro"><p class="kick" style="color:var(--pink-deep)">The Bitch-O-Meter</p>'
            + '<h1>How much of a bitch <span class="p">are you, really?</span></h1>'
            + '<p class="lede">Two tests. Twenty questions each. Every answer is funny and every pick gets a verdict. Only one answer per question is right, and it is probably not the one you want to pick. Take one or take both.</p></div>' + RULES.replace('Twenty questions, sixty points, one percentage.', 'Sixty points per test.')
            + f'<div class="hubgrid">{cards}</div>'

@@ -28,7 +28,7 @@ img{max-width:100%}
 .nav a.l{padding:7px 11px}
 .nav a.l:hover{color:var(--pink)}
 .nav a.l.on,.nav a.l.on:hover{background:var(--pink);color:var(--black);font-weight:800}
-@media(max-width:640px){.nav .brand{flex-basis:100%}.nav .wrap{gap:14px}}
+@media(max-width:900px){.nav .brand{flex-basis:100%}.nav .wrap{gap:2px;justify-content:space-between}.nav a.l{font-size:10px;letter-spacing:.07em;padding:7px 8px}}@media(max-width:420px){.nav .wrap{padding-left:8px;padding-right:8px}.nav a.l{font-size:9px;letter-spacing:.02em;padding:7px 4px}}
 .hero{background:var(--black);color:#fff;padding:54px 0 60px}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:center}
 @media(max-width:760px){.hero .wrap{grid-template-columns:1fr;gap:28px}}
@@ -162,12 +162,17 @@ EXCERPTS = json.load(open(os.path.join(os.path.dirname(__file__), 'excerpts.json
 
 def esc(s): return E(s, quote=True)
 
-NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/#secrets', 'The Secrets', 0), ('/which-bitch/', 'Which Bitch?', 0), ('/bitch-o-meter/', 'Bitch-O-Meter', 0), ('/#inside', 'Look Inside', 0)]
+NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/#secrets', 'The Secrets', 0), ('/which-bitch/', 'Bitch Quiz', 0), ('/#inside', 'Look Inside', 0)]
 
 def nav(cur=''):
+    if cur.startswith('/bitch-o-meter'): cur = '/which-bitch/'
     links = ''.join(f'<a class="l{" b" if b else ""}{" on" if h==cur else ""}" href="{h}">{t}</a>' for h, t, b in NAV_ITEMS)
     return (f'<nav class="nav"><div class="wrap"><a class="brand" href="/">Every <b>Bitch</b> Has Her Way</a>'
             f'{links}</div></nav>')
+
+def QTABS(active):
+    a = lambda k, h, t: (f'<span class="btn dark">{t}</span>' if k == active else f'<a class="btn" href="{h}" style="background:transparent;color:var(--black)">{t}</a>')
+    return '<div class="btns" style="margin:0 0 26px">' + a('quiz', '/which-bitch/', 'Which breed?') + a('meter', '/bitch-o-meter/', 'Bitch-O-Meter') + '</div>'
 
 FOOT = ('<div class="foot"><div class="wrap"><b>Every Bitch Has Her Way</b>, Secrets of the Well-Bred Bitch. By Richard J. Koret.<br>'
         '&copy; 2026 Richard J. Koret. Published by <a href="https://rainingcad.com/">Raining Cats &amp; Dogs</a>.<br>'
@@ -300,7 +305,7 @@ def quiz():
           "out.classList.add('on');out.scrollIntoView({behavior:'smooth',block:'center'})});")
     h = (head('Which Bitch Are You? Every Bitch Has Her Way', 'Five questions. Six she-dogs. Find out which bitch you are.', '/which-bitch/')
          + nav('/which-bitch/')
-         + '<div class="wrap" style="max-width:760px;padding-top:50px"><p class="kick" style="color:var(--pink-deep)">The quiz</p><h1 style="color:var(--black)">Which bitch <span class="p">are you?</span></h1>'
+         + '<div class="wrap" style="max-width:760px;padding-top:50px">' + QTABS('quiz') + '<p class="kick" style="color:var(--pink-deep)">The quiz</p><h1 style="color:var(--black)">Which bitch <span class="p">are you?</span></h1>'
          + '<p class="lede">Five questions. Six breeds. Answer fast. She would.</p>'
          + f'<form id="qz" novalidate>{qs}<button class="btn dark" type="submit">Reveal me</button> <span id="msg" style="font:700 14px Hanken,sans-serif;color:var(--pink-deep);margin-left:10px"></span></form>'
          + '<div id="res" class="res" aria-live="polite"></div>'
@@ -310,7 +315,7 @@ def quiz():
 
 def meter():
     import meter_page
-    meter_page.build(write, head, nav, FOOT, buttons)
+    meter_page.build(write, head, nav, FOOT, buttons, QTABS)
 
 def home_merch():
     items = {s: (ti, f) for s, ti, f in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'merch_items.json')))}
