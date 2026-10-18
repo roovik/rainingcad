@@ -162,7 +162,7 @@ EXCERPTS = json.load(open(os.path.join(os.path.dirname(__file__), 'excerpts.json
 
 def esc(s): return E(s, quote=True)
 
-NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/#secrets', 'The Secrets', 0), ('/which-bitch/', 'Bitch Quiz', 0), ('/#inside', 'Look Inside', 0)]
+NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/#secrets', 'The Secrets', 0), ('/which-bitch/', 'Bitch Quiz', 0)]
 
 def nav(cur=''):
     if cur.startswith('/bitch-o-meter'): cur = '/which-bitch/'
@@ -264,7 +264,6 @@ def home():
          + home_merch()
          + f'<section class="rules"><div class="wrap"><h2>The house rules of the <span class="p">well-bred bitch.</span></h2><div class="rl">{rl}</div></div></section>'
          + '<section class="quizband"><div class="wrap"><h2>Which bitch <span class="p">are you?</span></h2><p class="lede">Five questions. No wrong answers. Several uncomfortable ones. Then find out how much of a bitch you really are.</p><div class="btns" style="justify-content:center"><a class="btn dark" href="/which-bitch/">Which breed?</a><a class="btn dark" href="/bitch-o-meter/">Bitch-O-Meter</a></div></div></section>'
-         + f'<section class="sec" id="inside"><div class="wrap"><h2>Look <span class="p">inside.</span></h2><p class="lede">Short sentences. Long pauses. Every chapter opens with a full page portrait.</p><div class="look">{look}</div></div></section>'
          + f'<section class="sec" style="padding-top:0"><div class="wrap"><h2>Buy it for <span class="p">her.</span></h2><ul class="gifts">{gl}</ul></div></section>'
          + '<script>(function(){var n=document.querySelectorAll(".nav a.l"),m={};n.forEach(function(a){var h=a.getAttribute("href");if(h==="/#secrets"||h==="/#inside")m[h.slice(2)]=a});var home=document.querySelector(".nav a.l[href=\\"/\\"]");function set(a){n.forEach(function(x){if(x.getAttribute("href").charAt(0)==="/"&&(x===home||m.secrets===x||m.inside===x))x.classList.remove("on")});if(a)a.classList.add("on")}var ids=["secrets","inside"].filter(function(i){return document.getElementById(i)});function upd(){var y=window.scrollY+120,cur=home;ids.forEach(function(i){if(document.getElementById(i).offsetTop<=y)cur=m[i]||cur});set(cur)}window.addEventListener("scroll",upd,{passive:true});upd()})();</script>'
          + FOOT + '</body></html>')
