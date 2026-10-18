@@ -162,7 +162,7 @@ EXCERPTS = json.load(open(os.path.join(os.path.dirname(__file__), 'excerpts.json
 
 def esc(s): return E(s, quote=True)
 
-NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/#secrets', 'The Secrets', 0), ('/which-bitch/', 'Bitch Quiz', 0)]
+NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/which-bitch/', 'Bitch Quiz', 0)]
 
 def nav(cur=''):
     if cur.startswith('/bitch-o-meter'): cur = '/which-bitch/'
@@ -214,7 +214,7 @@ def chapter_page(i):
     ex = ''.join((f'<h3>{E(x)}</h3>' if t == 'h' else f'<p>{E(x)}</p>') for t, x in EXCERPTS[i])
     cap = ' '.join(c['cap'])
     body = (head(f'{c["title"]}, Every Bitch Has Her Way', c['teaser'], f'/secrets/{c["slug"]}/', og=f'/img/ch{idx(i)}.webp')
-            + nav('/#secrets')
+            + nav('/')
             + f'<div class="wrap"><div class="ch"><img class="pt" src="/img/ch{idx(i)}.webp" width="900" alt="Illustrated portrait for {esc(c["title"])}">'
             + f'<div><p class="kick">{label}</p><h1>{E(c["title"])}</h1><p class="cap">{E(cap)}</p>'
             + f'<div class="open">{ex}<div class="more">The rest of the chapter is in the book.</div>{cb}</div></div></div>'
