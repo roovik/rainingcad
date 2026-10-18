@@ -162,7 +162,7 @@ EXCERPTS = json.load(open(os.path.join(os.path.dirname(__file__), 'excerpts.json
 
 def esc(s): return E(s, quote=True)
 
-NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/which-bitch/', 'Bitch Quiz', 0)]
+NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/which-bitch/', 'Quiz', 0)]
 
 def nav(cur=''):
     if cur.startswith('/bitch-o-meter'): cur = '/which-bitch/'
