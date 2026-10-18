@@ -25,11 +25,9 @@ img{max-width:100%}
 .nav .brand b{color:var(--pink)}
 .nav a.l{font:500 11px Hanken,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-decoration:none;padding:4px 0}
 .nav a.l.b{font-weight:800}
-.nav a.l:hover,.nav a.l.on{color:var(--pink)}
-.nav a.l.on{font-weight:800}
-.nav a.get{font-weight:800}
-.nav a.get{background:var(--pink);color:var(--black);padding:9px 14px}
-.nav a.get:hover{background:#fff;color:var(--black)}
+.nav a.l{padding:7px 11px}
+.nav a.l:hover{color:var(--pink)}
+.nav a.l.on,.nav a.l.on:hover{background:var(--pink);color:var(--black);font-weight:800}
 @media(max-width:640px){.nav .brand{flex-basis:100%}.nav .wrap{gap:14px}}
 .hero{background:var(--black);color:#fff;padding:54px 0 60px}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:center}
@@ -169,7 +167,7 @@ NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/#secrets', 'The Secre
 def nav(cur=''):
     links = ''.join(f'<a class="l{" b" if b else ""}{" on" if h==cur else ""}" href="{h}">{t}</a>' for h, t, b in NAV_ITEMS)
     return (f'<nav class="nav"><div class="wrap"><a class="brand" href="/">Every <b>Bitch</b> Has Her Way</a>'
-            f'{links}<a class="l get" href="/#get">Buy</a></div></nav>')
+            f'{links}</div></nav>')
 
 FOOT = ('<div class="foot"><div class="wrap"><b>Every Bitch Has Her Way</b>, Secrets of the Well-Bred Bitch. By Richard J. Koret.<br>'
         '&copy; 2026 Richard J. Koret. Published by <a href="https://rainingcad.com/">Raining Cats &amp; Dogs</a>.<br>'
@@ -248,7 +246,7 @@ def home():
               'Secrets of the Well-Bred Bitch. Seventeen portraits of the she-dogs who run the world. Deadpan, warm and inspiring. A gift book for the bitch in your life.',
               '/', extra=f'<script type="application/ld+json">{jsonld}</script>')
          + nav('/')
-         + '<header class="hero"><div class="wrap"><img class="cov" src="/img/cover.webp" width="900" height="1350" alt="Every Bitch Has Her Way cover">'
+         + '<header class="hero" id="get"><div class="wrap"><img class="cov" src="/img/cover.webp" width="900" height="1350" alt="Every Bitch Has Her Way cover">'
          + '<div><p class="kick">A gift book for the bitch in your life</p><h1>Every Bitch<span class="p">Has Her Way</span></h1>'
          + '<p class="tag">What she-dogs know that humans forget.</p>'
          + '<p class="s">Secrets of the Well-Bred Bitch. Seventeen original portraits. Deadpan. Warm. Inspiring. By Richard J. Koret.</p>'
@@ -263,8 +261,7 @@ def home():
          + '<section class="quizband"><div class="wrap"><h2>Which bitch <span class="p">are you?</span></h2><p class="lede">Five questions. No wrong answers. Several uncomfortable ones. Then find out how much of a bitch you really are.</p><div class="btns" style="justify-content:center"><a class="btn dark" href="/which-bitch/">Which breed?</a><a class="btn dark" href="/bitch-o-meter/">Bitch-O-Meter</a></div></div></section>'
          + f'<section class="sec" id="inside"><div class="wrap"><h2>Look <span class="p">inside.</span></h2><p class="lede">Short sentences. Long pauses. Every chapter opens with a full page portrait.</p><div class="look">{look}</div></div></section>'
          + f'<section class="sec" style="padding-top:0"><div class="wrap"><h2>Buy it for <span class="p">her.</span></h2><ul class="gifts">{gl}</ul></div></section>'
-         + '<section class="sec" id="get" style="padding-top:0"><div class="wrap"><div class="getbox"><b>Get Every Bitch Has Her Way</b>Paperback, 6 x 9 in, full color, 114 pages. Also on Kindle.'
-         + buttons() + '</div></div></section>'
+         + '<script>(function(){var n=document.querySelectorAll(".nav a.l"),m={};n.forEach(function(a){var h=a.getAttribute("href");if(h==="/#secrets"||h==="/#inside")m[h.slice(2)]=a});var home=document.querySelector(".nav a.l[href=\\"/\\"]");function set(a){n.forEach(function(x){if(x.getAttribute("href").charAt(0)==="/"&&(x===home||m.secrets===x||m.inside===x))x.classList.remove("on")});if(a)a.classList.add("on")}var ids=["secrets","inside"].filter(function(i){return document.getElementById(i)});function upd(){var y=window.scrollY+120,cur=home;ids.forEach(function(i){if(document.getElementById(i).offsetTop<=y)cur=m[i]||cur});set(cur)}window.addEventListener("scroll",upd,{passive:true});upd()})();</script>'
          + FOOT + '</body></html>')
     write('/', h)
 
