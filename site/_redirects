@@ -1,2 +1,8 @@
 /song /12dogs.mp4 302
 /song/ /12dogs.mp4 302
+/books/every-dog-has-his-day/sample /books/every-dog-has-his-day/look-inside/ 301
+/books/every-dog-has-his-day/sample/ /books/every-dog-has-his-day/look-inside/ 301
+/books/every-dog-has-his-day/sample/* /books/every-dog-has-his-day/look-inside/:splat 301
+/books/the-cats-pajamas/sample /books/the-cats-pajamas/look-inside/ 301
+/books/the-cats-pajamas/sample/ /books/the-cats-pajamas/look-inside/ 301
+/books/the-cats-pajamas/sample/* /books/the-cats-pajamas/look-inside/:splat 301
