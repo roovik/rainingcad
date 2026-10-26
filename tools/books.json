@@ -1,0 +1,6 @@
+[
+ {"id": "dog-breeds", "key": "bk-dog-breeds", "title": "Dog Breeds", "kind": "breeds", "links": [["Paperback on Amazon", "https://www.amazon.com/dp/B0HN2FXQGQ"], ["Kindle on Amazon", "https://www.amazon.com/dp/B0HN2RCQMN/"]]},
+ {"id": "cat-breeds", "key": "bk-cat-breeds", "title": "Cat Breeds", "kind": "breeds", "links": [["Paperback on Amazon", "https://www.amazon.com/dp/B0HN2T53Q7"], ["Kindle on Amazon", "https://www.amazon.com/Cat-Breeds-Ranking-Character-Beloved-ebook/dp/B0HN2CJSC4/"]]},
+ {"id": "every-dog-has-his-day", "key": "bk-every-dog", "title": "Every Dog Has His Day", "kind": "idioms", "links": [["Paperback on Amazon", "https://www.amazon.com/dp/B0HNHLFXX5"], ["Kindle on Amazon", "https://www.amazon.com/dp/B0HNH3BSBP/"]]},
+ {"id": "the-cats-pajamas", "key": "bk-cats-pajamas", "title": "The Cat's Pajamas", "kind": "idioms", "links": [["Paperback on Amazon", "https://www.amazon.com/dp/B0HNJPT6GH"], ["Kindle on Amazon", "https://www.amazon.com/dp/B0HNHFZCRW/"]]}
+]

@@ -18,3 +18,4 @@ catyear_repo/merch/printify_cats/Mugs_15oz_2475x1275/
 # everybitch built pages are committed so the Cloudflare deploy needs no build step
 !site-everybitch/public/**/*.html
 !site-everybitch/public/**/*.png
+.wrangler/

@@ -1,7 +1,11 @@
 {
   "name": "rainingcad",
   "compatibility_date": "2026-10-01",
-  "assets": {
-    "directory": "./site"
-  }
+  "main": "worker.js",
+  // the site is static (./site). The Worker runs first only for book access codes and the gated Read inside chapters.
+  "assets": { "directory": "./site", "binding": "ASSETS", "run_worker_first": ["/api/*", "/inside/*"] },
+  "durable_objects": { "bindings": [{ "name": "CODES", "class_name": "CodesDB" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["CodesDB"] }],
+  // ADMIN_KEY (the password for /admin/) is a secret set in the Cloudflare dashboard, never in this file
+  "keep_vars": true
 }
