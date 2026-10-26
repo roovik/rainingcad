@@ -6,7 +6,7 @@ PUB = os.path.join(H, '..', 'public')
 DST = os.path.join(H, '..', '..', 'site', 'bitch-o-meter')
 if os.path.isdir(DST): shutil.rmtree(DST)
 os.makedirs(os.path.join(DST, 'img', 'q'), exist_ok=True)
-for f in glob.glob(os.path.join(PUB, 'img', 'ch*.webp')) + [os.path.join(PUB, 'img', 'og.jpg')]:
+for f in glob.glob(os.path.join(PUB, 'img', 'ch*.webp')) + [os.path.join(PUB, 'img', 'og.jpg'), os.path.join(PUB, 'img', 'og-certificate.jpg')]:
     shutil.copy(f, os.path.join(DST, 'img'))
 for f in glob.glob(os.path.join(PUB, 'img', 'q', '*.webp')):
     shutil.copy(f, os.path.join(DST, 'img', 'q'))
@@ -22,7 +22,7 @@ def fix(t):
     t = t.replace('<meta charset="utf-8">', '<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">', 1)
     t = t.replace('<link rel="icon" href="/favicon.svg" type="image/svg+xml">', '')
     return t
-for f in ['index.html', 'home/index.html', 'work/index.html']:
+for f in ['index.html', 'home/index.html', 'work/index.html', 'certificate/index.html']:
     t = open(os.path.join(PUB, 'bitch-o-meter', f), encoding='utf-8').read()
     out = os.path.join(DST, f); os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, 'w', encoding='utf-8').write(fix(t))
