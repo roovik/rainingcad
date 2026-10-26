@@ -1,0 +1,621 @@
+{
+ "blurb": "Fifty dogs breeds in five rounds. Name the breed from its photo, its description and where it comes from.",
+ "pass": 70,
+ "rounds": [
+  {
+   "name": "Dogs 50 to 41",
+   "qs": [
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/soft-coated-wheaten-terrier.webp",
+     "o": [
+      "Saint Bernard",
+      "Soft Coated Wheaten Terrier",
+      "Bullmastiff",
+      "Portuguese Water Dog"
+     ],
+     "a": 1,
+     "x": "The Soft Coated Wheaten Terrier, number 50 in the countdown. The Soft Coated Wheaten Terrier was the all-purpose dog of the Irish farm."
+    },
+    {
+     "q": "Which breed is “The patron saint of rescue — a mountain of a dog with a mission to match”?",
+     "o": [
+      "Saint Bernard",
+      "Bichon Frise",
+      "Portuguese Water Dog",
+      "Shetland Sheepdog"
+     ],
+     "a": 0,
+     "x": "The Saint Bernard, number 49 in the countdown. The Saint Bernard is the great rescuer of the Alps."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/bullmastiff.webp",
+     "o": [
+      "Bullmastiff",
+      "Portuguese Water Dog",
+      "Belgian Malinois",
+      "Bichon Frise"
+     ],
+     "a": 0,
+     "x": "The Bullmastiff, number 48 in the countdown. enough to close the distance, big enough to pin a man, and steady enough not to maul him."
+    },
+    {
+     "q": "Where does the Akita come from?",
+     "img": "/quiz/dog-breeds/img/akita.webp",
+     "o": [
+      "Japan",
+      "Mexico",
+      "Scotland",
+      "Cuba"
+     ],
+     "a": 0,
+     "x": "The Akita, number 47 in the countdown. treasure, a powerful, dignified breed protected by law and woven deep into Japanese culture as a symbol of health, strength, and loyalty."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/portuguese-water-dog.webp",
+     "o": [
+      "Portuguese Water Dog",
+      "Soft Coated Wheaten Terrier",
+      "Shetland Sheepdog",
+      "Bullmastiff"
+     ],
+     "a": 0,
+     "x": "The Portuguese Water Dog, number 46 in the countdown. The Portuguese Water Dog earned its living on the Atlantic."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/shetland-sheepdog.webp",
+     "o": [
+      "Shetland Sheepdog",
+      "Portuguese Water Dog",
+      "Rhodesian Ridgeback",
+      "Saint Bernard"
+     ],
+     "a": 0,
+     "x": "The Shetland Sheepdog, number 45 in the countdown. The Shetland Sheepdog was bred to fit a hard, small place."
+    },
+    {
+     "q": "Which breed is “A small white Scot with a large, stubborn opinion of the world”?",
+     "o": [
+      "West Highland White Terrier",
+      "Bichon Frise",
+      "Soft Coated Wheaten Terrier",
+      "Akita"
+     ],
+     "a": 0,
+     "x": "The West Highland White Terrier, number 44 in the countdown. The West Highland White Terrier earned its keep underground in the Scottish Highlands."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/bichon-frise.webp",
+     "o": [
+      "Bichon Frise",
+      "West Highland White Terrier",
+      "Bullmastiff",
+      "Soft Coated Wheaten Terrier"
+     ],
+     "a": 0,
+     "x": "The Bichon Frise, number 43 in the countdown. cheerful currency, bartering the little dogs from port to port."
+    },
+    {
+     "q": "Where does the Belgian Malinois come from?",
+     "img": "/quiz/dog-breeds/img/belgian-malinois.webp",
+     "o": [
+      "England & France, 1800s",
+      "Belgium",
+      "Portugal",
+      "Mediterranean"
+     ],
+     "a": 1,
+     "x": "The Belgian Malinois, number 42 in the countdown. The Belgian Malinois was bred to herd, and it now guards presidents."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/rhodesian-ridgeback.webp",
+     "o": [
+      "Rhodesian Ridgeback",
+      "Akita",
+      "Bullmastiff",
+      "West Highland White Terrier"
+     ],
+     "a": 0,
+     "x": "The Rhodesian Ridgeback, number 41 in the countdown. The Rhodesian Ridgeback was bred in southern Africa to stand up to the biggest game on earth."
+    }
+   ]
+  },
+  {
+   "name": "Dogs 40 to 31",
+   "qs": [
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/newfoundland.webp",
+     "o": [
+      "Mastiff",
+      "Australian Cattle Dog",
+      "Newfoundland",
+      "Brittany"
+     ],
+     "a": 2,
+     "x": "The Newfoundland, number 40 in the countdown. haul nets, pull carts, and above all swim, and the breed obliged with a water-shedding coat, webbed feet, and a build strong enough to tow a grown man to shore."
+    },
+    {
+     "q": "Which breed is “A world-class nose, delivered at a leisurely six inches off the ground. he Basset Hound is a scent hound built close to the work. French breeders wanted a dog whose nose stayed near the trail and whose pace stayed slow enough for hunters to”?",
+     "o": [
+      "Mastiff",
+      "Basset Hound",
+      "Brittany",
+      "Chihuahua"
+     ],
+     "a": 1,
+     "x": "The Basset Hound, number 39 in the countdown. follow on foot, so they bred for short legs and a long, heavy frame."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/collie.webp",
+     "o": [
+      "Australian Cattle Dog",
+      "Basset Hound",
+      "Collie",
+      "Weimaraner"
+     ],
+     "a": 2,
+     "x": "The Collie, number 38 in the countdown. country, valued for intelligence and a gentle, biddable nature rather than for looks, a plain and useful dog of the uplands."
+    },
+    {
+     "q": "Where does the Weimaraner come from?",
+     "img": "/quiz/dog-breeds/img/weimaraner.webp",
+     "o": [
+      "Germany, 1899",
+      "Central Europe",
+      "Cuba",
+      "Germany, 1800s"
+     ],
+     "a": 3,
+     "x": "The Weimaraner, number 37 in the countdown. game like deer and boar, then later turn its talents to birds, and they guarded the breed closely as their private hunting secret."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/maltese.webp",
+     "o": [
+      "Brittany",
+      "English Springer Spaniel",
+      "Collie",
+      "Maltese"
+     ],
+     "a": 3,
+     "x": "The Maltese, number 36 in the countdown. written about by philosophers, and traded as luxuries long before most modern breeds existed."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/australian-cattle-dog.webp",
+     "o": [
+      "Weimaraner",
+      "Brittany",
+      "Chihuahua",
+      "Australian Cattle Dog"
+     ],
+     "a": 3,
+     "x": "The Australian Cattle Dog, number 35 in the countdown. The Australian Cattle Dog was built to move stubborn cattle across an enormous, brutal country."
+    },
+    {
+     "q": "Which breed is “An ancient guardian, vast and gentle — the quietest giant in the house. he Mastiff is one of the oldest and heaviest breeds on earth. Dogs of its type guarded homes and fought in arenas across the ancient world, and the breed took firm root in England,”?",
+     "o": [
+      "Australian Cattle Dog",
+      "Mastiff",
+      "Maltese",
+      "Newfoundland"
+     ],
+     "a": 1,
+     "x": "The Mastiff, number 34 in the countdown. where it watched over estates for centuries."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/english-springer-spaniel.webp",
+     "o": [
+      "Brittany",
+      "Maltese",
+      "Newfoundland",
+      "English Springer Spaniel"
+     ],
+     "a": 3,
+     "x": "The English Springer Spaniel, number 33 in the countdown. The English Springer Spaniel is a working ancestor of half the spaniel family."
+    },
+    {
+     "q": "Where does the Chihuahua come from?",
+     "img": "/quiz/dog-breeds/img/chihuahua.webp",
+     "o": [
+      "Mexico",
+      "United States, 1960s",
+      "United States, 1800s",
+      "Southern Africa"
+     ],
+     "a": 0,
+     "x": "The Chihuahua, number 32 in the countdown. and it is thought to descend from the Techichi, a small companion dog kept by the Toltec and Aztec peoples centuries before."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/brittany.webp",
+     "o": [
+      "Weimaraner",
+      "Maltese",
+      "English Springer Spaniel",
+      "Brittany"
+     ],
+     "a": 3,
+     "x": "The Brittany, number 31 in the countdown. affordable gun dog that could both point game and retrieve it, and they built exactly that in a frame small enough to keep on a modest holding."
+    }
+   ]
+  },
+  {
+   "name": "Dogs 30 to 21",
+   "qs": [
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/pug.webp",
+     "o": [
+      "Miniature American Shepherd",
+      "Pug",
+      "Border Collie",
+      "Havanese"
+     ],
+     "a": 1,
+     "x": "The Pug, number 30 in the countdown. guarded the bloodlines closely."
+    },
+    {
+     "q": "Which breed is “The velcro dog — a rust-gold hunter that cannot bear to leave your side. he Vizsla is one of the oldest pointing breeds, and one of the most devoted. It comes from Hungary, where it hunted alongside the Magyar nobility for centuries as a sleek,”?",
+     "o": [
+      "Cocker Spaniel",
+      "Vizsla",
+      "Boston Terrier",
+      "Border Collie"
+     ],
+     "a": 1,
+     "x": "The Vizsla, number 29 in the countdown. all-purpose gun dog that could point game and retrieve it from land or water."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/miniature-american-shepherd.webp",
+     "o": [
+      "Cocker Spaniel",
+      "Miniature American Shepherd",
+      "Pug",
+      "Havanese"
+     ],
+     "a": 1,
+     "x": "The Miniature American Shepherd, number 28 in the countdown. The Miniature American Shepherd is a stockdog scaled to fit."
+    },
+    {
+     "q": "Where does the Cocker Spaniel come from?",
+     "img": "/quiz/dog-breeds/img/cocker-spaniel.webp",
+     "o": [
+      "England, refined in America",
+      "Japan",
+      "France",
+      "Scotland"
+     ],
+     "a": 0,
+     "x": "The Cocker Spaniel, number 27 in the countdown. The Cocker Spaniel is the smallest of the sporting dogs, and one of the oldest names on the American rolls."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/border-collie.webp",
+     "o": [
+      "Cocker Spaniel",
+      "Border Collie",
+      "Shih Tzu",
+      "Vizsla"
+     ],
+     "a": 1,
+     "x": "The Border Collie, number 26 in the countdown. to herd sheep, and it does so with an uncanny, crouching intensity known simply as the eye, controlling a whole flock by stare and position."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/great-dane.webp",
+     "o": [
+      "Vizsla",
+      "Havanese",
+      "Pug",
+      "Great Dane"
+     ],
+     "a": 3,
+     "x": "The Great Dane, number 25 in the countdown. tremendous size, speed, and courage."
+    },
+    {
+     "q": "Which breed is “Born to run — a wolfish face with a tireless engine behind it”?",
+     "o": [
+      "Miniature American Shepherd",
+      "Siberian Husky",
+      "Havanese",
+      "Boston Terrier"
+     ],
+     "a": 1,
+     "x": "The Siberian Husky, number 24 in the countdown. The Siberian Husky was bred to cover ground."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/havanese.webp",
+     "o": [
+      "Pug",
+      "Shih Tzu",
+      "Havanese",
+      "Vizsla"
+     ],
+     "a": 2,
+     "x": "The Havanese, number 23 in the countdown. settlers, which evolved in the Caribbean heat into a light-coated charmer once known as the Havana Silk Dog."
+    },
+    {
+     "q": "Where does the Boston Terrier come from?",
+     "img": "/quiz/dog-breeds/img/boston-terrier.webp",
+     "o": [
+      "United States, 1870s",
+      "Hungary",
+      "Scotland",
+      "England"
+     ],
+     "a": 0,
+     "x": "The Boston Terrier, number 22 in the countdown. The Boston Terrier is one of the few breeds that can call the United States home."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/shih-tzu.webp",
+     "o": [
+      "Havanese",
+      "Vizsla",
+      "Miniature American Shepherd",
+      "Shih Tzu"
+     ],
+     "a": 3,
+     "x": "The Shih Tzu, number 21 in the countdown. The Shih Tzu never worked a day in its life, and that was the entire point."
+    }
+   ]
+  },
+  {
+   "name": "Dogs 20 to 11",
+   "qs": [
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/bernese-mountain-dog.webp",
+     "o": [
+      "Pomeranian",
+      "Cavalier King Charles Spaniel",
+      "Bernese Mountain Dog",
+      "Doberman Pinscher"
+     ],
+     "a": 2,
+     "x": "The Bernese Mountain Dog, number 20 in the countdown. The Bernese Mountain Dog comes down from the Swiss farms around Bern, where it earned its keep in three jobs at once."
+    },
+    {
+     "q": "Which breed is “A sled dog that shrank to fit your lap — and never lost the attitude. he Pomeranian is an Arctic sled dog in miniature. It descends from the large spitz breeds of the far north, the haulers and herders of the cold, and takes its name from”?",
+     "o": [
+      "Cane Corso",
+      "Bernese Mountain Dog",
+      "Australian Shepherd",
+      "Pomeranian"
+     ],
+     "a": 3,
+     "x": "The Pomeranian, number 19 in the countdown. Pomerania on the Baltic coast, where it was first bred steadily smaller."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/miniature-schnauzer.webp",
+     "o": [
+      "Miniature Schnauzer",
+      "Cavalier King Charles Spaniel",
+      "Bernese Mountain Dog",
+      "Australian Shepherd"
+     ],
+     "a": 0,
+     "x": "The Miniature Schnauzer, number 18 in the countdown. The Miniature Schnauzer was built to keep the barn clear of vermin."
+    },
+    {
+     "q": "Where does the Boxer come from?",
+     "img": "/quiz/dog-breeds/img/boxer.webp",
+     "o": [
+      "Japan",
+      "Ireland",
+      "Switzerland",
+      "Germany"
+     ],
+     "a": 3,
+     "x": "The Boxer, number 17 in the countdown. The Boxer descends from a fearsome ancestor and turned out a comedian."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/doberman-pinscher.webp",
+     "o": [
+      "Pomeranian",
+      "Cane Corso",
+      "Cavalier King Charles Spaniel",
+      "Doberman Pinscher"
+     ],
+     "a": 3,
+     "x": "The Doberman Pinscher, number 16 in the countdown. The Doberman is one of the few breeds traceable to a single inventor."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/pembroke-welsh-corgi.webp",
+     "o": [
+      "Boxer",
+      "Pembroke Welsh Corgi",
+      "Cane Corso",
+      "Bernese Mountain Dog"
+     ],
+     "a": 1,
+     "x": "The Pembroke Welsh Corgi, number 15 in the countdown. The Pembroke Welsh Corgi was bred to move cattle, which it managed by being exactly the wrong shape for the work and exactly the right one."
+    },
+    {
+     "q": "Which breed is “Bred for one job — to be adored, and to adore you back”?",
+     "o": [
+      "Australian Shepherd",
+      "Cavalier King Charles Spaniel",
+      "Yorkshire Terrier",
+      "Pomeranian"
+     ],
+     "a": 1,
+     "x": "The Cavalier King Charles Spaniel, number 14 in the countdown. The Cavalier carries a king's name for good reason."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/australian-shepherd.webp",
+     "o": [
+      "Miniature Schnauzer",
+      "Australian Shepherd",
+      "Yorkshire Terrier",
+      "Pembroke Welsh Corgi"
+     ],
+     "a": 1,
+     "x": "The Australian Shepherd, number 13 in the countdown. The Australian Shepherd is American, and the name is a long-standing misunderstanding."
+    },
+    {
+     "q": "Where does the Yorkshire Terrier come from?",
+     "img": "/quiz/dog-breeds/img/yorkshire-terrier.webp",
+     "o": [
+      "Scotland",
+      "England",
+      "Mexico",
+      "United States, 1870s"
+     ],
+     "a": 1,
+     "x": "The Yorkshire Terrier, number 12 in the countdown. The Yorkshire Terrier began life with dirty paws."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/cane-corso.webp",
+     "o": [
+      "Pomeranian",
+      "Cane Corso",
+      "Bernese Mountain Dog",
+      "Miniature Schnauzer"
+     ],
+     "a": 1,
+     "x": "The Cane Corso, number 11 in the countdown. reaches back to Latin, loosely a guardian or a yard dog, and for centuries the job matched the name."
+    }
+   ]
+  },
+  {
+   "name": "Dogs 10 to 1",
+   "qs": [
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/bulldog.webp",
+     "o": [
+      "French Bulldog",
+      "German Shepherd",
+      "Dachshund",
+      "Bulldog"
+     ],
+     "a": 3,
+     "x": "The Bulldog, number 10 in the countdown. jaw that could grip and hold against a thrashing animal."
+    },
+    {
+     "q": "Which breed is “The all-terrain gun dog — point, retrieve, repeat”?",
+     "o": [
+      "German Shepherd",
+      "Bulldog",
+      "Beagle",
+      "German Shorthaired Pointer"
+     ],
+     "a": 3,
+     "x": "The German Shorthaired Pointer, number 9 in the countdown. The German Shorthaired Pointer is a whole hunting outfit folded into a single dog."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/rottweiler.webp",
+     "o": [
+      "Rottweiler",
+      "Golden Retriever",
+      "Dachshund",
+      "Labrador Retriever"
+     ],
+     "a": 0,
+     "x": "The Rottweiler, number 8 in the countdown. The Rottweiler is older than most countries."
+    },
+    {
+     "q": "Where does the Beagle come from?",
+     "img": "/quiz/dog-breeds/img/beagle.webp",
+     "o": [
+      "Belgium",
+      "England",
+      "Cuba",
+      "Newfoundland & Britain, 1800s"
+     ],
+     "a": 1,
+     "x": "The Beagle, number 7 in the countdown. rabbit and hare."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/poodle.webp",
+     "o": [
+      "Poodle",
+      "German Shepherd",
+      "Golden Retriever",
+      "German Shorthaired Pointer"
+     ],
+     "a": 0,
+     "x": "The Poodle, number 6 in the countdown. The Poodle is German, whatever the accent suggests."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/dachshund.webp",
+     "o": [
+      "Golden Retriever",
+      "Labrador Retriever",
+      "Dachshund",
+      "Bulldog"
+     ],
+     "a": 2,
+     "x": "The Dachshund, number 5 in the countdown. low, with a deep chest for air, a loud voice to carry through the soil, and paws like little shovels."
+    },
+    {
+     "q": "Which breed is “Some dogs notice things. German Shepherds notice everything”?",
+     "o": [
+      "Labrador Retriever",
+      "German Shepherd",
+      "Dachshund",
+      "Bulldog"
+     ],
+     "a": 1,
+     "x": "The German Shepherd, number 4 in the countdown. The German Shepherd is a young breed with an old purpose."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/golden-retriever.webp",
+     "o": [
+      "Golden Retriever",
+      "Beagle",
+      "Dachshund",
+      "German Shorthaired Pointer"
+     ],
+     "a": 0,
+     "x": "The Golden Retriever, number 3 in the countdown. No dog tries harder to be loved."
+    },
+    {
+     "q": "Where does the Labrador Retriever come from?",
+     "img": "/quiz/dog-breeds/img/labrador-retriever.webp",
+     "o": [
+      "United States, 1870s",
+      "Wales",
+      "Newfoundland & Britain, 1800s",
+      "Ireland"
+     ],
+     "a": 2,
+     "x": "The Labrador Retriever, number 2 in the countdown. The Labrador never set foot in Labrador."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/dog-breeds/img/french-bulldog.webp",
+     "o": [
+      "French Bulldog",
+      "Labrador Retriever",
+      "Poodle",
+      "Golden Retriever"
+     ],
+     "a": 0,
+     "x": "The French Bulldog, number 1 in the countdown. The French Bulldog is neither fully French nor much of a bulldog."
+    }
+   ]
+  }
+ ]
+}

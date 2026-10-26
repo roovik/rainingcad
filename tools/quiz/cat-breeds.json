@@ -1,0 +1,621 @@
+{
+ "blurb": "Fifty cats breeds in five rounds. Name the breed from its photo, its description and where it comes from.",
+ "pass": 70,
+ "rounds": [
+  {
+   "name": "Cats 50 to 41",
+   "qs": [
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/snowshoe.webp",
+     "o": [
+      "Lykoi",
+      "Snowshoe",
+      "Toyger",
+      "American Curl"
+     ],
+     "a": 1,
+     "x": "The Snowshoe, number 50 in the countdown. The Snowshoe takes the elegant pointed coat of the Siamese and adds a splash of white in all the right places."
+    },
+    {
+     "q": "Which breed is “The werewolf cat — a patchy, masked roan that looks like it howls at the moon”?",
+     "o": [
+      "Ocicat",
+      "Toyger",
+      "Lykoi",
+      "Japanese Bobtail"
+     ],
+     "a": 2,
+     "x": "The Lykoi, number 49 in the countdown. The Lykoi is the cat that launched a thousand werewolf jokes, and the resemblance is uncanny."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/chausie.webp",
+     "o": [
+      "Toyger",
+      "American Curl",
+      "Ocicat",
+      "Chausie"
+     ],
+     "a": 3,
+     "x": "The Chausie, number 48 in the countdown. The Chausie is one of the most genuinely wild-derived cats a person can own, a tall, long-legged athlete descended from crosses between the domestic cat and the jungle cat, Felis chaus, of Asia and the Middle East."
+    },
+    {
+     "q": "Where does the Ocicat come from?",
+     "img": "/quiz/cat-breeds/img/ocicat.webp",
+     "o": [
+      "Developed from the Abyssinian",
+      "Singapore",
+      "United States",
+      "Russia"
+     ],
+     "a": 2,
+     "x": "The Ocicat, number 47 in the countdown. The Ocicat looks like a small spotted wildcat and behaves like the friendliest cat in the house."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/toyger.webp",
+     "o": [
+      "Pixiebob",
+      "Lykoi",
+      "Toyger",
+      "American Bobtail"
+     ],
+     "a": 2,
+     "x": "The Toyger, number 46 in the countdown. The Toyger is exactly what its name promises, a toy tiger, a housecat deliberately bred to wear the bold vertical stripes of its giant wild cousin."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/pixiebob.webp",
+     "o": [
+      "American Curl",
+      "Japanese Bobtail",
+      "Pixiebob",
+      "Lykoi"
+     ],
+     "a": 2,
+     "x": "The Pixiebob, number 45 in the countdown. The Pixiebob was built to look like a wild bobcat, and it succeeds."
+    },
+    {
+     "q": "Which breed is “A fishing cat from a chain of volcanic islands — stocky, wild, and built to hunt”?",
+     "o": [
+      "Kurilian Bobtail",
+      "Japanese Bobtail",
+      "Ocicat",
+      "Chausie"
+     ],
+     "a": 0,
+     "x": "The Kurilian Bobtail, number 44 in the countdown. The Kurilian Bobtail comes from the Kuril Islands, a remote volcanic chain strung between Russia and Japan, and it carries the look of a cat shaped by hard country."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/japanese-bobtail.webp",
+     "o": [
+      "Snowshoe",
+      "Japanese Bobtail",
+      "Lykoi",
+      "Pixiebob"
+     ],
+     "a": 1,
+     "x": "The Japanese Bobtail, number 43 in the countdown. The Japanese Bobtail is one of the oldest and most culturally loaded cats in the world."
+    },
+    {
+     "q": "Where does the American Bobtail come from?",
+     "img": "/quiz/cat-breeds/img/american-bobtail.webp",
+     "o": [
+      "United States (California)",
+      "England (Devon)",
+      "United States",
+      "Abyssinia (debated)"
+     ],
+     "a": 2,
+     "x": "The American Bobtail, number 42 in the countdown. The American Bobtail looks like it strolled in off a hunting trail."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/american-curl.webp",
+     "o": [
+      "American Curl",
+      "Lykoi",
+      "Toyger",
+      "Chausie"
+     ],
+     "a": 0,
+     "x": "The American Curl, number 41 in the countdown. The American Curl is instantly recognizable, and the giveaway is its ears."
+    }
+   ]
+  },
+  {
+   "name": "Cats 40 to 31",
+   "qs": [
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/donskoy-don-sphynx.webp",
+     "o": [
+      "Donskoy (Don Sphynx)",
+      "Havana Brown",
+      "Balinese",
+      "Ragamuffin"
+     ],
+     "a": 0,
+     "x": "The Donskoy (Don Sphynx), number 40 in the countdown. The Donskoy is a hairless cat with a story that begins in an act of kindness."
+    },
+    {
+     "q": "Which breed is “A naked Siamese in silhouette — a slender, big-eared hairless cat from St. Petersburg”?",
+     "o": [
+      "Peterbald",
+      "Havana Brown",
+      "Donskoy (Don Sphynx)",
+      "Balinese"
+     ],
+     "a": 0,
+     "x": "The Peterbald, number 39 in the countdown. The Peterbald is what you get when a hairless cat is built on the long, fine lines of a Siamese."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/laperm.webp",
+     "o": [
+      "Peterbald",
+      "Selkirk Rex",
+      "LaPerm",
+      "Donskoy (Don Sphynx)"
+     ],
+     "a": 2,
+     "x": "The LaPerm, number 38 in the countdown. The LaPerm wears its name on its back."
+    },
+    {
+     "q": "Where does the Selkirk Rex come from?",
+     "img": "/quiz/cat-breeds/img/selkirk-rex.webp",
+     "o": [
+      "United States",
+      "Thailand",
+      "Russia",
+      "Great Britain"
+     ],
+     "a": 0,
+     "x": "The Selkirk Rex, number 37 in the countdown. The Selkirk Rex looks like a cat knitted out of lambswool."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/balinese.webp",
+     "o": [
+      "Balinese",
+      "Korat",
+      "Donskoy (Don Sphynx)",
+      "Selkirk Rex"
+     ],
+     "a": 0,
+     "x": "The Balinese, number 36 in the countdown. The Balinese is a Siamese with a longer coat, and nothing more exotic than that."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/havana-brown.webp",
+     "o": [
+      "Singapura",
+      "Balinese",
+      "Havana Brown",
+      "LaPerm"
+     ],
+     "a": 2,
+     "x": "The Havana Brown, number 35 in the countdown. The Havana Brown is one of the rarest pedigreed cats, and one of the most striking in a quiet way."
+    },
+    {
+     "q": "Which breed is “The smallest of them all — a saucer-eyed sprite the size of a teacup that never sits still”?",
+     "o": [
+      "LaPerm",
+      "Singapura",
+      "Ragamuffin",
+      "Nebelung"
+     ],
+     "a": 1,
+     "x": "The Singapura, number 34 in the countdown. The Singapura is often called the smallest cat breed, and meeting one is a surprise."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/korat.webp",
+     "o": [
+      "LaPerm",
+      "Peterbald",
+      "Korat",
+      "Selkirk Rex"
+     ],
+     "a": 2,
+     "x": "The Korat, number 33 in the countdown. The Korat is one of the oldest natural cat breeds in the world, and in its native Thailand it has always meant good luck."
+    },
+    {
+     "q": "Where does the Nebelung come from?",
+     "img": "/quiz/cat-breeds/img/nebelung.webp",
+     "o": [
+      "United States and Canada",
+      "Singapore",
+      "United States",
+      "Japan"
+     ],
+     "a": 2,
+     "x": "The Nebelung, number 32 in the countdown. The Nebelung is a quiet, elegant cat in a shimmering blue-grey coat, and its name says exactly what it looks like."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/ragamuffin.webp",
+     "o": [
+      "Ragamuffin",
+      "Korat",
+      "Peterbald",
+      "Selkirk Rex"
+     ],
+     "a": 0,
+     "x": "The Ragamuffin, number 31 in the countdown. The Ragamuffin looks like a stuffed animal that learned to purr."
+    }
+   ]
+  },
+  {
+   "name": "Cats 30 to 21",
+   "qs": [
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/chartreux.webp",
+     "o": [
+      "Tonkinese",
+      "Chartreux",
+      "Egyptian Mau",
+      "Somali"
+     ],
+     "a": 1,
+     "x": "The Chartreux, number 30 in the countdown. The Chartreux is France's own blue cat, old enough to come wrapped in legend."
+    },
+    {
+     "q": "Which breed is “The mink-coated middle child — a playful blend of Siamese and Burmese”?",
+     "o": [
+      "Chartreux",
+      "Manx",
+      "Egyptian Mau",
+      "Tonkinese"
+     ],
+     "a": 3,
+     "x": "The Tonkinese, number 29 in the countdown. The Tonkinese sits squarely between two famous parents."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/bombay.webp",
+     "o": [
+      "Turkish Van",
+      "Cornish Rex",
+      "Bombay",
+      "Chartreux"
+     ],
+     "a": 2,
+     "x": "The Bombay, number 28 in the countdown. The Bombay was made to look like a wild thing and behave like a teddy bear."
+    },
+    {
+     "q": "Where does the Manx come from?",
+     "img": "/quiz/cat-breeds/img/manx.webp",
+     "o": [
+      "Thailand (Siam)",
+      "Canada",
+      "United States",
+      "Isle of Man"
+     ],
+     "a": 3,
+     "x": "The Manx, number 27 in the countdown. The Manx is famous for what it lacks."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/somali.webp",
+     "o": [
+      "Somali",
+      "Savannah",
+      "Manx",
+      "Chartreux"
+     ],
+     "a": 0,
+     "x": "The Somali, number 26 in the countdown. The Somali is the Abyssinian in a flowing coat."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/cornish-rex.webp",
+     "o": [
+      "Turkish Angora",
+      "Cornish Rex",
+      "Chartreux",
+      "Egyptian Mau"
+     ],
+     "a": 1,
+     "x": "The Cornish Rex, number 25 in the countdown. The Cornish Rex began with a barn cat in Cornwall."
+    },
+    {
+     "q": "Which breed is “The only natural spotted cat — a fast, ancient sprinter with worried eyes”?",
+     "o": [
+      "Turkish Angora",
+      "Savannah",
+      "Egyptian Mau",
+      "Bombay"
+     ],
+     "a": 2,
+     "x": "The Egyptian Mau, number 24 in the countdown. The Egyptian Mau looks like it stepped out of a tomb painting, and it may not be far wrong."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/turkish-van.webp",
+     "o": [
+      "Turkish Van",
+      "Savannah",
+      "Tonkinese",
+      "Bombay"
+     ],
+     "a": 0,
+     "x": "The Turkish Van, number 23 in the countdown. The Turkish Van earned a nickname few cats can claim."
+    },
+    {
+     "q": "Where does the Turkish Angora come from?",
+     "img": "/quiz/cat-breeds/img/turkish-angora.webp",
+     "o": [
+      "United Kingdom",
+      "Thailand (Siam)",
+      "United States (Maine)",
+      "Turkey"
+     ],
+     "a": 3,
+     "x": "The Turkish Angora, number 22 in the countdown. The Turkish Angora is one of the oldest known longhaired breeds, named for Ankara, the Turkish city once called Angora."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/savannah.webp",
+     "o": [
+      "Turkish Angora",
+      "Somali",
+      "Bombay",
+      "Savannah"
+     ],
+     "a": 3,
+     "x": "The Savannah, number 21 in the countdown. The Savannah is the closest most people will come to keeping a wild cat."
+    }
+   ]
+  },
+  {
+   "name": "Cats 20 to 11",
+   "qs": [
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/munchkin.webp",
+     "o": [
+      "Birman",
+      "Norwegian Forest Cat",
+      "Bengal",
+      "Munchkin"
+     ],
+     "a": 3,
+     "x": "The Munchkin, number 20 in the countdown. The Munchkin is the cat that started the dwarf-cat trend, and the arguments that came with it."
+    },
+    {
+     "q": "Which breed is “A Persian in Siamese clothing — a flat-faced cloud with sapphire eyes”?",
+     "o": [
+      "Birman",
+      "Himalayan",
+      "Burmese",
+      "Munchkin"
+     ],
+     "a": 1,
+     "x": "The Himalayan, number 19 in the countdown. The Himalayan is a Persian that borrowed the Siamese coat."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/birman.webp",
+     "o": [
+      "Norwegian Forest Cat",
+      "Oriental Shorthair",
+      "Siberian",
+      "Birman"
+     ],
+     "a": 3,
+     "x": "The Birman, number 18 in the countdown. The Birman comes wrapped in legend."
+    },
+    {
+     "q": "Where does the Burmese come from?",
+     "img": "/quiz/cat-breeds/img/burmese.webp",
+     "o": [
+      "France",
+      "Turkey",
+      "Burma and the United States",
+      "Developed from the Abyssinian"
+     ],
+     "a": 2,
+     "x": "The Burmese, number 17 in the countdown. The modern Burmese traces to a single cat."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/siamese.webp",
+     "o": [
+      "Bengal",
+      "Siamese",
+      "Sphynx",
+      "Burmese"
+     ],
+     "a": 1,
+     "x": "The Siamese, number 16 in the countdown. Few cats are as famous as the Siamese."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/oriental-shorthair.webp",
+     "o": [
+      "Oriental Shorthair",
+      "Siberian",
+      "Birman",
+      "Himalayan"
+     ],
+     "a": 0,
+     "x": "The Oriental Shorthair, number 15 in the countdown. The Oriental Shorthair is what you get when you take the Siamese and open it up to every color and pattern under the sun."
+    },
+    {
+     "q": "Which breed is “The living-room leopard — a glittering, athletic cat with a wild coat and a tame heart”?",
+     "o": [
+      "Munchkin",
+      "Birman",
+      "Bengal",
+      "Himalayan"
+     ],
+     "a": 2,
+     "x": "The Bengal, number 14 in the countdown. The Bengal was built to put the look of the jungle in your living room."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/norwegian-forest-cat.webp",
+     "o": [
+      "Birman",
+      "Burmese",
+      "Norwegian Forest Cat",
+      "Siberian"
+     ],
+     "a": 2,
+     "x": "The Norwegian Forest Cat, number 13 in the countdown. The Norwegian Forest Cat, called the Wegie for short, is the stuff of Viking legend."
+    },
+    {
+     "q": "Where does the Siberian come from?",
+     "img": "/quiz/cat-breeds/img/siberian.webp",
+     "o": [
+      "Norway",
+      "Russia",
+      "United States, from Siamese",
+      "United States and Britain"
+     ],
+     "a": 1,
+     "x": "The Siberian, number 12 in the countdown. The Siberian is Russia's native cat and its national treasure, a hardy longhair that survived centuries of brutal winters in the forests and villages of Siberia."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/sphynx.webp",
+     "o": [
+      "Sphynx",
+      "Oriental Shorthair",
+      "Bengal",
+      "Burmese"
+     ],
+     "a": 0,
+     "x": "The Sphynx, number 11 in the countdown. The Sphynx looks engineered in a lab, but it is an accident of nature."
+    }
+   ]
+  },
+  {
+   "name": "Cats 10 to 1",
+   "qs": [
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/russian-blue.webp",
+     "o": [
+      "Ragdoll",
+      "American Shorthair",
+      "Russian Blue",
+      "Devon Rex"
+     ],
+     "a": 2,
+     "x": "The Russian Blue, number 10 in the countdown. The Russian Blue carries an air of mystery, and a likely backstory to match."
+    },
+    {
+     "q": "Which breed is “The owl-eyed charmer — a sweet, folded-ear cat with a famous sit”?",
+     "o": [
+      "Russian Blue",
+      "Exotic Shorthair",
+      "Scottish Fold",
+      "Abyssinian"
+     ],
+     "a": 2,
+     "x": "The Scottish Fold, number 9 in the countdown. The Scottish Fold began with a single barn cat."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/american-shorthair.webp",
+     "o": [
+      "British Shorthair",
+      "Abyssinian",
+      "American Shorthair",
+      "Scottish Fold"
+     ],
+     "a": 2,
+     "x": "The American Shorthair, number 8 in the countdown. The American Shorthair earned its place the hard way."
+    },
+    {
+     "q": "Where does the Abyssinian come from?",
+     "img": "/quiz/cat-breeds/img/abyssinian.webp",
+     "o": [
+      "Thailand",
+      "Abyssinia (debated)",
+      "United States, from Siamese",
+      "United States (Maine)"
+     ],
+     "a": 1,
+     "x": "The Abyssinian, number 7 in the countdown. The Abyssinian looks like it stepped off the wall of an Egyptian tomb, and that resemblance helped build its legend."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/british-shorthair.webp",
+     "o": [
+      "Russian Blue",
+      "Scottish Fold",
+      "Persian",
+      "British Shorthair"
+     ],
+     "a": 3,
+     "x": "The British Shorthair, number 6 in the countdown. The British Shorthair is the founding cat of Britain, descended from the working cats the Romans are said to have carried to the island to guard their grain."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/devon-rex.webp",
+     "o": [
+      "Devon Rex",
+      "Scottish Fold",
+      "Russian Blue",
+      "Ragdoll"
+     ],
+     "a": 0,
+     "x": "The Devon Rex, number 5 in the countdown. The Devon Rex looks like it wandered in from a fairy tale."
+    },
+    {
+     "q": "Which breed is “The Persian in pajamas — all the teddy-bear charm, half the grooming”?",
+     "o": [
+      "Persian",
+      "Scottish Fold",
+      "Abyssinian",
+      "Exotic Shorthair"
+     ],
+     "a": 3,
+     "x": "The Exotic Shorthair, number 4 in the countdown. The Exotic Shorthair is what happens when you give a Persian a wash-and-wear coat."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/persian.webp",
+     "o": [
+      "Maine Coon",
+      "Abyssinian",
+      "Persian",
+      "Ragdoll"
+     ],
+     "a": 2,
+     "x": "The Persian, number 3 in the countdown. The Persian is the cat people picture when they picture a fancy cat."
+    },
+    {
+     "q": "Where does the Ragdoll come from?",
+     "img": "/quiz/cat-breeds/img/ragdoll.webp",
+     "o": [
+      "Isle of Man",
+      "United States and Canada",
+      "Abyssinia (debated)",
+      "United States (California)"
+     ],
+     "a": 3,
+     "x": "The Ragdoll, number 2 in the countdown. The Ragdoll is a modern American breed with an almost mythic origin."
+    },
+    {
+     "q": "Which breed is this?",
+     "img": "/quiz/cat-breeds/img/maine-coon.webp",
+     "o": [
+      "Devon Rex",
+      "Russian Blue",
+      "Ragdoll",
+      "Maine Coon"
+     ],
+     "a": 3,
+     "x": "The Maine Coon, number 1 in the countdown. The Maine Coon is America's own cat, and it did not come from a show ring."
+    }
+   ]
+  }
+ ]
+}

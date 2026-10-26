@@ -1,1 +1,1 @@
-{}
+{"bk-dog-breeds": {"re": "^/inside/dog-breeds/(\\d+)/", "free": [0, 1]}, "bk-cat-breeds": {"re": "^/inside/cat-breeds/(\\d+)/", "free": [0, 1]}, "bk-every-dog": {"re": "^/inside/every-dog-has-his-day/(\\d+)/", "free": [0, 1]}, "bk-cats-pajamas": {"re": "^/inside/the-cats-pajamas/(\\d+)/", "free": [0, 1]}, "bk-every-bitch": {"re": "^/inside/every-bitch-has-her-way/(\\d+)/", "free": [0, 1]}}

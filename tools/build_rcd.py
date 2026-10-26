@@ -75,10 +75,23 @@ for b in BOOKS:
     f = os.path.join(T, 'quiz', b['id'] + '.json')
     if not os.path.exists(f): continue
     Z = json.load(open(f, encoding='utf-8')); P = f'/quiz/{b["id"]}/'
+    _src = os.path.join(T, 'quiz', b['id'], 'img'); _dst = os.path.join(SITE, 'quiz', b['id'], 'img')
+    if os.path.isdir(_src): shutil.rmtree(_dst, ignore_errors=True); shutil.copytree(_src, _dst)
     data = {'page': 'quiz', 'book': b['id'], 'key': b['key'], 'title': b['title'], 'kind': b['kind'], 'cover': f'/books/{b["id"]}/cover.webp', 'cert': Z.get('cert') or b['cert'], 'pass': Z.get('pass', 70),
             'rounds': Z['rounds'], 'links': b['links'], 'inside': f'/inside/{b["id"]}/' if b['key'] in gate else ''}
     write(P, f'The {b["title"]} Quiz | Raining Cats & Dogs', Z['blurb'], '<div id="rc-app" class="rc rc-quiz" aria-live="polite"><p>Loading…</p></div>', data, og=f'/books/{b["id"]}/cover.webp')
     write(P + 'certificate/', f'A {(Z.get("cert") or b["cert"])["title"]} certificate | Raining Cats & Dogs', f'Certified by the {b["title"]} quiz. Take it yourself.', '<div id="rc-app" class="rc" aria-live="polite"><p>Loading…</p></div>',
           dict(data, page='certview'), og=f'/books/{b["id"]}/cover.webp')
 json.dump(gate, open(os.path.join(SITE, 'gate.json'), 'w'))
+# Read inside and quiz buttons on each book's own page (hand-made pages: the line between the markers is replaced on every build)
+for b in BOOKS:
+    f = os.path.join(SITE, 'books', b['id'], 'index.html')
+    if not os.path.exists(f) or b['key'] not in gate: continue
+    h = open(f, encoding='utf-8').read(); h = re.sub(r'<!--rc-in-->.*?<!--/rc-in-->', '', h, flags=re.S)
+    row = (f'<!--rc-in--><div class="btns"><a class="btn" href="/inside/{b["id"]}/">Read inside</a>'
+           + (f'<a class="btn" href="/quiz/{b["id"]}/">Take the quiz</a>' if os.path.exists(os.path.join(T, 'quiz', b['id'] + '.json')) else '') + '</div><!--/rc-in-->')
+    i = h.find('<div class="btns">')
+    if i < 0: continue
+    j = h.find('</div>', i) + 6
+    open(f, 'w', encoding='utf-8').write(h[:j] + row + h[j:])
 print('built: code pages,', len(gate), 'books inside,', sum(os.path.exists(os.path.join(T, 'quiz', b['id'] + '.json')) for b in BOOKS), 'quizzes')

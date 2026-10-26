@@ -19,3 +19,7 @@ catyear_repo/merch/printify_cats/Mugs_15oz_2475x1275/
 !site-everybitch/public/**/*.html
 !site-everybitch/public/**/*.png
 .wrangler/
+
+# page images and quiz pictures are made from the book PDFs (tools/make_inside.py, tools/make_quizzes.py); the built copies in site/ are committed
+tools/inside/*/pages/
+tools/quiz/*/img/

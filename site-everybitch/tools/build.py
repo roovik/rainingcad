@@ -188,7 +188,7 @@ def head(title, desc, path, og='/img/og.jpg', extra=''):
             f'<link rel="icon" href="/favicon.svg" type="image/svg+xml"><style>{CSS}</style>{extra}</head><body>')
 
 def buttons(light=False):
-    return ('<div class="btns"><span class="btn off">Paperback coming soon</span><span class="btn off">Kindle coming soon</span></div>')
+    return ('<div class="btns"><a class="btn main" href="https://rainingcad.com/inside/every-bitch-has-her-way/">Read inside</a><span class="btn off">Paperback coming soon</span><span class="btn off">Kindle coming soon</span></div>')
 
 def write(path, content):
     full = os.path.join(ROOT, path.strip('/'), 'index.html') if not path.endswith('.html') else os.path.join(ROOT, path)
