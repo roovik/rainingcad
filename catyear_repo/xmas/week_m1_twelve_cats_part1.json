@@ -1,0 +1,105 @@
+{
+ "num": -1,
+ "kicker": "Holiday Season, Part One",
+ "url_slug": "holiday1",
+ "breed": "The Twelve Cats of Christmas, Part One",
+ "name_lines": [
+  "The Twelve Cats",
+  "of Christmas"
+ ],
+ "positioning": "Seven days. Twenty-eight cats. One pear tree.",
+ "story": [
+  "Every carol has a list. This one has cats.",
+  "The old song counts twelve days of gifts. Ours counts twelve days of cats, starting today, Sunday, December 20. A Maine Coon sits in the pear tree. Every day after that, a bigger group joins her in the same snowy courtyard.",
+  "Two Munchkins dig. Three Siberians haul. Four Scottish Folds creep. Five Bengal Kittens tumble. Six Egyptian Maus race. Seven Siamese sing. By Saturday the courtyard holds 28 cats.",
+  "The tune is old. It first appeared in print in England in 1780, in a children’s book. The pear tree stayed. The partridge, we decided, was a Maine Coon.",
+  "Keep the cookies up high and the tinsel off the floor. A cat’s idea of a present is the box.",
+  "Turn the page. The Maine Coon is waiting, and she has no plan for getting down."
+ ],
+ "rank_num": "28",
+ "rank_cap": "cats in the courtyard by Saturday",
+ "season_line": "Days 1 to 7 of 12 &middot; Holiday Season",
+ "glance": [
+  [
+   "Dates",
+   "Dec 20 to 26, 2026"
+  ],
+  [
+   "Days of the carol",
+   "1 to 7"
+  ],
+  [
+   "Cats this week",
+   "1, 2, 3, 4, 5, 6, 7"
+  ],
+  [
+   "Setting",
+   "A snowy courtyard"
+  ],
+  [
+   "Song",
+   "The Twelve Days of Christmas"
+  ]
+ ],
+ "fblocks": [
+  [
+   "Origin of the Carol",
+   "The Twelve Days of Christmas appeared in England in 1780. It was a children’s rhyme, not a hymn."
+  ],
+  [
+   "Notable Cats",
+   "Maine Coon, America’s largest native breed. Munchkin, the short-legged runner. Siamese, the one with opinions."
+  ],
+  [
+   "Good to Know",
+   "Lilies, tinsel and ribbon are dangerous for cats. Even a little lily pollen can harm the kidneys. Keep all of it out of reach."
+  ],
+  [
+   "A Cat in a Sweater",
+   "Most cats dislike clothes. If you try, keep it loose and short and never leave it on unwatched."
+  ],
+  [
+   "By the Numbers",
+   "28 cats by Saturday. 78 by New Year’s Eve. 12 days. 1 pear tree."
+  ]
+ ],
+ "days": [
+  [
+   "Sunday",
+   "Observation",
+   "One Maine Coon, one pear tree, and no plan for getting down."
+  ],
+  [
+   "Monday",
+   "Fact",
+   "Munchkins have short legs from a natural gene and run just fine. Two of them dig to the gifts."
+  ],
+  [
+   "Tuesday",
+   "Story",
+   "Siberian cats come from the cold forests of Russia and grow a thick coat for it. Three haul the sled."
+  ],
+  [
+   "Wednesday",
+   "Surprise",
+   "Scottish Fold kittens are born with straight ears. Four creep toward the cookies with them folded flat."
+  ],
+  [
+   "Thursday",
+   "Wisdom",
+   "Five Bengal Kittens pile into the sled. Wisdom is knowing when to just ride."
+  ],
+  [
+   "Friday",
+   "Conversation Piece",
+   "The Egyptian Mau is among the fastest of the domestic cats. On Christmas Day, six of them choose a circle."
+  ],
+  [
+   "Saturday",
+   "Heartwarmer",
+   "Seven Siamese sing at the gate for the sake of it. The yard sings back."
+  ]
+ ],
+ "last_walk": "The snow keeps falling on the courtyard.\nTwenty-eight cats are settling in for the night. The Maine Coon still holds her branch. The Egyptian Maus slept where they stopped. Stay a minute by the lights. Eight Ragdolls are on their way.",
+ "weekhead": "Holiday Season, Part One"
+}
