@@ -91,7 +91,7 @@ for w in weeks:
             prev=f'<a href="/CY2027/{n}/7/">&larr; Previous</a>'; nxt=f'<a href="/CY2027/{n}/">Week {n} &rarr;</a>'
         h=fix_head(hD,title,desc,durl,f"{url}{i}.webp")
         body=(TOPBAR+f'<div class=kick>{kick}</div><img class=big src="/CY2027/{n}/{i}.webp" alt="{attr(B)}">{main}\n'
-          f'<div class="notes" id="notes" data-key="{n}/{i}" data-title="{attr(dt)}"><h2>My notes</h2><textarea rows="7" placeholder="What did your cat do today?" aria-label="My notes"></textarea><p class="saved">Notes are saved on this device only.</p><button type="button" class="dl">Download all my notes</button></div>\n'
+          f'<div class="notes" id="notes" data-key="{n}/{i}" data-title="{attr(dt)}"><h2>My Cat-Eared Notes</h2><textarea rows="7" placeholder="What did your cat do today?" aria-label="My Cat-Eared Notes"></textarea><p class="saved">Notes are saved on this device only.</p><button type="button" class="dl">Download all my notes</button></div>\n'
           f'<div class=nav>{prev}<a href="/CY2027/{n}/">All of week {n}</a>{nxt}</div>\n')
         os.makedirs(f"{wd}/{i}",exist_ok=True)
         open(f"{wd}/{i}/index.html","w",encoding='utf-8').write(h+body+qD+qr(durl)+tD+fix_script(fD))
