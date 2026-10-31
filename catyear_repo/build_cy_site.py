@@ -52,6 +52,11 @@ for w in weeks:
     n=w['num']; wd=f"{OUT}/{n}"; os.makedirs(wd,exist_ok=True)
     d0=start+datetime.timedelta(days=7*(n-1)); d6=d0+datetime.timedelta(days=6)
     src=glob.glob(f"{PNG}/**/w{n:02d}_*",recursive=True)
+    if not src:
+        # no new PNGs for this week: keep any already-built week, just list it on the index
+        if os.path.exists(f"{wd}/hero.webp"):
+            Bk=esc(w['breed']); cards.append(f'<a href="/CY2027/{n}/"><img loading=lazy src="/CY2027/{n}/hero.webp" alt="{attr(w["breed"])}"><small>Week {n}</small><b>{Bk}</b></a>')
+        continue
     def find(k): 
         m=[p for p in src if f"_{k}_" in os.path.basename(p)]; assert len(m)==1,(k,m); return m[0]
     save(Image.open(find('hero')),f"{wd}/hero.webp",(1086,1448))
@@ -99,6 +104,6 @@ for w in weeks:
 # index
 hI,qI,tI,fI=split(tpl_idx)
 h=fix_head(hI,"Cat Year 2027 · Every Day Has Its Cat","Cat Year 2027. A week with a breed, a page for every day, and a last walk.",f"{BASE}/CY2027/",f"{BASE}/CY2027/1/hero.webp")
-body=(TOPBAR+'<div class=kick>2027</div><h1>Cat Year 2027</h1><p class=pos>Every Day Has Its Cat.</p>\n<p>Scan any date in the book and it opens here. Pick a week to meet the breed.</p><p><a href="/CY2027/print/" style="font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase">Print your own journal &rarr;</a></p><div class=grid>'+''.join(cards)+'</div>\n')
+body=(TOPBAR+'<div class=kick>2027</div><h1>Cat Year 2027</h1><p class=pos>Every Day Has Its Cat.</p>\n<p>Scan any date in the book and it opens here. Pick a week to meet the breed. Journal your way: write, tap or talk. Buy the book or the Kindle edition and get online access to all of it.</p><p><a href="/CY2027/print/" style="font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase">Print your own journal &rarr;</a></p><div class=grid>'+''.join(cards)+'</div>\n')
 open(f"{OUT}/index.html","w",encoding='utf-8').write(h+body+qI+qr(f"{BASE}/CY2027/")+tI+fix_script(fI))
 print("built",len(weeks),"weeks")
