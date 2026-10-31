@@ -5,7 +5,7 @@ src=open(f'{SITE}/DY2027/print/index.html',encoding='utf-8').read()
 P='@@RCD@@'
 s=src.replace('Raining Cats &amp; Dogs',P)
 R=[('Dog Year 2027 &middot; Every Day Has Its Dog','Cat Year 2027 &middot; Every Day Has Its Cat'),('Dog Year 2027','Cat Year 2027'),('Dog Year','Cat Year'),
-('Every Day<br>a Dog','Every Day<br>a Cat'),('Every Day a Dog','Every Day a Cat'),('<em>dog journal.</em>','<em>cat journal.</em>'),
+('Every Day<br>a Dog','Every Day<br>Has Its Cat'),('Every Day a Dog','Every Day Has Its Cat'),('<em>dog journal.</em>','<em>cat journal.</em>'),
 ("Your dog's name","Your cat's name"),("your dog's name","your cat's name"),('placeholder="Biscuit"','placeholder="Mochi"'),('your dog do today','your cat do today'),
 ('add your dog','add your cat'),('Add your own dog','Add your own cat'),('your own dog','your own cat'),('every dog online','every cat online'),('My dog year','My cat year'),
 ('my-dog-year','my-cat-year'),('dy27','cy27'),('/DY2027/','/CY2027/'),('Dogs of ','Cats of '),
@@ -19,7 +19,7 @@ R=[('Dog Year 2027 &middot; Every Day Has Its Dog','Cat Year 2027 &middot; Every
 for a,b in R: s=s.replace(a,b)
 s=s.replace(P,'Raining Cats &amp; Dogs')
 s=s.replace('Print Your Own Journal · Cat Year 2027','Print Your Own Journal · Cat Year 2027')
-s=s.replace('Make your own Every Day a Dog journal.','Make your own Every Day a Cat journal.').replace("add your dog's name","add your cat's name").replace("dog's name and your own photos","cat's name and your own photos")
+s=s.replace('Make your own Every Day a Dog journal.','Make your own Every Day Has Its Cat journal.').replace("add your dog's name","add your cat's name").replace("dog's name and your own photos","cat's name and your own photos")
 s=s.replace('The page was','The page was')
 s=s.replace("fetch('/CY2027/print/data.json')","fetch('/CY2027/print/data.json')")
 os.makedirs(f'{SITE}/CY2027/print',exist_ok=True)

@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Print Your Own Journal · Cat Year 2027</title>
-<meta name="description" content="Make your own Every Day a Cat journal. Pick your weeks, add your cat's name and photos, write your notes, then print at home or save as a PDF.">
+<meta name="description" content="Make your own Every Day Has Its Cat journal. Pick your weeks, add your cat's name and photos, write your notes, then print at home or save as a PDF.">
 <link rel="canonical" href="https://rainingcad.com/CY2027/print/">
 <meta property="og:title" content="Print Your Own Journal · Cat Year 2027"><meta property="og:description" content="Pick your weeks, add your cat and your photos, then print at home or save as a PDF.">
 <meta property="og:image" content="https://rainingcad.com/CY2027/1/hero.webp"><meta property="og:type" content="website">
@@ -167,7 +167,7 @@ textarea{resize:vertical;line-height:1.45;min-height:84px}
 
 <section class="hero">
  <div>
-  <div class="kick">Cat Year 2027 &middot; Every Day a Cat</div>
+  <div class="kick">Cat Year 2027 &middot; Every Day Has Its Cat</div>
   <h1>Print your own <em>cat journal.</em></h1>
   <p>Pick the weeks you want, add your cat's name and your own photos, jot your notes, then print at home or save a PDF for your local copy shop. It works the same on your phone and your computer.</p>
   <ol class="steps"><li><b>1</b>Make it yours</li><li><b>2</b>Pick weeks</li><li><b>3</b>Notes</li><li><b>4</b>Photos</li><li><b>5</b>Print</li></ol>
@@ -267,8 +267,8 @@ function ph(n,f){return '/CY2027/'+n+'/'+f+'.webp'}
 function cover(){
  var w=D[(S.cwk||1)-1]||D[0],name=S.dog?esc(S.dog):'',own=S.owner?esc(S.owner):'',cs=S.cstyle;
  var who=name?'The journal of '+name:'My cat year',by=own?'Kept by '+own:'Raining Cats &amp; Dogs';
- if(cs==='photo')return '<section class="page cv"><div class="im"><img src="'+ph(w.n,'hero')+'" alt=""></div><div class="ov"><div class="kk">2027</div><h1>Every Day<br>a Cat</h1><div class="who">'+who+'</div><div class="by">'+by+'</div></div></section>';
- return '<section class="page cv '+cs+'"><div class="top2"><div class="kk">2027</div><h1>Every Day<br>a Cat</h1></div><div class="im"><img src="'+ph(w.n,'hero')+'" alt=""></div><div class="bot"><div class="who">'+who+'</div><div class="by">'+by+'</div></div></section>'}
+ if(cs==='photo')return '<section class="page cv"><div class="im"><img src="'+ph(w.n,'hero')+'" alt=""></div><div class="ov"><div class="kk">2027</div><h1>Every Day<br>Has Its Cat</h1><div class="who">'+who+'</div><div class="by">'+by+'</div></div></section>';
+ return '<section class="page cv '+cs+'"><div class="top2"><div class="kk">2027</div><h1>Every Day<br>Has Its Cat</h1></div><div class="im"><img src="'+ph(w.n,'hero')+'" alt=""></div><div class="bot"><div class="who">'+who+'</div><div class="by">'+by+'</div></div></section>'}
 function ded(){
  return '<section class="page p-ded"><div class="kk">This journal belongs to</div><div class="own'+(S.owner?'':' bl0')+'">'+(S.owner?esc(S.owner):'&nbsp;')+'</div><div class="dg'+(S.dog?'':' bl0')+'">'+(S.dog?'and '+esc(S.dog):'&nbsp;')+'</div><div class="rule"></div>'+(S.ded?'<div class="tx">'+esc(S.ded)+'</div>':'')+'</section>'}
 function hero(w){
@@ -302,7 +302,7 @@ function planner(w){
   '<div class="pl-bot"><div class="pl-box"><h4>To do</h4><div class="todo"></div></div><div class="pl-box"><h4>Appointments and reminders</h4><div class="ln3"></div></div></div></section>'}
 function photoPg(p){
  return '<section class="page p-photo"><div class="kk">'+(S.dog?esc(S.dog)+' &middot; ':'')+'My photo</div><div class="fr"><img src="'+p.data+'" alt=""></div><div class="capt">'+(p.cap?esc(p.cap):'&nbsp;')+'</div></section>'}
-function back(){return '<section class="page p-back"><img class="mk" src="/img/rcd-mark-192.webp" alt=""><h2>Every Day a Cat</h2><p>A new breed every week. Scan the code to find every cat online, at rainingcad.com.</p><div class="qq">'+qr(BASE)+'</div><p class="kk">Raining Cats &amp; Dogs</p></section>'}
+function back(){return '<section class="page p-back"><img class="mk" src="/img/rcd-mark-192.webp" alt=""><h2>Every Day Has Its Cat</h2><p>A new breed every week. Scan the code to find every cat online, at rainingcad.com.</p><div class="qq">'+qr(BASE)+'</div><p class="kk">Raining Cats &amp; Dogs</p></section>'}
 function plan(){
  var ws=D.filter(function(w){return S.weeks.indexOf(w.n)>-1}),pg=[];
  pg.push(cover);pg.push(ded);

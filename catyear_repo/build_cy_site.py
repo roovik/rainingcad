@@ -33,7 +33,7 @@ def fix_head(h,title,desc,canon,og):
     h=re.sub(r'<meta property="og:image" content="[^"]*">',f'<meta property="og:image" content="{og}">',h)
     h=h.replace('<a href="/DY2027/">DY2027</a>','<a href="/DY2027/">DY2027</a><a href="/CY2027/">CY2027</a>')
     return h
-TOPBAR='<div class="wrap"><div class="top"><a class="mk" href="/" aria-label="Raining Cats &amp; Dogs home"><img src="/img/rcd-mark-96.webp" srcset="/img/rcd-mark-96.webp 1x,/img/rcd-mark-192.webp 2x" width="48" height="31" alt="Raining Cats &amp; Dogs"></a><a href="/CY2027/">Cat Year 2027 &middot; Every Day a Cat</a></div>\n'
+TOPBAR='<div class="wrap"><div class="top"><a class="mk" href="/" aria-label="Raining Cats &amp; Dogs home"><img src="/img/rcd-mark-96.webp" srcset="/img/rcd-mark-96.webp 1x,/img/rcd-mark-192.webp 2x" width="48" height="31" alt="Raining Cats &amp; Dogs"></a><a href="/CY2027/">Cat Year 2027 &middot; Every Day Has Its Cat</a></div>\n'
 def fix_script(s):
     s=s.replace("dy27:","cy27:").replace("MY DOG YEAR 2027 NOTES","MY CAT YEAR 2027 NOTES").replace("my-dog-year-notes","my-cat-year-notes")
     s=s.replace("Dog Year 2027 &middot; Every Day Has Its Dog","Cat Year 2027 &middot; Every Day Has Its Cat")
@@ -98,7 +98,7 @@ for w in weeks:
     cards.append(f'<a href="/CY2027/{n}/"><img loading=lazy src="/CY2027/{n}/hero.webp" alt="{attr(B)}"><small>Week {n}</small><b>{B_e}</b></a>')
 # index
 hI,qI,tI,fI=split(tpl_idx)
-h=fix_head(hI,"Cat Year 2027 · Every Day a Cat","Cat Year 2027. A week with a breed, a page for every day, and a last walk.",f"{BASE}/CY2027/",f"{BASE}/CY2027/1/hero.webp")
-body=(TOPBAR+'<div class=kick>2027</div><h1>Cat Year 2027</h1><p class=pos>Every Day a Cat.</p>\n<p>Scan any date in the book and it opens here. Pick a week to meet the breed.</p><p><a href="/CY2027/print/" style="font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase">Print your own journal &rarr;</a></p><div class=grid>'+''.join(cards)+'</div>\n')
+h=fix_head(hI,"Cat Year 2027 · Every Day Has Its Cat","Cat Year 2027. A week with a breed, a page for every day, and a last walk.",f"{BASE}/CY2027/",f"{BASE}/CY2027/1/hero.webp")
+body=(TOPBAR+'<div class=kick>2027</div><h1>Cat Year 2027</h1><p class=pos>Every Day Has Its Cat.</p>\n<p>Scan any date in the book and it opens here. Pick a week to meet the breed.</p><p><a href="/CY2027/print/" style="font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase">Print your own journal &rarr;</a></p><div class=grid>'+''.join(cards)+'</div>\n')
 open(f"{OUT}/index.html","w",encoding='utf-8').write(h+body+qI+qr(f"{BASE}/CY2027/")+tI+fix_script(fI))
 print("built",len(weeks),"weeks")
