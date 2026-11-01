@@ -50,7 +50,7 @@ PARTS={
  'holiday1':dict(json='xmas/week_m1_twelve_cats_part1.json',start=datetime.date(2026,12,20),hero='day07.png',
    slots=['day01.png','day02.png','day03.png','day04.png','day05.png','day06.png','day07.png','lastwalk1.png|day07_alt1.png']),
  'holiday2':dict(json='xmas/week_00_twelve_cats_part2.json',start=datetime.date(2026,12,27),hero='day12.png',
-   slots=['day08.png','day09.png','day10.png','day11.png','day12.png','N3.png','N4.png','N5.png']),
+   slots=['day08.png','day09.png','day10.png','day11.png','day12.png','N3.png','N4.png','N5.png|day12_alt1.png']),
 }
 def pick(spec):
     for f in spec.split('|'):
