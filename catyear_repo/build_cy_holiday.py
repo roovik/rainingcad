@@ -89,12 +89,12 @@ for slug,P in PARTS.items():
     rank=f"<div class=rank><b>{w['rank_num']}</b><span>{esc(w['rank_cap'])} &middot; {esc(w['season_line'])}</span></div>"
     names=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
     thumbs=''.join(f'<a href="/CY2027/{slug}/{i}/"><img loading=lazy src="/CY2027/{slug}/{'ct' if i in closes else 't'}{i}.webp" alt="{attr(B)}, {dn}"><b>{dn}</b><small>{md(d0+datetime.timedelta(days=i-1))}</small></a>' for i,dn in enumerate(names,1))
-    thumbs+=f'<a href="/CY2027/{slug}/8/"><img loading=lazy src="/CY2027/{slug}/t8.webp" alt="Last walk of the holiday week"><b>Last Walk</b><small>Week close</small></a>'
+    if slug=='holiday2': thumbs+=f'<a href="/CY2027/{slug}/8/"><img loading=lazy src="/CY2027/{slug}/t8.webp" alt="Last walk of the holiday week"><b>Last Walk</b><small>Week close</small></a>'
     body=(TOPBAR+f'<div class=kick>{esc(w["kicker"])} &middot; {md(d0)} &ndash; {md(d6)}</div>\n<h1>{B_e}</h1><p class=pos>{esc(curly(w["positioning"]))}</p>\n'
       f'<p><a href="/CY2027/twelve-cats/" style="font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase">See all twelve days in one place &rarr;</a></p>\n<img class=big src="/CY2027/{slug}/hero.webp" alt="{attr(B)}">\n<div class=story style="margin-top:28px">{story}</div>\n'
       f'<div class=facts>{rank}<dl>{facts}</dl>{blks}</div>\n<div class=kick>The week</div><div class=days>{thumbs}</div>\n')
     open(f"{wd}/index.html","w",encoding='utf-8').write(h+body+qW+qr(url)+tW+fix_script(fW))
-    for i in range(1,9):
+    for i in range(1,(8 if slug=='holiday1' else 9)):
         durl=f"{url}{i}/"
         if i<=7:
             day,beat,text=w['days'][i-1]; dd=d0+datetime.timedelta(days=i-1)
@@ -103,8 +103,8 @@ for slug,P in PARTS.items():
             ordn=["first","second","third","fourth","fifth","sixth","seventh","eighth","ninth","tenth","eleventh","twelfth"]
             cap_day=f'</div><div class=kick style="margin-top:2px">The {ordn[nth-1]} day of Christmas' if nth<=12 else ""
             kick=f"{esc(w['kicker'])} &middot; {mdl(dd)}{cap_day}"; main=f'<p class=daytxt>{esc(curly(text))}</p>'; dt=mdl(dd)
-            prev=f'<a href="/CY2027/{slug}/{i-1}/">&larr; Previous</a>' if i>1 else f'<a href="/CY2027/{slug}/">&larr; {esc(w["weekhead"])}</a>'
-            nxt=f'<a href="/CY2027/{slug}/{i+1}/">Next &rarr;</a>'
+            prev=f'<a href="/CY2027/{slug}/{i-1}/">&larr; Previous</a>' if i>1 else (f'<a href="/CY2027/holiday1/7/">&larr; Previous</a>' if slug=='holiday2' else f'<a href="/CY2027/twelve-cats/">&larr; The Twelve Cats of Christmas</a>')
+            nxt=f'<a href="/CY2027/{slug}/{i+1}/">Next &rarr;</a>' if not (slug=='holiday1' and i==7) else '<a href="/CY2027/holiday2/1/">Next &rarr;</a>'
         else:
             lead,rest=w['last_walk'].split("\n",1)
             title=f"Last Walk · {B} · Cat Year 2027"; desc=lead
