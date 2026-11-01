@@ -105,7 +105,7 @@ for w in weeks:
 if os.path.isdir(f"{OUT}/twelve-cats"):
     cards.insert(0,'<a href="/CY2027/twelve-cats/"><img loading=lazy src="/CY2027/twelve-cats/hero.webp" alt="The Twelve Cats of Christmas"><small>Dec 20 &ndash; Jan 2</small><b>The Twelve Cats of Christmas</b></a>')
 if os.path.isdir(f"{OUT}/365"):
-    cards.append('<a href="/CY2027/365/"><img loading=lazy src="/CY2027/365/hero.webp" alt="Burmilla"><small>Day 365 &middot; Dec 19, 2027</small><b>The Extra Day: Burmilla</b></a>')
+    cards.append('<a href="/CY2027/365/"><img loading=lazy src="/CY2027/365/hero.webp" alt="Burmilla"><small>Day 365 &middot; Dec 19, 2027</small><b>Burmilla</b></a>')
 # index
 hI,qI,tI,fI=split(tpl_idx)
 h=fix_head(hI,"Cat Year 2027 · Every Day Has Its Cat","Cat Year 2027. A week with a breed, a page for every day, and a last walk.",f"{BASE}/CY2027/",f"{BASE}/CY2027/1/hero.webp")
