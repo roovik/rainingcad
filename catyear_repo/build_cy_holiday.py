@@ -74,7 +74,9 @@ for slug,P in PARTS.items():
     for i in range(1,8):
         cf=pick(f"close{cl0+i-1:02d}.png")
         if cf and (slug=='holiday1' or i<=5):
-            save(Image.open(cf),f"{wd}/c{i}.webp",(1086,1448)); closes[i]=True
+            im_c=Image.open(cf); save(im_c,f"{wd}/c{i}.webp",(1086,1448)); save(im_c,f"{wd}/ct{i}.webp",(480,640),75); closes[i]=True
+    hc=pick('close07.png' if slug=='holiday1' else 'close12.png')
+    if hc: save(Image.open(hc),f"{wd}/hero.webp",(1086,1448))
     base=pick('day00_base.png')
     if base and closes: save(Image.open(base),f"{wd}/e.webp",(1086,1448))
     B=' '.join(w['name_lines']); B_e=esc(' '.join(w['name_lines'])); title_b=f"{B}, {w['kicker'].split(', ',1)[1]}"
@@ -85,7 +87,7 @@ for slug,P in PARTS.items():
     blks=''.join(f"<div class=blk><h3>{esc(a)}</h3><p>{esc(curly(b))}</p></div>" for a,b in w['fblocks'])
     rank=f"<div class=rank><b>{w['rank_num']}</b><span>{esc(w['rank_cap'])} &middot; {esc(w['season_line'])}</span></div>"
     names=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-    thumbs=''.join(f'<a href="/CY2027/{slug}/{i}/"><img loading=lazy src="/CY2027/{slug}/t{i}.webp" alt="{attr(B)}, {dn}"><b>{dn}</b><small>{md(d0+datetime.timedelta(days=i-1))}</small></a>' for i,dn in enumerate(names,1))
+    thumbs=''.join(f'<a href="/CY2027/{slug}/{i}/"><img loading=lazy src="/CY2027/{slug}/{'ct' if i in closes else 't'}{i}.webp" alt="{attr(B)}, {dn}"><b>{dn}</b><small>{md(d0+datetime.timedelta(days=i-1))}</small></a>' for i,dn in enumerate(names,1))
     thumbs+=f'<a href="/CY2027/{slug}/8/"><img loading=lazy src="/CY2027/{slug}/t8.webp" alt="Last walk of the holiday week"><b>Last Walk</b><small>Week close</small></a>'
     body=(TOPBAR+f'<div class=kick>{esc(w["kicker"])} &middot; {md(d0)} &ndash; {md(d6)}</div>\n<h1>{B_e}</h1><p class=pos>{esc(curly(w["positioning"]))}</p>\n'
       f'<img class=big src="/CY2027/{slug}/hero.webp" alt="{attr(B)}">\n<div class=story style="margin-top:28px">{story}</div>\n'
