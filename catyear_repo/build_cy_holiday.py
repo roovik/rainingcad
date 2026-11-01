@@ -75,6 +75,8 @@ for slug,P in PARTS.items():
         cf=pick(f"close{cl0+i-1:02d}.png")
         if cf and (slug=='holiday1' or i<=5):
             save(Image.open(cf),f"{wd}/c{i}.webp",(1086,1448)); closes[i]=True
+    base=pick('day00_base.png')
+    if base and closes: save(Image.open(base),f"{wd}/e.webp",(1086,1448))
     B=' '.join(w['name_lines']); B_e=esc(' '.join(w['name_lines'])); title_b=f"{B}, {w['kicker'].split(', ',1)[1]}"
     url=f"{BASE}/CY2027/{slug}/"
     h=fix_head(hW,f"{title_b} · Holiday Season · Cat Year 2027",w['positioning'],url,f"{url}hero.webp")
@@ -104,9 +106,15 @@ for slug,P in PARTS.items():
             main=f'<div class=lw><p class=lead>{esc(curly(lead))}</p><p>{esc(curly(rest))}</p></div>'; dt=f"Last Walk, {w['weekhead']}"
             prev=f'<a href="/CY2027/{slug}/7/">&larr; Previous</a>'; nxt=f'<a href="/CY2027/{slug}/">{esc(w["weekhead"])} &rarr;</a>'
         h=fix_head(hD,title,desc,durl,f"{url}{i}.webp")
-        body=(TOPBAR+f'<div class=kick>{kick}</div><img class=big src="/CY2027/{slug}/{i}.webp" alt="{attr(B)}">{main}\n'
-          +(f'<div class=kick style="margin-top:28px">Up close</div><img class=big src="/CY2027/{slug}/c{i}.webp" alt="{attr(B)}, up close" loading=lazy>\n' if i in closes else '')+
-          ''
+        cap=lambda t: f'<div class=kick style="margin-top:24px">{t}</div>'
+        if i in closes:
+            media=(f'<img class=big src="/CY2027/{slug}/e.webp" alt="The empty courtyard, before the cats arrive">'
+                   +cap('Up close')+f'<img class=big src="/CY2027/{slug}/c{i}.webp" alt="{attr(B)}, up close" loading=lazy>'
+                   +cap('The whole courtyard')+f'<img class=big src="/CY2027/{slug}/{i}.webp" alt="{attr(B)}, the whole courtyard" loading=lazy>')
+            media=cap('The courtyard, waiting').replace('margin-top:24px','margin-top:0')+media
+        else:
+            media=f'<img class=big src="/CY2027/{slug}/{i}.webp" alt="{attr(B)}">'
+        body=(TOPBAR+f'<div class=kick>{kick}</div>{media}{main}\n'
           f'<div class="notes" id="notes" data-key="{slug}/{i}" data-title="{attr(dt)}"><h2>My Cat-Eared Notes</h2><textarea rows="7" placeholder="What did your cat do today?" aria-label="My Cat-Eared Notes"></textarea><p class="saved">Notes are saved on this device only.</p><button type="button" class="dl">Download all my notes</button></div>\n'
           f'<div class=nav>{prev}<a href="/CY2027/{slug}/">All of this week</a>{nxt}</div>\n')
         os.makedirs(f"{wd}/{i}",exist_ok=True)
