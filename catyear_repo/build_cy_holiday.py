@@ -90,7 +90,7 @@ for slug,P in PARTS.items():
     thumbs=''.join(f'<a href="/CY2027/{slug}/{i}/"><img loading=lazy src="/CY2027/{slug}/{'ct' if i in closes else 't'}{i}.webp" alt="{attr(B)}, {dn}"><b>{dn}</b><small>{md(d0+datetime.timedelta(days=i-1))}</small></a>' for i,dn in enumerate(names,1))
     thumbs+=f'<a href="/CY2027/{slug}/8/"><img loading=lazy src="/CY2027/{slug}/t8.webp" alt="Last walk of the holiday week"><b>Last Walk</b><small>Week close</small></a>'
     body=(TOPBAR+f'<div class=kick>{esc(w["kicker"])} &middot; {md(d0)} &ndash; {md(d6)}</div>\n<h1>{B_e}</h1><p class=pos>{esc(curly(w["positioning"]))}</p>\n'
-      f'<img class=big src="/CY2027/{slug}/hero.webp" alt="{attr(B)}">\n<div class=story style="margin-top:28px">{story}</div>\n'
+      f'<p><a href="/CY2027/twelve-cats/" style="font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase">See all twelve days in one place &rarr;</a></p>\n<img class=big src="/CY2027/{slug}/hero.webp" alt="{attr(B)}">\n<div class=story style="margin-top:28px">{story}</div>\n'
       f'<div class=facts>{rank}<dl>{facts}</dl>{blks}</div>\n<div class=kick>The week</div><div class=days>{thumbs}</div>\n')
     open(f"{wd}/index.html","w",encoding='utf-8').write(h+body+qW+qr(url)+tW+fix_script(fW))
     for i in range(1,9):
@@ -122,4 +122,33 @@ for slug,P in PARTS.items():
         os.makedirs(f"{wd}/{i}",exist_ok=True)
         open(f"{wd}/{i}/index.html","w",encoding='utf-8').write(h+body+qD+qr(durl)+tD+fix_script(fD))
     built.append(slug)
+
+# ---- one landing page for the whole twelve-day sequence ----
+TWELVE=[("Maine Coon","Maine Coon"),("Siamese","Siamese"),("Manx","Manx"),("Scottish Folds","Scottish Fold"),("Sphynx","Sphynx"),
+        ("Bengals","Bengal"),("Korats","Korat"),("Ragdolls","Ragdoll"),("Persians","Persian"),("Munchkins","Munchkin"),("Devon Rex","Devon Rex"),("Abyssinians","Abyssinian")]
+if all(os.path.isdir(f"{OUT}/{x}") for x in ('holiday1','holiday2')):
+    wd=f"{OUT}/twelve-cats"; os.makedirs(wd,exist_ok=True)
+    hc=pick('close12.png')
+    if hc: save(Image.open(hc),f"{wd}/hero.webp",(1086,1448))
+    url=f"{BASE}/CY2027/twelve-cats/"
+    d0=datetime.date(2026,12,20)
+    title="The Twelve Cats of Christmas"
+    desc="Twelve days. Twelve breeds. Seventy-eight cats. One pear tree."
+    h=fix_head(hW,f"{title} · Holiday Season · Cat Year 2027",desc,url,f"{url}hero.webp")
+    cards=''; tot=0
+    for n,(plural,_b) in enumerate(TWELVE,1):
+        tot+=n
+        dd=d0+datetime.timedelta(days=n-1)
+        part,k=('holiday1',n) if n<=7 else ('holiday2',n-7)
+        label=f"{n} {plural}" if n>1 else plural
+        cards+=f'<a href="/CY2027/{part}/{k}/"><img loading=lazy src="/CY2027/{part}/ct{k}.webp" alt="Day {n}, {attr(label)}"><b>Day {n}, {esc(plural)}</b><small>{md(dd)} &middot; {tot} in all</small></a>'
+    after=''.join(f'<a href="/CY2027/holiday2/{k}/"><img loading=lazy src="/CY2027/holiday2/t{k}.webp" alt="{a}"><b>{a}</b><small>{b}</small></a>' for k,a,b in ((6,"New Year&rsquo;s Day","Fri Jan 1"),(7,"The rescue cat","Sat Jan 2"),(8,"Last Walk","Week close")))
+    body=(TOPBAR+'<div class=kick>Holiday Season &middot; Dec 20 &ndash; Jan 2</div>\n<h1>The Twelve Cats of Christmas</h1><p class=pos>Twelve days. Twelve breeds. Seventy-eight cats. One pear tree.</p>\n'
+      f'<img class=big src="/CY2027/twelve-cats/hero.webp" alt="Twelve Abyssinians in a pyramid">\n'
+      '<div class=story style="margin-top:28px"><p>Every carol has a list. This one has cats. The old song counts twelve days of gifts. Ours counts twelve days of cats in one snowy courtyard, starting on Sunday, December 20. A Maine Coon sits in the pear tree. Every day after that, a bigger group of a new breed joins her, until the courtyard holds all seventy-eight on New Year&rsquo;s Eve.</p><p>The days run in order below. Tap a day for its close-up, its wide view and a place for your notes.</p></div>\n'
+      '<div class=kick>The twelve days</div><div class=days>'+cards+'</div>\n'
+      '<div class=kick>After the twelfth day</div><div class=days>'+after+'</div>\n'
+      '<div class=nav><a href="/CY2027/">&larr; All weeks</a><a href="/CY2027/holiday1/">Part One by week</a><a href="/CY2027/holiday2/">Part Two by week</a></div>\n')
+    open(f"{wd}/index.html","w",encoding='utf-8').write(h+body+qW+qr(url)+tW+fix_script(fW))
+    built.append('twelve-cats')
 print("built",built)

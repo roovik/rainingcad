@@ -101,9 +101,8 @@ for w in weeks:
         os.makedirs(f"{wd}/{i}",exist_ok=True)
         open(f"{wd}/{i}/index.html","w",encoding='utf-8').write(h+body+qD+qr(durl)+tD+fix_script(fD))
     cards.append(f'<a href="/CY2027/{n}/"><img loading=lazy src="/CY2027/{n}/hero.webp" alt="{attr(B)}"><small>Week {n}</small><b>{B_e}</b></a>')
-for _k,_w in ((1,'one'),(2,'two')):
-    if os.path.isdir(f"{OUT}/holiday{_k}"):
-        cards.append(f'<a href="/CY2027/holiday{_k}/"><img loading=lazy src="/CY2027/holiday{_k}/hero.webp" alt="The Twelve Cats of Christmas, part {_w}"><small>Holiday season, part {_w}</small><b>The Twelve Cats of Christmas</b></a>')
+if os.path.isdir(f"{OUT}/twelve-cats"):
+    cards.append('<a href="/CY2027/twelve-cats/"><img loading=lazy src="/CY2027/twelve-cats/hero.webp" alt="The Twelve Cats of Christmas"><small>Holiday season, days 1 to 12</small><b>The Twelve Cats of Christmas</b></a>')
 # index
 hI,qI,tI,fI=split(tpl_idx)
 h=fix_head(hI,"Cat Year 2027 · Every Day Has Its Cat","Cat Year 2027. A week with a breed, a page for every day, and a last walk.",f"{BASE}/CY2027/",f"{BASE}/CY2027/1/hero.webp")
