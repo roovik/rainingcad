@@ -29,3 +29,5 @@ div.top{display:none}
 .pin .mb[aria-expanded=true] i span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 .mpanel:not([hidden]){display:block;position:fixed;left:0;right:0;top:var(--pinh,47px);z-index:59;max-height:calc(100vh - var(--pinh,47px));max-height:calc(100dvh - var(--pinh,47px));overflow-y:auto;background:var(--paper,#F3F2EC);box-shadow:0 10px 24px rgba(0,0,0,.14)}
 }
+
+@media(max-width:360px){.kick{letter-spacing:.1em!important;font-size:11px!important}}

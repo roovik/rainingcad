@@ -101,7 +101,7 @@ for slug,P in PARTS.items():
             title=f"{mdl(dd)} · {B} · Cat Year 2027"; desc=text
             nth=i if slug=='holiday1' else i+7
             ordn=["first","second","third","fourth","fifth","sixth","seventh","eighth","ninth","tenth","eleventh","twelfth"]
-            cap_day=f" &middot; The {ordn[nth-1]} day of Christmas" if nth<=12 else ""
+            cap_day=f'</div><div class=kick style="margin-top:2px">The {ordn[nth-1]} day of Christmas' if nth<=12 else ""
             kick=f"{esc(w['kicker'])} &middot; {mdl(dd)}{cap_day}"; main=f'<p class=daytxt>{esc(curly(text))}</p>'; dt=mdl(dd)
             prev=f'<a href="/CY2027/{slug}/{i-1}/">&larr; Previous</a>' if i>1 else f'<a href="/CY2027/{slug}/">&larr; {esc(w["weekhead"])}</a>'
             nxt=f'<a href="/CY2027/{slug}/{i+1}/">Next &rarr;</a>'
