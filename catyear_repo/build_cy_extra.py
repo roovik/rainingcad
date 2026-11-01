@@ -12,7 +12,7 @@ def qr(url):
     s=q.make_image(image_factory=qrcode.image.svg.SvgPathImage).to_string().decode()
     return re.search(r'<path[^>]*\bd="([^"]+)"',s).group(1)
 t=open(f"{DY}/365/index.html",encoding='utf-8').read()
-TITLE="The Extra Day · Burmilla · Day 365 · Cat Year 2027"
+TITLE="Burmilla · Day 365 · Cat Year 2027"
 DESC="A year has 52 weeks and one day left over. This one goes to the Burmilla."
 t=re.sub(r'<title>.*?</title>',f'<title>{TITLE}</title>',t)
 t=re.sub(r'(<meta name="description" content=")[^"]*"',r'\g<1>'+DESC+'"',t)
