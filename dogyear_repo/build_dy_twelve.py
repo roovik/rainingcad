@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add the one-page Twelve Dogs of Christmas landing page to site/DY2027 and link it. Idempotent. Usage: build_dy_twelve.py SITEDIR"""
+"""Add the one-page Twelve Dogs of Christmas landing page to site/DY2027 and link it. Idempotent. Usage: build_dy_twelve.py SITEDIR [EMPTY_COURTYARD_PNG]"""
 import re,sys,os,datetime
 import qrcode,qrcode.image.svg
 SITE=sys.argv[1]; DY=f"{SITE}/DY2027"; BASE="https://rainingcad.com"; URL=f"{BASE}/DY2027/twelve-dogs/"
@@ -38,7 +38,11 @@ body=top+f'''
 t=t[:i]+body+t[j:]
 t=re.sub(r'(<path d=")[^"]+(" id="qr-path")',lambda m:m.group(1)+qr(URL)+m.group(2),t,count=1)
 out=f"{DY}/twelve-dogs"; os.makedirs(out,exist_ok=True)
-import shutil; shutil.copy(f"{DY}/holiday1/1.webp",f"{out}/hero.webp")
+import shutil
+if len(sys.argv)>2:
+    from PIL import Image
+    Image.open(sys.argv[2]).convert('RGB').resize((1086,1448)).save(f"{out}/hero.webp",'WEBP',quality=80,method=6)
+elif not os.path.exists(f"{out}/hero.webp"): shutil.copy(f"{DY}/holiday1/1.webp",f"{out}/hero.webp")
 shutil.copy(f"{DY}/holiday2/5.webp",f"{out}/full.webp")
 shutil.copy(f"{DY}/holiday2/c5.webp" if os.path.exists(f"{DY}/holiday2/c5.webp") else f"{DY}/holiday2/5.webp",f"{out}/card.webp")
 open(f"{out}/index.html","w",encoding='utf-8').write(t)
