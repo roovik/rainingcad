@@ -103,7 +103,7 @@ for w in weeks:
         open(f"{wd}/{i}/index.html","w",encoding='utf-8').write(h+body+qD+qr(durl)+tD+fix_script(fD))
     cards.append(f'<a href="/CY2027/{n}/"><img loading=lazy src="/CY2027/{n}/hero.webp" alt="{attr(B)}"><small>{md(d0)} &ndash; {md(d6)} &middot; Week {n}</small><b>{B_e}</b></a>')
 if os.path.isdir(f"{OUT}/twelve-cats"):
-    cards.insert(0,'<a href="/CY2027/twelve-cats/"><img loading=lazy src="/CY2027/twelve-cats/hero.webp" alt="The Twelve Cats of Christmas"><small>Dec 20 &ndash; Jan 2</small><b>The Twelve Cats of Christmas</b></a>')
+    cards.insert(0,'<a href="/CY2027/twelve-cats/"><img loading=lazy src="/CY2027/twelve-cats/card.webp" alt="The Twelve Cats of Christmas"><small>Dec 20 &ndash; Jan 2</small><b>The Twelve Cats of Christmas</b></a>')
 if os.path.isdir(f"{OUT}/365"):
     cards.append('<a href="/CY2027/365/"><img loading=lazy src="/CY2027/365/hero.webp" alt="Burmilla"><small>Day 365 &middot; Dec 19, 2027</small><b>Burmilla</b></a>')
 # index

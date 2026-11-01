@@ -114,12 +114,7 @@ for slug,P in PARTS.items():
         h=fix_head(hD,title,desc,durl,f"{url}{i}.webp")
         cap=lambda t: f'<div class=kick style="margin-top:24px">{t}</div>'
         if i in closes:
-            nth_=i if slug=='holiday1' else i+7
-            parts=[]
-            if nth_==1: parts+=[cap('The courtyard, waiting').replace('margin-top:24px','margin-top:0'),f'<img class=big src="/CY2027/{slug}/e.webp" alt="The empty courtyard, before the cats arrive">',cap('Up close')]
-            parts.append(f'<img class=big src="/CY2027/{slug}/c{i}.webp" alt="{attr(B)}, up close">')
-            if nth_==12: parts+=[cap('The whole courtyard'),f'<img class=big src="/CY2027/{slug}/{i}.webp" alt="{attr(B)}, the whole courtyard" loading=lazy>']
-            media=''.join(parts)
+            media=f'<img class=big src="/CY2027/{slug}/c{i}.webp" alt="{attr(B)}">'
         else:
             media=f'<img class=big src="/CY2027/{slug}/{i}.webp" alt="{attr(B)}">'
         body=(TOPBAR+f'<div class=kick>{kick}</div>{media}{main}\n'
@@ -134,13 +129,15 @@ TWELVE=[("Maine Coon","Maine Coon"),("Siamese","Siamese"),("Manx","Manx"),("Scot
         ("Bengals","Bengal"),("Korats","Korat"),("Ragdolls","Ragdoll"),("Persians","Persian"),("Munchkins","Munchkin"),("Devon Rex","Devon Rex"),("Abyssinians","Abyssinian")]
 if all(os.path.isdir(f"{OUT}/{x}") for x in ('holiday1','holiday2')):
     wd=f"{OUT}/twelve-cats"; os.makedirs(wd,exist_ok=True)
-    hc=pick('close12.png')
-    if hc: save(Image.open(hc),f"{wd}/hero.webp",(1086,1448))
+    hc=pick('close12.png'); eb=pick('day00_base.png'); fu=pick('day12.png')
+    if hc: save(Image.open(hc),f"{wd}/card.webp",(1086,1448))
+    if eb: save(Image.open(eb),f"{wd}/hero.webp",(1086,1448))
+    if fu: save(Image.open(fu),f"{wd}/full.webp",(1086,1448))
     url=f"{BASE}/CY2027/twelve-cats/"
     d0=datetime.date(2026,12,20)
     title="The Twelve Cats of Christmas"
     desc="Twelve days. Twelve breeds. Seventy-eight cats. One pear tree."
-    h=fix_head(hW,f"{title} · Holiday Season · Cat Year 2027",desc,url,f"{url}hero.webp")
+    h=fix_head(hW,f"{title} · Holiday Season · Cat Year 2027",desc,url,f"{url}card.webp")
     cards=''; tot=0
     for n,(plural,_b) in enumerate(TWELVE,1):
         tot+=n
@@ -150,9 +147,10 @@ if all(os.path.isdir(f"{OUT}/{x}") for x in ('holiday1','holiday2')):
         cards+=f'<a href="/CY2027/{part}/{k}/"><img loading=lazy src="/CY2027/{part}/ct{k}.webp" alt="Day {n}, {attr(label)}"><b>Day {n}, {esc(plural)}</b><small>{md(dd)} &middot; {tot} in all</small></a>'
     after=''.join(f'<a href="/CY2027/holiday2/{k}/"><img loading=lazy src="/CY2027/holiday2/t{k}.webp" alt="{a}"><b>{a}</b><small>{b}</small></a>' for k,a,b in ((6,"New Year&rsquo;s Day","Fri Jan 1"),(7,"The rescue cat","Sat Jan 2"),(8,"Last Walk","Week close")))
     body=(TOPBAR+'<div class=kick>Holiday Season &middot; Dec 20 &ndash; Jan 2</div>\n<h1>The Twelve Cats of Christmas</h1><p class=pos>Twelve days. Twelve breeds. Seventy-eight cats. One pear tree.</p>\n'
-      f'<img class=big src="/CY2027/twelve-cats/hero.webp" alt="Twelve Abyssinians in a pyramid">\n'
-      '<div class=story style="margin-top:28px"><p>Every carol has a list. This one has cats. The old song counts twelve days of gifts. Ours counts twelve days of cats in one snowy courtyard, starting on Sunday, December 20. A Maine Coon sits in the pear tree. Every day after that, a bigger group of a new breed joins her, until the courtyard holds all seventy-eight on New Year&rsquo;s Eve.</p><p>The days run in order below. Tap a day for its close-up, its wide view and a place for your notes.</p></div>\n'
+      f'<img class=big src="/CY2027/twelve-cats/hero.webp" alt="The empty courtyard, waiting for the first cat">\n'
+      '<div class=story style="margin-top:28px"><p>Every carol has a list. This one has cats. The old song counts twelve days of gifts. Ours counts twelve days of cats in one snowy courtyard, starting on Sunday, December 20. A Maine Coon sits in the pear tree. Every day after that, a bigger group of a new breed joins her, until the courtyard holds all seventy-eight on New Year&rsquo;s Eve.</p><p>The days run in order below. Tap a day for its close-up and a place for your notes.</p></div>\n'
       '<div class=kick>The twelve days</div><div class=days>'+cards+'</div>\n'
+      '<div class=kick style="margin-top:24px">The whole courtyard</div><img class=big src="/CY2027/twelve-cats/full.webp" alt="All seventy-eight cats in the courtyard" loading=lazy>\n'
       '<div class=kick>After the twelfth day</div><div class=days>'+after+'</div>\n'
       '<div class=nav><a href="/CY2027/">&larr; All weeks</a><a href="/CY2027/holiday1/">Dec 20 to 26</a><a href="/CY2027/holiday2/">Dec 27 to Jan 2</a></div>\n')
     open(f"{wd}/index.html","w",encoding='utf-8').write(h+body+qW+qr(url)+tW+fix_script(fW))
