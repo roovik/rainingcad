@@ -1,13 +1,13 @@
 {
  "num": -1,
- "kicker": "Holiday Season, Part One",
+ "kicker": "Holiday Season",
  "url_slug": "holiday1",
- "breed": "The Twelve Cats of Christmas, Part One",
+ "breed": "The Twelve Cats of Christmas",
  "name_lines": [
   "The Twelve Cats",
   "of Christmas"
  ],
- "positioning": "Seven days. Twenty-eight cats. One pear tree.",
+ "positioning": "The first seven days of Christmas. Twenty-eight cats so far.",
  "story": [
   "Every carol has a list. This one has cats.",
   "The old song counts twelve days of gifts. Ours counts twelve days of cats, starting today, Sunday, December 20. A Maine Coon sits in the pear tree. Every day after that, a bigger group joins her in the same snowy courtyard.",
@@ -18,7 +18,7 @@
  ],
  "rank_num": "28",
  "rank_cap": "cats in the courtyard by Saturday",
- "season_line": "Days 1 to 7 of 12 &middot; Holiday Season",
+ "season_line": "Days 1 to 7 of 12 · Holiday Season",
  "glance": [
   [
    "Dates",
@@ -101,5 +101,5 @@
   ]
  ],
  "last_walk": "The snow keeps falling on the courtyard.\nTwenty-eight cats are settling in for the night. The Maine Coon still holds her branch. The Korats slept where they stopped. Stay a minute by the lights. Eight Ragdolls are on their way.",
- "weekhead": "Holiday Season, Part One"
+ "weekhead": "Holiday Season, Dec 20 to 26"
 }

@@ -32,7 +32,7 @@ body=top+f'''
 <div class=story style="margin-top:28px"><p>Every carol has a list. This one has dogs. The old song counts twelve days of gifts. Ours counts twelve days of dogs in one snowy courtyard, starting on Sunday, December 20. A Poodle sits in the pear tree. Every day after that, a bigger group of a new breed joins her, until the courtyard holds all seventy-eight on New Year&rsquo;s Eve.</p><p>The days run in order below. Tap a day to see the courtyard and keep your notes.</p></div>
 <div class=kick>The twelve days</div><div class=days>{cards}</div>
 <div class=kick>After the twelfth day</div><div class=days>{after}</div>
-<div class=nav><a href="/DY2027/">&larr; All weeks</a><a href="/DY2027/holiday1/">Part One by week</a><a href="/DY2027/holiday2/">Part Two by week</a></div>
+<div class=nav><a href="/DY2027/">&larr; All weeks</a><a href="/DY2027/holiday1/">Dec 20 to 26</a><a href="/DY2027/holiday2/">Dec 27 to Jan 2</a></div>
 '''
 t=t[:i]+body+t[j:]
 t=re.sub(r'(<path d=")[^"]+(" id="qr-path")',lambda m:m.group(1)+qr(URL)+m.group(2),t,count=1)

@@ -79,7 +79,7 @@ for slug,P in PARTS.items():
     if hc: save(Image.open(hc),f"{wd}/hero.webp",(1086,1448))
     base=pick('day00_base.png')
     if base and closes: save(Image.open(base),f"{wd}/e.webp",(1086,1448))
-    B=' '.join(w['name_lines']); B_e=esc(' '.join(w['name_lines'])); title_b=f"{B}, {w['kicker'].split(', ',1)[1]}"
+    B=' '.join(w['name_lines']); B_e=esc(' '.join(w['name_lines'])); title_b=f"{B}, {md(d0)} to {md(d6)}"
     url=f"{BASE}/CY2027/{slug}/"
     h=fix_head(hW,f"{title_b} · Holiday Season · Cat Year 2027",w['positioning'],url,f"{url}hero.webp")
     story=''.join(f"<p>{esc(curly(p))}</p>" for p in w['story'])
@@ -98,7 +98,10 @@ for slug,P in PARTS.items():
         if i<=7:
             day,beat,text=w['days'][i-1]; dd=d0+datetime.timedelta(days=i-1)
             title=f"{mdl(dd)} · {B} · Cat Year 2027"; desc=text
-            kick=f"{esc(w['kicker'])} &middot; {mdl(dd)}"; main=f'<p class=daytxt>{esc(curly(text))}</p>'; dt=mdl(dd)
+            nth=i if slug=='holiday1' else i+7
+            ordn=["first","second","third","fourth","fifth","sixth","seventh","eighth","ninth","tenth","eleventh","twelfth"]
+            cap_day=f" &middot; The {ordn[nth-1]} day of Christmas" if nth<=12 else ""
+            kick=f"{esc(w['kicker'])} &middot; {mdl(dd)}{cap_day}"; main=f'<p class=daytxt>{esc(curly(text))}</p>'; dt=mdl(dd)
             prev=f'<a href="/CY2027/{slug}/{i-1}/">&larr; Previous</a>' if i>1 else f'<a href="/CY2027/{slug}/">&larr; {esc(w["weekhead"])}</a>'
             nxt=f'<a href="/CY2027/{slug}/{i+1}/">Next &rarr;</a>'
         else:
@@ -148,7 +151,7 @@ if all(os.path.isdir(f"{OUT}/{x}") for x in ('holiday1','holiday2')):
       '<div class=story style="margin-top:28px"><p>Every carol has a list. This one has cats. The old song counts twelve days of gifts. Ours counts twelve days of cats in one snowy courtyard, starting on Sunday, December 20. A Maine Coon sits in the pear tree. Every day after that, a bigger group of a new breed joins her, until the courtyard holds all seventy-eight on New Year&rsquo;s Eve.</p><p>The days run in order below. Tap a day for its close-up, its wide view and a place for your notes.</p></div>\n'
       '<div class=kick>The twelve days</div><div class=days>'+cards+'</div>\n'
       '<div class=kick>After the twelfth day</div><div class=days>'+after+'</div>\n'
-      '<div class=nav><a href="/CY2027/">&larr; All weeks</a><a href="/CY2027/holiday1/">Part One by week</a><a href="/CY2027/holiday2/">Part Two by week</a></div>\n')
+      '<div class=nav><a href="/CY2027/">&larr; All weeks</a><a href="/CY2027/holiday1/">Dec 20 to 26</a><a href="/CY2027/holiday2/">Dec 27 to Jan 2</a></div>\n')
     open(f"{wd}/index.html","w",encoding='utf-8').write(h+body+qW+qr(url)+tW+fix_script(fW))
     built.append('twelve-cats')
 print("built",built)
