@@ -56,7 +56,7 @@ for w in weeks:
     if not src:
         # no new PNGs for this week: keep any already-built week, just list it on the index
         if os.path.exists(f"{wd}/hero.webp"):
-            Bk=esc(w['breed']); cards.append(f'<a href="/CY2027/{n}/"><img loading=lazy src="/CY2027/{n}/hero.webp" alt="{attr(w["breed"])}"><small>Week {n}</small><b>{Bk}</b></a>')
+            Bk=esc(w['breed']); cards.append(f'<a href="/CY2027/{n}/"><img loading=lazy src="/CY2027/{n}/hero.webp" alt="{attr(w["breed"])}"><small>{md(d0)} &ndash; {md(d6)} &middot; Week {n}</small><b>{Bk}</b></a>')
         continue
     def find(k): 
         m=[p for p in src if f"_{k}_" in os.path.basename(p)]; assert len(m)==1,(k,m); return m[0]
@@ -101,9 +101,11 @@ for w in weeks:
           f'<div class=nav>{prev}<a href="/CY2027/{n}/">All of week {n}</a>{nxt}</div>\n')
         os.makedirs(f"{wd}/{i}",exist_ok=True)
         open(f"{wd}/{i}/index.html","w",encoding='utf-8').write(h+body+qD+qr(durl)+tD+fix_script(fD))
-    cards.append(f'<a href="/CY2027/{n}/"><img loading=lazy src="/CY2027/{n}/hero.webp" alt="{attr(B)}"><small>Week {n}</small><b>{B_e}</b></a>')
+    cards.append(f'<a href="/CY2027/{n}/"><img loading=lazy src="/CY2027/{n}/hero.webp" alt="{attr(B)}"><small>{md(d0)} &ndash; {md(d6)} &middot; Week {n}</small><b>{B_e}</b></a>')
 if os.path.isdir(f"{OUT}/twelve-cats"):
-    cards.append('<a href="/CY2027/twelve-cats/"><img loading=lazy src="/CY2027/twelve-cats/hero.webp" alt="The Twelve Cats of Christmas"><small>Holiday season, days 1 to 12</small><b>The Twelve Cats of Christmas</b></a>')
+    cards.insert(0,'<a href="/CY2027/twelve-cats/"><img loading=lazy src="/CY2027/twelve-cats/hero.webp" alt="The Twelve Cats of Christmas"><small>Dec 20 &ndash; Jan 2 &middot; The twelve days</small><b>The Twelve Cats of Christmas</b></a>')
+if os.path.isdir(f"{OUT}/365"):
+    cards.append('<a href="/CY2027/365/"><img loading=lazy src="/CY2027/365/hero.webp" alt="Burmilla"><small>Day 365 &middot; Dec 19, 2027</small><b>The Extra Day: Burmilla</b></a>')
 # index
 hI,qI,tI,fI=split(tpl_idx)
 h=fix_head(hI,"Cat Year 2027 · Every Day Has Its Cat","Cat Year 2027. A week with a breed, a page for every day, and a last walk.",f"{BASE}/CY2027/",f"{BASE}/CY2027/1/hero.webp")
