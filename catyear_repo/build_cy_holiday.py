@@ -114,10 +114,12 @@ for slug,P in PARTS.items():
         h=fix_head(hD,title,desc,durl,f"{url}{i}.webp")
         cap=lambda t: f'<div class=kick style="margin-top:24px">{t}</div>'
         if i in closes:
-            media=(f'<img class=big src="/CY2027/{slug}/e.webp" alt="The empty courtyard, before the cats arrive">'
-                   +cap('Up close')+f'<img class=big src="/CY2027/{slug}/c{i}.webp" alt="{attr(B)}, up close" loading=lazy>'
-                   +cap('The whole courtyard')+f'<img class=big src="/CY2027/{slug}/{i}.webp" alt="{attr(B)}, the whole courtyard" loading=lazy>')
-            media=cap('The courtyard, waiting').replace('margin-top:24px','margin-top:0')+media
+            nth_=i if slug=='holiday1' else i+7
+            parts=[]
+            if nth_==1: parts+=[cap('The courtyard, waiting').replace('margin-top:24px','margin-top:0'),f'<img class=big src="/CY2027/{slug}/e.webp" alt="The empty courtyard, before the cats arrive">',cap('Up close')]
+            parts.append(f'<img class=big src="/CY2027/{slug}/c{i}.webp" alt="{attr(B)}, up close">')
+            if nth_==12: parts+=[cap('The whole courtyard'),f'<img class=big src="/CY2027/{slug}/{i}.webp" alt="{attr(B)}, the whole courtyard" loading=lazy>']
+            media=''.join(parts)
         else:
             media=f'<img class=big src="/CY2027/{slug}/{i}.webp" alt="{attr(B)}">'
         body=(TOPBAR+f'<div class=kick>{kick}</div>{media}{main}\n'
