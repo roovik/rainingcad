@@ -20,6 +20,7 @@ t=re.sub(r'(<meta property="og:description" content=")[^"]*"',r'\g<1>'+DESC+'"',
 t=re.sub(r'(<meta property="og:title" content=")[^"]*"',r'\g<1>'+TITLE+'"',t)
 t=re.sub(r'<link rel="canonical" href="[^"]*">',f'<link rel="canonical" href="{URL}">',t)
 t=re.sub(r'<meta property="og:image" content="[^"]*">',f'<meta property="og:image" content="{URL}hero.webp">',t)
+t=t.replace('<span class="q"><a href="/DY2027/" class="on">Dog Year</a><a href="/CY2027/">Cat Year</a></span>','<span class="q"><a href="/DY2027/">Dog Year</a><a href="/CY2027/" class="on">Cat Year</a></span>').replace('<a href="/DY2027/" class="on">Dog Year 2027</a><a href="/CY2027/">Cat Year 2027</a>','<a href="/DY2027/">Dog Year 2027</a><a href="/CY2027/" class="on">Cat Year 2027</a>')
 i=t.index('<div class="wrap">'); j=t.index('<div class="qr">')
 TOP='<div class="wrap"><div class="top"><a class="mk" href="/" aria-label="Raining Cats &amp; Dogs home"><img src="/img/rcd-mark-96.webp" srcset="/img/rcd-mark-96.webp 1x,/img/rcd-mark-192.webp 2x" width="48" height="31" alt="Raining Cats &amp; Dogs"></a><a href="/CY2027/">Cat Year 2027 &middot; Every Day Has Its Cat</a></div>\n'
 body=TOP+'''<div class=kick>Day 365 &middot; Sunday, Dec 19, 2027</div>
