@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build site/CY2027/365 (The Extra Day, Burmilla). Usage: build_cy_extra.py EXTRA_PNG SITEDIR"""
+"""Build site/CY2027/365 (Burmilla). Usage: build_cy_extra.py EXTRA_PNG SITEDIR"""
 import re,sys,os,html
 from PIL import Image
 import qrcode,qrcode.image.svg
@@ -24,10 +24,10 @@ t=t.replace('<span class="q"><a href="/DY2027/" class="on">Dog Year</a><a href="
 i=t.index('<div class="wrap">'); j=t.index('<div class="qr">')
 TOP='<div class="wrap"><div class="top"><a class="mk" href="/" aria-label="Raining Cats &amp; Dogs home"><img src="/img/rcd-mark-96.webp" srcset="/img/rcd-mark-96.webp 1x,/img/rcd-mark-192.webp 2x" width="48" height="31" alt="Raining Cats &amp; Dogs"></a><a href="/CY2027/">Cat Year 2027 &middot; Every Day Has Its Cat</a></div>\n'
 body=TOP+'''<div class=kick>Day 365 &middot; Sunday, Dec 19, 2027</div>
-<h1>The Extra Day</h1><p class=pos>One more day, and one more breed.</p>
+<h1>Burmilla</h1><p class=pos>One more day, and one more breed.</p>
 <img class=big src="/CY2027/365/hero.webp" alt="Burmilla">
 <div class=story style="margin-top:28px"><p>A year has 52 weeks and one day left over. Most calendars hide it. This one gives it to a cat that did not exist until 1981, the Burmilla, a Burmese crossed with a Chinchilla Persian.</p><p>It was an accident. At a cattery in England, a lilac Burmese named Bambino Lilac Fabergé and a Chinchilla Persian named Jamari Sanquist were kept in separate rooms. One night a door was left open. Four silver shaded kittens arrived, and the breed was named for both parents.</p><p>The Burmese came in week 4. The Persian came in week 14. Today they meet.</p><p>Write down one thing you want to remember about this year.</p></div>
-<div class="notes" id="notes" data-key="365" data-title="Day 365 · The Extra Day"><h2>My Cat-Eared Notes</h2><textarea rows="7" placeholder="What did your cat do today?" aria-label="My Cat-Eared Notes"></textarea><p class="saved">Notes are saved on this device only.</p><button type="button" class="dl">Download all my notes</button></div>
+<div class="notes" id="notes" data-key="365" data-title="Day 365 · Burmilla"><h2>My Cat-Eared Notes</h2><textarea rows="7" placeholder="What did your cat do today?" aria-label="My Cat-Eared Notes"></textarea><p class="saved">Notes are saved on this device only.</p><button type="button" class="dl">Download all my notes</button></div>
 <div class=nav><a href="/CY2027/">&larr; All weeks</a><a href="/CY2027/50/">Week 50</a><span></span></div>
 '''
 t=t[:i]+body+t[j:]

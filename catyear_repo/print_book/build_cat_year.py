@@ -130,7 +130,7 @@ def xday_page():
     qr=mw.qr_uri("https://rainingcad.com/CY2027/365")
     img=b64(f"{IMG}/extraday.jpg")
     body=["A year has 52 weeks and one day left over. Most calendars hide it. This one gives it to a cat that did not exist until 1981, the Burmilla, a Burmese crossed with a Chinchilla Persian.","It was an accident. At a cattery in England, a lilac Burmese named Bambino Lilac Faberg&eacute; and a Chinchilla Persian named Jamari Sanquist were kept in separate rooms. One night a door was left open. Four silver shaded kittens arrived, and the breed was named for both parents. The Burmese came in week 4. The Persian came in week 14. Today they meet. Write down one thing you want to remember about this year."]
-    return f'''<section class="page fm xd"><div class="pad"><div class="kicker">Sunday, December 19, 2027 &nbsp;&middot;&nbsp; Day 365</div><h1>The Extra Day</h1><p class="pos">One more day, and one more breed.</p>
+    return f'''<section class="page fm xd"><div class="pad"><div class="kicker">Sunday, December 19, 2027 &nbsp;&middot;&nbsp; Day 365</div><h1>Burmilla</h1><p class="pos">One more day, and one more breed.</p>
       <div class="xi"><img src="{img}" alt=""></div>{"".join(f'<p class="xb">{t}</p>' for t in body)}
       <div class="xr"><a class="qr" href="https://rainingcad.com/CY2027/365"><img src="{qr}" alt=""></a><div class="write">{"<span></span>"*5}</div></div></div>{FOLIO}</section>'''
 def close_page():
