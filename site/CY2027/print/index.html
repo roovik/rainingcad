@@ -53,7 +53,7 @@ textarea{resize:vertical;line-height:1.45;min-height:84px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:12px;margin-top:14px;max-height:520px;overflow:auto;padding:4px 4px 8px}
 .wk{position:relative;text-align:left;border:0;background:none;padding:0;cursor:pointer;border-radius:6px}
 .wk img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border:3px solid #fff;outline:1px solid var(--line);background:#ddd;border-radius:2px;transition:.15s}
-.wk b{display:block;margin-top:6px;font:600 14px/1.2 Spectral,serif}.wk small{display:block;font:600 10px Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.wk b{display:block;margin-top:6px;font:600 14px/1.2 Spectral,serif}.wk small{display:block;white-space:nowrap;font:600 9px Hanken,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--soft)}
 .wk .ck{position:absolute;top:8px;right:8px;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.9);border:1.5px solid var(--ink);display:grid;place-items:center;font:700 14px Hanken;opacity:.85}
 .wk[aria-pressed=true] img{outline:3px solid var(--gold-deep)}.wk[aria-pressed=true] .ck{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff;opacity:1}.wk[aria-pressed=true] .ck:after{content:"\2713"}
 .cnt{margin:12px 0 0;font:600 12px Hanken,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep)}
@@ -251,7 +251,7 @@ function load(){var o={};try{o=JSON.parse(lsGet(KEY)||'{}')}catch(e){}S={};for(v
 var st;function save(){clearTimeout(st);st=setTimeout(function(){lsSet(KEY,JSON.stringify(S))},300)}
 function dt(w,i){var d=new Date(w.start+'T12:00:00');d.setDate(d.getDate()+i);return d}
 function dlab(w,i){var d=dt(w,i);return MON[d.getMonth()]+' '+d.getDate()}
-function wrange(w){return dlab(w,0)+' – '+dlab(w,6)}
+function wrange(w){var d0=dt(w,0),d1=dt(w,6);return d0.getMonth()==d1.getMonth()?MON[d0.getMonth()]+' '+d0.getDate()+'–'+d1.getDate():dlab(w,0)+'–'+dlab(w,6)}
 function note(n,d){return lsGet('cy27:'+n+'/'+d)||''}
 /* ---------- QR ---------- */
 var qc={};function qr(url){if(qc[url])return qc[url];var q=qrcode(0,'M');q.addData(url);q.make();var n=q.getModuleCount(),p='';for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(q.isDark(r,c))p+='M'+(c+1)+','+(r+1)+'h1v1h-1z';
@@ -275,7 +275,7 @@ function hero(w){
  return '<section class="page p-hero"><div class="kk">Week '+w.n+' &nbsp;&middot;&nbsp; '+wrange(w)+'</div><div class="fr"><img loading="lazy" src="'+ph(w.n,'hero')+'" alt="'+esc(w.b)+'"></div><div class="ft"><div><h1>'+esc(w.b)+'</h1><p class="pos">'+esc(w.p)+'</p></div>'+(S.qr?'<div class="qrbox" style="flex:none">'+qr(BASE+w.n+'/')+'</div>':'')+'</div></section>'}
 function breed(w){
  var st=w.s.map(function(p){return '<p>'+esc(p)+'</p>'}).join(''),gl=w.g.map(function(g){return '<div><span>'+esc(g[0])+'</span><b style="font-weight:400">'+esc(g[1])+'</b></div>'}).join(''),bl=w.f.map(function(b){return '<div class="bl"><h4>'+esc(b[0])+'</h4><p>'+esc(b[1])+'</p></div>'}).join('');
- return '<section class="page p-breed"><div class="kk">Week '+w.n+' &nbsp;&middot;&nbsp; Cat Year 2027</div><h1>'+esc(w.b)+'</h1><p class="pos">'+esc(w.p)+'</p><div class="cols fb"><div class="story">'+st+'</div><div class="side"><div class="rk"><b>'+esc(w.rn)+'</b><span>No. '+w.n+' &middot; Cats of '+w.se+'</span></div><div class="cap">'+esc(w.rc)+'</div><div class="gl">'+gl+'</div>'+bl+'</div></div>'+(S.qr?'<div class="foot qrbox">'+qr(BASE+w.n+'/')+'<small>Meet the breed online<br>Scan for this week\'s page</small></div>':'')+'</section>'}
+ return '<section class="page p-breed"><div class="kk">Week '+w.n+' &nbsp;&middot;&nbsp; Cat Year 2027</div><h1>'+esc(w.b)+'</h1><p class="pos">'+esc(w.p)+'</p><div class="cols fb"><div class="story">'+st+'</div><div class="side"><div class="rk"><b>'+w.cd+'</b><span>Cats of '+w.se+' countdown, '+w.sz+' to 1<small style="display:block;margin-top:4px;font-size:.82em;opacity:.8">annual rank No. '+esc(w.rn)+' of 50'+'</small></span></div><div class="cap">'+esc(w.rc)+'</div><div class="gl">'+gl+'</div>'+bl+'</div></div>'+(S.qr?'<div class="foot qrbox">'+qr(BASE+w.n+'/')+'<small>Meet the breed online<br>Scan for this week\'s page</small></div>':'')+'</section>'}
 function dayRow(w,i){
  var last=i===7,lab=last?'Last Walk':DAYS[i],sub=last?'Week close':dlab(w,i),beat=last?'':w.d[i][1];
  var txt=last?'<b>'+esc(w.lw[0])+'</b>'+esc(w.lw[1]):esc(w.d[i][2]),nt=S.notes?esc(note(w.n,i+1)):'';
@@ -338,7 +338,7 @@ function ui(){
 }
 function buildCovers(){$('#covers').innerHTML=D.map(function(w){return '<button data-n="'+w.n+'" aria-pressed="'+(S.cwk===w.n)+'" title="'+esc(w.b)+'" style="background-image:url('+ph(w.n,'hero')+')"></button>'}).join('')}
 function buildGrid(){
- $('#grid').innerHTML=D.map(function(w){return '<button class="wk" data-n="'+w.n+'" aria-pressed="'+(S.weeks.indexOf(w.n)>-1)+'"><img loading="lazy" decoding="async" src="'+ph(w.n,'hero')+'" alt=""><span class="ck"></span><b>'+esc(w.b)+'</b><small>Week '+w.n+' &middot; '+wrange(w)+'</small></button>'}).join('');
+ $('#grid').innerHTML=D.map(function(w){return '<button class="wk" data-n="'+w.n+'" aria-pressed="'+(S.weeks.indexOf(w.n)>-1)+'"><img loading="lazy" decoding="async" src="'+ph(w.n,'hero')+'" alt=""><span class="ck"></span><b>'+esc(w.b)+'</b><small>'+wrange(w)+'</small><small>Week '+w.n+'</small></button>'}).join('');
  var seas=['Winter','Spring','Summer','Fall'].filter(function(x){return D.some(function(w){return w.se===x})});
  $('#seas').innerHTML='<button class="chip" data-all="1">All</button>'+seas.map(function(s){return '<button class="chip" data-s="'+s+'">'+s+'</button>'}).join('')+'<button class="chip" data-none="1">Clear</button>';
  wcount()}

@@ -71,7 +71,9 @@ for w in weeks:
     story=''.join(f"<p>{esc(curly(p))}</p>" for p in w['story'])
     facts=''.join(f"<div><dt>{esc(a)}</dt><dd>{esc(curly(b))}</dd></div>" for a,b in w['glance'])
     blks=''.join(f"<div class=blk><h3>{esc(a)}</h3><p>{esc(curly(b))}</p></div>" for a,b in w['fblocks'])
-    rank=f"<div class=rank><b>{w['rank_num']}</b><span>{esc(w['rank_cap'])} &middot; {esc(w['season_line'])}</span></div>"
+    _S=[(1,11,'Winter'),(12,24,'Spring'),(25,37,'Summer'),(38,50,'Fall')]
+    _a,_b,_se=[t for t in _S if t[0]<=w['num']<=t[1]][0]
+    rank=f"<div class=rank><b>{_b-w['num']+1}</b><span>Cats of {_se} countdown, {_b-_a+1} to 1<small style=\"display:block;margin-top:5px;font-size:.82em;letter-spacing:.1em;opacity:.8\">annual rank No. {w['rank_num']} of 50</small></span></div>"
     cap=f"<p class=cap>{esc(curly(w.get('cap','')))}</p>" if w.get('cap') else ""
     thumbs=''.join(f'<a href="/CY2027/{n}/{i}/"><img loading=lazy src="/CY2027/{n}/t{i}.webp" alt="{attr(B)} on {dn}"><b>{dn}</b><small>{md(d0+datetime.timedelta(days=i-1))}</small></a>' for i,dn in enumerate(["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],1))
     thumbs+=f'<a href="/CY2027/{n}/8/"><img loading=lazy src="/CY2027/{n}/t8.webp" alt="Last walk of the week"><b>Last Walk</b><small>Week close</small></a>'
@@ -103,12 +105,12 @@ for w in weeks:
         open(f"{wd}/{i}/index.html","w",encoding='utf-8').write(h+body+qD+qr(durl)+tD+fix_script(fD))
     cards.append(f'<a href="/CY2027/{n}/"><img loading=lazy src="/CY2027/{n}/hero.webp" alt="{attr(B)}"><small>{md(d0)} &ndash; {md(d6)} &middot; Week {n}</small><b>{B_e}</b></a>')
 if os.path.isdir(f"{OUT}/twelve-cats"):
-    cards.insert(0,'<a href="/CY2027/twelve-cats/"><img loading=lazy src="/CY2027/twelve-cats/card.webp" alt="The Twelve Cats of Christmas"><small>Dec 20 &ndash; Jan 2</small><b>The Twelve Cats of Christmas</b></a>')
+    cards.insert(0,'<a href="/CY2027/twelve-cats/"><img loading=lazy src="/CY2027/twelve-cats/card.webp" alt="The Twelve Cats of Christmas"><small>Dec 20 &ndash; Dec 31</small><b>The Twelve Cats of Christmas</b></a>')
 if os.path.isdir(f"{OUT}/365"):
     cards.append('<a href="/CY2027/365/"><img loading=lazy src="/CY2027/365/hero.webp" alt="Burmilla"><small>Day 365 &middot; Dec 19, 2027</small><b>Burmilla</b></a>')
 # index
 hI,qI,tI,fI=split(tpl_idx)
 h=fix_head(hI,"Cat Year 2027 · Every Day Has Its Cat","Cat Year 2027. A week with a breed, a page for every day, and a last walk.",f"{BASE}/CY2027/",f"{BASE}/CY2027/1/hero.webp")
-body=(TOPBAR+'<div class=kick>2027</div><h1>Cat Year 2027</h1><p class=pos>Every Day Has Its Cat.</p>\n<p>Scan any date in the book and it opens here. Pick a week to meet the breed. Journal your way: write, tap or talk. Buy the book or the Kindle edition and get online access to all of it.</p><p><a href="/CY2027/print/" style="font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase">Print your own journal &rarr;</a></p><div class=grid>'+''.join(cards)+'</div>\n')
+body=(TOPBAR+'<div class=kick>2027</div><h1>Cat Year 2027</h1><p class=pos>Every Day Has Its Cat.</p>\n<p>Cat Year 2027 is a year of cats, one breed for every week. Each week has a portrait, the breed&rsquo;s story, and a short thought for every day, with a place for your own notes. Write, tap or talk your journal entries right here. The year opens with the Holiday Season, twelve days of cats in a snowy courtyard, and closes on December 19, 2027, with a Burmilla. Pick a week below to meet the breed. It is also a printed calendar and journal: every date in the book has a QR code that opens that day here, and buying the book or the Kindle edition gives you online access to all of it.</p><p><a href="/CY2027/print/" style="font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase">Print your own journal &rarr;</a></p><div class=grid>'+''.join(cards)+'</div>\n')
 open(f"{OUT}/index.html","w",encoding='utf-8').write(h+body+qI+qr(f"{BASE}/CY2027/")+tI+fix_script(fI))
 print("built",len(weeks),"weeks")

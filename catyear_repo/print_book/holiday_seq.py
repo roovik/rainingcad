@@ -8,7 +8,7 @@ def pages():
     a=json.load(open(f'{ROOT}/xmas/week_m1_twelve_cats_part1.json',encoding='utf-8'))
     b=json.load(open(f'{ROOT}/xmas/week_00_twelve_cats_part2.json',encoding='utf-8'))
     m=dict(a)
-    m['kicker']='Holiday Season, Dec 20 to Jan 2'
+    m['kicker']='Holiday Season, Dec 20 to Dec 31'
     m['positioning']='Twelve days of Christmas. Seventy-eight cats. One courtyard.'
     m['story']=["Every carol has a list. This one has cats.",
      "The old song counts twelve days of gifts. Ours counts twelve days of cats, starting Sunday, December 20. A Maine Coon sits in the pear tree. Every day after that, a bigger group of a new breed joins her in the same snowy courtyard.",
@@ -18,7 +18,7 @@ def pages():
      "Turn the page. The Maine Coon is waiting, and she has no plan for getting down."]
     m['rank_num']='78'; m['rank_cap']='cats in all, by New Year&rsquo;s Eve'
     m['season_line']='12 days &middot; Holiday Season'
-    m['glance']=[["Dates","Dec 20 to Jan 2"],["Days of the carol","1 to 12"],["Cats in all","78"],["Setting","A snowy courtyard"],["Song","The Twelve Days of Christmas"]]
+    m['glance']=[["Dates","Dec 20 to Dec 31"],["Days of the carol","1 to 12"],["Cats in all","78"],["Setting","A snowy courtyard"],["Song","The Twelve Days of Christmas"]]
     m['fblocks']=[a['fblocks'][0],["Notable Cats","Maine Coon, America&rsquo;s largest native breed. Siamese, the one with opinions. Sphynx, the one who wants the fire. Persian, the long-haired classic. Devon Rex, the pixie."],
       ["Good to Know","Lilies, tinsel and ribbon are dangerous for cats. Even a little lily pollen can harm the kidneys. Fireworks frighten many cats: give them a quiet room on New Year&rsquo;s Eve."],
       a['fblocks'][3],["By the Numbers","78 cats. 12 days. 1 pear tree."]]

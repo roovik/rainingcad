@@ -26,7 +26,7 @@ for n,name in enumerate(DOGS,1):
     cards+=f'<a href="/DY2027/{part}/{k}/"><img loading=lazy src="/DY2027/{part}/{'ct' if os.path.exists(f'{DY}/{part}/ct{k}.webp') else 't'}{k}.webp" alt="Day {n}, {name}"><b>Day {n}, {name}</b><small>{lab} &middot; {tot} in all</small></a>'
 after=''.join(f'<a href="/DY2027/holiday2/{k}/"><img loading=lazy src="/DY2027/holiday2/t{k}.webp" alt="{a}"><b>{a}</b><small>{b}</small></a>' for k,a,b in ((6,"New Year&rsquo;s Day","Fri Jan 1"),(7,"The dog not on the list","Sat Jan 2"),(8,"Last Walk","Week close")))
 body=top+f'''
-<div class=kick>Holiday Season &middot; Dec 20 &ndash; Jan 2</div>
+<div class=kick>Holiday Season &middot; Dec 20 &ndash; Dec 31</div>
 <h1>The Twelve Dogs of Christmas</h1><p class=pos>Twelve days. Twelve breeds. Seventy-eight dogs. One pear tree.</p>
 <img class=big src="/DY2027/twelve-dogs/hero.webp" alt="The courtyard, waiting for the first dog">
 <div class=story style="margin-top:28px"><p>Every carol has a list. This one has dogs. The old song counts twelve days of gifts. Ours counts twelve days of dogs in one snowy courtyard, starting on Sunday, December 20. A Poodle sits in the pear tree. Every day after that, a bigger group of a new breed joins her, until the courtyard holds all seventy-eight on New Year&rsquo;s Eve.</p><p>The days run in order below. Tap a day for its close-up and a place for your notes.</p></div>

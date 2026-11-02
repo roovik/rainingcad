@@ -146,7 +146,7 @@ if all(os.path.isdir(f"{OUT}/{x}") for x in ('holiday1','holiday2')):
         label=f"{n} {plural}" if n>1 else plural
         cards+=f'<a href="/CY2027/{part}/{k}/"><img loading=lazy src="/CY2027/{part}/ct{k}.webp" alt="Day {n}, {attr(label)}"><b>Day {n}, {esc(plural)}</b><small>{md(dd)} &middot; {tot} in all</small></a>'
     after=''.join(f'<a href="/CY2027/holiday2/{k}/"><img loading=lazy src="/CY2027/holiday2/t{k}.webp" alt="{a}"><b>{a}</b><small>{b}</small></a>' for k,a,b in ((6,"New Year&rsquo;s Day","Fri Jan 1"),(7,"The rescue cat","Sat Jan 2"),(8,"Last Walk","Week close")))
-    body=(TOPBAR+'<div class=kick>Holiday Season &middot; Dec 20 &ndash; Jan 2</div>\n<h1>The Twelve Cats of Christmas</h1><p class=pos>Twelve days. Twelve breeds. Seventy-eight cats. One pear tree.</p>\n'
+    body=(TOPBAR+'<div class=kick>Holiday Season &middot; Dec 20 &ndash; Dec 31</div>\n<h1>The Twelve Cats of Christmas</h1><p class=pos>Twelve days. Twelve breeds. Seventy-eight cats. One pear tree.</p>\n'
       f'<img class=big src="/CY2027/twelve-cats/hero.webp" alt="The empty courtyard, waiting for the first cat">\n'
       '<div class=story style="margin-top:28px"><p>Every carol has a list. This one has cats. The old song counts twelve days of gifts. Ours counts twelve days of cats in one snowy courtyard, starting on Sunday, December 20. A Maine Coon sits in the pear tree. Every day after that, a bigger group of a new breed joins her, until the courtyard holds all seventy-eight on New Year&rsquo;s Eve.</p><p>The days run in order below. Tap a day for its close-up and a place for your notes.</p></div>\n'
       '<div class=kick>The twelve days</div><div class=days>'+cards+'</div>\n'

@@ -64,6 +64,14 @@ for n,f in [(-1,"week_m1_twelve_cats_part1.json"),(0,"week_00_twelve_cats_part2.
 for _n in DATA:
     DATA[_n]["base_url"]="https://rainingcad.com/CY2027"
     if _n>0: DATA[_n]["fblocks"]=[b for b in DATA[_n]["fblocks"] if not (b[0].startswith("Coat") or b[0].startswith("By the Numbers"))]
+SEAS=[(1,11,"Winter"),(12,24,"Spring"),(25,37,"Summer"),(38,50,"Fall")]
+for _n in list(DATA):
+    if _n<1: continue
+    _a,_b,_se=[t for t in SEAS if t[0]<=_n<=t[1]][0]
+    _ann=DATA[_n]["rank_num"]
+    DATA[_n]["rank_num"]=str(_b-_n+1)
+    DATA[_n]["rank_cap"]=f"annual rank No. {_ann} of 50"
+    DATA[_n]["season_line"]=f"Cats of {_se} &middot; countdown {_b-_a+1} to 1"
 def sunday(n): return datetime.date(2027,1,3)+datetime.timedelta(days=7*(n-1))
 def fmt(d): return d.strftime("%b ")+str(d.day)
 
@@ -72,7 +80,7 @@ def prep(season): pass
 
 def title_page():
     return '''<section class="page fm title"><div class="tpad"><div class="kicker">A Calendar &amp; Journal</div><h1>Cat Year<br>2027</h1><div class="trule"></div>
-      <p class="tag">Every Day Has Its Cat</p><p class="span">51 breeds &nbsp;&middot;&nbsp; 365 days &nbsp;&middot;&nbsp; December 20, 2026 to December 19, 2027</p>
+      <p class="tag">Every Day Has Its Cat</p><p class="span">52 breeds &nbsp;&middot;&nbsp; 365 days &nbsp;&middot;&nbsp; December 20, 2026 to December 19, 2027</p>
       <div class="byline">Richard J. Koret</div><div class="press">Raining Cats &amp; Dogs Press</div></div></section>'''
 def copy_page():
     return '''<section class="page fm copy"><div class="cpad"><p class="cb"><strong>A Cat Year: Every Day Has Its Cat</strong><br>2027 Edition</p>
@@ -81,7 +89,7 @@ def copy_page():
       <p>Published by Raining Cats &amp; Dogs Press<br>rainingcad.com</p><p>First edition, 2026.</p><p>Breed rankings are approximate.</p></div></section>'''
 def intro_page():
     intro=["Cats do not keep calendars. They keep schedules. The window at dawn, the sunbeam at noon, the exact moment the can opener starts. A cat&rsquo;s year is made of small, particular hours, and none of them is wasted.",
-      "This book follows that example. Cat Year 2027 gives every week its own breed, fifty in all, from forest giants to hairless sunbathers. Each week opens with a portrait, then a page of history, character, and fact. Seven short thoughts follow, one for each day, with room beside each to write down your own.",
+      "This book follows that example. Cat Year 2027 gives every week its own breed: fifty, plus the Burmilla on Day 365 and a rescue cat who belongs to every breed and none. Fifty-two in all. Each week opens with a portrait, then a page of history, character, and fact. Seven short thoughts follow, one for each day, with room beside each to write down your own.",
       "The book opens with a Holiday Season prelude of twelve days of cats, and the year begins on the first Sunday of January. Four seasons follow, each opening with a few words on what it means to a cat.",
       "Every date carries a photograph and a QR code. Write in the book, or scan the code and tap or talk your note online at rainingcad.com. The book or the Kindle edition gives you online access to all of it.",
       "Turn the page. The first cat is already at the window."]
@@ -91,7 +99,8 @@ def toc_page(seasons,first):
     rows=""
     if first:
         rows+='<div class="sh"><span>Holiday Season</span><span>Dec 20, 2026 &middot; Jan 2, 2027</span></div>'
-        rows+=f'<div class="r"><span class="w">Holiday</span><span class="b">The Twelve Cats of Christmas</span><span class="l"></span><span class="d">{fmt(sunday(-1))}</span><span class="p">{HOL[-1]}</span></div>'
+        rows+=f'<div class="r"><span class="w">Holiday</span><span class="b">The Twelve Cats of Christmas</span><span class="l"></span><span class="d">Dec 20 &ndash; 31</span><span class="p">{HOL[-1]}</span></div>'
+        rows+=f'<div class="r"><span class="w">2027</span><span class="b">The New Year Begins</span><span class="l"></span><span class="d">Jan 1</span><span class="p">{HOL[-1]+7}</span></div>'
     for s in seasons:
         c=CFG[s]; rng=SEASONS_STRIP[ORDER.index(s)]
         rows+=f'<div class="sh"><span>{c["name"]}</span><span>{rng[1]} &middot; {rng[2]}</span></div>'
