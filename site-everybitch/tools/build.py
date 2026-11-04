@@ -28,7 +28,7 @@ img{max-width:100%}
 .nav a.l{padding:7px 11px}
 .nav a.l:hover{color:var(--pink)}
 .nav a.l.on,.nav a.l.on:hover{background:var(--pink);color:var(--black);font-weight:800}
-@media(max-width:900px){.nav .brand{flex-basis:100%}.nav .wrap{gap:2px;justify-content:space-between}.nav a.l{font-size:10px;letter-spacing:.07em;padding:7px 8px}}@media(max-width:420px){.nav .wrap{padding-left:8px;padding-right:8px}.nav a.l{font-size:9px;letter-spacing:.02em;padding:7px 4px}}
+@media(max-width:600px){.nav .wrap{flex-wrap:nowrap;gap:10px}.nav .brand{font-size:15px;white-space:nowrap}.nav a.l{font-size:10px;letter-spacing:.06em;padding:7px 8px;white-space:nowrap}}@media(max-width:420px){.nav .wrap{padding-left:10px;padding-right:10px}.nav .brand{font-size:13px}.nav a.l{font-size:9px;letter-spacing:.03em;padding:7px 6px}}
 .hero{background:var(--black);color:#fff;padding:54px 0 60px}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:center}
 @media(max-width:760px){.hero .wrap{grid-template-columns:1fr;gap:28px}}
@@ -162,7 +162,7 @@ EXCERPTS = json.load(open(os.path.join(os.path.dirname(__file__), 'excerpts.json
 
 def esc(s): return E(s, quote=True)
 
-NAV_ITEMS = [('/', 'Book', 1), ('/merch/', 'Merch', 1), ('/which-bitch/', 'Quiz', 0)]
+NAV_ITEMS = [('/which-bitch/', 'Which bitch are you?', 1)]
 
 def nav(cur=''):
     if cur.startswith('/bitch-o-meter'): cur = '/which-bitch/'
