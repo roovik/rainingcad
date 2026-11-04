@@ -56,7 +56,18 @@
           + '<h2>Codes</h2>' + (r.codes.length ? '<div class="rc-wrapt"><table class="rc-tbl"><thead><tr><th>Code</th><th>Opens</th><th>Days</th><th>Used</th><th>Ends</th><th>Note</th><th>Made</th><th></th></tr></thead><tbody>' + r.codes.map(function (c) {
             var live = !(c.expires && c.expires < Date.now()) && c.uses < c.uses_max;
             return '<tr><td><code>' + esc(c.code) + '</code></td><td>' + esc(c.books.split(',').map(function (k) { return NAMES[k] || k; }).join(', ')) + '</td><td>' + c.days + '</td><td>' + c.uses + ' of ' + c.uses_max + '</td><td>' + (c.expires ? day(c.expires) : '') + '</td><td>' + esc(c.note || '') + '</td><td>' + day(c.created) + '</td><td>' + (live ? '<button class="btn" type="button" data-end="' + esc(c.code) + '" style="padding:6px 10px">End</button>' : 'Ended') + '</td></tr>'; }).join('') + '</tbody></table></div>' : '<p>None yet.</p>')
+          + '<h2>Subscribers</h2><div id="subs"><p>Loading…</p></div>'
           + '<p><button class="btn" type="button" id="so">Sign out</button></p>';
+        api('admin/subs', null, { 'x-admin-key': K }).then(function (s) {
+          var h = $('#subs'); if (!h) return; if (!s.ok) { h.innerHTML = '<p>Could not load subscribers.</p>'; return; }
+          var by = function (b) { return s.subs.filter(function (x) { return x.books.split(',').indexOf(b) > -1; }).length; };
+          h.innerHTML = '<p>' + s.subs.length + ' subscribers (' + by('dy') + ' Dog Year, ' + by('cy') + ' Cat Year). ' + s.notes + ' notes saved.</p>' + (s.subs.length ? '<p><button class="btn" type="button" id="csv">Download emails as CSV</button></p><div class="rc-wrapt"><table class="rc-tbl"><thead><tr><th>Email</th><th>Books</th><th>Joined</th><th>From</th></tr></thead><tbody>' + s.subs.slice(0, 200).map(function (x) { return '<tr><td>' + esc(x.email) + '</td><td>' + esc(x.books.replace('dy', 'Dog Year').replace('cy', 'Cat Year')) + '</td><td>' + day(x.created) + '</td><td>' + esc(x.source || '') + '</td></tr>'; }).join('') + '</tbody></table></div>' : '');
+          var c = $('#csv'); if (c) c.onclick = function () {
+            var q = function (v) { return '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"'; };
+            var txt = 'email,books,joined,source,country\n' + s.subs.map(function (x) { return [x.email, x.books, new Date(x.created).toISOString(), x.source, x.country].map(q).join(','); }).join('\n');
+            var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([txt], { type: 'text/csv' })); a.download = 'rainingcad-subscribers.csv'; a.click();
+          };
+        });
         $('#mk').onsubmit = function (e) {
           e.preventDefault(); var f = this, books = [].slice.call(f.querySelectorAll('input[name=books]:checked')).map(function (i) { return i.value; });
           if (!books.length) { $('.rc-err', f).textContent = msg('pick-books'); return; }

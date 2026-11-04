@@ -65,7 +65,7 @@ for b in BOOKS:
             figs += f'<figure class="rc-pg"><img src="{P}{c["n"]}/{pg}" alt="Page {int(pg[1:4])}" width="{w}" height="{h}" loading="{"lazy" if figs else "eager"}" draggable="false"></figure>'
         pv = CH[k - 1] if k else None; nx = CH[k + 1] if k + 1 < len(CH) else None
         nav = (f'<a href="{P}{pv["n"]}/"><small>Back</small>{lbl(pv)}</a>' if pv else f'<a href="{P}"><small>Back</small>Contents</a>')
-        nav += (f'<a class="nx" href="{P}{nx["n"]}/"><small>Next{" &middot; full book" if nx["n"] not in FREE_IN else ""}</small>{lbl(nx)}: {E(nx["name"])}</a>' if nx else f'<a class="nx" href="/books/{b["id"]}/"><small>The end</small>Get the book</a>')
+        nav += (f'<a class="nx" href="{P}{nx["n"]}/"><small>Next{" &middot; full book" if nx["n"] not in FREE_IN else ""}</small>{lbl(nx)}: {E(nx["name"])}</a>' if nx else f'<a class="nx" href="{b["links"][0][1] if b["key"] == "bk-every-bitch" else "/books/" + b["id"] + "/"}"><small>The end</small>Get the book</a>')
         end = f'<div class="rc-end"><p>The next chapter is in the full book.</p><div class="btns">{buy}</div>{code}</div>' if nx and nx['n'] not in FREE_IN and c['n'] in FREE_IN else ''
         write(f'{P}{c["n"]}/', f'{b["title"]}: {lbl(c)} | Read inside', f'Read inside {b["title"]}.',
               f'<p class="kick"><a href="{P}">{E(b["title"])}</a> &middot; read inside</p><h1>{lbl(c)}{": " + E(c["name"]) if c["n"] else ""}</h1><div class="rc-pages" oncontextmenu="return false">{figs}</div>{end}<nav class="rc-nav">{nav}</nav>', robots='noindex')

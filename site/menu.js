@@ -5,3 +5,4 @@ document.addEventListener('click',function(e){if(!m.hidden&&!m.contains(e.target
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden){set(false);b.focus()}});
 window.addEventListener('resize',function(){if(!m.hidden)set(false)});
 })();
+(function(){var s=document.createElement('script');s.src='/sub.js?v=1';s.defer=true;document.head.appendChild(s)})();
