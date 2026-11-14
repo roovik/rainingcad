@@ -6,3 +6,5 @@
 /books/the-cats-pajamas/sample /books/the-cats-pajamas/look-inside/ 301
 /books/the-cats-pajamas/sample/ /books/the-cats-pajamas/look-inside/ 301
 /books/the-cats-pajamas/sample/* /books/the-cats-pajamas/look-inside/:splat 301
+/merch/t-shirts/rottweiler /merch/dogs/rottweiler/ 301
+/merch/t-shirts/rottweiler/ /merch/dogs/rottweiler/ 301
