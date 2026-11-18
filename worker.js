@@ -4,6 +4,7 @@
 // /api/access          -> GET: what this device can read
 // /api/admin/*         -> the owner's code admin, with the x-admin-key header matching the ADMIN_KEY secret (set in the Cloudflare dashboard)
 // /api/offer, /api/subscribe, /api/me, /api/notes, /api/note, /api/notes-bulk -> the free Dog Year and Cat Year subscription (email, sync key, notes that follow the reader across devices) until FREE_UNTIL
+// /api/share, /api/share/<id>/delete, /s/<id>/ -> "Share this day" on Dog Year and Cat Year day pages: notes the reader chose to share, on a private link they can stop sharing
 // Access keys: a book (bk-...), 'books' (every book) or 'all' (everything).
 import { DurableObject } from 'cloudflare:workers';
 
@@ -17,6 +18,39 @@ const ALPH = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 const code4 = () => [...crypto.getRandomValues(new Uint8Array(4))].map(b => ALPH[b % ALPH.length]).join('');
 const b64u = s => btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 const unb64u = s => atob(s.replace(/-/g, '+').replace(/_/g, '/'));
+
+async function sha256hex(s) { return [...new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s)))].map(x => x.toString(16).padStart(2, '0')).join(''); }
+const H = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+// rainingcad.com/s/<id>/: a Dog Year or Cat Year day someone shared with their notes. The day itself (title, words, photo) comes from our own page.
+async function sharePage(request, env, url) {
+  const m = url.pathname.match(/^\/s\/([a-z0-9]{10})\/?(card\.jpg)?$/);
+  if (m && m[2]) return stub(env).fetch('https://internal/share-card', { method: 'POST', body: JSON.stringify({ id: m[1] }) });
+  const page = (code, title, head, body) => new Response(`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>${title}</title>${head}`
+    + `<style>@font-face{font-family:Spectral;font-weight:400;src:url(/fonts/spectral-400.woff2) format('woff2')}@font-face{font-family:Spectral;font-weight:400;font-style:italic;src:url(/fonts/spectral-400i.woff2) format('woff2')}@font-face{font-family:Spectral;font-weight:800;src:url(/fonts/spectral-800.woff2) format('woff2')}@font-face{font-family:Hanken;font-weight:100 900;src:url(/fonts/hanken.woff2) format('woff2')}`
+    + `body{margin:0;background:#F3F2EC;color:#2A2A2D;font:18px/1.6 Spectral,serif}.wrap{max-width:720px;margin:0 auto;padding:24px 20px 60px}.top{display:flex;gap:12px;align-items:center;font:600 14px Hanken,sans-serif;border-bottom:1px solid rgba(42,42,45,.16);padding-bottom:14px}.top a{color:#876217;text-decoration:none}`
+    + `.kick{font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#876217;margin:26px 0 10px}h1{font:800 40px/1.1 Spectral,serif;margin:6px 0 10px}img.big{width:100%;display:block;margin:10px 0}.day{font-style:italic;color:#6F6F74;font-size:20px}`
+    + `.mine{background:#fff;border-left:5px solid #B0822B;padding:16px 22px;margin:24px 0;font-size:19px}.mine h2{font:700 12px Hanken,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#876217;margin:0 0 6px}`
+    + `.btn{display:inline-block;font:700 12px Hanken,sans-serif;letter-spacing:.12em;text-transform:uppercase;border:2px solid #876217;padding:11px 16px;text-decoration:none;color:#876217;margin:4px 8px 4px 0}.btn.d{background:#876217;color:#fff}</style></head>`
+    + `<body><div class="wrap"><div class="top"><a href="/"><img src="/img/rcd-mark-96.webp" width="48" height="31" alt="Raining Cats &amp; Dogs"></a><a href="/DY2027/">Dog Year 2027</a><a href="/CY2027/">Cat Year 2027</a></div>${body}</div></body></html>`,
+    { status: code, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex' } });
+  const gone = () => page(404, 'Shared page | Raining Cats &amp; Dogs', '', '<h1 style="margin-top:40px">This shared page is no longer here</h1><p>The person who shared it has stopped sharing, or the link is not complete.</p><p><a class="btn d" href="/DY2027/">Dog Year 2027</a><a class="btn" href="/CY2027/">Cat Year 2027</a></p>');
+  if (!m) return gone();
+  const r = await (await stub(env).fetch('https://internal/share-get', { method: 'POST', body: JSON.stringify({ id: m[1], ip: request.headers.get('cf-connecting-ip') || '' }) })).json().catch(() => ({}));
+  if (!r.ok) return gone();
+  const html = await (await env.ASSETS.fetch(new Request(url.origin + r.path))).text().catch(() => '');
+  const g = re => (html.match(re) || [])[1] || '';
+  const title = g(/<meta property="og:title" content="([^"]*)"/), img = g(/<img class=big src="([^"]+)"/) || g(/<meta property="og:image" content="([^"]+)"/);
+  const kick = g(/<div class=kick>([\s\S]*?)<\/div>/), day = g(/<p class=daytxt>([\s\S]*?)<\/p>/), alt = g(/<img class=big src="[^"]+" alt="([^"]*)"/);
+  if (!title) return gone();
+  const dog = r.path.startsWith('/DY2027/'), abs = 'https://rainingcad.com', desc = r.text.replace(/\s+/g, ' ').slice(0, 190);
+  const paras = r.text.split(/\n\s*\n/).map(x => '<p style="margin:.4em 0">' + H(x).replace(/\n/g, '<br>') + '</p>').join('');
+  const head = `<meta property="og:type" content="article"><meta property="og:site_name" content="Raining Cats &amp; Dogs"><meta property="og:title" content="${title}"><meta property="og:description" content="${H(desc)}"><meta property="og:url" content="${abs}/s/${m[1]}/">`
+    + (r.pic ? `<meta property="og:image" content="${abs}/s/${m[1]}/card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">` : `<meta property="og:image" content="${img.startsWith('http') ? img : abs + img}">`)
+    + '<meta name="twitter:card" content="summary_large_image">';
+  return page(200, title, head, `<div class="kick">Shared from ${dog ? 'Dog' : 'Cat'} Year 2027 · ${kick}</div><h1>${H(alt) || title}</h1>${img ? `<img class="big" src="${img}" alt="">` : ''}${day ? `<p class="day">${day}</p>` : ''}`
+    + `<div class="mine"><h2>${dog ? 'My Dog-Eared Notes' : 'My Cat-Eared Notes'}</h2>${paras}</div>`
+    + `<p><a class="btn d" href="${r.path}">Write your own for this day</a><a class="btn" href="/${dog ? 'DY' : 'CY'}2027/">${dog ? 'Dog' : 'Cat'} Year 2027</a></p>`);
+}
 
 let GATE = null, GKEY = null;
 async function gateKey(env) {
@@ -64,6 +98,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url), p = url.pathname;
     if (request.method === 'GET' && p.startsWith('/inside/')) { const r = await gate(request, env, url); if (r) return r; }
+    if (p.startsWith('/s/')) return sharePage(request, env, url);
     if (p.startsWith('/api/')) {
       if (request.method === 'POST' && (!sameOrigin(request, url) || !(request.headers.get('content-type') || '').includes('application/json'))) return json({ ok: false, error: 'bad-request' }, 403);
       if (p === '/api/access') return json({ ok: true, access: await readPass(env, request) });
@@ -89,6 +124,20 @@ export default {
         let body = {}; if (request.method === 'POST') { try { body = await request.json(); } catch (e) {} }
         return stub(env).fetch('https://internal' + p.replace('/api', ''), { method: 'POST', body: JSON.stringify(Object.assign(body, { id: S.i })) });
       }
+      if (p === '/api/share' && request.method === 'POST') {   // the page must be one of our Dog Year or Cat Year day pages with notes
+        let b = {}; try { b = await request.json(); } catch (e) {}
+        const path = String(b.path || '');
+        if (!/^\/(DY|CY)2027\/[a-z0-9]{1,12}(\/[0-9]{1,2})?\/$/.test(path)) return json({ ok: false, error: 'bad-request' }, 400);
+        const pg = await env.ASSETS.fetch(new Request(url.origin + path)); if (!pg.ok || !(await pg.text()).includes('id="notes"')) return json({ ok: false, error: 'bad-request' }, 400);
+        const r = await (await stub(env).fetch('https://internal/share', { method: 'POST', body: JSON.stringify({ path, text: b.text, image: b.image, ip: request.headers.get('cf-connecting-ip') || '' }) })).json();
+        return json(r, r.status || 200);
+      }
+      const sd = p.match(/^\/api\/share\/([a-z0-9]{10})\/delete$/);
+      if (sd && request.method === 'POST') {
+        let b = {}; try { b = await request.json(); } catch (e) {}
+        const r = await (await stub(env).fetch('https://internal/share-del', { method: 'POST', body: JSON.stringify({ id: sd[1], secret: b.secret }) })).json();
+        return json(r, r.status || 200);
+      }
       if (p.startsWith('/api/admin/')) {
         if (!env.ADMIN_KEY) return json({ ok: false, error: 'no-admin-key' }, 503);
         if (!(await keyOk(request, env))) return json({ ok: false, error: 'wrong-key' }, 401);
@@ -109,6 +158,7 @@ export class CodesDB extends DurableObject {
     this.sql.exec('CREATE TABLE IF NOT EXISTS subs (id TEXT PRIMARY KEY, email TEXT UNIQUE, key TEXT, books TEXT, created INTEGER, source TEXT, country TEXT)');
     this.sql.exec('CREATE TABLE IF NOT EXISTS notes (id TEXT, k TEXT, v TEXT, title TEXT, u INTEGER, PRIMARY KEY (id, k))');
     this.sql.exec('CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v TEXT)');
+    this.sql.exec('CREATE TABLE IF NOT EXISTS shares (id TEXT PRIMARY KEY, secret TEXT, path TEXT, body TEXT, img TEXT, created INTEGER, views INTEGER DEFAULT 0)');
   }
   one(q, ...a) { return [...this.sql.exec(q, ...a)][0] || null; }
   all(q, ...a) { return [...this.sql.exec(q, ...a)]; }
@@ -156,6 +206,30 @@ export class CodesDB extends DurableObject {
         const ex = this.one('SELECT u FROM notes WHERE id = ? AND k = ?', b.id, k); if (ex && ex.u >= u) continue;
         this.sql.exec('INSERT INTO notes (id, k, v, title, u) VALUES (?, ?, ?, ?, ?) ON CONFLICT (id, k) DO UPDATE SET v = excluded.v, title = excluded.title, u = excluded.u', b.id, k, v, clean(it.t, 80), u || NOW()); n++;
       } return json({ ok: true, n });
+    }
+    if (p === '/share') {
+      if (this.limited('sh:' + b.ip, 30, 60)) return json({ ok: false, error: 'slow-down', status: 429 });
+      const text = String(b.text || '').trim(), img = String(b.image || '');
+      if (!text || text.length > 6000) return json({ ok: false, error: 'bad-request', status: 400 });
+      if (img && (img.length > 700000 || !img.startsWith('/9j/') || !/^[A-Za-z0-9+/=]+$/.test(img))) return json({ ok: false, error: 'bad-image', status: 400 });
+      const A = 'abcdefghjkmnpqrstuvwxyz23456789', id = [...crypto.getRandomValues(new Uint8Array(10))].map(x => A[x % A.length]).join(''), secret = hex(16);
+      this.sql.exec('INSERT INTO shares (id, secret, path, body, img, created) VALUES (?, ?, ?, ?, ?, ?)', id, await sha256hex(secret), b.path, text, img || null, NOW());
+      return json({ ok: true, id, secret });
+    }
+    if (p === '/share-del') {
+      const row = this.one('SELECT secret FROM shares WHERE id = ?', b.id); if (!row) return json({ ok: false, error: 'not-found', status: 404 });
+      if (row.secret !== await sha256hex(String(b.secret || ''))) return json({ ok: false, error: 'forbidden', status: 403 });
+      this.sql.exec('DELETE FROM shares WHERE id = ?', b.id); return json({ ok: true });
+    }
+    if (p === '/share-get') {
+      if (this.limited('sg:' + b.ip, 300, 60)) return json({ ok: false, error: 'slow-down', status: 429 });
+      const row = this.one('SELECT path, body, img IS NOT NULL AS pic FROM shares WHERE id = ?', b.id); if (!row) return json({ ok: false, error: 'not-found', status: 404 });
+      this.sql.exec('UPDATE shares SET views = views + 1 WHERE id = ?', b.id);
+      return json({ ok: true, path: row.path, text: row.body, pic: !!row.pic });
+    }
+    if (p === '/share-card') {
+      const row = this.one('SELECT img FROM shares WHERE id = ?', b.id); if (!row || !row.img) return new Response('Not found', { status: 404 });
+      return new Response(Uint8Array.from(atob(row.img), c => c.charCodeAt(0)), { headers: { 'content-type': 'image/jpeg', 'cache-control': 'public, max-age=600' } });
     }
     if (p === '/admin/subs') return json({ ok: true, subs: this.all('SELECT email, books, created, source, country FROM subs ORDER BY created DESC LIMIT 5000'), notes: this.one('SELECT COUNT(*) AS n FROM notes').n });
     if (p === '/admin/codes') return json({ ok: true, codes: this.all('SELECT * FROM codes ORDER BY created DESC LIMIT 500'), uses: this.all('SELECT * FROM uses ORDER BY at DESC LIMIT 200') });

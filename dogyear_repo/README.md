@@ -27,3 +27,7 @@ QR codes use `https://rainingcad.com/DY2027/[week 1-50]/[day 1-8]`. Days 1-7 are
 ## Not in this repo
 
 Photos and rendered PDFs are large and are kept out. Add them with Git LFS if needed.
+
+## Share this day
+
+`site/share-day.js` adds "Share this day" to every DY2027 and CY2027 page with notes; the Worker keeps shared notes at `/s/<id>/`. After rebuilding day pages, run `python tools/add_share.py`.
